@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.lab-20d6e3\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 935,
+      "first_words": "Computer lab \u2013 Open Computing Facility Toggle nav..."
+    },
+    {
+      "index": 2,
+      "size": 830,
+      "first_words": "It can be accessed through the main MLK building o..."
+    },
+    {
+      "index": 3,
+      "size": 420,
+      "first_words": "The front desk staff can help with basic troublesh..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

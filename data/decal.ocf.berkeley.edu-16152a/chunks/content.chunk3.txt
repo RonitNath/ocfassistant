@@ -1,0 +1,3 @@
+3/1 Week 5: 3/04/2025 Lecture Networking 101 Lab Lab 5 Week 6: 3/11/2025 Lecture Web Servers Lab Lab 6 Week 7: 3/18/2025 Lecture Security Fundamentals Lab Lab 7 Week 8: 4/01/2025 Lecture Version Control (git) and Backups Lab Lab 8 Week 9: 4/08/2025 Lecture Docker Lab Lab 9 Week 10: 4/15/2025 Lecture Puppet Lab Lab 10 Week 11: 4/22/2025 Lecture Kubernetes (Optional Extra Lab) Lab Lab 11 Thanks to Jane Street for supporting the DeCal.
+
+Copyright © 2017-2025 Open Computing Facility and eXperimental Computing Facility This website and its course materials are licensed under the terms of the CC BY-NC-SA 4.0 License. Source Code available on GitHub

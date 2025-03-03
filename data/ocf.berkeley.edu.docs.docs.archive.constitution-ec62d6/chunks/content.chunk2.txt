@@ -1,0 +1,5 @@
+This document records the Constitution of the Open Computing Facility , as ratified or amended by votes of the OCF membership or by the Board of Directors: ratified on February 3, 1989; and amended on: March 21, 1990 May 14, 1991 November 21, 1991 February 8, 2000 September 29, 2014 September 1, 2015 ( part 0 , part 1 , part 2 ) September 22, 2015 May 13, 2016 ( part 0 , part 1 ) Preamble We, the computer using community of the Berkeley campus of the University of California, provide by this Constitution an organization dedicated to the pursuit of obtaining and managing open computing resources.
+
+The intent of this organization is to provide an environment where no member of Berkeley's campus community is denied the computer resources he or she seeks.
+
+This group's spirit can be traced directly to the former Undergraduate Computing Facility, however this organization's membership is much more widely open.

@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.communications.blm-cd0142\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 865,
+      "first_words": "OCF Communication, 19 June 2020 \u2013 Open Computing..."
+    },
+    {
+      "index": 2,
+      "size": 984,
+      "first_words": "At the same time, widespread protests and police b..."
+    },
+    {
+      "index": 3,
+      "size": 852,
+      "first_words": "Edit this Page Page History More in this category..."
+    }
+  ]
+}

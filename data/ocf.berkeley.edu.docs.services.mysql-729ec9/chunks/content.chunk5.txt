@@ -1,0 +1,5 @@
+To do this from the command line, use mysql -D [username] < backup where backup is the name of the file that contains the dumped data. As usual, this command will prompt you for your MySQL password.
+
+Using .my.cnf for passwordless access to MySQL If you are using MySQL in a script or in another program, you will probably want to set it up so that the mysql call does not prompt for your password.
+
+While passing the -p option is the obvious way to achieve this, it is also very insecure because anyone on OCF can see the password while the mysql command is running.

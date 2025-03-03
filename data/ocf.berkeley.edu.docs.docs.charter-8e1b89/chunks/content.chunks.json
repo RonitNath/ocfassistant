@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.docs.charter-8e1b89\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 770,
+      "first_words": "Charter \u2013 Open Computing Facility Toggle navigati..."
+    },
+    {
+      "index": 2,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

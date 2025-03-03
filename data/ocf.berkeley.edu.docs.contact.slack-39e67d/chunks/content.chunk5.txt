@@ -1,0 +1,7 @@
+Just make sure you are in a python virtual environment before running the command: python pip install websocket-client We describe setting up a virtual environment here .
+
+As a general recommendation, you'll probably want to leave wee-slack running in a detached tmux session .
+
+Edit this Page Page History Table of Contents Join the OCF Slack Workspace Other important info Everything is public I can't log in!
+
+List of Major OCF Channels List of Minor OCF channels Optional: Using wee-slack More in this category Contact us Internet Relay Chat (IRC) Slack OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

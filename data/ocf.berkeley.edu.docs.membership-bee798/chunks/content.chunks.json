@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.membership-bee798\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 568,
+      "first_words": "Joining the OCF \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 1055,
+      "first_words": "For example, all currently-enrolled students and a..."
+    },
+    {
+      "index": 3,
+      "size": 891,
+      "first_words": "(below) Group accounts Group accounts are associat..."
+    },
+    {
+      "index": 4,
+      "size": 796,
+      "first_words": "You don't need to re-apply for a new account every..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

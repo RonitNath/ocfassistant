@@ -1,0 +1,516 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-services-shell-commands">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/services/shell/commands/" />
+
+        <title>
+            
+                
+                    Command reference &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/services/shell/commands/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Command reference</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+  <div class="ocf-content-block">
+    <h2>Shell interface</h2>
+    <div class="shell-wrapper">
+      <iframe src="https://ssh.ocf.berkeley.edu" class="shell-frame">
+        <p>Sorry! Your browser can't display this window.</p>
+      </iframe>
+    </div>
+    <p>
+      Welcome to the live command reference! Here you can securely access our
+      login server via <a href="/docs/services/shell/">SSH</a> and
+      run commands to manage your account, edit a website, or work on our
+      server. Below is a list of account management commands with a brief
+      description of what they do and how to use them. Simply type in a command
+      and hit enter to run it. To log out, run the command <code>exit</code>.
+    </p>
+    <h2>OCF commands</h2>
+      <table class="table table-striped table-hover">
+        <caption>
+          <strong>Key:</strong>
+          <code>ARGUMENT</code>
+          <code>[optional]</code>
+        </caption>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    how
+                  
+                </strong>
+                
+                  SCRIPT
+                
+              </code>
+            </td>
+            <td>
+              Shows the source code for a script
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    <a href="/docs/services/web/#h3_via-ssh">
+                      makehttp
+                    </a>
+                  
+                </strong>
+                
+              </code>
+            </td>
+            <td>
+              Puts a shortcut to your web directory in your home folder
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    <a href="/docs/services/mysql/#h3_ssh-terminal">
+                      makemysql
+                    </a>
+                  
+                </strong>
+                
+              </code>
+            </td>
+            <td>
+              Generates a new random password for your database, creating the database if it does not exist
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    paper
+                  
+                </strong>
+                
+              </code>
+            </td>
+            <td>
+              Shows how many pages you can currently print
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    update-email
+                  
+                </strong>
+                
+              </code>
+            </td>
+            <td>
+              Prompts you to set a contact email address for your OCF account
+            </td>
+          </tr>
+        
+      </table>
+    <h2>File commands</h2>
+      <p>
+        For convenience, here is a very basic listing of commands to manage
+        files. For a more complete listing, see for example <a
+        href="https://en.wikipedia.org/wiki/List_of_Unix_commands">
+        Wikipedia</a>. For more information on a specific command, run
+        <code>man COMMAND</code>.
+      </p>
+      <table class="table table-striped table-hover">
+        <caption>
+          <strong>Key:</strong>
+          <code>ARGUMENT</code>
+          <code>[optional]</code>
+        </caption>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    cd
+                  
+                </strong>
+                DIRECTORY
+              </code>
+            </td>
+            <td>
+              Changes the current directory to a new one
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    cp
+                  
+                </strong>
+                [-r] SOURCE DEST
+              </code>
+            </td>
+            <td>
+              Copies a file. The <code>-r</code> option allows for copying directories.
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    less
+                  
+                </strong>
+                FILE
+              </code>
+            </td>
+            <td>
+              Lets you view the contents of a text file
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    ls
+                  
+                </strong>
+                [FILE]
+              </code>
+            </td>
+            <td>
+              Lists information about files and directories
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    mkdir
+                  
+                </strong>
+                DIRECTORY
+              </code>
+            </td>
+            <td>
+              Creates a new directory
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    nano
+                  
+                </strong>
+                FILE
+              </code>
+            </td>
+            <td>
+              Lets you edit a text file with a basic interface
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    mv
+                  
+                </strong>
+                SOURCE DEST
+              </code>
+            </td>
+            <td>
+              Moves or renames a file or folder
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    rm
+                  
+                </strong>
+                [-r] FILE
+              </code>
+            </td>
+            <td>
+              Deletes a file. The <code>-r</code> option allows for deleting non-empty directories.
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+              <code>
+                <strong>
+                  
+                    rmdir
+                  
+                </strong>
+                DIRECTORY
+              </code>
+            </td>
+            <td>
+              Deletes an empty directory. Safer than <code>rm -r</code>.
+            </td>
+          </tr>
+        
+      </table>
+  </div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

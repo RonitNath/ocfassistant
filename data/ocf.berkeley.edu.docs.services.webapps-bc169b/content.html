@@ -1,0 +1,1019 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-services-webapps">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/services/webapps/" />
+
+        <title>
+            
+                
+                    Web application hosting &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/services/webapps/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                            Closed All Day
+                            on Sunday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Web application hosting</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_introduction">Introduction</a></li><li><a href="#h2_app-hosting-eligibility">App hosting eligibility</a></li><li><a href="#h2_requesting-app-hosting">Requesting app hosting</a></li><li><a href="#h2_requirements-for-virtually-hosted-apps">Requirements for virtually-hosted apps</a></li><li><a href="#h2_technical-documentation">Technical documentation</a></li><ol><li><a href="#h3_connecting-to-the-application-server">Connecting to the application server</a></li><li><a href="#h3_routing-traffic-to-your-app">Routing traffic to your app</a></li><li><a href="#supervise">Supervising and starting your app</a></li></ol><li><a href="#h2_frequently-asked-questions">Frequently asked questions</a></li><ol><li><a href="#h3_can-you-install-a-package-on-the-app-server">Can you install a package on the app server?</a></li><li><a href="#h3_this-package-is-7-years-old-can-you-update-it">This package is 7 years old. Can you update it?</a></li><li><a href="#h3_how-do-i-get-a-database-for-my-application">How do I get a database for my application?</a></li><li><a href="#h3_im-running-my-app-on-port-3000-but-i-cant-access-it">I'm running my app on port 3000 but I can't access it.</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p><strong>Note: This document only applies to student groups with virtual hosts who
+have applied for apphosting. For normal user accounts or for groups without
+apphosting, you'll want to host with FastCGI instead.</strong></p>
+<h2 id="h2_introduction">Introduction <a class="anchor" href="#h2_introduction"><span></span></a></h2>
+<p>All accounts include our <a href="/docs/services/web/">standard web hosting</a>, which is
+suitable for static content, PHP (WordPress, Joomla, etc.), and CGI/FastCGI.
+For student groups wishing to host more advanced web apps with the OCF (Django,
+Flask, Rails, Node.js, etc.), we offer a separate hosting platform which
+provides more flexibility.</p>
+<h2 id="h2_app-hosting-eligibility">App hosting eligibility <a class="anchor" href="#h2_app-hosting-eligibility"><span></span></a></h2>
+<p>App hosting is <em>only available for student groups with <a href="/docs/services/vhost/">virtually-hosting
+domain names</a></em> (either group.studentorg.berkeley.edu, or your own
+separately-purchased domain name). If you don't already have a virtual host and
+want to use app hosting, see below for instructions; please don't fill out a
+virtual host request form.</p>
+<h2 id="h2_requesting-app-hosting">Requesting app hosting <a class="anchor" href="#h2_requesting-app-hosting"><span></span></a></h2>
+<p>To request app hosting, you need to first <a href="/docs/membership/">create an OCF group account</a>. Once you have an account, email <code>hostmaster@ocf.berkeley.edu</code>
+with at least the following information:</p>
+<ul>
+<li>Group's account name</li>
+<li>Group's current website, if any (even if not hosted by OCF)</li>
+<li>Desired domain name for the app (either group.studentorg.berkeley.edu, or your own
+domain)</li>
+<li>The technologies/languages your site is built on</li>
+</ul>
+<h2 id="h2_requirements-for-virtually-hosted-apps">Requirements for virtually-hosted apps <a class="anchor" href="#h2_requirements-for-virtually-hosted-apps"><span></span></a></h2>
+<p>All <a href="/docs/services/vhost/">normal requirements for virtual hosts</a> apply. In
+particular, be sure you are in compliance with the university student group
+disclaimer policy, and that your website features a "Hosted by OCF" banner.</p>
+<h2 id="h2_technical-documentation">Technical documentation <a class="anchor" href="#h2_technical-documentation"><span></span></a></h2>
+<p>You can host basically any kind of web application that can bind to a socket.
+We provide suggested deployment instructions for some popular web applications
+below, but if you know what you're doing, you needn't follow them.</p>
+<h3 id="h3_connecting-to-the-application-server">Connecting to the application server <a class="anchor" href="#h3_connecting-to-the-application-server"><span></span></a></h3>
+<p>We provide a separate server (currently named <code>vampires</code>), for hosting
+applications. <strong>You should connect to this server</strong>, not to the public login
+server.</p>
+<p>You connect to this server via SSH using your normal OCF account name and
+password.</p>
+<ul>
+<li><strong>Host:</strong> apphost.ocf.berkeley.edu</li>
+<li><strong>Port:</strong> 22</li>
+</ul>
+<p>If your login is refused (but you <em>can</em> log in to <code>ssh.ocf.berkeley.edu</code>), your
+account probably isn't configured yet. Contact us (see above) to request app
+hosting on your account.</p>
+<h3 id="h3_routing-traffic-to-your-app">Routing traffic to your app <a class="anchor" href="#h3_routing-traffic-to-your-app"><span></span></a></h3>
+<p>Our application server uses a reverse proxy to route traffic to UNIX sockets
+located at <code>/srv/apps/username/username.sock</code>. Your application should bind to
+that socket; basically any server can be configured to bind to a UNIX socket
+instead of a port, so do that.</p>
+<p>We provide some example setups below.</p>
+<h3 id="supervise">Supervising and starting your app <a class="anchor" href="#supervise"><span></span></a></h3>
+<p><strong>Make sure you do these steps on the application server.</strong> If you start your
+app on tsunami, the public login server, it won't work.</p>
+<p>We may restart the application server as part of regular maintenance, and
+you'll want your app to start again when we do. You'll also want your app to
+automatically restart if it crashes.</p>
+<p>We highly recommend to use systemd to supervise your app. Our recommended setup
+is:</p>
+<ol>
+<li><p>Create a directory for your app <code>~/myapp</code>.</p>
+</li>
+<li><p>Place a startup script at <code>~/myapp/run</code>. Your script should end by <code>exec</code>ing
+the server process. If you followed one of the guides for <a href="/docs/services/webapps/nodejs/">Node.js</a>, <a href="/docs/services/webapps/rails/">Rails</a>, or
+<a href="/docs/services/webapps/python/">Django</a>, you've already created this file, so
+can move on to the next step.</p>
+<p>Otherwise, an example would be:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>#!/bin/sh -e
+exec ~/myapp/run-server
+</pre></div>
+<p>Your server should run in the <em>foreground</em> (it should not daemonize), and
+the <code>run</code> script should end with an <code>exec</code> line so that signals are sent to
+the server (and not to the shell that started it).</p>
+<p>Once you've written the script, make it executable (<code>chmod +x ~/myapp/run</code>).
+Test it by executing it in your terminal before moving on; it will be easier
+to debug problems.</p>
+</li>
+<li><p>Write a systemd service file so your app will be supervised on startup. Save
+the following to the file <code>~/.config/systemd/user/myapp.service</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>[Unit]
+Description={YOUR GROUP NAME} Webapp
+ConditionHost=vampires
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=/home/{U}/{UU}/{USERNAME}/myapp/run
+Restart=always
+</pre></div>
+<p>Make sure to replace <code>{YOUR GROUP NAME}</code> above with your actual group name,
+and also replace <code>{U}</code> with the first letter of your username, <code>{UU}</code> with
+the first two letters of your username, and <code>{USERNAME}</code> with your username.</p>
+</li>
+<li><p>Tell systemd to start your app on startup, by running <code>systemctl --user
+enable myapp</code>.</p>
+</li>
+<li><p>You'll need to start your app manually once (on future reboots, it will be
+started for you). To do that, run <code>systemctl --user start myapp</code>.</p>
+</li>
+</ol>
+<p>To control your app, you can use the <code>systemctl</code> tool. See <code>man systemctl</code> for
+full details. In summary,</p>
+<ul>
+<li><strong>Restart an app.</strong> <code>systemctl --user restart myapp</code></li>
+<li><strong>Bring an app offline.</strong> <code>systemctl --user stop myapp</code></li>
+<li><strong>Bring an app back online.</strong> <code>systemctl --user start myapp</code></li>
+<li><strong>Check the status of an app.</strong> <code>systemctl --user status myapp</code></li>
+</ul>
+<p>Your app's standard output and error streams are sent to systemd's journal (by
+default). You can view them using <code>journalctl --user -n</code>. See <code>man journalctl</code>
+for more options.</p>
+<h2 id="h2_frequently-asked-questions">Frequently asked questions <a class="anchor" href="#h2_frequently-asked-questions"><span></span></a></h2>
+<h3 id="h3_can-you-install-a-package-on-the-app-server">Can you install a package on the app server? <a class="anchor" href="#h3_can-you-install-a-package-on-the-app-server"><span></span></a></h3>
+<p>Probably. <a href="/docs/contact/">Send us an email</a>, and be sure to provide the name of
+the <a href="https://www.debian.org/distrib/packages#search_packages">Debian package</a> you want us to install. Keep in mind we'll probably
+be installing the stable version of the package, so it might be old.</p>
+<p>You might prefer to install the package locally. See below.</p>
+<h3 id="h3_this-package-is-7-years-old-can-you-update-it">This package is 7 years old. Can you update it? <a class="anchor" href="#h3_this-package-is-7-years-old-can-you-update-it"><span></span></a></h3>
+<p>Probably not. Our servers run Debian stable, so it's expected that system
+packages aren't current (indeed, they're often a few years old). We almost
+never make exceptions or install backported packages.</p>
+<p>For developing and deploying your app, you should almost certainly be using
+your platform's version manager (rvm, virtualenv, nvm, gvm, etc.). This will
+allow you to run the exact versions you want, and install any necessary
+dependencies, all without coordinating with us (or forcing the rest of our
+users to switch versions).</p>
+<p>The pages above provide instructions on doing this with popular programming
+languages.</p>
+<h3 id="h3_how-do-i-get-a-database-for-my-application">How do I get a database for my application? <a class="anchor" href="#h3_how-do-i-get-a-database-for-my-application"><span></span></a></h3>
+<p>A <a href="/docs/services/mysql/">MySQL database</a> is included with your OCF account. You
+should probably just use that. We're <em>not</em> going to set up a different database
+for you (you could install one in your home directory if you <em>really</em> want to).</p>
+<h3 id="h3_im-running-my-app-on-port-3000-but-i-cant-access-it">I'm running my app on port 3000 but I can't access it. <a class="anchor" href="#h3_im-running-my-app-on-port-3000-but-i-cant-access-it"><span></span></a></h3>
+<p>The app server is behind a firewall; you won't be able to access most ports
+from outside of the OCF. You could come work from <a href="/docs/services/lab/">the lab</a>,
+or forward the port over SSH from elsewhere.</p>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/services/webapps.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/services/webapps.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_introduction">Introduction</a></li><li><a href="#h2_app-hosting-eligibility">App hosting eligibility</a></li><li><a href="#h2_requesting-app-hosting">Requesting app hosting</a></li><li><a href="#h2_requirements-for-virtually-hosted-apps">Requirements for virtually-hosted apps</a></li><li><a href="#h2_technical-documentation">Technical documentation</a></li><ol><li><a href="#h3_connecting-to-the-application-server">Connecting to the application server</a></li><li><a href="#h3_routing-traffic-to-your-app">Routing traffic to your app</a></li><li><a href="#supervise">Supervising and starting your app</a></li></ol><li><a href="#h2_frequently-asked-questions">Frequently asked questions</a></li><ol><li><a href="#h3_can-you-install-a-package-on-the-app-server">Can you install a package on the app server?</a></li><li><a href="#h3_this-package-is-7-years-old-can-you-update-it">This package is 7 years old. Can you update it?</a></li><li><a href="#h3_how-do-i-get-a-database-for-my-application">How do I get a database for my application?</a></li><li><a href="#h3_im-running-my-app-on-port-3000-but-i-cant-access-it">I'm running my app on port 3000 but I can't access it.</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/services/">Services</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/account/">Account</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/account/account-policies/">Account policies</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/account/content-removal/">Content removal policy</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/lab/">Computer lab</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/lab/lab-reservation-policy/">Lab reservation policy</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/lab/printing/">Printing</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/mysql/">Database (MySQL)</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/mail/">Email</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/hpc/">High performance computing</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/hpc/slurm/">Slurm</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/mastodon/">Mastodon</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/shell/">Remote shell and file transfer (SSH/SFTP)</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/shell/commands/">Command reference</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/mirrors/">Software Mirrors</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/vhost/">Virtual hosting (group.studentorg.berkeley.edu)</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/vhost/badges/">Hosting badges</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/vhost/mail/">Mail virtual hosting for student groups</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/vhost/mail/gmail/">Using Gmail with mail virtual hosting</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/vhost/subdomain-migration/">Subdomain migration FAQ</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Web application hosting</strong>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/webapps/nodejs/">Node.js</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/webapps/python/">Python (Django, Flask, etc.)</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/webapps/rails/">Ruby on Rails</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/">Web hosting</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/backups/">Backups/Archiving</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/django/">Django</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/flask/">Flask</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/jekyll/">Jekyll</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/php/">PHP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/rails/">Ruby on Rails</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/wordpress/">WordPress</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/xmpp/">XMPP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

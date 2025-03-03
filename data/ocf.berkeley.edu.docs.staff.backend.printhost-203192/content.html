@@ -1,0 +1,774 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-backend-printhost">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/backend/printhost/" />
+
+        <title>
+            
+                
+                    Printhost &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/backend/printhost/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Printhost</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_introduction">Introduction</a></li><li><a href="#h2_cups-pipeline-overview">CUPS pipeline overview</a></li><ol><li><a href="#h3_filters">Filters</a></li><li><a href="#h3_drivers">Drivers</a></li></ol><li><a href="#h2_print-accounting">Print accounting</a></li><ol><li><a href="#h3_desktop-notifications">Desktop notifications</a></li></ol><li><a href="#h2_see-also">See also</a></li></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <h2 id="h2_introduction">Introduction <a class="anchor" href="#h2_introduction"><span></span></a></h2>
+<p>The OCF's print server is based around two components: <a href="https://www.cups.org/documentation.html">CUPS</a>, the
+standard UNIX print server, and a custom print accounting system contained in
+the ocflib API. CUPS is responsible for receiving print jobs over the network,
+converting documents to a printer-friendly format, and delivering processed
+jobs to one of the available printers. The OCF's print accounting system,
+nicknamed enforcer after one of the scripts, plugs into CUPS as a hook that
+looks at jobs before and after going to the printer. It records jobs in a
+database that keeps track of how many pages each user has printed, rejecting
+jobs that go over quota. The high level flow of data through the print system
+looks like this:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>   [Application]
+         +
+         | PDF or PS document
+         v
+[Print spool (CUPS)]
+         +
+         | Raw document
+         v
+[Filter(s) (ocfps)]
+         +
+         | Converted PS document
+         v
+[Backend (Tea4CUPS)]
+         +
+         |  Accept or reject
+         +&lt;------------------+[Page counter (enforcer)]
+         |                               ^
+         v                               |
+     [Printer]                           |                 Remaining quota
+         +                               +-------+/      \&lt;---------------+/             \
+         | Status/completion time                 |ocflib|                 |Jobs database|
+         v                               +-------&gt;\      /+---------------&gt;\             /
+     [Backend]                           |                 Job table entry
+         +                               |
+         |                               +
+         +----------------------&gt;[Enforcer (again)]
+         |  Log success/failure
+         v
+[Print spool logger]
+</pre></div>
+<h2 id="h2_cups-pipeline-overview">CUPS pipeline overview <a class="anchor" href="#h2_cups-pipeline-overview"><span></span></a></h2>
+<p>The first stage of printing is handled by the application that sends the print
+job, such as Evince. The application opens up a system print dialog, which gets
+a list of available printers and options from the local CUPS client, which in
+turn gets it from the printhost. The application renders the desired pages to a
+PostScript, PDF, or other CUPS-compatible format, then sends it to the
+printhost.</p>
+<p>The CUPS server on the printhost receives the job and print options and queues
+the job for printing. The actual document, plus metadata including user-set
+options, is stored in the print spool at <code>/var/spool/cups</code> until a printer
+becomes available to print it. The document is converted into a more
+printer-friendly format before it actually reaches the printer. Once it's ready
+to print, it is sent to the printer via some backend such as IPP.</p>
+<p>Finally, the printer accepts a PostScript document as raw data and prints it
+out (some also support raster formats). This part of the process is largely
+controlled by the printer's onboard configuration, which can be modified by
+visiting the printer's IP over the web (e.g. <code>https://papercut/</code>). In the OCF's
+case, security is provided by an access control list (ACL) which accepts print
+jobs from the printhost and rejects jobs from other hosts.</p>
+<h3 id="h3_filters">Filters <a class="anchor" href="#h3_filters"><span></span></a></h3>
+<p>CUPS handles documents of many different formats. Some typical MIME types
+include <code>application/pdf</code> for raw PDF and <code>application/vnd.cups-postscript</code> for
+printable PostScript. To convert between formats, CUPS runs the data through
+programs called <em>filters</em>. A filter is, basically, a program that takes a
+special call format, plus CUPS-specific environment variables, and converts
+files from one format to another while adding special formatting options like
+duplex mode.</p>
+<p>CUPS uses not just one, but potentially several filters to get the document
+into its final format. For example, a PDF file might go through <code>pdftops</code> to
+convert it to PostScript, then <code>pstops</code> to insert print job options such as
+duplexing, then, finally, a device-specific filter such as <code>hpcups</code>. Each
+filter is associated with an internal "cost", and CUPS picks the path with the
+least total cost to print the document.</p>
+<p>At the OCF, print jobs are all processed by a single filter, <a href="https://github.com/ocf/puppet/blob/master/modules/ocf_printhost/files/ocfps">ocfps</a>,
+which converts raw PDFs to rasterized, printable PostScript. It calls on a
+command-line converter to render the PDF as pixels (rasterization), then passes
+the result and the rest of the arguments to standard CUPS filters. So far, this
+has given us the fewest headaches in terms of malformatted output and printer
+errors.</p>
+<h3 id="h3_drivers">Drivers <a class="anchor" href="#h3_drivers"><span></span></a></h3>
+<p>In order to know what job options are available for a particular printer and
+how to convert documents to a printable format, CUPS requires large config
+files called PostScript Printer Drivers (PPDs). The OCF uses a modified HP PPD
+for the <a href="https://github.com/ocf/puppet/blob/master/modules/ocf_printhost/templates/cups/ppd/m806.ppd.epp">M806</a>. There are two versions of it: one which only allows
+double-sided printing and one which only allows single-sided. This is how we
+implement the "double" and "single" classes. The PPDs tell CUPS to use <code>ocfps</code>
+to convert documents to PostScript, plus they turn on economode so we can
+afford the toner.</p>
+<h2 id="h2_print-accounting">Print accounting <a class="anchor" href="#h2_print-accounting"><span></span></a></h2>
+<p>The OCF uses a virtual CUPS printer backend called <a href="https://wiki.debian.org/Tea4CUPS">Tea4CUPS</a> to
+install a page accounting hook that runs before and after each job is actually
+sent to the printer. The script is called <a href="https://github.com/ocf/puppet/blob/master/modules/ocf_printhost/files/enforcer">enforcer</a>, but all the
+logic is contained in the <a href="https://github.com/ocf/ocflib/tree/master/ocflib/printing">ocflib printing package</a>. All jobs
+are logged in the <code>ocfprinting</code> SQL database, including the username, print
+queue, and number of pages. Several views count up the number of pages printed
+by each user per day and per semester.</p>
+<p>Page counting is actually done when the document is converted to PostScript,
+since CUPS-processed PostScript includes the page count as a comment near the
+top or bottom of the file. When enforcer receives a job that would put the user
+over daily or semesterly quota, it emails the user and returns an error code
+that cancels the job. Otherwise, it logs successful print jobs in the database
+and emails users in the case a job fails.</p>
+<h3 id="h3_desktop-notifications">Desktop notifications <a class="anchor" href="#h3_desktop-notifications"><span></span></a></h3>
+<p>After printing a document from a desktop, lab visitors are notified when pages
+are subtracted from their quota by a little popup notification. This is done by
+a short daemon script, <a href="https://github.com/ocf/puppet/blob/master/modules/ocf_desktop/files/xsession/notify">notify script</a>, which starts upon login and
+runs the <a href="/docs/staff/scripts/paper/">paper command</a> every minute to see if the
+quota has changed.</p>
+<p>In the future, it would be nice to have a more robust notification system where
+enforcer pushes notifications to desktops while a job is printing. This would
+allow for richer notifications to be displayed; namely, alerts to show when
+a job has started or finished printing, whether the job printed successfully,
+and whether it went over quota. Current thinking is that this could be
+implemented by broadcasting notifications to the whole network, or just the
+desktops, and modifying the notify script to listen for messages about the
+current user.</p>
+<h2 id="h2_see-also">See also <a class="anchor" href="#h2_see-also"><span></span></a></h2>
+<ul>
+<li><a href="/docs/staff/procedures/printing/">Printing maintenance</a></li>
+<li>The <a href="https://github.com/ocf/puppet/tree/master/modules/ocf_printhost">ocf_printhost</a> Puppet class</li>
+<li>The <a href="/docs/staff/scripts/paper/">paper</a> command</li>
+<li><a href="https://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/CUPS-printing.html">CUPS documentation at Samba</a> (for Windows users, but has general
+CUPS info as well)</li>
+</ul>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/backend/printhost.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/backend/printhost.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_introduction">Introduction</a></li><li><a href="#h2_cups-pipeline-overview">CUPS pipeline overview</a></li><ol><li><a href="#h3_filters">Filters</a></li><li><a href="#h3_drivers">Drivers</a></li></ol><li><a href="#h2_print-accounting">Print accounting</a></li><ol><li><a href="#h3_desktop-notifications">Desktop notifications</a></li></ol><li><a href="#h2_see-also">See also</a></li></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/">Infrastructure</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/backups/">Backups</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/buster/">Debian Buster upgrade</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/firewall/">External firewall</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/git/">Git</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/internal-firewalls/">Internal firewalls</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/jenkins/">Jenkins</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/libvirt/">KVM/Libvirt</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kerberos/">Kerberos</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kubernetes/">Kubernetes</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/ldap/">LDAP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/">Mail</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/vhost/">Virtual hosted mail</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/switch/">Managed switches</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/munin/">Munin</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Printhost</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/prometheus/">Prometheus</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/puppet/">Puppet</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/rt/">Request Tracker</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/servers/">Servers</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

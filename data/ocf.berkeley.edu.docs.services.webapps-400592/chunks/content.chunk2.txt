@@ -1,0 +1,9 @@
+For normal user accounts or for groups without apphosting, you'll want to host with FastCGI instead.
+
+Introduction All accounts include our standard web hosting , which is suitable for static content, PHP (WordPress, Joomla, etc. ), and CGI/FastCGI.
+
+For student groups wishing to host more advanced web apps with the OCF (Django, Flask, Rails, Node.js, etc. ), we offer a separate hosting platform which provides more flexibility.
+
+App hosting eligibility App hosting is only available for student groups with virtually-hosting domain names (either group.studentorg.berkeley.edu, or your own separately-purchased domain name).
+
+If you don't already have a virtual host and want to use app hosting, see below for instructions; please don't fill out a virtual host request form. Requesting app hosting To request app hosting, you need to first create an OCF group account .

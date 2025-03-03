@@ -1,0 +1,7 @@
+7.1.5 Participation in Governance OCF members have the right to attend and be appointed to the Board of Directors, subject only to reasonable requirements that can be demonstrably justified for an inclusive and open computing facility.
+
+7.1.6 Rights Not Enumerated The enumeration in this Constitution of certain rights shall not be construed to deny or disparage other rights retained by individuals.
+
+7.2 Responsibilities of Members 7.2.1 Conduct All users of OCF managed facilities shall comply with University of California regulations, including the UC Berkeley Student Conduct Code and any OCF regulations. The OCF reserves the right to deny services to any user who fails to follow any such regulations.
+
+8 Amendments and Bylaws 8.1 Amendments 8.1.1 Process A proposed amendment to the Constitution must be presented and seconded at a Board of Directors meeting at least one week before the meeting at which it is to be voted upon.

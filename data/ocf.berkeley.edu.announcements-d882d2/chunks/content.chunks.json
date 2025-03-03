@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements-d882d2\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 682,
+      "first_words": "News from the staff team \u2013 Open Computing Facilit..."
+    },
+    {
+      "index": 2,
+      "size": 480,
+      "first_words": "7 years, 11 months ago OCF seeking interest in hig..."
+    },
+    {
+      "index": 3,
+      "size": 738,
+      "first_words": "Here are some recent updates from it: Planned Outa..."
+    },
+    {
+      "index": 4,
+      "size": 416,
+      "first_words": "Our staff work hard to provide valuable services t..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

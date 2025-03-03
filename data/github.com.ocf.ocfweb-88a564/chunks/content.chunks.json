@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\github.com.ocf.ocfweb-88a564\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 1428,
+      "first_words": "GitHub - ocf/ocfweb: The main ocf website Skip to..."
+    },
+    {
+      "index": 2,
+      "size": 492,
+      "first_words": "Include my email address so I can be contacted Can..."
+    },
+    {
+      "index": 3,
+      "size": 1532,
+      "first_words": "Dismiss alert ocf / ocfweb Public Notifications Yo..."
+    },
+    {
+      "index": 4,
+      "size": 927,
+      "first_words": "Working on ocfweb We recommend following all of th..."
+    },
+    {
+      "index": 5,
+      "size": 948,
+      "first_words": "Please don't push to master with failing tests\u2014Jen..."
+    },
+    {
+      "index": 6,
+      "size": 869,
+      "first_words": "Alternatively, if you'd rather not install any hoo..."
+    },
+    {
+      "index": 7,
+      "size": 618,
+      "first_words": "About The main ocf website www.ocf.berkeley.edu To..."
+    }
+  ]
+}

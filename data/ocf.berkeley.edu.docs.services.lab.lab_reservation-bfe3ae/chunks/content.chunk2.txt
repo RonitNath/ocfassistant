@@ -1,0 +1,11 @@
+Those who reserve the OCF lab space are able to use the 29 computers within the lab (as well as additional seating if available), in addition to the main TV attached to the back wall.
+
+A whiteboard is available upon request, and student group members who are also OCF members may print normally pursuant to their existing printing quotas.
+
+Should the lab be reserved, the option to fully close the lab to the general population may be available.
+
+Here are a few important things to note: All OCF computers run on Debian Linux, so operating system specific applications such as Microsoft Word will not be available. However, browser-based tools, such as Google Docs, will work.
+
+If software you need is available for Debian, it may be installed at the discretion of an OCF Site Manager.
+
+The OCF hosts a DeCal; in Fall 2018 the DeCal is from 8 to 9 pm on Tuesdays and Thursdays, and as such we will be unable to allow lab reservations that conflict with or extend into that timeframe.

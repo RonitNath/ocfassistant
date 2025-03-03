@@ -14,7 +14,10 @@ scrape_safe_patterns:
 
 # Where webscraping starts
 scrape_root:
-  - https://ocf.io
+  - https://ocf.berkeley.edu
+
+# Set low so we can scrape faster. Keep an eye on this if you are running into issues.
+scrape_fetch_timeout: 1
 
 # Chunking parameters
 chunking:

@@ -1,0 +1,5 @@
+We've spent a lot of time trying to figure out how best to meet our budget while impacting the fewest people. Below we'll describe the changes we're making and our rationale for them. The daily quota is decreasing to 8 on weekdays, and 16 on weekends. So far this semester, we've had an average of about 750 users in the lab each day. That's a huge jump from last semester, where the average was closer to 500. Unfortunately, our resources haven't kept up with the increased demand.
+
+When you subtract out moving expenses, such as purchasing another 15 computers, monitors, and peripherals, our budget this year is less than it was last year in a space half the size. Not only are we facing budget troubles, but our printers are starting to fail. They've both now printed over a million pages . They're several years old and starting to show it.
+
+The near-doubling of printing this semester has greatly increased the frequency of paper jams and other technical glitches (just ask the front desk staff).

@@ -1,0 +1,7 @@
+if it's a department-sponsored group), you will need to come in during staff hours instead to reset the password. Over SSH You can change your password over SSH if you know your current password. Use SSH to run the command passwd and follow the prompts as shown below.
+
+No text will appear when you are entering in a password, just press enter when done after each prompt.
+
+$ passwd myusername@OCF.BERKELEY.EDU's Password: <my current password> New password: <my new password> Verifying - New password: <my new password> Success : Password changed In person If you are not able to use CalNet or SSH, or if you are a group and forgot your current password, you can meet a staff member in person during staff hours .
+
+Please bring sufficient documentation as listed on the membership eligibility page to demonstrate that you are authorized to reset the account password.

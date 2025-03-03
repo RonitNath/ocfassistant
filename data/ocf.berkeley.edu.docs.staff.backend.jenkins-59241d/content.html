@@ -1,0 +1,762 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-backend-jenkins">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/backend/jenkins/" />
+
+        <title>
+            
+                
+                    Jenkins &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/backend/jenkins/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Jenkins</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_making-changes-to-jenkins">Making changes to Jenkins</a></li><li><a href="#h2_jenkins-security-model">Jenkins security model</a></li><li><a href="#h2_jenkins-for-github-projects">Jenkins for GitHub projects</a></li><ol><li><a href="#h3_on-the-master-branch">On the master branch</a></li><ol><li><a href="#h4_adding-a-build-status-badge-to-the-readme">Adding a "Build Status" badge to the README</a></li></ol><li><a href="#h3_building-and-tagging-pull-requests">Building and tagging pull requests</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p><a href="https://jenkins.ocf.berkeley.edu/">Jenkins</a> is the tool we use for continuous
+integration and continuous delivery (TM) at OCF. All that means is that when
+you push code,</p>
+<ul>
+<li>Jenkins will test that code,</li>
+<li>Jenkins will build that code (if applicable),</li>
+<li>and then Jenkins will deploy that code.</li>
+</ul>
+<p>Ideally all projects at OCF will go through this pipeline of being tested
+before deployed, though currently some don't (or some only use some portion,
+such as deploying without any tests).</p>
+<h2 id="h2_making-changes-to-jenkins">Making changes to Jenkins <a class="anchor" href="#h2_making-changes-to-jenkins"><span></span></a></h2>
+<p>Anyone in group <code>ocfroot</code> can log in to Jenkins (using their OCF username and
+password) and will have full access to Jenkins.</p>
+<p>Sadly, while the installation of Jenkins is controlled via Puppet, its
+configuration is not. Configuring by Puppet would be nice, but it would mean
+changes would need to be made inside Puppet instead of the web UI.</p>
+<p>In practice it seems most people in industry are still using the web UI for
+configuration anyway.</p>
+<h2 id="h2_jenkins-security-model">Jenkins security model <a class="anchor" href="#h2_jenkins-security-model"><span></span></a></h2>
+<p>There are three users configured on the Jenkins server (<code>reaper</code>):</p>
+<ul>
+<li><p><code>jenkins</code>, the user created by the Debian package. It is used for running the
+Jenkins master but not for performing any work.</p>
+</li>
+<li><p><code>jenkins-slave</code>, a user we create. It is used for running build jobs with
+potentially untrusted code. <strong>However,</strong> it's not secure enough to run
+totally untrusted code, since all jobs run under this user.</p>
+</li>
+<li><p><code>jenkins-deploy</code>, a user we create. It is used for running build jobs tagged
+<code>deploy</code>, whose only purpose is intended to be <em>deploying</em> code which has
+been built or tested in a previous step. The user has a Kerberos keytab for
+the <code>ocfdeploy</code> user and our PyPI key in its home directory. Jobs such as
+<code>upload-deb</code> or <code>puppet-trigger</code> fall under this user.</p>
+</li>
+</ul>
+<p>Within Jenkins, we configure two "slaves" which are really on the same server,
+but execute by launching the <code>slave.jar</code> file as the <code>jenkins-slave</code> or
+<code>jenkins-deploy</code> user (via passwordless sudo from the <code>jenkins</code> user,
+effectively dropping permissions).</p>
+<p>The jobs are configured to run on either <code>jenkins-slave</code> (the default) or
+<code>jenkins-deploy</code> (for deploy jobs).</p>
+<p>This is a bit complicated, but it allows us both better security (we no longer
+have to worry that anybody who can get some code built can become ocfdeploy,
+which is a privileged user account) and protects Jenkins somewhat against bad
+jobs that might e.g. delete files or crash processes.</p>
+<p>Of course, in many cases once code builds successfully, we ship it off
+somewhere where it gets effectively run as root anyway. But this feels a little
+safer.</p>
+<h2 id="h2_jenkins-for-github-projects">Jenkins for GitHub projects <a class="anchor" href="#h2_jenkins-for-github-projects"><span></span></a></h2>
+<h3 id="h3_on-the-master-branch">On the master branch <a class="anchor" href="#h3_on-the-master-branch"><span></span></a></h3>
+<p>To test GitHub projects when you push to master:</p>
+<ol>
+<li><p>Configure the "GitHub Project" URL to point to the main page of the project
+(for example, <a href="https://github.com/ocf/puppet/">https://github.com/ocf/puppet/</a>).</p>
+</li>
+<li><p>Under "Source Code Management", select "Git" and add the repository URL (for
+example, <a href="https://github.com/ocf/puppet/">https://github.com/ocf/puppet/</a>).</p>
+</li>
+<li><p>Under "Build Triggers", check "Build when a change is pushed to GitHub".</p>
+</li>
+<li><p>On GitHub, go to "Settings" then "Webhooks &amp; services". Add a new "Jenkins
+(GitHub Plugin)" service with URL
+<code>https://jenkins.ocf.berkeley.edu/github-webhook/</code>.</p>
+</li>
+</ol>
+<p>You can create additional steps or organize pipelines if desired (for example,
+if you'd like to first test and then deploy).</p>
+<h4 id="h4_adding-a-build-status-badge-to-the-readme">Adding a "Build Status" badge to the README <a class="anchor" href="#h4_adding-a-build-status-badge-to-the-readme"><span></span></a></h4>
+<p>You might like to add a fancy "Build Status" badge to the README. From the
+project page, choose the "Embeddable Build Status" icon, then choose "Markdown
+(with view), unprotected". You can optionally change the link to point to the
+pipeline view rather ther than just the individual job.</p>
+<h3 id="h3_building-and-tagging-pull-requests">Building and tagging pull requests <a class="anchor" href="#h3_building-and-tagging-pull-requests"><span></span></a></h3>
+<p>Jenkins can build and tag pull requests with their build status, similar to
+Travis. To configure this for a repository, create a new job specifically for
+testing pull requests. For example, <code>puppet-test-pr</code>.</p>
+<ol>
+<li><p>Configure the "GitHub Project" URL to point to the main page of the project
+(for example, <a href="https://github.com/ocf/puppet/">https://github.com/ocf/puppet/</a>).</p>
+</li>
+<li><p>Under "Source Code Management", select "Git" and add the repository URL (for
+example, <a href="https://github.com/ocf/puppet/">https://github.com/ocf/puppet/</a>).</p>
+</li>
+<li><p>Under "Source Code Management", change "Branch Specifier" to <code>${sha1}</code>.</p>
+</li>
+<li><p>Also under "Source Code Management", change "Refspec" (it's under Advanced)
+to <code>+refs/pull/*:refs/remotes/origin/pr/*</code>.</p>
+</li>
+<li><p>Under "Build Triggers", check "GitHub Pull Request Builder", and then check
+"Use github hooks for build triggering".</p>
+</li>
+<li><p>Under "GitHub Pull Request Builder", delete all lines under "Admin List" (if
+there are any). Add "ocf" as the only line to the "List of organizations"
+box.</p>
+</li>
+<li><p>On GitHub, under "Settings" and "Webhooks &amp; services", add a new webhook
+with payload URL <code>https://jenkins.ocf.berkeley.edu/ghprbhook/</code>, content type
+<code>application/json</code>, and the secret (it's in <code>supernova:/opt/passwords</code>).
+Choose to trigger only on certain events:</p>
+<ul>
+<li>Commit comment</li>
+<li>Issue comment</li>
+<li>Issues</li>
+<li>Pull Request</li>
+<li>Pull Request view comment</li>
+</ul>
+<p>(These might not all be necessary, but I don't know the exact list.)</p>
+</li>
+<li><p>On GitHub, add the "Bots" group admin access to the repository. This is
+necessary so that it can set commit statuses.</p>
+</li>
+</ol>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/backend/jenkins.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/backend/jenkins.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_making-changes-to-jenkins">Making changes to Jenkins</a></li><li><a href="#h2_jenkins-security-model">Jenkins security model</a></li><li><a href="#h2_jenkins-for-github-projects">Jenkins for GitHub projects</a></li><ol><li><a href="#h3_on-the-master-branch">On the master branch</a></li><ol><li><a href="#h4_adding-a-build-status-badge-to-the-readme">Adding a "Build Status" badge to the README</a></li></ol><li><a href="#h3_building-and-tagging-pull-requests">Building and tagging pull requests</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/">Infrastructure</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/backups/">Backups</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/buster/">Debian Buster upgrade</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/firewall/">External firewall</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/git/">Git</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/internal-firewalls/">Internal firewalls</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Jenkins</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/libvirt/">KVM/Libvirt</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kerberos/">Kerberos</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kubernetes/">Kubernetes</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/ldap/">LDAP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/">Mail</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/vhost/">Virtual hosted mail</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/switch/">Managed switches</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/munin/">Munin</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/printhost/">Printhost</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/prometheus/">Prometheus</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/puppet/">Puppet</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/rt/">Request Tracker</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/servers/">Servers</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

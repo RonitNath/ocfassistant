@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2016_04_01.renaming-6e447c\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 958,
+      "first_words": "Unveiling a new name for the Open Computing Facil..."
+    },
+    {
+      "index": 2,
+      "size": 677,
+      "first_words": "After a heated discussion (and short break to get..."
+    },
+    {
+      "index": 3,
+      "size": 584,
+      "first_words": "We're also working with facilities to get some sti..."
+    },
+    {
+      "index": 4,
+      "size": 592,
+      "first_words": "Our staff work hard to provide valuable services t..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

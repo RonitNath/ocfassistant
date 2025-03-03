@@ -1,0 +1,9 @@
+Here are two easy ways to re-create the symlink: via the web interface Open the web commands interface in your web browser. Select the "makehttp" option. Enter your OCF username and password, and choose "Run command".
+
+You should see something like this in the output, assuming you entered your username and password correctly: public_html folder has been created successfully. via SSH Login to your account via SSH .
+
+After you go past all system messages, you will see a command prompt: user@tsunami:~$ At this prompt, type makehttp . This command will create your web directory.
+
+Here's a sample command output: user@tsunami:~$ makehttp Your public_html directory is ready to use!
+
+Edit this Page Page History Table of Contents Uploading Files Additional details Supported languages FAQ My public_html directory is missing, how do I fix that?

@@ -1,0 +1,205 @@
+<!DOCTYPE html><html>
+
+<head>
+    <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><title>CAS - Central Authentication Service</title>
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" type="text/css" href="/cas/webjars/normalize.css/8.0.1/normalize.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/bootstrap/5.2.0/css/bootstrap-grid.min.css" /><link rel="stylesheet" type="text/css" href="/cas/webjars/mdi__font/6.5.95/css/materialdesignicons.min.css" /><link rel="stylesheet" type="text/css" href="/cas/themes/default/css/media.css"/><link rel="shortcut icon" href="/cas/themes/default/images/favicon.ico" /></head>
+
+<body>
+    <script type="text/javascript" src="/cas/webjars/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="/cas/webjars/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script type="text/javascript" src="/cas/webjars/css-vars-ponyfill/2.4.7/dist/css-vars-ponyfill.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="/cas/js/cas.js"></script>
+<script>
+    if (typeof resourceLoadedSuccessfully === "function") {
+        resourceLoadedSuccessfully();
+    }
+    $(function() {
+        typeof cssVars === "function" && cssVars({onlyLegacy: true});
+    })
+</script>
+
+<div class="tesselation"></div>
+
+    <div class="hidden"><h1>UC Berkeley</h1></div>
+    <div class="wrapper">
+        <div id="content" role="main">
+            <div>
+        <script src="js/login.js" type="text/javascript"></script>
+        <h2 class="title">
+    <strong>CalNet</strong> Authentication Service
+</h2>
+<form method="post" id="loginForm" onsubmit="return checkId();" role="main" action="login">
+            <fieldset>
+                <p class="note"></p>
+        
+                <p>
+                    <label for="username" id="username-label"><span class="accesskey">C</span>alNet ID:</label>
+
+                    <input class="required"
+                        id="username"
+                        size="25"
+                        type="text"
+                        autocomplete="off"
+                        autocorrect="off"
+                        spellcheck="false"
+                        autocapitalize="none"
+                        aria-required="true"
+                        aria-labelledby="username-label" name="username" value=""/></p>
+
+                <p>
+                    <label for="password"><span class="accesskey">P</span>assphrase (Case Sensitive):</label>
+
+                    <input class="required"
+                        type="password"
+                        id="password"
+                        size="25"
+                        autocomplete="off"
+                        spellcheck="false" name="password" value=""/></p>
+
+                <p class="submit">
+                    
+                    <div>
+        </div>
+
+                    <input type="hidden" name="execution" value="20f649ba-8409-4a78-920f-79451af1f16d_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0lzSW10cFpDSTZJakF5TVRReVlURTRMVEF6TXpjdE5EZGpaUzFpWVRjMExUZGxNRGsxT0RNd01EVmxPU0o5LlY5aGRvLVVtamRMQzJ4akdzQ1hDcF9YaGRaZURoTXB6OUdpVDl4ZmhoeWRPS202b3dnRTJmZ2NIdjNlczZOdEZXX05zY0kxZTl4bDc3MHd5ZEU5MkF2cTA4aG51cEtUWFVCNGh3RVlJd2RIZU9zcXg5ZlJ6M1FUZ0RJbUl3WjRiZ0RXLUZ2QzV5NmgxbDh6X1MtazJvUWNOeTE1M0hmTWFDVVE4TkM0OVJzc2d5RFFlN19hNzJfY0ZaQTd1cjNSR2RDNjhOOERia2J0TklTUlZIU01pYnZNQWc0bkg3UnVxQkZTVjlEdjdUUF9XWUJPZjlPMEk3TWVNVUlfTXVoMGY1bmJ1dVdGelJNR1Nlc0lxOGtCak1kd3F2RTc3RFRPUndPYTg0WENWSUdHeHhRdXlGRnVOdXdvRk82NzRXVlY0cF94Y093ak00bkVIVVZJMEpNdWtCeHlaYTMzY2JONnJQVWlrdHpuTE5qWWdCY3lPMTI2WmNWYVo1YmVPTUZMQ0IwWk5idGk2TGV0dXNBeUVPZUx5U0RzQ1IyN3BHWU9mTzNTV2pWczJKaFZqLUhsUUFxdGRYSXNpZEdWTFJaTFR2OFlyMWJwSXVCWWZNdTdVR0NOSjNFQXZfeEo0WUdkM3NIdnRpSVczYno0aEJVbTAydXNpVEtSZ2hKWUNqeE5ZeklEeDlVTzhzM3lYMDNMaEZvbWp2ZW1WYy1aY0Z5eVhMamxiNVFrSnNhQW1rUmFsTFIzQUw0QU51QmZySUJnX29ENllrazkyc3VQRFZCRmVXemhvRDhFY184VEEyQnpRclptY2FWZEgzOTJFN2xzM2pFa21zZTNmbXRWRlMxdXlaQW9ub1N5MVQ3ZTZFNkEyYmNmdGV0c2daWnpCUWU2dnFIbkZSeE55cTRRVmR1ZTlzbldzMlpyRnVyVXBDNlh6c3JvMk04V1BIcXkycURmb28yci1VdFdCZzJhM3pwWEtSeW12M2hnVEZBZG1maHlSZDkxOHMxZEpKTEVPQnRRN284RUNfTHVzazVXMmNiT2lEUzhENERZeUl4NG1kVnlIVlI5V1duQWRXUHhvNlhFWTN6NktLajBjaE01blJaNW5vdEZ1aFVsNnBrR0tXMUhoXzNwajFtRFA2cml0WHlaRk0xWEJoVVR6TnpKUi1HWWpxRThqMnhOWUc4Z0d4ZXJVc24zczFuTmxEdnJuaUluOEJNVllqbFJZX09EMThPR1BuaGRmSm5SanhFWWZEdEVSeTRVQkZmWm1HZHNnRnZUZzdYYkU5d0dWeEZteEtuVm5xLWJVbWdJbjNFa0IwdmstOXd3cTBQUVp6Q2VHSXpTS2c5eTNodUtPcnQtbkozR2tldVVjV1NCWDlUTUpEUnFUMXJhM3k2c016UWJXVUFuLV8zaEg5cjVvZDQtQm9tMm9PeF91eWgyUTVPMDFrT2dQeS1BSUMxQzdwZDd2OFd3bVkzWmRQNXZzX2tkTGtaOERYVHRnVzB0Z2IwRzQ1RDRtYVdONkE1TktCZ215b0NvN2tKWHdCck51VHlBaWtnSHEwSU9tdFVNbjliQmEyQlBBdW9SVThFQWRmYm45R3RnZHQ0VjQ5M2h5VUp6eUxlYmx0elk2OHA3bVM4UTc5WTd3RXdUam9QaDQtVm4tUXhEQ0x0R3pyY0xFeXRHZ2VQRzBEOVIwRnYtb3dHcDRPTVJ4T1ZLTXVnX2tlQ2VMUWEtSWo0RmgxTTVsYVV4YUZBb3AtNTBoQlRpSWZ4UkpLOFFVelUxUUZGMW9JTGl2WmZ5NzBYUThmX0l1QTN6SElqSWFxMGpwTHgzaGtvVks5ZTVmVFVEX1l0ZG9SWTRuQ0JnVnVHWGNyb1B4bGhDcVVZX2w2elJXcHZvVUtuZGVNUmI0RmhMUEJKQlRDbk1QRnpuNGdvajFIc3FCOTNlRGJmNEpyREdMNk1hb2NIS2paVUVmdEE5Wktvb2prbkFtSGdFX1ZjSEM4OUxLdm5OSkJkbzVLXzZWUWdaVmtjUGlHT0YtMEVIQXNKUElWMlpaRDRBbjR1TUV0d1pLcW1aNkJBbUhpcElvLUhYN0JQVE1HN0pLN000MDBhOWJnamViWjd0TlZZTnF4eWc1dVlnX0V5NGhHTGU1VUhrWm9wTjB0dzRXT3NqU0x1UExPX3pCbTZZSFZudzJMS3NxNDZSUjZKcF8tZEw0ZjZRN2ZBeWpQLXo5LXMwR25QQlJ0bHdIblpwQnNDVFZFb3lZZklwaFh5T1NyWmc2enVyMllDSHpYcjhuelIxVUg4Q3ZKa0dVZmw2QklqajNsOU80QjhtYTZweS15ell2MVpGV1NUX0NTMTktNGZsYnFFMWFvaFRMX0cxS05CTFRRR2JyMll5OXRGLUxvd0xPY1lVZGkzNXd1YjdiOFA5dFB3LS1kMWtyNVJJcWVhcTdWQUNzNTdxSG9RdUhQd3J3ajNmelZZN3NKTGp3bDZaeFBFNi1xZi1kVC0xUW41bmtsay1hZXMzdWU1X1JaOF94Z3VYVV9ONWphT2V2U0VnT3d0SGJNTmpRa19WYlFVaXBIZWNrdHJCaUtBRElaamJ4Y0QxeDFscHJpYzlGdlNQYTlyQzJLd1FPOVlnbGExcDZtZ05SQkk3aGJJLWw3Q3BVMDE0bnI0Q3ZvU05RVVVvUFlFUnNsSUdVMGpTZWRxN3lTcFlfaVJZZUMwNU9UNVdIN2pJQkdqbjNoSG04aktZMmNzZzBSZVlQT2c4OUJHcV9kQmtZOEY4SVdFTnRLaFk5WTNSbVRzVjJ2MDJhaXVGcnRJSElheEtjclJBQXdOdWVWOUhOcm1lVlhyeUJoTm1QZFNlZEcwZnNIcURFdUtoOHNRbW9RY3RMSU9IRnhxT0ctTFBLTU8xTVdjcU54VTl5MUlEQ2IwQnJ2NUNEeVFkMlp2czloWjBhNEx5VVRHR1F5Q1dhZnNKd0lEVjdySXZRQlprWjlTY2VHdTJGM21rVmZWV2JaMm5vV20tUFVLMUxnSHVjSWdLYTZSWmlTV1FBZUUyRWhiQllXdzM4Q1NoSE9hZ1RUcXZBMnpkckF3OXYzV0E5MndEUXIySjNDLXNYbVBMNmFyVEF3UERISTdNOExEZHdudGxrWG9sN0tsUnhUVThTNHZmNUNld3lMelY2amgxWFJwYjFZM21xOHNCQkpLMlplVmJGeGZ4Q1FWRlMzV0FCT1BXejliMGl3VXBpQk9jaUdxRElsUThsTEs2TzFEOGt3al9ONWhSWHYwU3p2N3pldG9kRmFDWkIwUjB3OUZHOW0wRndNVUZWZjNpLUZJNXNianpfZ2p1OVdhNWZSNEZjNklIa0FYb21zRVhWRHBhUGRzNnlMMV9Ta3RLeGJHVUljU3Q3bmZCeHZnNDNoLVF3QkRoQ0tUUXBJcUh0X0lHZTFsZTFoMUo2aUNEaHlKQllCYURzeDdtQTVJS2lCeDRhT2NUU0pEOGcwV0JqNmtyNDZWTHZxSUtVS0ZTQkZsU0trY3JrVmhZRXR2UlZNODR1N2hQS21OODQ2VW4xaDZiY3FEWDBuaHY2cHJEMG5PNzRHTWIyc3dFbjhNNEt6WE1aM3lHbVhSQXFUbDlBcXUwYklveGpVVHdvUkVCdkNJWHJkVzlDR0VhV0x5ZmlfWWVJaEMwd016OUUwQXZHZC1yR3FpdnFLMjZlbXVISTJadFBreV9PQWdlUlpmeGZNa1VBWEdFQzIwR0YyVzVBRUc2U2NUaUlwZTFQQXJON3JPRzRkczN6cTB4WEZpOXVBX0oxWEloclVWcEpnbUhKTWNJeDZTSUFmZVg0LWNLVGdPcUhyVEZyLVh0MHZUcEt5dlBvc1I2VmloT1FYcVlYcnlzNUpuYm5GbXRXMTFxWm5PYVJZcktvNHpKMGRjQVNsWWJ1Y2pTakhqQUdZU01DQTlwbG9oMHhlS3BIdTlPU2RJM0wzWU0xTEtKdWF1NlZ0RWU1NG0wZk5NaGI4VFkzM0xCUExmc2xnQkQtNWMwRDRpdENZSEg1TUhQeEV6eVE0N0V1ZU45YkJzMlJVMXhDWThCSWdld0t3UGFtU216YlBfVE0waEFQWndMMVdZVjhYMHNTUlMyMHVEa0xWZVFKM09tNUxHaTFzZlA0SnJDMU9tSmNnakwwWlpUVWFmX1FFMEg3dV9FbWd3SVFEQllWRlZ5d0RoWllDZVRucVd5eGs2OFBNVHlEbHRQMkxaQks3QjVpU29MekZHaVFlRVVHeUI3azJJcldJWDNkRTBUNW5SOVBVSFlCUFYwMXZVWUgxZllab19tUW81UDg5enVzZko2X2dJNFBBbGxZalZlZ0t3QlRPM3V5OUc5bElnUjFxSlpDbjJlZGJQOHlrUEx3NUJteTlZY0x6MmE3ZDJCcm9GbElVYXZzRWQ2bTFOZlprSGxHdW4wQ3JJWGhRMEFMek5kM1pCTHo1Wl8wb0E5V0EySF9McHRxSUVmR3BsYXQwRTVEMHk1MmVUelNTX0xVUWxrdzVvSC13TXpHdjdOTThBZEotaTdQcUtkNVhxaW5TNzVXMjF3bkdJdUVFelBpZi1WQldLQndya19nVUhXU2N6WWNxenpHNVVJQnU0MFVPQWdpbTB4OE9yaVpxU1hzVV9lRXBUOG44Nl9mTEZEdmFSaHBOSXdVempkdkxHbzFVUVdZdGR5ZHhfa2RUeWZ2R3dHa2lmaTdYU2NsdW5xeTRsTzEwdTdVRTVqcjNXdzdmYUFCcmNienkxV0pNZE1XTkhEY2xKNnEwU1diUTF5Tm1IRFowRjk1YkVFWnM2YXphTnZZMHotYXltNVRlc1VuZDZkRHpkcWptM2RKSUFBVWJvTGlJbnFCU2lOUHpXRTk4NnAtUkhobmZuYXFVaS1WN2Zkcm1tNHBrNHgxTmo3dHpzQjQzcXVMTDlyVEdGeWd1UkQ1eXhnYW1LRUZqTmVXclpLR2ZTMXJhVHFacmZhY2FaSnFNeFdGXzRxeDgyVXY2a08zUVQ1NDFZbUFheWRpZUpjMkROZE81aUh0NXF1TWI5TUIwZ0RVZVp2aXNFUEQ5SVFtaS1qeXlsdDdkaFRXTEM3dXN2amdKYWcxQ1Nxc1ZfVWpTdkUwMHV5eXd4eG9PTG9oZGxmemtmVVo0aEExOUk4aTB3LVNWRHF2aTE2TTh1VlJXYTlwVFZqelpRT1c5RE1odEVJREMzeEtUclAxSzFIZEdwOUR4WWE0blF3M0ZhenEyMnQxcjI2RDl6UEtmYnZ0UkhRU01vcTRUa2h6dFE2d1Fpc1lPQ05LVldGZkxkVHZPNUJTN2pnOGdxSmR4V1NjS2tBbHhJUWswaERacFh6NkdPVTd5Ym56RWs2OGZWZEpUV25CdVU4R29VQ1FseUsyODZDZFhBOXhEbE9tU1RWZFdDVldDZFRhM1lBcFFqZHIzb0gtNjdHSFJZdFpqMFFfNDBCSkRUVDRpckRBU1U3X2pMVVFGN2JGUnAtMFAtRmk1dmlKVGl1bmRpYjVZQTlQdlBjUk9UTndRbmJqelJLZlZ5TDRWN3BJR0Y1X2ZSQmlDeG56SmFBV1dFZVJOQS5fWDNpRURvVS04eW1mOGxpOWdJVkQzelJVdnM5SUV1S09Leko2TUhCUU1rdG1PU0NoTWV4QjBjTEU3N3NrZ181VUJIdFFERlVUMTZBMWRINUVETzNPQQ=="/><input type="hidden" name="_eventId" value="submit"/><input type="hidden" name="geolocation"/><input class="button"
+                        name="submit"
+                        id="submit"
+                        value="Sign In"
+                        type="submit"/><span class="hidden"><br/><br/></span>
+
+                    <span class='help'>
+                        <a id="showHelpText" href='#' aria-owns="helpText"><span class="forScreenReaders">Show </span>HELP<span class="forScreenReaders"> below</span></a>
+                        <a id='hideHelpText' href='#' style="display: none;">Hide HELP</a>
+                    </span>
+                </p>
+            </fieldset>
+        </form>
+
+        <div>
+            <p>
+                <label style="font-size: 0.7em; text-transform: uppercase; padding:0px">
+                    <a href="https://bpr.calnet.berkeley.edu/account-manager/">Forgot CalNet ID or Passphrase?</a>
+                    </label>
+            </p>
+            <p>
+                <label style="font-size: 0.7em; text-transform: uppercase; padding:0px">
+                    <a href="https://mycalnet.berkeley.edu">Manage my CalNet account</a>
+                </label>
+            </p>
+        </div>
+
+        <div id="helpTextTop">
+
+            <div>
+                <div id="helpText" class="help-copy" style="display: none" aria-hidden="true" role="complementary"
+                    tabindex="-1">
+                    <div ><div role="region" tabindex="2">
+    <h4 class="calnet-help">How to Sign In as a SPA</h4>
+    
+    <p>
+        To sign in to a Special Purpose Account (SPA) via a list, add a "<strong>+</strong>" to your CalNet ID 
+        (e.g., "<strong>+mycalnetid</strong>"), then enter your passphrase. The next screen will show a drop-down 
+        list of all the SPAs you have permission to access. Select the SPA you wish to sign in as.
+    </p>
+
+    <p>
+        To sign in directly as a SPA, enter the SPA name, "<strong>+</strong>", and your CalNet ID into 
+        the CalNet ID field (e.g., “<span style="white-space:nowrap;"><strong>spa-mydept+mycalnetid</strong></span>”), 
+        then enter your passphrase.
+    </p>
+
+    <p>
+        To view and manage your SPAs, log into the <a href="https://idc.berkeley.edu/spa/">Special Purpose Accounts</a> application with your personal credentials.
+    </p>
+
+</div>
+</div>
+                    <div ><div tabindex="4">
+    <h3 class="calnet-help">Help</h3>
+
+    <p>For assistance, see:</p>
+
+    <p><a href="https://calnetweb.berkeley.edu/it-help-desk-and-calnet-support">Help desk information</a></p>
+
+    <p><a href="https://mycalnet.berkeley.edu">Manage my CalNet account</a>
+
+</div>
+</div>
+                </div>
+                <noscript>
+                    <div class="help-copy" role="complementary">
+                        <div ><div role="region" tabindex="2">
+    <h4 class="calnet-help">How to Sign In as a SPA</h4>
+    
+    <p>
+        To sign in to a Special Purpose Account (SPA) via a list, add a "<strong>+</strong>" to your CalNet ID 
+        (e.g., "<strong>+mycalnetid</strong>"), then enter your passphrase. The next screen will show a drop-down 
+        list of all the SPAs you have permission to access. Select the SPA you wish to sign in as.
+    </p>
+
+    <p>
+        To sign in directly as a SPA, enter the SPA name, "<strong>+</strong>", and your CalNet ID into 
+        the CalNet ID field (e.g., “<span style="white-space:nowrap;"><strong>spa-mydept+mycalnetid</strong></span>”), 
+        then enter your passphrase.
+    </p>
+
+    <p>
+        To view and manage your SPAs, log into the <a href="https://idc.berkeley.edu/spa/">Special Purpose Accounts</a> application with your personal credentials.
+    </p>
+
+</div>
+</div>
+                        <div ><div tabindex="4">
+    <h3 class="calnet-help">Help</h3>
+
+    <p>For assistance, see:</p>
+
+    <p><a href="https://calnetweb.berkeley.edu/it-help-desk-and-calnet-support">Help desk information</a></p>
+
+    <p><a href="https://mycalnet.berkeley.edu">Manage my CalNet account</a>
+
+</div>
+</div>
+                    </div>
+                </noscript>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            /*<![CDATA[*/
+            var i = "One moment please..."
+            var j = "Sign In"
+                /*]]>*/
+                $(window).on('pageshow', function () {
+                    $(':submit').prop('disabled', false);
+                    $(':submit').attr('value', j);
+                });
+            $(document).ready(function () {
+                $("#fm1").submit(function () {
+                    $(":submit").attr("disabled", true);
+                    $(":submit").attr("value", i);
+                    return true;
+                });
+            });
+        </script>
+
+    </div>
+            <div class="copyright" aria-hidden="true">
+                <small>Copyright &copy; <script type="text/javascript">
+                    var theDate=new Date()
+                    document.write(theDate.getFullYear())
+                </script> UC Regents. All rights reserved.</small>
+            </div><!--end copyright-->
+    
+        </div><!-- end content -->
+    </div><!-- end wrapper -->
+    <div class="debuggingInfo" aria-hidden="true">
+        Served from: <span>auth-p07.calnet.berkeley.edu/169.229.218.110</span> - <span>6.6.15.2</span>.
+    </div>
+
+</body>
+</html>

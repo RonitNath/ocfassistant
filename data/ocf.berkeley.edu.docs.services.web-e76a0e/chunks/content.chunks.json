@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web-e76a0e\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 830,
+      "first_words": "Web hosting \u2013 Open Computing Facility Toggle navi..."
+    },
+    {
+      "index": 2,
+      "size": 848,
+      "first_words": "Uploading Files Upload files to your web space the..."
+    },
+    {
+      "index": 3,
+      "size": 827,
+      "first_words": "Supported languages PHP 7.4 Perl 5.32.1 Python 3.7..."
+    },
+    {
+      "index": 4,
+      "size": 683,
+      "first_words": "Here are two easy ways to re-create the symlink: v..."
+    },
+    {
+      "index": 5,
+      "size": 889,
+      "first_words": "Edit this Page Page History Table of Contents Uplo..."
+    },
+    {
+      "index": 6,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

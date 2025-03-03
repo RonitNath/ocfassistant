@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu-5bf84d\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 900,
+      "first_words": "Open Computing Facility at UC Berkeley Toggle nav..."
+    },
+    {
+      "index": 2,
+      "size": 854,
+      "first_words": "OCF volunteers maintain services for the Berkeley..."
+    },
+    {
+      "index": 3,
+      "size": 585,
+      "first_words": "News from the staff team Planned Outage: All OCF S..."
+    },
+    {
+      "index": 4,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

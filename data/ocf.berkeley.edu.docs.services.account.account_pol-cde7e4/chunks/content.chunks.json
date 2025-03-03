@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.account.account_pol-cde7e4\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 833,
+      "first_words": "Account policies \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 875,
+      "first_words": "In addition, system administrators may access user..."
+    },
+    {
+      "index": 3,
+      "size": 463,
+      "first_words": "The OCF is also NOT LIABLE for any damages, includ..."
+    },
+    {
+      "index": 4,
+      "size": 897,
+      "first_words": "OCF staff may disable the accounts of those who do..."
+    },
+    {
+      "index": 5,
+      "size": 927,
+      "first_words": "Examples of misuse include, but are not limited to..."
+    },
+    {
+      "index": 6,
+      "size": 780,
+      "first_words": "Using electronic mail or communication to harass o..."
+    },
+    {
+      "index": 7,
+      "size": 937,
+      "first_words": "Furthermore, OCF staff may disable an account and/..."
+    }
+  ]
+}

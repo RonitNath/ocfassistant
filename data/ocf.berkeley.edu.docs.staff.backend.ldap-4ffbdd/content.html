@@ -1,0 +1,776 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-backend-ldap">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/backend/ldap/" />
+
+        <title>
+            
+                
+                    LDAP &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/backend/ldap/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>LDAP</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_introduction">Introduction</a></li><li><a href="#h2_definition-of-an-ocf-account">Definition of an OCF account</a></li><li><a href="#h2_definition-of-a-posix-group">Definition of a POSIX group</a></li><li><a href="#h2_utilities">Utilities</a></li><ol><li><a href="#h3_ldapsearch">ldapsearch</a></li><li><a href="#h3_ldapvi">ldapvi</a></li><li><a href="#h3_ldapadd">ldapadd</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <h2 id="h2_introduction">Introduction <a class="anchor" href="#h2_introduction"><span></span></a></h2>
+<p>The Lightweight Directory Access Protocol accesses a directory service over a
+network. We currently use OpenLDAP to store information about accounts (except
+password hashes which are in <a href="/docs/staff/backend/kerberos/">Kerberos</a>).</p>
+<h2 id="h2_definition-of-an-ocf-account">Definition of an OCF account <a class="anchor" href="#h2_definition-of-an-ocf-account"><span></span></a></h2>
+<p>Attributes that define an OCF account (group or individual). Some of these
+attributes cannot be seen without the proper permissions, such as <code>mail</code>:</p>
+<ul>
+<li><code>dn</code>: distinguished name; primary key for the entry. Should be in the form
+<code>uid=[uid],ou=People,dc=OCF,dc=Berkeley,dc=EDU</code>, where <code>uid</code> is the user's
+username.</li>
+<li><code>objectClass</code>: <code>account</code>, <code>ocfAccount</code>, and <code>posixAccount</code> for accounts.</li>
+<li><code>cn</code>: common name; full name for users, group name for group accounts</li>
+<li><code>uid</code>: username</li>
+<li><code>uidNumber</code>: POSIX user ID number (sequentially-assigned starting at 1000)</li>
+<li><code>gidNumber</code>: primary POSIX group ID number (For example, 1000 if in group
+<code>ocf</code>, or 2390 for group <code>sorry</code>)</li>
+<li><code>homeDirectory</code>: location of home directory</li>
+<li><code>loginShell</code>: shell (usually <code>/bin/bash</code>)</li>
+<li><code>mail</code>: Email address. Usually a @berkeley.edu email, but any email address
+works. Some OCF staff have @g.ocf.berkeley.edu emails (Google Apps)</li>
+<li><code>calnetUid</code>: CalNet ID number (for individuals)</li>
+<li><code>callinkOid</code>: CalLink organization ID number (for student groups)</li>
+<li><code>userPassword</code>: Not actually a password, this is only used for pass-through
+authentication with Kerberos, so that the LDAP server can be authenticated
+with directly for things that don't support Kerberos.</li>
+<li><code>creationTime</code>: Account creation time in ISO 8601 format</li>
+</ul>
+<h2 id="h2_definition-of-a-posix-group">Definition of a POSIX group <a class="anchor" href="#h2_definition-of-a-posix-group"><span></span></a></h2>
+<p>Attributes that define a POSIX group:</p>
+<ul>
+<li><code>dn</code>: distinguished name; primary key for the entry. Should be in the form
+<code>cn=[gid],ou=Group,dc=OCF,dc=Berkeley,dc=EDU</code>, where <code>gid</code> is the group's
+name.</li>
+<li><code>objectClass</code>: <code>posixGroup</code> for groups</li>
+<li><code>cn</code>: common name; full name</li>
+<li><code>description</code>: description of the group</li>
+<li><code>gidNumber</code>: POSIX group ID number (greater than 1000, less than 1000 is
+reserved for system groups)</li>
+<li><code>memberUid</code>: A member of the group (will often have multiple memberUid
+attributes)</li>
+</ul>
+<h2 id="h2_utilities">Utilities <a class="anchor" href="#h2_utilities"><span></span></a></h2>
+<h3 id="h3_ldapsearch"><code>ldapsearch</code> <a class="anchor" href="#h3_ldapsearch"><span></span></a></h3>
+<p>For most staff, their primary interface to LDAP will be <code>ldapsearch</code>.
+<code>ldapsearch</code> is a powerful program that allows queries of the LDAP database.
+For most usage, you want to type in <code>-x</code>, which skips authentication. After
+that you provide a search filter (in this case UID).</p>
+<p>Searching for an account:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ ldapsearch -x uid=sanjayk
+dn: uid=sanjayk,ou=People,dc=OCF,dc=Berkeley,dc=EDU
+objectClass: ocfAccount
+objectClass: account
+objectClass: posixAccount
+cn: Sanjay Krishnan
+uid: sanjayk
+uidNumber: 18298
+gidNumber: 20
+homeDirectory: /home/s/sa/sanjayk
+gecos: Sanjay Krishnan
+loginShell: /bin/tcsh
+calnetUid: 646431
+</pre></div>
+<p>Searching for an account in a group:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ ldapsearch -x memberUid=sanjayk | grep cn:
+cn: ocfstaff
+cn: admin
+</pre></div>
+<p>Searching for all accounts created after a certain time:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ ldapsearch -x &#39;(creationTime&gt;=20160101000000Z)&#39;
+&lt;many lines of output&gt;
+</pre></div>
+<h3 id="h3_ldapvi"><code>ldapvi</code> <a class="anchor" href="#h3_ldapvi"><span></span></a></h3>
+<p><code>ldapvi</code> is a "text editor" for LDAP which can generate LDIF change records to
+pass to <code>ldapadd</code> (or modify directly if you have the proper <a href="/docs/staff/powers/">permissions</a>). The easiest way to edit a single record with <code>ldapvi</code> is to
+just run <code>kinit [username]/admin ldapvi [record]</code>, which will authenticate with
+Kerberos and then run <code>ldapvi</code> all in one step.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ ldapvi uid=daradib
+0 uid=daradib,ou=People,dc=OCF,dc=Berkeley,dc=EDU
+objectClass: ocfAccount
+objectClass: account
+objectClass: posixAccount
+cn: Dara Adib
+uid: daradib
+uidNumber: 19892
+gidNumber: 20
+homeDirectory: /home/d/da/daradib
+loginShell: /bin/bash
+calnetUid: 872544
+</pre></div>
+<p>Now if you make changes to some attributes (say, change the shell to <code>tcsh</code>)
+and try to save the temporary file which has been opened in a text editor:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>      1 entry read
+add: 0, rename: 0, modify: 1, delete: 0
+Action? [yYqQvVebB*rsf+?]
+</pre></div>
+<p>You can enter <code>v</code> to view the LDIF change record (or <code>?</code> for help).</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>dn: uid=daradib,ou=People,dc=OCF,dc=Berkeley,dc=EDU
+changetype: modify
+replace: loginShell
+loginShell: /bin/tcsh
+</pre></div>
+<p>You can enter <code>y</code> to apply changes, <code>q</code> to save the LDIF change record as a
+file in your current directory, or <code>Q</code> to discard.</p>
+<h3 id="h3_ldapadd"><code>ldapadd</code> <a class="anchor" href="#h3_ldapadd"><span></span></a></h3>
+<p><code>ldapadd</code> is a utility to add entries to the LDAP directory if you have the
+proper <a href="/docs/staff/powers/">permissions</a>.</p>
+<p>To add an account, first create a file (we call it <code>user_file</code>):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>dn: uid=asdf,ou=People,dc=OCF,dc=Berkeley,dc=EDU
+objectClass: ocfAccount
+objectClass: account
+objectClass: posixAccount
+cn: asdf
+uid: asdf
+uidNumber: 25444
+gidNumber: 20
+homeDirectory: /home/a/as/asdf
+loginShell: /bin/bash
+calnetUid: 758472
+</pre></div>
+<p>Then authenticate with <a href="/docs/staff/backend/kerberos/">Kerberos</a>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ kinit myusername/admin
+</pre></div>
+<p>Finally run <code>ldapadd</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ ldapadd &lt; user_file
+</pre></div>
+<p>This also works on lists of entries to add separated by empty newlines.</p>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/backend/ldap.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/backend/ldap.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_introduction">Introduction</a></li><li><a href="#h2_definition-of-an-ocf-account">Definition of an OCF account</a></li><li><a href="#h2_definition-of-a-posix-group">Definition of a POSIX group</a></li><li><a href="#h2_utilities">Utilities</a></li><ol><li><a href="#h3_ldapsearch">ldapsearch</a></li><li><a href="#h3_ldapvi">ldapvi</a></li><li><a href="#h3_ldapadd">ldapadd</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/">Infrastructure</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/backups/">Backups</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/buster/">Debian Buster upgrade</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/firewall/">External firewall</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/git/">Git</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/internal-firewalls/">Internal firewalls</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/jenkins/">Jenkins</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/libvirt/">KVM/Libvirt</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kerberos/">Kerberos</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kubernetes/">Kubernetes</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>LDAP</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/">Mail</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/vhost/">Virtual hosted mail</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/switch/">Managed switches</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/munin/">Munin</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/printhost/">Printhost</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/prometheus/">Prometheus</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/puppet/">Puppet</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/rt/">Request Tracker</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/servers/">Servers</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

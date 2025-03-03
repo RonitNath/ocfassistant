@@ -1,0 +1,5 @@
+Our first server is planned to feature multiple high-end graphics cards, a many-core CPU, and spacious quantities of RAM and storage, but we will need as much input as we can get to make informed decisions if we want to make high-performance computing a reality for as many as possible.
+
+To student groups in particular, we would like to select a few candidates for our trial run on limited hardware.
+
+We will use our experience on this outing to iron out wrinkles and anticipate obstacles that may come up during a full run. If this sounds interesting to you, please let us know in your response. If you have any questions, don't hesitate to contact us ! OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

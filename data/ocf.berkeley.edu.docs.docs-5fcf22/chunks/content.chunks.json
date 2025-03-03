@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.docs-5fcf22\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 736,
+      "first_words": "Official documents \u2013 Open Computing Facility Togg..."
+    },
+    {
+      "index": 2,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

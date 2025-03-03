@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.contact.slack-39e67d\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 652,
+      "first_words": "Slack \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 728,
+      "first_words": "Join the OCF Slack Workspace Create an OCF account..."
+    },
+    {
+      "index": 3,
+      "size": 499,
+      "first_words": "Anyone could be keeping a log of what is said, so..."
+    },
+    {
+      "index": 4,
+      "size": 840,
+      "first_words": "#rebuild : Technical discussion #administrivia : A..."
+    },
+    {
+      "index": 5,
+      "size": 667,
+      "first_words": "Just make sure you are in a python virtual environ..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

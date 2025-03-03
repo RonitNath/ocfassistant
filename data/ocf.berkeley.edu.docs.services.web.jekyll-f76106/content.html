@@ -1,0 +1,518 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-services-web-jekyll">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/services/web/jekyll/" />
+
+        <title>
+            
+                
+                    Jekyll &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/services/web/jekyll/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Jekyll</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_set-up-your-site">Set up your site</a></li><li><a href="#h2_deploy-your-new-site">Deploy your new site</a></li><li><a href="#h2_quick-start-guide">Quick Start Guide</a></li><li><a href="#h2_advanced-guide">Advanced Guide</a></li></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p><a href="https://jekyllrb.com">Jekyll</a> is a popular static website generator, often
+used for blogs and personal websites. Since all the content it generates is
+static, it makes for very fast and simple websites.</p>
+<h2 id="h2_set-up-your-site">Set up your site <a class="anchor" href="#h2_set-up-your-site"><span></span></a></h2>
+<ol>
+<li><p>Go to either our <a href="https://ssh.ocf.berkeley.edu/">web-based SSH client</a> or a
+terminal (using <a href="/docs/services/shell/">SSH</a> to connect to
+<code>ssh.ocf.berkeley.edu</code>) and sign in with your OCF username and password.</p>
+</li>
+<li><p>Create a new directory for your Jekyll project and name it whatever you
+want, then enter that directory:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~$<span style="color: #bbbbbb"> </span>mkdir<span style="color: #bbbbbb"> </span>jekyll
+user@tsunami:~$<span style="color: #bbbbbb"> </span><span style="color: #008000">cd</span><span style="color: #bbbbbb"> </span>jekyll
+</pre></div>
+</li>
+<li><p>Install the Jekyll gem and set up your site. Note that the specific jekyll
+path is only needed for setup since jekyll is being installed for only your
+user, but after this setup, you can just add <code>bundle exec</code> before any
+jekyll-related commands to get them to work:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~/jekyll$<span style="color: #bbbbbb"> </span>gem<span style="color: #bbbbbb"> </span>install<span style="color: #bbbbbb"> </span>--user<span style="color: #bbbbbb"> </span>jekyll
+
+<span style="color: #3D7B7B; font-style: italic"># The path used for jekyll below should be printed out as a warning when you</span>
+<span style="color: #3D7B7B; font-style: italic"># install jekyll using the above command, it&#39;ll be something like</span>
+<span style="color: #3D7B7B; font-style: italic"># &quot;/home/u/us/username/.local/share/gem/ruby/2.7.0/bin/jekyll&quot; but can vary</span>
+<span style="color: #3D7B7B; font-style: italic"># by Ruby version. Use `gem environment` to find the appropriate path.</span>
+user@tsunami:~/jekyll$<span style="color: #bbbbbb"> </span>~/.local/share/gem/ruby/2.7.0/bin/jekyll<span style="color: #bbbbbb"> </span>new<span style="color: #bbbbbb"> </span>--skip-bundle<span style="color: #bbbbbb"> </span>.
+user@tsunami:~/jekyll$<span style="color: #bbbbbb"> </span>bundle<span style="color: #bbbbbb"> </span>config<span style="color: #bbbbbb"> </span><span style="color: #008000">set</span><span style="color: #bbbbbb"> </span>--local<span style="color: #bbbbbb"> </span>path<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;vendor/bundle&#39;</span>
+user@tsunami:~/jekyll$<span style="color: #bbbbbb"> </span>bundle<span style="color: #bbbbbb"> </span>install
+</pre></div>
+</li>
+</ol>
+<h2 id="h2_deploy-your-new-site">Deploy your new site <a class="anchor" href="#h2_deploy-your-new-site"><span></span></a></h2>
+<ol>
+<li><p>Change the <code>baseurl</code> option in <code>_config.yml</code> file to the path you want your
+site available at. This is likely something like <code>"/~username"</code> or
+<code>"/~username/blog"</code> (make sure to replace <code>username</code> with your username!).</p>
+</li>
+<li><p>Build the site in <code>~/public_html</code> (make sure to also run this whenever you
+make changes to your site and want to publish them). This path should match
+whatever you used for your <code>baseurl</code> option, so if you chose <code>"/~username"</code>
+there, then use <code>~/public_html</code> here, if you chose <code>"/~username/blog"</code> then
+use <code>~/public_html/blog</code> here instead:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~/jekyll$<span style="color: #bbbbbb"> </span>bundle<span style="color: #bbbbbb"> </span><span style="color: #008000">exec</span><span style="color: #bbbbbb"> </span>jekyll<span style="color: #bbbbbb"> </span>build<span style="color: #bbbbbb"> </span>-d<span style="color: #bbbbbb"> </span>~/public_html
+</pre></div>
+</li>
+<li><p>Your site should now be up at <code>https://www.ocf.berkeley.edu/~username</code> (or
+whatever path you chose previously).</p>
+</li>
+</ol>
+<h2 id="h2_quick-start-guide">Quick Start Guide <a class="anchor" href="#h2_quick-start-guide"><span></span></a></h2>
+<p>We've just created a default template site. Let's see how to customize it a
+bit to make it yours:</p>
+<ul>
+<li><p>On your site, there should be a new welcome post (at some path like
+<code>https://www.ocf.berkeley.edu/~username/jekyll/current-date/welcome-to-jekyll.html</code>).
+This contains instructions on how to add a new post, but we've summarized the
+instructions below:</p>
+<p>In your site directory (<code>jekyll</code> for instance), there should be a
+subdirectory named <code>_posts</code>. Blog posts go there by default as Markdown
+files. Please follow the sample post file there to make your own (note the
+YAML header at the top in between <code>---</code> markers and the file name format with
+the date and a title).</p>
+</li>
+<li><p>Other than blog posts, you can also make other pages (about, contact, etc.)
+that are linked at the top right of the site. An example is the <code>about.md</code>
+file already placed in your site directory (note the YAML header with
+<code>layout: page</code> to specify which layout to use).</p>
+</li>
+<li><p>The <code>_config.yml</code> file in your site directory contains global site settings,
+where you can change the title of the site among other settings.</p>
+</li>
+</ul>
+<h2 id="h2_advanced-guide">Advanced Guide <a class="anchor" href="#h2_advanced-guide"><span></span></a></h2>
+<p>For more advanced setup, please see the <a href="https://jekyllrb.com/docs/home/">Jekyll
+Docs</a>.</p>
+<p>Here are some docs that might be of interest:</p>
+<ul>
+<li><p><a href="https://jekyllrb.com/docs/themes/#installing-a-theme">Using a different
+theme</a> (Note that
+different themes might not be compatible with each other; the YAML header
+format might be different, for instance)</p>
+</li>
+<li><p><a href="https://jekyllrb.com/docs/variables/">Using variables</a></p>
+</li>
+</ul>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/services/web/jekyll.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/services/web/jekyll.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_set-up-your-site">Set up your site</a></li><li><a href="#h2_deploy-your-new-site">Deploy your new site</a></li><li><a href="#h2_quick-start-guide">Quick Start Guide</a></li><li><a href="#h2_advanced-guide">Advanced Guide</a></li></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/services/web/">Web hosting</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/backups/">Backups/Archiving</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/django/">Django</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/flask/">Flask</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Jekyll</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/php/">PHP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/rails/">Ruby on Rails</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/wordpress/">WordPress</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

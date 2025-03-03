@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.membership.eligibility-d4b5f6\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 903,
+      "first_words": "Eligibility \u2013 Open Computing Facility Toggle navi..."
+    },
+    {
+      "index": 2,
+      "size": 577,
+      "first_words": "research groups) Staff organizations ASUC bodies n..."
+    },
+    {
+      "index": 3,
+      "size": 883,
+      "first_words": "Current Cal ID Lawrence Berkeley National Laborato..."
+    },
+    {
+      "index": 4,
+      "size": 128,
+      "first_words": "California Alumni Association, International House..."
+    },
+    {
+      "index": 5,
+      "size": 895,
+      "first_words": "Richmond Field Station)) Letter from your organiza..."
+    },
+    {
+      "index": 6,
+      "size": 867,
+      "first_words": "research groups) Letter from your Principal Invest..."
+    },
+    {
+      "index": 7,
+      "size": 769,
+      "first_words": "Requests for additional accounts must demonstrate..."
+    },
+    {
+      "index": 8,
+      "size": 900,
+      "first_words": "research groups) Staff organizations ASUC bodies n..."
+    }
+  ]
+}

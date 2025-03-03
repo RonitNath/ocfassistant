@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.mysql-729ec9\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 900,
+      "first_words": "Database (MySQL) \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 918,
+      "first_words": "In practice, you shouldn't notice any important di..."
+    },
+    {
+      "index": 3,
+      "size": 926,
+      "first_words": "Select the option: makemysql \u2014 reset your MySQL da..."
+    },
+    {
+      "index": 4,
+      "size": 897,
+      "first_words": "To use your OCF MySQL database with a web applicat..."
+    },
+    {
+      "index": 5,
+      "size": 567,
+      "first_words": "To do this from the command line, use mysql -D [us..."
+    },
+    {
+      "index": 6,
+      "size": 604,
+      "first_words": "A better approach is to create a ~/.my.cnf file wi..."
+    },
+    {
+      "index": 7,
+      "size": 984,
+      "first_words": "Edit this Page Page History Table of Contents Poli..."
+    },
+    {
+      "index": 8,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

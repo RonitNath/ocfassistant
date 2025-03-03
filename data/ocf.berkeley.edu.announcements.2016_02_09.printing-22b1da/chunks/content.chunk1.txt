@@ -1,0 +1,5 @@
+ Changes to printing policies – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Changes to printing policies We're changing our printing policies to match our new lab space. Here are the details about how and why.
+
+February 9, 2016 Last semester, we moved from our trusty old space in 6A Hearst Gym into our shiny new home in 171 MLK, more than twice the size and conveniently located in the ASUC Student Union.
+
+The new lab is great: it's larger, more accessible, and has allowed us to serve many more users than in previous semesters, especially with the lab being open later. However, coupled with the lab being open later, we've seen huge jumps in overall lab traffic.

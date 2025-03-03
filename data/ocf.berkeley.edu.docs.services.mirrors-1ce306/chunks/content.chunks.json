@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.mirrors-1ce306\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 883,
+      "first_words": "Software Mirrors \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 1030,
+      "first_words": "Currently mirrored projects AlmaLinux Alpine Linux..."
+    },
+    {
+      "index": 3,
+      "size": 806,
+      "first_words": "Ruby on Rails Web hosting Backups/Archiving Django..."
+    }
+  ]
+}

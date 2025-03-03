@@ -1,0 +1,886 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-backend-buster">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/backend/buster/" />
+
+        <title>
+            
+                
+                    Debian Buster upgrade &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/backend/buster/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Debian Buster upgrade</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+    <div class="ocf-content-block">
+        <p>
+            This table lists all servers and whether they have been upgraded to
+            Debian 10 Buster. In general, we prefer to rebuild new servers using buster,
+            rather than upgrading from stretch. There are a few exceptions
+            (marked with comments in the table).
+        </p>
+
+        <p>
+            Desktops and staff VMs are not listed, but none of them have been upgraded either.
+        </p>
+    </div>
+
+    <table class="table">
+        
+            <tr >
+                <th>
+                    death
+                    
+                        <br />
+                        dev-death
+                    
+                </th>
+                <td>
+                    
+                    
+                        <div style="background-color: #fffed3;">
+                            <strong>Comments:</strong> same time as all login servers
+                        </div>
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    tsunami
+                    
+                        <br />
+                        dev-tsunami
+                    
+                </th>
+                <td>
+                    
+                    
+                        <div style="background-color: #fffed3;">
+                            <strong>Comments:</strong> same time as all login servers
+                        </div>
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    vampires
+                    
+                        <br />
+                        dev-vampires
+                    
+                </th>
+                <td>
+                    
+                    
+                        <div style="background-color: #fffed3;">
+                            <strong>Comments:</strong> same time as all login servers
+                        </div>
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    firestorm
+                    
+                        <br />
+                        dev-firestorm
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    anthrax
+                    
+                        <br />
+                        dev-anthrax
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    maelstrom
+                    
+                        <br />
+                        dev-maelstrom
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    supernova
+                    
+                        <br />
+                        dev-supernova
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    biohazard
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    dementors
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    flood
+                    
+                        <br />
+                        dev-flood
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    pestilence
+                    
+                        <br />
+                        dev-pestilence
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    thunder
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    whiteout
+                    
+                        <br />
+                        dev-whiteout
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    reaper
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    democracy
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    zombies
+                    
+                </th>
+                <td>
+                    
+                    
+                        <div style="background-color: #fffed3;">
+                            <strong>Comments:</strong> in-place (not well puppeted)
+                        </div>
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    lightning
+                    
+                        <br />
+                        dev-lightning
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    gridlock
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    lethe
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    pgp
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    segfault
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    monsoon
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    fraud
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    coup
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    autocrat
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    deadlock
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    overheat
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    riptide
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    jaws
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    pandemic
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    hal
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    scurvy
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    dataloss
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    bedbugs
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    corruption
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr >
+                <th>
+                    fallingrocks
+                    
+                </th>
+                <td>
+                    
+                    
+                        <div style="background-color: #fffed3;">
+                            <strong>Comments:</strong> dev-fallingrocks is migrated already
+                        </div>
+                    
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    tornado
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+            <tr 
+                style="background-color: #d3ffd3;"
+              >
+                <th>
+                    y2k
+                    
+                </th>
+                <td>
+                    
+                    
+                </td>
+                <th>
+                    
+                        Done!
+                    
+                </th>
+            </tr>
+        
+    </table>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

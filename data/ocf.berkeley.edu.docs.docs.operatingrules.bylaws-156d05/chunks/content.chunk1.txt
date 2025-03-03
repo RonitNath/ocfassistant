@@ -1,0 +1,5 @@
+ Bylaws – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Bylaws These are the official Bylaws of the Open Computing Facility , as last amended at the Board meeting of November 17, 2021.
+
+[Repealed] The OCF Board of Directors shall meet at least once every two weeks while the OCF is formally in session.
+
+Any Director appointed to the Board by the Decision Making Process missing two consecutive regularly scheduled meetings will be removed from the Board, regardless of whether the meetings achieve quorum. OCF Board meetings must be announced to all Directors at least twenty-four hours in advance. Resolutions by the Board of Directors can be put to a vote electronically.

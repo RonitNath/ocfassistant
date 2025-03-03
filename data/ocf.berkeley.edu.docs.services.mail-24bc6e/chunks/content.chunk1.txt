@@ -1,0 +1,7 @@
+ Email – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Email Email sent to your username @ocf.berkeley.edu (e.g. username@ocf.berkeley.edu ) will be forwarded to a contact email address of your choosing.
+
+To configure a forwarding address, log in via SSH and enter the update-email command to view or update your contact email address.
+
+Note that you are required to keep your contact address up-to-date for as long as you continue to use your account.
+
+While we do not proactively disable accounts without emails, if we need to contact you for any reason and cannot, your account will be disabled. This is true for both individual and group accounts.

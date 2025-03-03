@@ -1,0 +1,5 @@
+When to use srun versus sbatch If your job requires interactivity or inputs from the terminal, or you need a terminal to test or experiment, use srun . Otherwise, use sbatch , as you don't have to keep your terminal open until the job runs.
+
+Alternatively, you could use screen or tmux with srun to keep your job alive, even if you disconnect from your terminal. Resource options Some terminology: Slurm refers to a process as a "task". Even if a single process is using multiple threads/CPUs, it still counts as one task.
+
+By default, without any flags, a job you submit will be allocated one CPU, 100 MB of RAM, and no GPUs, and will run for at maximum 2 days.

@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\mirrors.ocf.berkeley.edu-103f78\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 2675,
+      "first_words": "OCF Mirrors OCF Mirrors OCF Contact Stats Donate..."
+    },
+    {
+      "index": 2,
+      "size": 88,
+      "first_words": "-03 08:00 Hosted by the Open Computing Facillity ...."
+    }
+  ]
+}

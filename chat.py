@@ -8,7 +8,12 @@ with open('config.yml', 'r') as f:
 default_prompt = config['default_prompt']
 example_question = config['example_question']
 
-def chat(model_name, message=example_question):
+async def run_chat(model_name, message=example_question):
+    ollama_url = os.getenv("OLLAMA_URL")
+
+    client = ollama.AsyncClient(ollama_url)
+
+
     messages = [
     {
         'role': 'system',
@@ -20,5 +25,6 @@ def chat(model_name, message=example_question):
     },
     ]
 
-    for part in chat(model_name, messages=messages, stream=True):
+    for part in await client.chat(model_name, messages=messages, stream=True):
         print(part['message']['content'], end='', flush=True)
+

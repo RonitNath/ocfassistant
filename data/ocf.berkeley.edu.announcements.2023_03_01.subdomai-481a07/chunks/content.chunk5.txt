@@ -1,0 +1,9 @@
+As of today, this is the official policy of UC Berkeley - student groups may not hold berkeley.edu domains. All existing subdomains must be changed. As far as we are aware, there will be no exceptions to this rule. The OCF recently conducted a survey of all hosted student organizations.
+
+Almost 90% of these groups responded that they oppose the change and nearly all feel it is a negative step for the university. Mainly, this change will break all links pointing to all student sites.
+
+Every flyer, poster, document, and more produced over the last 20 years will have to be reprinted at the expense of the student group.
+
+Each and every industry contact at every student organization will have to be told to change their contact - otherwise the contact will be lost forever. Groups may then favor a shorter .org or .com domain.
+
+Since we do not provide these domains, we cannot regulate them and ensure they comply with campus technical, legal, and marketing requirements.

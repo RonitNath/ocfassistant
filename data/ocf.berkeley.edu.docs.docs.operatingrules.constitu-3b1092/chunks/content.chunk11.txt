@@ -1,0 +1,7 @@
+A candidate wins if there is a unique Condorcet Beatpath winner, otherwise the election will repeat. Write-in votes shall not be counted during the election. [Amended at the Board meeting of September 9, 2020]. 5.3.2 Other Votes All other votes require a simple majority to pass unless otherwise specified. 5.3.3 Voting Eligibility and Proxies Only Board members present at a meeting may vote.
+
+6 The OCF Decision Making Process 6.1 OCF Board of Directors The OCF Board of Directors shall have authority over any OCF actions.
+
+6.2 OCF General Manager The OCF General Manager shall have authority over any OCF actions except where such action conflicts with Article 6.1. [Amended at the Board meeting of March 6, 2017].
+
+6.3 OCF Site Manager The OCF Site Manager shall have authority over any OCF actions except where such action conflicts with Article 6.1 or 6.2. [Amended at the Board meeting of March 6, 2017].

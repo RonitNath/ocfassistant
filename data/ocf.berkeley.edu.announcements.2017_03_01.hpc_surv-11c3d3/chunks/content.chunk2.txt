@@ -1,0 +1,5 @@
+Our current, tentative itinerary is to make an initial hardware purchase by the end of the spring 2017 semester, then purchase additional hardware in the fall based on input from interested parties and feedback from a trial run in the summer or early fall.
+
+Depending on the success of the service after it launches for the entire campus, we will consider expanding it in future years to accommodate even more projects of varying sizes and needs.
+
+To that end, we have created a survey for those who might like to see their project run on OCF hardware: OCF HPC interest form To anyone who may consider hosting a current or future project on our open computer infrastructure, we urge you to fill out this survey as best as you can, using estimations if you do not have all the hard data. We want to see the full breadth of projects on campus that have unmet computing needs.

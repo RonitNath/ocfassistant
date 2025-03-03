@@ -1,0 +1,7 @@
+Subscribe to our mailing list for meeting recaps Chat with us on Slack , Discord , Matrix , or IRC Drop by and say hello, or email the staff team See more ways to contribute and get involved OCF Staff Meetings OCF Staff meet to discuss technology, learn from each other, and work on OCF projects. Drop-in visitors are always welcome, especially those interested in joining the staff team!
+
+When: Every Wednesday at 7:10pm Where: OCF Computer lab (171 MLK) OCF staff help provide cool services to the Berkeley community.
+
+Web & Email Hosting We provide free web and email hosting to more than 50,000 OCF members, including both students and student groups.
+
+UNIX Shell Accounts All members get their own shell account on our powerful Debian-based servers. (Staff get their own private VMs!) Computer Lab & Printing Our computer lab has free printing, scanners, mechanical keyboards, and blazing fast computers running Linux! We have a spiffy computer lab on southside. Create an account and drop by!

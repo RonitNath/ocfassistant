@@ -1,0 +1,785 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-rebuild-rt">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/rebuild/rt/" />
+
+        <title>
+            
+                
+                    Request Tracker &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/rebuild/rt/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Request Tracker</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_installation">Installation</a></li><li><a href="#h2_configuration">Configuration</a></li><li><a href="#h2_notes">Notes</a></li><li><a href="#h2_todo">Todo</a></li><li><a href="#h2_references">References</a></li></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p><strong>Note:</strong> RT is now deployed as a Kubernetes service running in Docker, so
+these instructions aren't super useful for OCF staff. This page is kept as a
+reference for others who might come across it (it ranks pretty highly on
+Google). If you're one of these people, you might find one of these useful:</p>
+<ul>
+<li><p><a href="https://github.com/ocf/puppet/tree/fc6d4242ba773cefbc9e7c1ea542f8f7de3e8785/modules/ocf_rt">Our Puppet code for installing RT.</a>
+We don't actually use this anymore, but it should be reasonably modern and
+worked well for us for a long time.</p>
+</li>
+<li><p><a href="https://github.com/ocf/rt">Our Dockerized RT service.</a>
+We run this on Kubernetes, but you should easily be able to get it running
+on something like Mesos/Marathon or Docker Swarm, too.</p>
+</li>
+</ul>
+<h2 id="h2_installation">Installation <a class="anchor" href="#h2_installation"><span></span></a></h2>
+<p>Both Apache 2 and Nginx installation are listed below. Pick your poison...</p>
+<ol>
+<li><p>Install required packages:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo aptitude install mysql-server
+sudo aptitude install -t squeeze-backports request-tracker4 rt4-db-mysql
+</pre></div>
+<p><strong>For Apache 2:</strong> Install</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo install libapache-mod-auth-kerb
+sudo install -t squeeze-backports rt4-apache
+</pre></div>
+<p><strong>For Nginx:</strong> Install</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo install -t squeeze-backports nginx rt4-fcgi
+</pre></div>
+<p>and enable the RT FastCGI daemon: in <code>/etc/default/rt4-fcgi</code>, edit:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>enabled=1
+</pre></div>
+<p>Debian packages an obscenely old version of Nginx in stable, so please don't
+install that. People will laugh at you.</p>
+<p>Configuration by debconf:</p>
+<ul>
+<li>Name: rt.ocf.berkeley.edu</li>
+<li>Handle RT_SiteConfig.pm permissions: yes</li>
+<li>SQL password: ....</li>
+</ul>
+<p>Install RT::Extension::CommandByMail and RT::Extension::MergeUsers:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo cpan
+cpan&gt; install RT::Extension::CommandByMail
+cpan&gt; notest install RT::Extension::MergeUsers
+</pre></div>
+<p>When prompted, the RT lib folder is located at
+<code>/usr/share/request-tracker4/lib</code>.</p>
+</li>
+<li><p>Copy site-specific RT configuration into
+<code>/etc/request-tracker4/RT_SiteConfig.d/99-ocf</code>: (this should be puppeted)</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Debug - commented out for now</span>
+<span style="color: #3D7B7B; font-style: italic">#Set($LogToSTDERR, &quot;debug&quot;);</span>
+<span style="color: #3D7B7B; font-style: italic">#Set($LogToSyslog, &quot;debug&quot;);</span>
+
+Set(<span style="color: #19177C">$WebDomain</span>,<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;rt.ocf.berkeley.edu&#39;</span>);
+Set(<span style="color: #19177C">$WebBaseURL</span><span style="color: #bbbbbb"> </span>,<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;https://rt.ocf.berkeley.edu&quot;</span>);
+Set(<span style="color: #19177C">$WebPort</span>,<span style="color: #bbbbbb"> </span><span style="color: #666666">443</span>);
+
+<span style="color: #3D7B7B; font-style: italic"># Use external authentication provided by mod_auth_kerb</span>
+Set(<span style="color: #19177C">$WebExternalAuth</span><span style="color: #bbbbbb"> </span>,<span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>);
+Set(<span style="color: #19177C">$WebFallbackToInternalAuth</span>,<span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>);
+<span style="color: #3D7B7B; font-style: italic"># tells RT to create users automatically if no user matching REMOTE_USER is found</span>
+Set(<span style="color: #19177C">$WebExternalAuto</span>,<span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>);
+Set(<span style="color: #19177C">$WebExternalGecos</span>,<span style="color: #bbbbbb"> </span><span style="color: #008000">undef</span>);
+
+<span style="color: #3D7B7B; font-style: italic"># Plugins</span>
+Set(<span style="color: #19177C">@MailPlugins</span>,<span style="color: #bbbbbb"> </span><span style="color: #008000">qw(Auth::MailFrom Filter::TakeAction)</span>);
+Set(<span style="color: #19177C">@Plugins</span>,(<span style="color: #008000">qw(RT::Extension::CommandByMail RT::Extension::MergeUsers)</span>));
+
+<span style="color: #3D7B7B; font-style: italic"># Make links clicky</span>
+Set(<span style="color: #19177C">@Active_MakeClicky</span>,<span style="color: #bbbbbb"> </span><span style="color: #008000">qw(httpurl_overwrite)</span>);
+
+<span style="color: #3D7B7B; font-style: italic"># Non-fail To addresses</span>
+Set(<span style="color: #19177C">$UseFriendlyToLine</span>,<span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>);
+
+<span style="color: #3D7B7B; font-style: italic"># Enable fulltext</span>
+Set(<span style="color: #bbbbbb"> </span><span style="color: #19177C">%FullTextSearch</span>,
+<span style="color: #bbbbbb">    </span>Enable<span style="color: #bbbbbb">     </span><span style="color: #666666">=&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>,
+<span style="color: #bbbbbb">    </span>Indexed<span style="color: #bbbbbb">    </span><span style="color: #666666">=&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>,
+<span style="color: #bbbbbb">    </span>Table<span style="color: #bbbbbb">      </span><span style="color: #666666">=&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;AttachmentsIndex&#39;</span>,
+<span style="color: #bbbbbb">    </span>MaxMatches<span style="color: #bbbbbb"> </span><span style="color: #666666">=&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;10000&#39;</span>,
+);
+
+<span style="color: #3D7B7B; font-style: italic"># Use plain text instead of HTML email</span>
+Set(<span style="color: #19177C">$MessageBoxRichText</span>,<span style="color: #bbbbbb"> </span><span style="color: #008000">undef</span>);
+Set(<span style="color: #19177C">$PreferRichText</span>,<span style="color: #bbbbbb"> </span><span style="color: #008000">undef</span>);
+</pre></div>
+<p>Regenerate the resultant <code>RT_SiteConfig.pm</code> file:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo update-rt-siteconfig
+</pre></div>
+</li>
+<li><p>Ensure that SSL certificates for <code>rt.ocf.berkeley.edu</code> exist at the
+following locations:</p>
+<ul>
+<li>Certificate: <code>/etc/ssl/private/rt_ocf_berkeley_edu.crt</code></li>
+<li>Certificate chain/bundle: <code>/etc/ssl/private/incommon.crt</code></li>
+<li>Private key: <code>/etc/ssl/private/rt_ocf_berkeley_edu.key</code></li>
+</ul>
+<p><strong>Nginx only:</strong> Create a "chained" certificate file:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>cat rt_ocf_berkeley_edu.crt incommon.crt &gt; rt_ocf_berkeley_edu.chained.crt
+</pre></div>
+</li>
+<li><p><strong>For Apache 2:</strong> Copy the following RT configuration file <code>rt</code> into
+<code>/etc/apache2/sites-available</code> and link to it from
+<code>/etc/apache2/sites-enabled</code> (replace typhoon.ocf.berkeley.edu with the FQDN
+reported by <code>hostname -f</code>):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Apache configuration file for RT</span>
+
+<span style="color: #008000; font-weight: bold">&lt;VirtualHost</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">*:80</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">ServerName</span><span style="color: #bbbbbb"> </span>rt.ocf.berkeley.edu
+<span style="color: #bbbbbb">        </span><span style="color: #008000">RewriteEngine</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">On</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">RewriteRule</span><span style="color: #bbbbbb"> </span>(.*)<span style="color: #bbbbbb"> </span>https://%{HTTP_HOST}%{REQUEST_URI}<span style="color: #bbbbbb"> </span>[R=301,L]
+<span style="color: #008000; font-weight: bold">&lt;/VirtualHost&gt;</span>
+
+<span style="color: #008000; font-weight: bold">&lt;VirtualHost</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">*:443</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">ServerName</span><span style="color: #bbbbbb"> </span>rt.ocf.berkeley.edu
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000">SSLEngine</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">on</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">SSLCertificateFile</span><span style="color: #bbbbbb"> </span><span style="color: #008000">/etc/ssl/private/rt_ocf_berkeley_edu.crt</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">SSLCertificateChainFile</span><span style="color: #bbbbbb"> </span><span style="color: #008000">/etc/ssl/private/incommon.crt</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">SSLCertificateKeyFile</span><span style="color: #bbbbbb"> </span><span style="color: #008000">/etc/ssl/private/rt_ocf_berkeley_edu.key</span>
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000">Alias</span><span style="color: #bbbbbb"> </span><span style="color: #008000">/rt</span><span style="color: #bbbbbb"> </span><span style="color: #008000">/usr/share/request-tracker4/html</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000">RedirectMatch</span><span style="color: #bbbbbb"> </span>^/$<span style="color: #bbbbbb"> </span><span style="color: #008000">/rt</span>
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;Location</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">SetHandler</span><span style="color: #bbbbbb"> </span>modperl
+<span style="color: #bbbbbb">                </span><span style="color: #008000">PerlResponseHandler</span><span style="color: #bbbbbb"> </span>Plack::Handler::Apache2
+<span style="color: #bbbbbb">                </span><span style="color: #008000">PerlSetVar</span><span style="color: #bbbbbb"> </span>psgi_app<span style="color: #bbbbbb"> </span><span style="color: #008000">/usr/share/request-tracker4/libexec/rt-server</span>
+
+<span style="color: #bbbbbb">                </span><span style="color: #3D7B7B; font-style: italic"># Comment this to enable RT-local root</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">AuthType</span><span style="color: #bbbbbb"> </span>Kerberos
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Require</span><span style="color: #bbbbbb"> </span>valid-user
+<span style="color: #bbbbbb">                </span><span style="color: #008000">KrbMethodNegotiate</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">On</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">KrbMethodK5Passwd</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">On</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">KrbLocalUserMapping</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">On</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">KrbServiceName</span><span style="color: #bbbbbb"> </span>HTTP/typhoon.ocf.berkeley.edu
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Krb5KeyTab</span><span style="color: #bbbbbb"> </span><span style="color: #008000">/etc/apache2/sites-available/rt.keytab</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;/Location&gt;</span>
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;Location</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt/REST/1.0/NoAuth</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #bbbbbb">                </span><span style="color: #3D7B7B; font-style: italic"># No Kerberos - for rt-mailgate</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Satisfy</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">Any</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Order</span><span style="color: #bbbbbb"> </span>Allow,Deny
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Allow</span><span style="color: #bbbbbb"> </span>from<span style="color: #bbbbbb"> </span><span style="color: #666666">128.32.129.218</span><span style="color: #bbbbbb"> </span>#<span style="color: #bbbbbb"> </span>sandstorm.ocf.berkeley.edu
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;/Location&gt;</span>
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;Location</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt/NoAuth</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span style="color: #bbbbbb">                </span><span style="color: #3D7B7B; font-style: italic"># No Kerberos - login/logout pages</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Satisfy</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">Any</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Order</span><span style="color: #bbbbbb"> </span>Allow,Deny
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Allow</span><span style="color: #bbbbbb"> </span>from<span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">All</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;/Location&gt;</span>
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;Perl&gt;</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000">use</span><span style="color: #bbbbbb"> </span>Plack::Handler::Apache2;
+<span style="color: #bbbbbb">                </span><span style="color: #008000">Plack</span>::Handler::Apache2-&gt;preload(<span style="color: #BA2121">&quot;/usr/share/request-tracker4/libexec/rt-server&quot;</span>);
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">&lt;/Perl&gt;</span>
+
+<span style="color: #008000; font-weight: bold">&lt;/VirtualHost&gt;</span>
+</pre></div>
+<p><strong>For Nginx:</strong> Copy the following RT configuration file <code>rt</code> into
+<code>/etc/nginx/sites-available</code> and link to it from <code>/etc/nginx/sites-enabled</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Configuration for RT on Nginx</span>
+<span style="color: #3D7B7B; font-style: italic"># rt.ocf.berkeley.edu</span>
+
+<span style="color: #008000; font-weight: bold">server</span><span style="color: #bbbbbb"> </span>{
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">listen</span><span style="color: #bbbbbb"> </span><span style="color: #666666">80</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">server_name</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">rt.ocf.berkeley.edu</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">rewrite</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">^</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">https://</span><span style="color: #19177C">$server_name$request_uri?</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">permanent</span>;
+}
+
+<span style="color: #008000; font-weight: bold">server</span><span style="color: #bbbbbb"> </span>{
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">listen</span><span style="color: #bbbbbb"> </span><span style="color: #666666">443</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">server_name</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">rt.ocf.berkeley.edu</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">rewrite</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">^/</span>$<span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt</span>;
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">root</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/usr/share/request-tracker4</span>;
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">location</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt</span><span style="color: #bbbbbb"> </span>{
+<span style="color: #bbbbbb">                </span><span style="color: #3D7B7B; font-style: italic"># See /usr/share/doc/rt4-fcgi/examples/request-tracker4.conf</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">expires</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">epoch</span>;
+
+<span style="color: #bbbbbb">                </span><span style="color: #3D7B7B; font-style: italic"># Require the default authentication on typhoon (pam_krb5)</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">auth_pam</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;RT&quot;</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">auth_pam_service_name</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;common-password&quot;</span>;
+
+<span style="color: #bbbbbb">                </span><span style="color: #3D7B7B; font-style: italic"># Proxy over to rt4.</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">fastcgi_pass</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">unix:/var/run/rt4-fcgi.sock</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">include</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/etc/nginx/fastcgi_params</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">fastcgi_param</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">REMOTE_USER</span><span style="color: #bbbbbb"> </span><span style="color: #19177C">$remote_user</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">fastcgi_param</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">SCRIPT_NAME</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;/rt&quot;</span>;
+<span style="color: #bbbbbb">        </span>}
+
+<span style="color: #bbbbbb">        </span><span style="color: #3D7B7B; font-style: italic"># Bypass FastCGI for images</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">location</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt/NoAuth/images</span><span style="color: #bbbbbb"> </span>{
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">alias</span><span style="color: #bbbbbb">           </span><span style="color: #BA2121">/usr/share/request-tracker4/html/NoAuth/images/</span>;
+<span style="color: #bbbbbb">        </span>}
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">location</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/rt/REST/1.0/NoAuth</span><span style="color: #bbbbbb"> </span>{
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">allow</span><span style="color: #bbbbbb">           </span><span style="color: #666666">128</span><span style="color: #BA2121">.32.129.218</span>;<span style="color: #bbbbbb"> </span><span style="color: #3D7B7B; font-style: italic"># sandstorm.ocf.berkeley.edu</span>
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">deny</span><span style="color: #bbbbbb">            </span><span style="color: #BA2121">all</span>;
+
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">fastcgi_pass</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">unix:/var/run/rt4-fcgi.sock</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">include</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/etc/nginx/fastcgi_params</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">fastcgi_param</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">REMOTE_USER</span><span style="color: #bbbbbb"> </span><span style="color: #19177C">$remote_user</span>;
+<span style="color: #bbbbbb">                </span><span style="color: #008000; font-weight: bold">fastcgi_param</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">SCRIPT_NAME</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;/rt&quot;</span>;
+<span style="color: #bbbbbb">        </span>}
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl</span><span style="color: #bbbbbb"> </span><span style="color: #880000">on</span>;
+
+<span style="color: #bbbbbb">        </span><span style="color: #3D7B7B; font-style: italic"># Same as apache</span>
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_certificate</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/etc/ssl/private/rt_ocf_berkeley_edu.chained.crt</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_certificate_key</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">/etc/ssl/private/rt_ocf_berkeley_edu.key</span>;
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_session_timeout</span><span style="color: #bbbbbb"> </span><span style="color: #666666">5m</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_session_cache</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">shared:SSL:10m</span>;
+
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_protocols</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">SSLv3</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">TLSv1</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_ciphers</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP</span>;
+<span style="color: #bbbbbb">        </span><span style="color: #008000; font-weight: bold">ssl_prefer_server_ciphers</span><span style="color: #bbbbbb"> </span><span style="color: #880000">on</span>;
+}
+</pre></div>
+</li>
+<li><p><strong>Apache 2 only:</strong> Obtain a keytab for the principal
+HTTP/typhoon.ocf.berkeley.edu@OCF.BERKELEY.EDU (replace
+typhoon.ocf.berkeley.edu with the FQDN reported by <code>hostname -f</code>) and place
+it into <code>/etc/apache2/sites-available/rt.keytab</code>. Make sure it's only
+readable by www-data.</p>
+</li>
+<li><p>mod_auth_kerb/ngx_http_auth_pam uses HTTP Basic authorization which has no
+concept of login/logout. Emulate logout behavior by changing the Logout page
+to send a 401 (works for Chrome), run proprietary IE code (works for IE),
+and make an Ajax call to a non-existing page with bad credentials (works for
+Firefox).</p>
+<p>The below code has been "adapted" from <a href="https://trac-hacks.org/wiki/TrueHttpLogoutPatch">https://trac-hacks.org/wiki/TrueHttpLogoutPatch</a></p>
+<p>This should be fixed so that RT's installation files aren't being directly modified.</p>
+<p>Edit <code>/usr/share/request-tracker4/html/NoAuth/Logout.html</code>:</p>
+<p>Change</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>&lt;&amp; /Elements/Header, Title =&gt; loc(&#39;Logout&#39;), Refresh =&gt; RT-&gt;Config-&gt;Get(&#39;LogoutRefresh&#39;) &amp;&gt;
+</pre></div>
+<p>to</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>&lt;&amp; /Elements/Header, Title =&gt; loc(&#39;Logout&#39;) &amp;&gt;
+</pre></div>
+<p>and paste the following below it:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>&lt;script type=&quot;text/javascript&quot;&gt;
+function clearAuthenticationCache() {
+  try {
+    var agent = navigator.userAgent.toLowerCase();
+    if (agent.indexOf(&quot;msie&quot;) != -1) {
+      // This works only on IE only.
+      document.execCommand(&quot;ClearAuthenticationCache&quot;);
+    }
+    else {
+      var xml = createXMLObject();
+      // Let&#39;s prepare invalid credentials
+      xml.open(&quot;GET&quot;, Math.random().toString(), true, &quot;logout&quot;, &quot;logout&quot;);
+      xml.send(&quot;&quot;);
+      xml.abort();
+    }
+  } catch (e) {
+    return;
+  }
+}
+
+function createXMLObject() {
+  try {
+    if (window.XMLHttpRequest) {
+      xml = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+      xml = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+    }
+  } catch (e) {
+    xml = false
+  }
+  return xml;
+}
+
+clearAuthenticationCache();
+&lt;/script&gt;
+</pre></div>
+<p>Add the following before the end of the &lt;%INIT&gt; block at the end of the file:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span># &quot;Force&quot; logout due to using mod_auth_kerb -- Chrome
+$HTML::Mason::Commands::r-&gt;status(401);
+</pre></div>
+<p>Clear the RT Mason cache.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo rm -rf /var/cache/request-tracker4/*
+</pre></div>
+</li>
+<li><p><strong>For Apache 2:</strong> Restart Apache.</p>
+<p><strong>For Nginx:</strong> Restart the RT FastCGI daemon.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo service rt4-fcgi restart
+</pre></div>
+</li>
+<li><p>Install the RT <a href="https://rt-wiki.bestpractical.com/wiki/EmailInterface#RT.27s_mail_gate">mailgate
+program</a>
+on the mail server.</p>
+<p>squeeze-backports is required here too.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>sudo aptitude install rt4-clients
+</pre></div>
+</li>
+<li><p>Set up rt@ocf.berkeley.edu to feed mail into rt-mailgate.</p>
+<p>Add or edit the following lines into <code>/var/mail/aliases/aliases</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>rt: &quot;|/usr/bin/rt-mailgate --queue General --action correspond --url https://rt.ocf.berkeley.edu/rt&quot;
+rt-comment: &quot;|/usr/bin/rt-mailgate --queue General --action comment --url https://rt.ocf.berkeley.edu/rt&quot;
+</pre></div>
+</li>
+</ol>
+<h2 id="h2_configuration">Configuration <a class="anchor" href="#h2_configuration"><span></span></a></h2>
+<ol>
+<li><p>The RT root user can't log in while Kerberos password authentication is
+enabled because of the way <code>mod_auth_kerb/ngx_http_auth_pam</code> works. So, you
+must first log in with Kerberos credentials to create a user from Kerberos
+and grant superuser rights on it.</p>
+<p>Log in to RT. You will be auto-created and redirected to Self-Service.
+Disable Kerberos password authentication:</p>
+<p><strong>Apache 2:</strong> Comment out the following lines in <code>/etc/apache2/sites-available/rt</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span># AuthType Kerberos
+# Require valid-user
+</pre></div>
+<p>and force-reload Apache configuration (<code>service apache2 force-reload</code>).</p>
+<p><strong>Nginx:</strong> Comment out the following lines in <code>/etc/nginx/sites-available/rt</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span># auth_pam &quot;RT&quot;;
+# auth_pam_service_name &quot;common-password&quot;;
+</pre></div>
+<p>and restart Nginx (<code>service nginx restart</code>).</p>
+</li>
+<li><p>Visit RT again and log in as RT root.</p>
+<p>Go to Tools &gt; Configuration &gt; Users &gt; Select, and type in your username in
+"Go to user". Enable <strong>Let this user be granted rights (Privileged)</strong>.</p>
+<p>Go to Tools &gt; Configuration &gt; Global &gt; User Rights. On the left side, in Add
+User, type your name. Then, on the right side, click the tab <strong>Rights for
+Administrators</strong>, and enable <strong>Do anything and everything</strong>.</p>
+<p>Save changes.</p>
+<p>You will want to remove your superuser powers later because superusers may
+be artificially limited in rights elsewhere on RT for your own protection:
+<a href="https://rt-wiki.bestpractical.com/wiki/SuperUser">"Starting from version 3.2 (or 3.4?) RT doesn't show users with the
+SuperUser right in a ticket owner
+select-box."</a></p>
+<p>Re-enable Kerberos password authentication in Apache configuration and
+force-reload Apache.</p>
+</li>
+<li><p>Create groups. I've created root and staff groups; this configuration may
+change as our use of RT is refined.</p>
+<p>Go to Tools &gt; Configuration &gt; Groups &gt; Create and create "Root" and "Staff"
+groups.</p>
+<p>Add users to these groups by the <strong>Members</strong> subsection in the upper right
+corner of the group modification page. (You can also alter a user's group
+memberships from the user's modification page.)</p>
+<p>In this configuration I see the set of RT privileged users to be the same as
+the set of users in group "Staff". This may change.</p>
+</li>
+<li><p>Enable user rights. <a href="https://rt-wiki.bestpractical.com/wiki/Rights">This</a>
+guide is being followed.</p>
+<p>Go to Tools &gt; Configuration &gt; Global &gt; Group Rights.</p>
+<p><strong>Save your changes each time you make changes to a group's rights.</strong></p>
+<p>Make sure the selected group is <strong>Everyone</strong>.</p>
+<p>Select the following rights:</p>
+<ul>
+<li>Comment on tickets</li>
+<li>Create tickets</li>
+<li>Reply to tickets</li>
+<li>View queue</li>
+<li>View ticket summaries</li>
+</ul>
+<p>Now add a group to add permissions to, from the bottom left: Add Group</p>
+<p>Add these rights to "Staff", in the "Rights for Staff" tab:</p>
+<ul>
+<li>Delete tickets</li>
+<li>Modify one's own RT account</li>
+<li>Modify tickets</li>
+<li>Own tickets</li>
+<li>Steal tickets</li>
+<li>Take tickets</li>
+<li>View private ticket commentary</li>
+</ul>
+<p>Add these rights to "Root", in the "Rights for Administrators" tab:</p>
+<ul>
+<li>Everything except "Do anything and everything"</li>
+</ul>
+</li>
+<li><p>Miscellaneous configuration</p>
+<p>Change RT root's info so he can be a front for staff@. (Tools &gt;
+Configuration &gt; Users &gt; Select, click root, change email to
+staff@ocf.berkeley.edu and Real Name to OCF Staff).</p>
+<p>Make the General queue sound better: Tools &gt; Configuration &gt; Queues &gt;
+Select, click General, change Description to "OCF Staff". (I think changing
+the Queue Name would be nice too. If you do that, remember to change the
+parameters to rt-mailgate in <code>/var/mail/aliases/aliases</code> and re-run
+newaliases on sandstorm.)</p>
+<p>Add root as a watcher for General so staff@ gets automatically Cc'ed to new
+tickets. Click Watchers in the upper right corner and add root.</p>
+</li>
+<li><p>Send more mail.</p>
+<p>By default RT only sends an autoreply to the requestor on ticket creation.
+Create a new scrip (RT callback) so that Cc (staff@) gets notified on ticket
+creation as well.</p>
+<p>Create that which is to be mailed: go to Tools &gt; Configuration &gt; Global &gt;
+Templates &gt; Create.</p>
+<p>Create a template with the name "Correspondence Creation" and description
+"For mailing staff on ticket creation, but without all that boilerplate".
+Keep type as "Perl". Paste this in as the content:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>RT-Attach-Message: yes
+Subject: {$Ticket-&gt;Subject}
+
+{$Transaction-&gt;Content()}
+</pre></div>
+<p>Save changes.</p>
+<p>Modify the scrip "On Create Notify AdminCcs" to use the template "Global Template: Correspondence Creation".</p>
+</li>
+<li><p>Send spoofed mail.</p>
+<p>Mail in the past has come from actual people, not endless drones of "via
+RT". Let's fake that for people who are uncomfortable with change. At the
+top of Correspondence, Admin Correspondence, Admin Comment, and
+Correspondence Creation templates, append the following below the last mail
+header that appears, if any exist:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>From: {
+  my $u = $Transaction-&gt;CreatorObj;
+  my $a = $u-&gt;EmailAddress;
+  my $res = $u-&gt;RealName || $u-&gt;Name;
+  $res .= &quot; &lt;&quot;.$a .&quot;&gt;&quot; ;
+$res; }
+</pre></div>
+</li>
+<li><p>Automatically close tickets.</p>
+<p>This needs to be chained or something to send a template saying that the
+ticket is closed because it hasn't been modified in 30 days. I don't know
+what this entails, but the below is a start.</p>
+<p>Put the following into a crontab; you may want to create a rt system user to
+run this.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>0 * * * * /usr/bin/rt-crontool --search RT::Search::FromSQL \
+--search-arg &quot;LastUpdated &lt; &#39;5 days ago&#39; AND Status = &#39;stalled&#39;&quot; \
+--action RT::Action::SetStatus --action-arg resolved
+</pre></div>
+<p>References:
+<a href="http://lists.bestpractical.com/pipermail/rt-users/2005-February/028837.html">1</a>
+<a href="https://rt-wiki.bestpractical.com/wiki/UntouchedInHours">2</a>
+<a href="https://rt-wiki.bestpractical.com/wiki/TimedNotifications">3</a></p>
+</li>
+</ol>
+<h2 id="h2_notes">Notes <a class="anchor" href="#h2_notes"><span></span></a></h2>
+<ul>
+<li>First-time autocreated users will have incorrect/embarrassing Real Names (for
+some reason, it grabs the gecos on occasion), so that should be fixed upon
+first login. Users can also update this information when they feel like it.</li>
+</ul>
+<h2 id="h2_todo">Todo <a class="anchor" href="#h2_todo"><span></span></a></h2>
+<ul>
+<li>Fix Chrome double login, if possible.<ul>
+<li>Doesn't occur when running Nginx, only Apache 2.</li>
+</ul>
+</li>
+<li>Set up ticket autoclose using
+<a href="https://rt-wiki.bestpractical.com/wiki/UntouchedInHours">https://rt-wiki.bestpractical.com/wiki/UntouchedInHours</a> or
+<a href="https://rt-wiki.bestpractical.com/wiki/TimedNotifications">https://rt-wiki.bestpractical.com/wiki/TimedNotifications</a></li>
+</ul>
+<h2 id="h2_references">References <a class="anchor" href="#h2_references"><span></span></a></h2>
+<ul>
+<li><a href="https://rt-wiki.bestpractical.com/wiki/Main_Page">https://rt-wiki.bestpractical.com/wiki/Main_Page</a></li>
+</ul>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/rebuild/rt.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/rebuild/rt.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_installation">Installation</a></li><li><a href="#h2_configuration">Configuration</a></li><li><a href="#h2_notes">Notes</a></li><li><a href="#h2_todo">Todo</a></li><li><a href="#h2_references">References</a></li></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/rebuild/">Rebuild</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <strong>Request Tracker</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

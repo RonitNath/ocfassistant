@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2017_03_20.hiring_2-482722\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 892,
+      "first_words": "The OCF is hiring!  \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 760,
+      "first_words": "These are very important roles, and without dedica..."
+    },
+    {
+      "index": 3,
+      "size": 897,
+      "first_words": "Operations Manager The Operations Manager will hav..."
+    },
+    {
+      "index": 4,
+      "size": 641,
+      "first_words": "Since its founding in 1989, the services offered b..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

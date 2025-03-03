@@ -1,0 +1,5 @@
+ Officers – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Officers Here you can find contact info for the OCF's current officers as well as a listing of past officers by election term.
+
+Current Officers (Spring 2025) Faculty Advisor Dr. Brian Harvey Board of Directors See minutes for attendance. The Board of Directors is the decision-making entity behind the OCF's operations. The Board is appointed based on attendance at our weekly meetings .
+
+General Managers Joseph Wang <storce> Ronit Nath <ronitnath> General Managers handle the organizational activities of the OCF and lead the Board of Directors meetings. They are elected by the Board of Directors at the end of each semester.

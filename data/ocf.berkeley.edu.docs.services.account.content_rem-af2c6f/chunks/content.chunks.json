@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.account.content_rem-af2c6f\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 685,
+      "first_words": "Content removal policy \u2013 Open Computing Facility..."
+    },
+    {
+      "index": 2,
+      "size": 997,
+      "first_words": "The OCF maintains a strict policy not to remove or..."
+    },
+    {
+      "index": 3,
+      "size": 915,
+      "first_words": "If repeated attempts to contact the owner of the a..."
+    },
+    {
+      "index": 4,
+      "size": 866,
+      "first_words": "DMCA considerations If you require content to be t..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

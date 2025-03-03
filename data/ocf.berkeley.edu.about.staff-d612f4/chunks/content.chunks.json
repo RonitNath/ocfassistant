@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.about.staff-d612f4\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 947,
+      "first_words": "Join the Staff Team \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 998,
+      "first_words": "Subscribe to our mailing list for meeting recaps C..."
+    },
+    {
+      "index": 3,
+      "size": 858,
+      "first_words": "Our computer lab, located in 171 MLK Student Union..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

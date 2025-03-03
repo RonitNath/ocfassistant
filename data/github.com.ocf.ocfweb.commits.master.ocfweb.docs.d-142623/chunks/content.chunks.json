@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\github.com.ocf.ocfweb.commits.master.ocfweb.docs.d-142623\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 1453,
+      "first_words": "History for ocfweb/docs/docs/services/hpc.md - oc..."
+    },
+    {
+      "index": 2,
+      "size": 492,
+      "first_words": "Include my email address so I can be contacted Can..."
+    },
+    {
+      "index": 3,
+      "size": 1345,
+      "first_words": "Dismiss alert ocf / ocfweb Public Notifications Yo..."
+    },
+    {
+      "index": 4,
+      "size": 716,
+      "first_words": "( #449 ) Show description for 56c82fb bzh-bzh auth..."
+    },
+    {
+      "index": 5,
+      "size": 620,
+      "first_words": "wporr committed 023aee7 Copy full SHA for 023aee7..."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+In addition, system administrators may access user files as required to protect the integrity or orderly functioning of computer systems. For example, system administrators may access or examine files or accounts that are suspected of unauthorized use or misuse, or that have been corrupted or damaged. System administrators may also access or modify files or accounts by request of the account holder.
+
+All existing laws (federal and state) and University regulations and policies apply, including not only those laws and regulations that are specific to computers and networks, but also those that may apply generally to personal conduct.
+
+Furthermore, the OCF provides its services on an “AS IS” BASIS, WITHOUT ANY WARRANTY, EXPRESS OR IMPLIED, including, but not limited to, any warranties of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE.

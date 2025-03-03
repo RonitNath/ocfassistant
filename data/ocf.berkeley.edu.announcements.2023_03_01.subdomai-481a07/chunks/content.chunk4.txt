@@ -1,0 +1,9 @@
+Sites must be pre-approved by both the OCF team and the university hostmaster (who allocates the subdomains).
+
+The OCF constantly monitors these sites for violations of university policy after their release, and resolves each issue in a timely manner.
+
+Recently, the UC Berkeley Department of Marketing and Digital Communications has decided that no registered student organizations shall be allowed to have a berkeley.edu subdomain.
+
+Their main concerns are (1) that student websites are not accessible to the standard required by the WCAG 2.0 (AA) Success Criteria and (2) that this then places liability on the university for the use of its brand image by student groups. Notably, however, student groups are exempt from the WCAG 2.0 (AA) Success Criteria.
+
+Despite several attempts to explain the importance of a berkeley.edu subdomain and massive impacts of removing this service (as well as providing suggestions for compromises), the marketing department has not changed their plans.

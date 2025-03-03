@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.docs.policies-287f8f\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 951,
+      "first_words": "Policies \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 995,
+      "first_words": "Some policies of note include: Computer Use Policy..."
+    }
+  ]
+}

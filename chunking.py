@@ -12,10 +12,27 @@ import os
 import re
 import json
 import numpy as np
+import logging
 from bs4 import BeautifulSoup
 import embeddings
 import nltk
 from tqdm import tqdm
+import yaml
+
+# Load config
+with open('config.yml', 'r') as f:
+    config = yaml.safe_load(f)
+
+# Setup logging
+if not os.path.exists("logs"):
+    os.makedirs("logs")
+
+# Configure logging
+logging.basicConfig(
+    filename='logs/chunking.log', 
+    level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 # Make sure NLTK data is available
 try:
@@ -25,6 +42,27 @@ except LookupError:
 
 # Import sent_tokenize after ensuring punkt is downloaded
 from nltk.tokenize import sent_tokenize
+
+import nltk
+
+def ensure_nltk_resource(resource_path, resource_name=None):
+    """
+    Checks for an NLTK resource and downloads it if not found.
+    
+    Parameters:
+        resource_path (str): The internal NLTK path (e.g., 'tokenizers/punkt_tab').
+        resource_name (str): The name to pass to nltk.download. If None,
+                             the function derives it from the resource_path.
+    """
+    try:
+        nltk.data.find(resource_path)
+    except LookupError:
+        if resource_name is None:
+            # Derive resource name from the resource path; e.g., "punkt_tab" from "tokenizers/punkt_tab"
+            resource_name = resource_path.split('/')[1]
+        nltk.download(resource_name)
+        # After downloading, you might want to verify the download succeeded:
+        nltk.data.find(resource_path)
 
 # Define a fallback sentence tokenizer in case NLTK's fails
 def safe_sent_tokenize(text):
@@ -92,6 +130,9 @@ def chunk_text_file(file_path, output_dir=None, method="hybrid"):
         print(f"Empty file: {file_path}")
         return []
     
+    # Usage:
+    ensure_nltk_resource('tokenizers/punkt_tab')
+
     # Choose chunking method
     if method == "size":
         chunks = chunk_by_size(text)
@@ -196,23 +237,38 @@ def chunk_by_semantic(text):
     
     # If we have very few sentences, just use size-based chunking
     if len(sentences) < 5:
+        logging.info("Too few sentences, falling back to size-based chunking")
         return chunk_by_size(text)
     
     # Generate embeddings for each sentence with progress bar
-    print(f"Generating embeddings for {len(sentences)} sentences...")
+    logging.info(f"Generating embeddings for {len(sentences)} sentences")
     sentence_embeddings = []
     
-    for sentence in tqdm(sentences, desc="Generating embeddings", unit="sentence"):
+    # Use minimal tqdm output 
+    for sentence in tqdm(
+        sentences, 
+        desc="Generating embeddings", 
+        unit="sentence",
+        ncols=100,
+        bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}'
+    ):
         embedding = embeddings.get_embeddings(sentence)
         sentence_embeddings.append(embedding)
     
     # Group sentences into chunks based on semantic similarity
-    print("Grouping sentences into chunks based on semantic similarity...")
+    logging.info("Grouping sentences into chunks based on semantic similarity")
     chunks = []
     current_chunk = sentences[0]
     current_embedding = sentence_embeddings[0]
     
-    for i in tqdm(range(1, len(sentences)), desc="Chunking", unit="sentence"):
+    # Use minimal tqdm output
+    for i in tqdm(
+        range(1, len(sentences)), 
+        desc="Chunking", 
+        unit="sentence",
+        ncols=100,
+        bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}'
+    ):
         sentence = sentences[i]
         embedding = sentence_embeddings[i]
         
@@ -263,14 +319,20 @@ def chunk_hybrid(text):
         list: List of text chunks
     """
     # First, split by obvious structural boundaries (headings, etc.)
-    print("Splitting text by structural boundaries...")
+    logging.info("Splitting text by structural boundaries")
     structural_chunks = split_by_structure(text)
     
     # Process each structural chunk
-    print(f"Processing {len(structural_chunks)} structural chunks...")
+    logging.info(f"Processing {len(structural_chunks)} structural chunks")
     final_chunks = []
     
-    for i, chunk in enumerate(tqdm(structural_chunks, desc="Processing chunks", unit="chunk")):
+    for i, chunk in enumerate(tqdm(
+        structural_chunks, 
+        desc="Processing chunks", 
+        unit="chunk",
+        ncols=100,
+        bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}'
+    )):
         # Skip empty chunks
         if not chunk.strip():
             continue
@@ -284,13 +346,13 @@ def chunk_hybrid(text):
                 semantic_chunks = chunk_by_semantic(chunk)
                 final_chunks.extend(semantic_chunks)
             except Exception as e:
-                tqdm.write(f"Error in semantic chunking (chunk {i+1}): {e}")
+                logging.error(f"Error in semantic chunking (chunk {i+1}): {e}")
                 # Fall back to size-based chunking
                 size_chunks = chunk_by_size(chunk)
                 final_chunks.extend(size_chunks)
     
     # Final pass to combine very small chunks
-    print("Combining small chunks...")
+    logging.info("Combining small chunks")
     combined_chunks = []
     current_chunk = ""
     
@@ -360,6 +422,7 @@ def process_all_text_files():
     """
     Process all text files in the data folder to create semantic chunks.
     """
+    logging.info(f"Scanning data folder: {data_folder}")
     print(f"Scanning data folder: {data_folder}...")
     
     # Get list of folders to process
@@ -378,20 +441,33 @@ def process_all_text_files():
             to_process.append((folder_name, text_path, chunks_dir))
     
     if not to_process:
+        logging.info("No text files need chunking")
         print("No text files need chunking.")
         return
     
-    print(f"Found {len(to_process)} files to chunk.")
+    logging.info(f"Will process {len(to_process)} files for chunking")
+    print(f"Processing {len(to_process)} files for chunking...")
     
-    # Process files with progress bar
-    for folder_name, text_path, chunks_dir in tqdm(to_process, desc="Chunking files", unit="file"):
+    total_chunks = 0
+    
+    # Process with progress bar - use a more minimal format
+    for folder_name, text_path, chunks_dir in tqdm(
+        to_process, 
+        desc="Chunking files", 
+        unit="file",
+        ncols=100,
+        bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}'
+    ):
         try:
-            print(f"\nProcessing: {folder_name}")
+            print(f"Processing: {folder_name}")
+            logging.info(f"Processing file: {folder_name}")
             chunks = chunk_text_file(text_path, chunks_dir)
+            total_chunks += len(chunks)
             print(f"Created {len(chunks)} chunks for {folder_name}")
         except Exception as e:
             print(f"Failed to chunk text from {folder_name}: {e}")
     
+    print(f"Created {total_chunks} chunks in total.")
     print("Chunking process completed.")
 
 if __name__ == "__main__":

@@ -1,0 +1,57 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2023_03_01.subdomai-481a07\\content.txt",
+  "chunk_count": 10,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 780,
+      "first_words": "Student Organization Subdomain Moratorium \u2013 Open..."
+    },
+    {
+      "index": 2,
+      "size": 975,
+      "first_words": "If you'd like to voice your feelings on this subje..."
+    },
+    {
+      "index": 3,
+      "size": 935,
+      "first_words": "Furthermore, the responsibility of migrating the w..."
+    },
+    {
+      "index": 4,
+      "size": 990,
+      "first_words": "Sites must be pre-approved by both the OCF team an..."
+    },
+    {
+      "index": 5,
+      "size": 975,
+      "first_words": "As of today, this is the official policy of UC Ber..."
+    },
+    {
+      "index": 6,
+      "size": 815,
+      "first_words": "Not to mention the price that groups would have to..."
+    },
+    {
+      "index": 7,
+      "size": 1252,
+      "first_words": "06/24/2022: The university requires all new *.berk..."
+    },
+    {
+      "index": 8,
+      "size": 566,
+      "first_words": "About the OCF The OCF is an all-volunteer, student..."
+    },
+    {
+      "index": 9,
+      "size": 453,
+      "first_words": "We provide a variety of services to the campus com..."
+    },
+    {
+      "index": 10,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

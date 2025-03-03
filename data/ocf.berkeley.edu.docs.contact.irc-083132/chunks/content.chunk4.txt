@@ -1,0 +1,9 @@
+Authenticating with NickServ To make sure that you can keep the same username, even after being disconnected and reconnecting again, you can register with NickServ.
+
+Registering with NickServ To register with NickServ, choose a password and enter the command /msg NickServ register [password] [email] into your IRC client.
+
+NickServ should reply after you run the registration command that you have been registered with your email. To see if you are registered properly, try running /msg NickServ info . You should see your email address, and where you are logged in from, among other results. ZNC ZNC is an IRC network bouncer.
+
+It permanently connects to the IRC server, so users connecting through it can preserve their chat session.
+
+Most users don't need this, but IRC regulars may appreciate the extended chat history and the absence of join/leave messages.

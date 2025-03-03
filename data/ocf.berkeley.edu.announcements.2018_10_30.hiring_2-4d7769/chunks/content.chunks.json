@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2018_10_30.hiring_2-4d7769\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 780,
+      "first_words": "The OCF is hiring!  \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 813,
+      "first_words": "Operations Assistants Operations Assistants will h..."
+    },
+    {
+      "index": 3,
+      "size": 804,
+      "first_words": "The OM position places a greater emphasis on manag..."
+    },
+    {
+      "index": 4,
+      "size": 453,
+      "first_words": "We provide a variety of services to the campus com..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

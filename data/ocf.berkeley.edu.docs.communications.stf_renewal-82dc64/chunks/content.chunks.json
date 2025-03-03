@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.communications.stf_renewal-82dc64\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 992,
+      "first_words": "Upcoming Student Technology Fund Renewal Vote \u2013 O..."
+    },
+    {
+      "index": 2,
+      "size": 980,
+      "first_words": "Without the STF, students would need to acquire li..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

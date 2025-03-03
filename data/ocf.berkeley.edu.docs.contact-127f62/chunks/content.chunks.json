@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.contact-127f62\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 930,
+      "first_words": "Contact us \u2013 Open Computing Facility Toggle navig..."
+    },
+    {
+      "index": 2,
+      "size": 960,
+      "first_words": "When contacting OCF staff, please reference your O..."
+    },
+    {
+      "index": 3,
+      "size": 946,
+      "first_words": "Mail sent here generates a help ticket which can b..."
+    },
+    {
+      "index": 4,
+      "size": 736,
+      "first_words": "DMCA takedown notices must comply with 17 U.S.C. \u00a7..."
+    },
+    {
+      "index": 5,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

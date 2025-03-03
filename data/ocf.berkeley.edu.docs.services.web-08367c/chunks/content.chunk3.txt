@@ -1,0 +1,7 @@
+Supported languages PHP 7.4 Perl 5.32.1 Python 3.7 and 3.9; Django; Flask 1.1.2 Ruby 2.7; Rails 6.0.3.7 NodeJS 12 Other flavors of the day may work but are not currently supported.
+
+We may be able to install additional packages on request, but will generally advise you to use alternatives instead (such as installing in a virtualenv or inside your home directory). FAQ My public_html directory is missing, how do I fix that?
+
+We automatically create the public_html symlink for all new accounts, but it's possible that it was accidentally removed (or that you have an older account from before we started the practice).
+
+Keep in mind that just recreating the directory is not sufficient; it must be a symbolic link to your actual web space. If you simply make a directory named public_html , it won't be used for your website.

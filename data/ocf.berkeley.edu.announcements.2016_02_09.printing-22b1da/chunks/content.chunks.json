@@ -1,0 +1,57 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2016_02_09.printing-22b1da\\content.txt",
+  "chunk_count": 10,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 970,
+      "first_words": "Changes to printing policies \u2013 Open Computing Fac..."
+    },
+    {
+      "index": 2,
+      "size": 907,
+      "first_words": "We're breaking records for the number of people in..."
+    },
+    {
+      "index": 3,
+      "size": 1002,
+      "first_words": "We've spent a lot of time trying to figure out how..."
+    },
+    {
+      "index": 4,
+      "size": 906,
+      "first_words": "The number of students using the lab each day has..."
+    },
+    {
+      "index": 5,
+      "size": 852,
+      "first_words": "Our budget and lab usage levels back then allowed..."
+    },
+    {
+      "index": 6,
+      "size": 974,
+      "first_words": "These users have a disproportionate impact on our..."
+    },
+    {
+      "index": 7,
+      "size": 984,
+      "first_words": "The reason for the immediate implementation is tha..."
+    },
+    {
+      "index": 8,
+      "size": 529,
+      "first_words": "* We won't take into account pages you've already..."
+    },
+    {
+      "index": 9,
+      "size": 499,
+      "first_words": "Our staff work hard to provide valuable services t..."
+    },
+    {
+      "index": 10,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

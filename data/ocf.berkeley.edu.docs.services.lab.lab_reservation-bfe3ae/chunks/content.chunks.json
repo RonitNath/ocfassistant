@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.lab.lab_reservation-bfe3ae\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 821,
+      "first_words": "Lab reservation policy \u2013 Open Computing Facility..."
+    },
+    {
+      "index": 2,
+      "size": 983,
+      "first_words": "Those who reserve the OCF lab space are able to us..."
+    },
+    {
+      "index": 3,
+      "size": 779,
+      "first_words": "We do not control access to the MLK Student Union;..."
+    },
+    {
+      "index": 4,
+      "size": 852,
+      "first_words": "Eating and drinking in the lab is permitted, as lo..."
+    },
+    {
+      "index": 5,
+      "size": 745,
+      "first_words": "Approving lab usage requests The Board of Director..."
+    },
+    {
+      "index": 6,
+      "size": 703,
+      "first_words": "In addition, failure to abide by safety procedures..."
+    },
+    {
+      "index": 7,
+      "size": 943,
+      "first_words": "Edit this Page Page History Table of Contents Stud..."
+    }
+  ]
+}

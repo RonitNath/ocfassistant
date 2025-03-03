@@ -1,0 +1,1 @@
+touch ~/.my.cnf cat >> ~/.my.cnf << EOF [client] password = dbpasswd EOF chmod 600 ~/.my.cnf And make sure that your .my.cnf has correct permissions by running $ ls -l ~/.my.cnf -rw------- 1 staff ocf 64 2005-11-15 16:16 /home/s/st/staff/.my.cnf Now the mysql command will automatically log you in, so you won't have to memorize or write down your MySQL password.

@@ -1,0 +1,1185 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-stats_mirrors">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/stats/mirrors/" />
+
+        <title>
+            
+                
+                    Mirrors Statistics &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/stats/mirrors/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Mirrors Statistics</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+    <div class="ocf-content-block">
+      <nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <span class="navbar-brand">OCF Stats</span>
+        </div>
+        <ul class="nav navbar-nav">
+            
+                <li class="">
+                    <a href="/stats/">Summary</a>
+                </li>
+            
+                <li class="">
+                    <a href="/stats/printing/">Printing</a>
+                </li>
+            
+                <li class="">
+                    <a href="/stats/printing/pages-printed">Lifetime Pages Printed</a>
+                </li>
+            
+                <li class="">
+                    <a href="/stats/accounts/">Accounts</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/stats/mirrors/">Mirrors</a>
+                </li>
+            
+                <li class="">
+                    <a href="/stats/session-stats/">Session Statistics</a>
+                </li>
+            
+        </ul>
+    </div>
+</nav>
+
+      <h2> Bandwidth usage per mirrored project </h2>
+      <h6> Please note that bandwidth statistics logged prior to 10/11/2021 were inaccurate. </h6>
+      <div class="row">
+    <div class="col-md-6">
+      <h4> Bandwidth Usage Since Jan. 1, 2025 - 420.81 TB total</h4>
+      <br />
+      <table class="table table-striped table-hover">
+        <tr>
+          <th> Mirrored Project </th>
+          <th> Bandwidth Usage </th>
+        </tr>
+        
+        <tr>
+          <td> blender </td>
+          <td> 146.62 TB </td>
+        </tr>
+        
+        <tr>
+          <td> kali </td>
+          <td> 27.94 TB </td>
+        </tr>
+        
+        <tr>
+          <td> debian </td>
+          <td> 23.99 TB </td>
+        </tr>
+        
+        <tr>
+          <td> kali-images </td>
+          <td> 19.41 TB </td>
+        </tr>
+        
+        <tr>
+          <td> centos-stream </td>
+          <td> 19.00 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu-releases </td>
+          <td> 17.03 TB </td>
+        </tr>
+        
+        <tr>
+          <td> linux-mint </td>
+          <td> 15.72 TB </td>
+        </tr>
+        
+        <tr>
+          <td> opensuse </td>
+          <td> 15.16 TB </td>
+        </tr>
+        
+        <tr>
+          <td> archlinux </td>
+          <td> 13.90 TB </td>
+        </tr>
+        
+        <tr>
+          <td> lineageos </td>
+          <td> 12.65 TB </td>
+        </tr>
+        
+        <tr>
+          <td> fedora </td>
+          <td> 10.11 TB </td>
+        </tr>
+        
+        <tr>
+          <td> debian-cd </td>
+          <td> 9.65 TB </td>
+        </tr>
+        
+        <tr>
+          <td> manjaro </td>
+          <td> 8.58 TB </td>
+        </tr>
+        
+        <tr>
+          <td> tails </td>
+          <td> 7.60 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu-ports </td>
+          <td> 7.37 TB </td>
+        </tr>
+        
+        <tr>
+          <td> videolan-ftp </td>
+          <td> 6.66 TB </td>
+        </tr>
+        
+        <tr>
+          <td> other </td>
+          <td> 6.28 TB </td>
+        </tr>
+        
+        <tr>
+          <td> gnu </td>
+          <td> 5.81 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu </td>
+          <td> 5.37 TB </td>
+        </tr>
+        
+        <tr>
+          <td> kde-applicationdata </td>
+          <td> 4.59 TB </td>
+        </tr>
+        
+        <tr>
+          <td> openbsd </td>
+          <td> 3.74 TB </td>
+        </tr>
+        
+        <tr>
+          <td> kde </td>
+          <td> 3.49 TB </td>
+        </tr>
+        
+        <tr>
+          <td> gimp </td>
+          <td> 3.41 TB </td>
+        </tr>
+        
+        <tr>
+          <td> trisquel-images </td>
+          <td> 3.07 TB </td>
+        </tr>
+        
+        <tr>
+          <td> qt </td>
+          <td> 3.06 TB </td>
+        </tr>
+        
+        <tr>
+          <td> parrot </td>
+          <td> 3.05 TB </td>
+        </tr>
+        
+        <tr>
+          <td> openeuler </td>
+          <td> 2.76 TB </td>
+        </tr>
+        
+        <tr>
+          <td> almalinux </td>
+          <td> 2.13 TB </td>
+        </tr>
+        
+        <tr>
+          <td> linuxmint-packages </td>
+          <td> 1.42 TB </td>
+        </tr>
+        
+        <tr>
+          <td> rpmfusion </td>
+          <td> 1.41 TB </td>
+        </tr>
+        
+        <tr>
+          <td> raspbian </td>
+          <td> 1.26 TB </td>
+        </tr>
+        
+        <tr>
+          <td> rocky </td>
+          <td> 1.14 TB </td>
+        </tr>
+        
+        <tr>
+          <td> archlinuxcn </td>
+          <td> 923.96 GB </td>
+        </tr>
+        
+        <tr>
+          <td> opnsense </td>
+          <td> 838.50 GB </td>
+        </tr>
+        
+        <tr>
+          <td> artix-iso </td>
+          <td> 809.39 GB </td>
+        </tr>
+        
+        <tr>
+          <td> debian-security </td>
+          <td> 605.73 GB </td>
+        </tr>
+        
+        <tr>
+          <td> archlinuxarm </td>
+          <td> 556.46 GB </td>
+        </tr>
+        
+        <tr>
+          <td> slackware </td>
+          <td> 484.05 GB </td>
+        </tr>
+        
+        <tr>
+          <td> devuan-cd </td>
+          <td> 433.76 GB </td>
+        </tr>
+        
+        <tr>
+          <td> openwrt </td>
+          <td> 363.04 GB </td>
+        </tr>
+        
+        <tr>
+          <td> artix-linux </td>
+          <td> 359.81 GB </td>
+        </tr>
+        
+        <tr>
+          <td> nongnu </td>
+          <td> 323.11 GB </td>
+        </tr>
+        
+        <tr>
+          <td> pub </td>
+          <td> 249.16 GB </td>
+        </tr>
+        
+        <tr>
+          <td> alpine </td>
+          <td> 236.08 GB </td>
+        </tr>
+        
+        <tr>
+          <td> apache </td>
+          <td> 215.61 GB </td>
+        </tr>
+        
+        <tr>
+          <td> blackarch </td>
+          <td> 201.70 GB </td>
+        </tr>
+        
+        <tr>
+          <td> freebsd </td>
+          <td> 142.28 GB </td>
+        </tr>
+        
+        <tr>
+          <td> ipfire </td>
+          <td> 115.28 GB </td>
+        </tr>
+        
+        <tr>
+          <td> mx-linux </td>
+          <td> 108.35 GB </td>
+        </tr>
+        
+        <tr>
+          <td> gentoo-distfiles </td>
+          <td> 104.29 GB </td>
+        </tr>
+        
+        <tr>
+          <td> gutenberg </td>
+          <td> 98.38 GB </td>
+        </tr>
+        
+        <tr>
+          <td> mx-packages </td>
+          <td> 83.64 GB </td>
+        </tr>
+        
+        <tr>
+          <td> trisquel </td>
+          <td> 83.30 GB </td>
+        </tr>
+        
+        <tr>
+          <td> libreelec </td>
+          <td> 75.93 GB </td>
+        </tr>
+        
+        <tr>
+          <td> gnome </td>
+          <td> 74.42 GB </td>
+        </tr>
+        
+        <tr>
+          <td> qubes </td>
+          <td> 23.23 GB </td>
+        </tr>
+        
+        <tr>
+          <td> lyx </td>
+          <td> 22.22 GB </td>
+        </tr>
+        
+        <tr>
+          <td> raspi </td>
+          <td> 20.58 GB </td>
+        </tr>
+        
+        <tr>
+          <td> debian-nonfree </td>
+          <td> 18.45 GB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu-ports-releases </td>
+          <td> 15.33 GB </td>
+        </tr>
+        
+        <tr>
+          <td> finnix-releases </td>
+          <td> 14.49 GB </td>
+        </tr>
+        
+        <tr>
+          <td> devuan </td>
+          <td> 9.54 GB </td>
+        </tr>
+        
+        <tr>
+          <td> dragora </td>
+          <td> 6.63 GB </td>
+        </tr>
+        
+        <tr>
+          <td> freexian </td>
+          <td> 4.85 GB </td>
+        </tr>
+        
+        <tr>
+          <td> parabola </td>
+          <td> 4.15 GB </td>
+        </tr>
+        
+        <tr>
+          <td> siduction </td>
+          <td> 3.51 GB </td>
+        </tr>
+        
+        <tr>
+          <td> tdf </td>
+          <td> 2.75 GB </td>
+        </tr>
+        
+        <tr>
+          <td> elpa </td>
+          <td> 2.09 GB </td>
+        </tr>
+        
+        <tr>
+          <td> puppetlabs </td>
+          <td> 1.46 GB </td>
+        </tr>
+        
+        <tr>
+          <td> melpa </td>
+          <td> 1.41 GB </td>
+        </tr>
+        
+        <tr>
+          <td> cran </td>
+          <td> 1.03 GB </td>
+        </tr>
+        
+        <tr>
+          <td> sage </td>
+          <td> 618.98 MB </td>
+        </tr>
+        
+        <tr>
+          <td> gentoo-portage </td>
+          <td> 453.32 MB </td>
+        </tr>
+        
+        <tr>
+          <td> pikvm </td>
+          <td> 256.23 MB </td>
+        </tr>
+        
+        <tr>
+          <td> test </td>
+          <td> 230.35 MB </td>
+        </tr>
+        
+        <tr>
+          <td> theme </td>
+          <td> 118.61 MB </td>
+        </tr>
+        
+        <tr>
+          <td> openindiana </td>
+          <td> 64.32 MB </td>
+        </tr>
+        
+        <tr>
+          <td> osdn </td>
+          <td> 44.35 MB </td>
+        </tr>
+        
+        <tr>
+          <td> centos </td>
+          <td> 27.49 MB </td>
+        </tr>
+        
+        <tr>
+          <td> centos-altarch </td>
+          <td> 12.50 MB </td>
+        </tr>
+        
+        <tr>
+          <td> fdroid </td>
+          <td> 11.11 MB </td>
+        </tr>
+        
+        <tr>
+          <td> ocf-isos </td>
+          <td> 716.06 KB </td>
+        </tr>
+        
+        <tr>
+          <td> js </td>
+          <td> 606.87 KB </td>
+        </tr>
+        
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h4> Bandwidth Usage - All Time - 116.41 PB total</h4>
+      <br />
+      <table class="table table-striped table-hover">
+        <tr>
+          <th> Mirrored Project </th>
+          <th> Bandwidth Usage </th>
+        </tr>
+        
+        <tr>
+          <td> kali </td>
+          <td> 32.59 PB </td>
+        </tr>
+        
+        <tr>
+          <td> centos </td>
+          <td> 24.25 PB </td>
+        </tr>
+        
+        <tr>
+          <td> kali-images </td>
+          <td> 16.96 PB </td>
+        </tr>
+        
+        <tr>
+          <td> debian </td>
+          <td> 8.47 PB </td>
+        </tr>
+        
+        <tr>
+          <td> archlinux </td>
+          <td> 6.78 PB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu </td>
+          <td> 3.79 PB </td>
+        </tr>
+        
+        <tr>
+          <td> raspbian </td>
+          <td> 3.25 PB </td>
+        </tr>
+        
+        <tr>
+          <td> manjaro </td>
+          <td> 3.07 PB </td>
+        </tr>
+        
+        <tr>
+          <td> archlinuxcn </td>
+          <td> 2.35 PB </td>
+        </tr>
+        
+        <tr>
+          <td> fedora </td>
+          <td> 1.90 PB </td>
+        </tr>
+        
+        <tr>
+          <td> centos-altarch </td>
+          <td> 1.84 PB </td>
+        </tr>
+        
+        <tr>
+          <td> debian-cd </td>
+          <td> 1.56 PB </td>
+        </tr>
+        
+        <tr>
+          <td> blender </td>
+          <td> 1.49 PB </td>
+        </tr>
+        
+        <tr>
+          <td> qt </td>
+          <td> 1.08 PB </td>
+        </tr>
+        
+        <tr>
+          <td> gnu </td>
+          <td> 976.56 TB </td>
+        </tr>
+        
+        <tr>
+          <td> debian-security </td>
+          <td> 962.17 TB </td>
+        </tr>
+        
+        <tr>
+          <td> parrot </td>
+          <td> 679.65 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu-releases </td>
+          <td> 667.58 TB </td>
+        </tr>
+        
+        <tr>
+          <td> opensuse </td>
+          <td> 427.50 TB </td>
+        </tr>
+        
+        <tr>
+          <td> centos-debuginfo </td>
+          <td> 397.59 TB </td>
+        </tr>
+        
+        <tr>
+          <td> apache </td>
+          <td> 373.42 TB </td>
+        </tr>
+        
+        <tr>
+          <td> videolan-ftp </td>
+          <td> 316.36 TB </td>
+        </tr>
+        
+        <tr>
+          <td> centos-stream </td>
+          <td> 313.91 TB </td>
+        </tr>
+        
+        <tr>
+          <td> kde-applicationdata </td>
+          <td> 279.12 TB </td>
+        </tr>
+        
+        <tr>
+          <td> slackware </td>
+          <td> 267.92 TB </td>
+        </tr>
+        
+        <tr>
+          <td> kde </td>
+          <td> 248.51 TB </td>
+        </tr>
+        
+        <tr>
+          <td> tails </td>
+          <td> 219.37 TB </td>
+        </tr>
+        
+        <tr>
+          <td> gimp </td>
+          <td> 143.29 TB </td>
+        </tr>
+        
+        <tr>
+          <td> linux-mint </td>
+          <td> 140.03 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu-ports </td>
+          <td> 113.64 TB </td>
+        </tr>
+        
+        <tr>
+          <td> rpmfusion </td>
+          <td> 101.52 TB </td>
+        </tr>
+        
+        <tr>
+          <td> trisquel-images </td>
+          <td> 86.33 TB </td>
+        </tr>
+        
+        <tr>
+          <td> devuan-cd </td>
+          <td> 81.57 TB </td>
+        </tr>
+        
+        <tr>
+          <td> almalinux </td>
+          <td> 69.86 TB </td>
+        </tr>
+        
+        <tr>
+          <td> other </td>
+          <td> 67.19 TB </td>
+        </tr>
+        
+        <tr>
+          <td> rocky </td>
+          <td> 43.15 TB </td>
+        </tr>
+        
+        <tr>
+          <td> openeuler </td>
+          <td> 38.93 TB </td>
+        </tr>
+        
+        <tr>
+          <td> openbsd </td>
+          <td> 37.53 TB </td>
+        </tr>
+        
+        <tr>
+          <td> lineageos </td>
+          <td> 33.30 TB </td>
+        </tr>
+        
+        <tr>
+          <td> linuxmint-packages </td>
+          <td> 15.44 TB </td>
+        </tr>
+        
+        <tr>
+          <td> osdn </td>
+          <td> 11.80 TB </td>
+        </tr>
+        
+        <tr>
+          <td> archlinuxarm </td>
+          <td> 7.99 TB </td>
+        </tr>
+        
+        <tr>
+          <td> alpine </td>
+          <td> 7.53 TB </td>
+        </tr>
+        
+        <tr>
+          <td> artix-iso </td>
+          <td> 7.51 TB </td>
+        </tr>
+        
+        <tr>
+          <td> blackarch </td>
+          <td> 5.20 TB </td>
+        </tr>
+        
+        <tr>
+          <td> pub </td>
+          <td> 5.01 TB </td>
+        </tr>
+        
+        <tr>
+          <td> opnsense </td>
+          <td> 4.41 TB </td>
+        </tr>
+        
+        <tr>
+          <td> finnix-releases </td>
+          <td> 4.11 TB </td>
+        </tr>
+        
+        <tr>
+          <td> qubes </td>
+          <td> 3.13 TB </td>
+        </tr>
+        
+        <tr>
+          <td> openwrt </td>
+          <td> 3.12 TB </td>
+        </tr>
+        
+        <tr>
+          <td> artix-linux </td>
+          <td> 3.02 TB </td>
+        </tr>
+        
+        <tr>
+          <td> mx-linux </td>
+          <td> 2.98 TB </td>
+        </tr>
+        
+        <tr>
+          <td> gnome </td>
+          <td> 2.94 TB </td>
+        </tr>
+        
+        <tr>
+          <td> trisquel </td>
+          <td> 2.74 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ipfire </td>
+          <td> 2.55 TB </td>
+        </tr>
+        
+        <tr>
+          <td> gutenberg </td>
+          <td> 2.45 TB </td>
+        </tr>
+        
+        <tr>
+          <td> freebsd </td>
+          <td> 2.38 TB </td>
+        </tr>
+        
+        <tr>
+          <td> ubuntu-ports-releases </td>
+          <td> 1.96 TB </td>
+        </tr>
+        
+        <tr>
+          <td> devuan </td>
+          <td> 1.85 TB </td>
+        </tr>
+        
+        <tr>
+          <td> tanglu-releases </td>
+          <td> 1.71 TB </td>
+        </tr>
+        
+        <tr>
+          <td> gentoo-distfiles </td>
+          <td> 1.67 TB </td>
+        </tr>
+        
+        <tr>
+          <td> tanglu </td>
+          <td> 1.67 TB </td>
+        </tr>
+        
+        <tr>
+          <td> debian-nonfree </td>
+          <td> 1.42 TB </td>
+        </tr>
+        
+        <tr>
+          <td> puppetlabs </td>
+          <td> 1.15 TB </td>
+        </tr>
+        
+        <tr>
+          <td> raspi </td>
+          <td> 1.01 TB </td>
+        </tr>
+        
+        <tr>
+          <td> nongnu </td>
+          <td> 962.73 GB </td>
+        </tr>
+        
+        <tr>
+          <td> mx-packages </td>
+          <td> 874.80 GB </td>
+        </tr>
+        
+        <tr>
+          <td> libreelec </td>
+          <td> 851.01 GB </td>
+        </tr>
+        
+        <tr>
+          <td> parabola </td>
+          <td> 794.56 GB </td>
+        </tr>
+        
+        <tr>
+          <td> test </td>
+          <td> 557.19 GB </td>
+        </tr>
+        
+        <tr>
+          <td> tdf </td>
+          <td> 472.64 GB </td>
+        </tr>
+        
+        <tr>
+          <td> cran </td>
+          <td> 448.04 GB </td>
+        </tr>
+        
+        <tr>
+          <td> dragora </td>
+          <td> 362.19 GB </td>
+        </tr>
+        
+        <tr>
+          <td> sage </td>
+          <td> 239.64 GB </td>
+        </tr>
+        
+        <tr>
+          <td> openindiana </td>
+          <td> 177.49 GB </td>
+        </tr>
+        
+        <tr>
+          <td> lyx </td>
+          <td> 92.84 GB </td>
+        </tr>
+        
+        <tr>
+          <td> ocf-isos </td>
+          <td> 89.29 GB </td>
+        </tr>
+        
+        <tr>
+          <td> tmp </td>
+          <td> 66.95 GB </td>
+        </tr>
+        
+        <tr>
+          <td> freexian </td>
+          <td> 63.44 GB </td>
+        </tr>
+        
+        <tr>
+          <td> elpa </td>
+          <td> 54.31 GB </td>
+        </tr>
+        
+        <tr>
+          <td> hyperbola </td>
+          <td> 47.46 GB </td>
+        </tr>
+        
+        <tr>
+          <td> siduction </td>
+          <td> 45.33 GB </td>
+        </tr>
+        
+        <tr>
+          <td> archive-raspberrypi </td>
+          <td> 33.17 GB </td>
+        </tr>
+        
+        <tr>
+          <td> rasppi </td>
+          <td> 12.41 GB </td>
+        </tr>
+        
+        <tr>
+          <td> gentoo-portage </td>
+          <td> 8.99 GB </td>
+        </tr>
+        
+        <tr>
+          <td> melpa </td>
+          <td> 8.01 GB </td>
+        </tr>
+        
+        <tr>
+          <td> theme </td>
+          <td> 4.45 GB </td>
+        </tr>
+        
+        <tr>
+          <td> pikvm </td>
+          <td> 3.19 GB </td>
+        </tr>
+        
+        <tr>
+          <td> fdroid </td>
+          <td> 21.24 MB </td>
+        </tr>
+        
+        <tr>
+          <td> fedora-buffet </td>
+          <td> 19.51 MB </td>
+        </tr>
+        
+        <tr>
+          <td> js </td>
+          <td> 13.14 MB </td>
+        </tr>
+        
+        <tr>
+          <td> rocky-linux </td>
+          <td> 1.97 MB </td>
+        </tr>
+        
+        <tr>
+          <td> rpi </td>
+          <td> 12.82 KB </td>
+        </tr>
+        
+        <tr>
+          <td> .data </td>
+          <td> 0.00  </td>
+        </tr>
+        
+      </table>
+    </div>
+      </div>
+    </div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

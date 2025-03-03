@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements-ab0145\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 545,
+      "first_words": "News from the staff team \u2013 Open Computing Facilit..."
+    },
+    {
+      "index": 2,
+      "size": 617,
+      "first_words": "Organizational updates Student Organization Subdom..."
+    },
+    {
+      "index": 3,
+      "size": 738,
+      "first_words": "Here are some recent updates from it: Planned Outa..."
+    },
+    {
+      "index": 4,
+      "size": 416,
+      "first_words": "Our staff work hard to provide valuable services t..."
+    },
+    {
+      "index": 5,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

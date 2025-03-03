@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2016_05_12.ocf_eff_-20ce89\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 966,
+      "first_words": "OCF affirms support for EFF's Electronic Frontier..."
+    },
+    {
+      "index": 2,
+      "size": 839,
+      "first_words": "Since its inception, the OCF's all-volunteer staff..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

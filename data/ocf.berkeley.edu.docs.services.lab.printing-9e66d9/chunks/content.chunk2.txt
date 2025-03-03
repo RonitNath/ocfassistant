@@ -1,0 +1,3 @@
+Remaining quota To see how many pages you have left for the day and semester, run the paper command over the web or in the shell . Print quota is also displayed at the top of the screen when using a lab computer. Check your print balance regularly! Printing refunds Pages are not normally refunded, except in cases of technical issues. In this case, you should talk with the OCF Operations Staff at the front desk for a refund.
+
+Edit this Page Page History More in this category Computer lab Lab reservation policy Printing OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

@@ -1,0 +1,7 @@
+Connecting to the application server We provide a separate server (currently named vampires ), for hosting applications. You should connect to this server , not to the public login server. You connect to this server via SSH using your normal OCF account name and password.
+
+Host: apphost.ocf.berkeley.edu Port: 22 If your login is refused (but you can log in to ssh.ocf.berkeley.edu ), your account probably isn't configured yet. Contact us (see above) to request app hosting on your account.
+
+Routing traffic to your app Our application server uses a reverse proxy to route traffic to UNIX sockets located at /srv/apps/username/username.sock .
+
+Your application should bind to that socket; basically any server can be configured to bind to a UNIX socket instead of a port, so do that. We provide some example setups below. Supervising and starting your app Make sure you do these steps on the application server. If you start your app on tsunami, the public login server, it won't work.

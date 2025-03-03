@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\github.com.ocf.ocfweb.commits.master.ocfweb.docs.d-cfa8c5\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 1453,
+      "first_words": "History for ocfweb/docs/docs/services/web.md - oc..."
+    },
+    {
+      "index": 2,
+      "size": 492,
+      "first_words": "Include my email address so I can be contacted Can..."
+    },
+    {
+      "index": 3,
+      "size": 2945,
+      "first_words": "Dismiss alert ocf / ocfweb Public Notifications Yo..."
+    }
+  ]
+}

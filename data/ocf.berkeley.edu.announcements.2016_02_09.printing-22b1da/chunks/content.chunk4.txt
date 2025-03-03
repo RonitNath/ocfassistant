@@ -1,0 +1,13 @@
+The number of students using the lab each day has greatly increased since 2014, with an especially large jump after the move to MLK (last semester, around November 16, 2015).
+
+Since 2013, we've gone from printing about 10,000 pages per week, up to almost 40,000 pages per week this semester.
+
+We're running the printers at more than four times the manufacturer's recommended maximum pages per month.
+
+We don't have much of a choice; we have to limit the pages printed per day, or we risk breaking our printers beyond repair.
+
+Historically, we've implemented a number of measures to manage our levels of printing, including draft-quality printing, lower-quality paper, and third-party toner.
+
+However, the OCF has never faced such a massive increase in number of users, lab usage, and printing before.
+
+Long-term members of the OCF will remember that the weekday printing limit was 10 pages per day in 2014.

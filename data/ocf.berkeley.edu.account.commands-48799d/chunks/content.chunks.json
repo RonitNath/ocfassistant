@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.account.commands-48799d\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 971,
+      "first_words": "Account commands \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 857,
+      "first_words": "SSH also allows you access to the full range of ac..."
+    }
+  ]
+}

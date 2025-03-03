@@ -1,0 +1,557 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-services-web-rails">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/services/web/rails/" />
+
+        <title>
+            
+                
+                    Ruby on Rails &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/services/web/rails/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Ruby on Rails</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_creating-a-new-application">Creating a New Application</a></li><li><a href="#h2_hosting-your-application">Hosting Your Application</a></li><ol><li><a href="#h3_install-fcgi-gem">Install fcgi gem</a></li><li><a href="#h3_create-fastcgi-wrapper-script">Create FastCGI wrapper script</a></li><li><a href="#h3_rewrite-requests-to-the-fastcgi-wrapper">Rewrite requests to the FastCGI wrapper</a></li><li><a href="#h3_rewriting-asset-and-route-paths">Rewriting asset and route paths</a></li><li><a href="#h3_debugging">Debugging</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p><strong>Note: These instructions are primarily intended for individual user accounts.
+If you are using a group account, you may wish to consider
+<a href="/docs/services/webapps/">apphosting</a> instead.</strong></p>
+<p>Ruby on Rails is a popular web framework for Ruby applications.</p>
+<h2 id="h2_creating-a-new-application">Creating a New Application <a class="anchor" href="#h2_creating-a-new-application"><span></span></a></h2>
+<p>To create a new Rails application, use the <code>rails</code> command-line interface. For
+example, to create an application called <code>foo</code> in your home directory, run the
+command:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~$<span style="color: #bbbbbb"> </span>rails<span style="color: #bbbbbb"> </span>new<span style="color: #bbbbbb"> </span>foo
+</pre></div>
+<p>This may take some time.</p>
+<h2 id="h2_hosting-your-application">Hosting Your Application <a class="anchor" href="#h2_hosting-your-application"><span></span></a></h2>
+<p>OCF allows hosting of Rails applications via FastCGI. This requires you to
+install the <code>fcgi</code> gem and create a FastCGI wrapper script.</p>
+<h3 id="h3_install-fcgi-gem">Install <code>fcgi</code> gem <a class="anchor" href="#h3_install-fcgi-gem"><span></span></a></h3>
+<ol>
+<li><p>Make sure the line <code>gem 'fcgi'</code> appears somewhere in your project's
+<code>Gemfile</code> (located at the root of the project).</p>
+</li>
+<li><p>Run <code>bundle install --path bundle</code> from the root of your project to install
+bundled gems. This will also ensure that the <code>fcgi</code> gem is installed. You'll
+want to specify <code>--path bundle</code> so that bundler installs your gems to a
+local directory to your app and not system-wide. You'll also likely want to
+add the new <code>bundle</code> directory to your <code>.gitignore</code> if you are using git for
+version control.</p>
+</li>
+</ol>
+<h3 id="h3_create-fastcgi-wrapper-script">Create FastCGI wrapper script <a class="anchor" href="#h3_create-fastcgi-wrapper-script"><span></span></a></h3>
+<p>To host your application, create a file called <code>dispatch.fcgi</code> in your web root
+(<code>~/public_html/</code>) based on the following template:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">#!/usr/bin/ruby</span>
+<span style="color: #008000">require</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;etc&#39;</span>
+
+<span style="color: #880000">APP_PATH</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #880000">Etc</span><span style="color: #666666">.</span>getpwuid<span style="color: #666666">.</span>dir<span style="color: #bbbbbb"> </span><span style="color: #666666">+</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;/foo&#39;</span>
+<span style="color: #880000">ENV</span><span style="color: #666666">[</span><span style="color: #BA2121">&#39;GEM_HOME&#39;</span><span style="color: #666666">]</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #880000">APP_PATH</span><span style="color: #bbbbbb"> </span><span style="color: #666666">+</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;/bundle/ruby/2.3.0/gems&#39;</span>
+<span style="color: #880000">ENV</span><span style="color: #666666">[</span><span style="color: #BA2121">&#39;GEM_PATH&#39;</span><span style="color: #666666">]</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #880000">APP_PATH</span><span style="color: #bbbbbb"> </span><span style="color: #666666">+</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;/bundle/ruby/2.3.0&#39;</span>
+
+require_relative<span style="color: #bbbbbb"> </span><span style="color: #880000">APP_PATH</span><span style="color: #bbbbbb"> </span><span style="color: #666666">+</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;/config/environment&#39;</span>
+
+<span style="color: #008000; font-weight: bold">class</span><span style="color: #bbbbbb"> </span><span style="color: #0000FF; font-weight: bold">Rack</span><span style="color: #666666">::</span><span style="color: #880000">PathInfoRewriter</span>
+<span style="color: #bbbbbb">  </span><span style="color: #008000; font-weight: bold">def</span><span style="color: #bbbbbb"> </span><span style="color: #0000FF">initialize</span>(app)
+<span style="color: #bbbbbb">    </span><span style="color: #19177C">@app</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>app
+<span style="color: #bbbbbb">  </span><span style="color: #008000; font-weight: bold">end</span>
+
+<span style="color: #bbbbbb">  </span><span style="color: #008000; font-weight: bold">def</span><span style="color: #bbbbbb"> </span><span style="color: #0000FF">call</span>(env)
+<span style="color: #bbbbbb">    </span>env<span style="color: #666666">.</span>delete(<span style="color: #BA2121">&#39;SCRIPT_NAME&#39;</span>)
+<span style="color: #bbbbbb">    </span>parts<span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>env<span style="color: #666666">[</span><span style="color: #BA2121">&#39;REQUEST_URI&#39;</span><span style="color: #666666">].</span>split(<span style="color: #BA2121">&#39;?&#39;</span>)
+<span style="color: #bbbbbb">    </span>env<span style="color: #666666">[</span><span style="color: #BA2121">&#39;PATH_INFO&#39;</span><span style="color: #666666">]</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>parts<span style="color: #666666">[0]</span>
+<span style="color: #bbbbbb">    </span>env<span style="color: #666666">[</span><span style="color: #BA2121">&#39;QUERY_STRING&#39;</span><span style="color: #666666">]</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>parts<span style="color: #666666">[1].</span>to_s
+<span style="color: #bbbbbb">    </span><span style="color: #19177C">@app</span><span style="color: #666666">.</span>call(env)
+<span style="color: #bbbbbb">  </span><span style="color: #008000; font-weight: bold">end</span>
+<span style="color: #008000; font-weight: bold">end</span>
+
+app,<span style="color: #bbbbbb"> </span>options<span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">Builder</span><span style="color: #666666">.</span>parse_file(<span style="color: #880000">APP_PATH</span><span style="color: #bbbbbb"> </span><span style="color: #666666">+</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;/config.ru&#39;</span>)
+wrappedApp<span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">Builder</span><span style="color: #666666">.</span>new<span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">do</span>
+<span style="color: #bbbbbb">  </span>use<span style="color: #bbbbbb"> </span><span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">ShowExceptions</span>
+<span style="color: #bbbbbb">  </span>use<span style="color: #bbbbbb"> </span><span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">PathInfoRewriter</span>
+<span style="color: #bbbbbb">  </span>run<span style="color: #bbbbbb"> </span>app
+<span style="color: #008000; font-weight: bold">end</span>
+
+<span style="color: #880000">Rack</span><span style="color: #666666">::</span><span style="color: #880000">Handler</span><span style="color: #666666">::</span><span style="color: #880000">FastCGI</span><span style="color: #666666">.</span>run<span style="color: #bbbbbb"> </span>wrappedApp
+</pre></div>
+<p>Be sure to adjust the path to your application near the top of the file
+(the <code>APP_PATH</code> variable)</p>
+<p>Once you've added the <code>dispatch.fcgi</code> file, mark it as executable:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~/public_html$<span style="color: #bbbbbb"> </span>chmod<span style="color: #bbbbbb"> </span>+x<span style="color: #bbbbbb"> </span>dispatch.fcgi
+</pre></div>
+<h3 id="h3_rewrite-requests-to-the-fastcgi-wrapper">Rewrite requests to the FastCGI wrapper <a class="anchor" href="#h3_rewrite-requests-to-the-fastcgi-wrapper"><span></span></a></h3>
+<p>Create a file called <code>.htaccess</code> in your web root (or a subdirectory)
+containing the following lines:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">RewriteEngine</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">On</span>
+<span style="color: #008000">RewriteBase</span><span style="color: #bbbbbb"> </span>/
+<span style="color: #008000">RewriteCond</span><span style="color: #bbbbbb"> </span>%{REQUEST_FILENAME}<span style="color: #bbbbbb"> </span>!-f
+<span style="color: #008000">RewriteRule</span><span style="color: #bbbbbb"> </span>^(.*)$<span style="color: #bbbbbb"> </span>/~user/rails/dispatch.fcgi<span style="color: #bbbbbb"> </span>[QSA,L]
+</pre></div>
+<p>Be sure to change <code>user</code> and <code>rails</code> to your username and whatever directory
+name you made in <code>public_html</code>, respectively. (or remove <code>rails</code> if not inside
+a separate directory)</p>
+<h3 id="h3_rewriting-asset-and-route-paths">Rewriting asset and route paths <a class="anchor" href="#h3_rewriting-asset-and-route-paths"><span></span></a></h3>
+<p>One issue you may run into is an error like <code>No route matches [GET] "/~user"</code>.
+To fix an issue like this, the best method is to edit <code>config/routes.rb</code> in
+your application and add a <code>scope</code> block around all your routes matching the
+path you are using. For instance, if your site is at
+<code>https://www.ocf.berkeley.edu/~user</code> then convert your routes from something like this:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #880000">MyApp</span><span style="color: #666666">::</span><span style="color: #880000">Application</span><span style="color: #666666">.</span>routes<span style="color: #666666">.</span>draw<span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">do</span>
+<span style="color: #bbbbbb">  </span>resources<span style="color: #bbbbbb"> </span><span style="color: #19177C">:users</span>
+
+<span style="color: #bbbbbb">  </span><span style="color: #666666">[...]</span>
+<span style="color: #008000; font-weight: bold">end</span>
+</pre></div>
+<p>to something like this:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #880000">MyApp</span><span style="color: #666666">::</span><span style="color: #880000">Application</span><span style="color: #666666">.</span>routes<span style="color: #666666">.</span>draw<span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">do</span>
+<span style="color: #bbbbbb">  </span>scope<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;~user&quot;</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">do</span>
+<span style="color: #bbbbbb">    </span>resources<span style="color: #bbbbbb"> </span><span style="color: #19177C">:users</span>
+
+<span style="color: #bbbbbb">    </span><span style="color: #666666">[...]</span>
+<span style="color: #bbbbbb">  </span><span style="color: #008000; font-weight: bold">end</span>
+<span style="color: #008000; font-weight: bold">end</span>
+</pre></div>
+<p>This will make your application able to route all your existing routes
+correctly. If your site is at something like
+<code>https://www.ocf.berkeley.edu/~user/rails</code> then use <code>~user/rails</code> in the scope
+block instead. However, assets (images, stylesheets, javascript) may still be
+broken. To fix these, add a line like this into your <code>config/application.rb</code>
+(or under the correct environment in
+<code>config/environments/(development,production).rb</code> if you want to be more
+specific). Note that this has to be inside the <code>class Application</code> block:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #880000">Rails</span><span style="color: #666666">.</span>application<span style="color: #666666">.</span>config<span style="color: #666666">.</span>assets<span style="color: #666666">.</span>prefix<span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;/~user/asset&quot;</span>
+</pre></div>
+<p>Make sure to replace <code>user</code> in this example (and in your <code>config/routes.rb</code>)
+with your username, and add the path you are using for your application if
+applicable between <code>~user</code> and <code>~asset</code>.</p>
+<h3 id="h3_debugging">Debugging <a class="anchor" href="#h3_debugging"><span></span></a></h3>
+<p>If you see an error page when trying to load your app, you may find the
+webserver's logs useful. You can access them in the following locations:</p>
+<ul>
+<li>error log: <code>/opt/httpd/error.log</code> (most useful)</li>
+<li>suexec log: <code>/opt/httpd/suexec.log</code> (only useful in rare cases)</li>
+</ul>
+<p>Once your app has started running, changes you make to the Ruby code or
+templates won't take effect for a few hours. To apply changes immediately, you
+can touch the dispatch.fcgi file with the command:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~/public_html$<span style="color: #bbbbbb"> </span>touch<span style="color: #bbbbbb"> </span>dispatch.fcgi
+</pre></div>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/services/web/rails.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/services/web/rails.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_creating-a-new-application">Creating a New Application</a></li><li><a href="#h2_hosting-your-application">Hosting Your Application</a></li><ol><li><a href="#h3_install-fcgi-gem">Install fcgi gem</a></li><li><a href="#h3_create-fastcgi-wrapper-script">Create FastCGI wrapper script</a></li><li><a href="#h3_rewrite-requests-to-the-fastcgi-wrapper">Rewrite requests to the FastCGI wrapper</a></li><li><a href="#h3_rewriting-asset-and-route-paths">Rewriting asset and route paths</a></li><li><a href="#h3_debugging">Debugging</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/services/web/">Web hosting</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/backups/">Backups/Archiving</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/django/">Django</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/flask/">Flask</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/jekyll/">Jekyll</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/php/">PHP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Ruby on Rails</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/wordpress/">WordPress</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

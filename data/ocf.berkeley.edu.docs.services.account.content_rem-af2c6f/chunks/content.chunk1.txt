@@ -1,0 +1,5 @@
+ Content removal policy – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Content removal policy As promulgated by the SMs on April 10, 2017.
+
+Introduction Most of the content on www.ocf.berkeley.edu is created and owned by OCF members, not the OCF itself.
+
+This user-generated content is not endorsed or supported by the OCF nor is the OCF responsible for content posted by OCF members.

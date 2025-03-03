@@ -1,0 +1,52 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.account-7faf16\\content.txt",
+  "chunk_count": 9,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 800,
+      "first_words": "Account \u2013 Open Computing Facility Toggle navigati..."
+    },
+    {
+      "index": 2,
+      "size": 933,
+      "first_words": "(Technical info: public account information and sa..."
+    },
+    {
+      "index": 3,
+      "size": 868,
+      "first_words": "if it's a department-sponsored group), you will ne..."
+    },
+    {
+      "index": 4,
+      "size": 877,
+      "first_words": "Manual verification of identity (typically for alu..."
+    },
+    {
+      "index": 5,
+      "size": 960,
+      "first_words": "For security purposes, please include the followin..."
+    },
+    {
+      "index": 6,
+      "size": 979,
+      "first_words": "Disabled accounts Some common reasons accounts are..."
+    },
+    {
+      "index": 7,
+      "size": 462,
+      "first_words": "Offsite backups are made weekly and consist of the..."
+    },
+    {
+      "index": 8,
+      "size": 964,
+      "first_words": "Edit this Page Page History Table of Contents Intr..."
+    },
+    {
+      "index": 9,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

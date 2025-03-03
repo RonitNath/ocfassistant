@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.membership.banning-72071f\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 856,
+      "first_words": "Banning policy \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 745,
+      "first_words": "If the violation of OCF policies is additionally a..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.contact-51ee41\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 930,
+      "first_words": "Contact us \u2013 Open Computing Facility Toggle navig..."
+    },
+    {
+      "index": 2,
+      "size": 806,
+      "first_words": "When contacting OCF staff, please reference your O..."
+    },
+    {
+      "index": 3,
+      "size": 812,
+      "first_words": "help@ocf.berkeley.edu If you have questions about..."
+    },
+    {
+      "index": 4,
+      "size": 748,
+      "first_words": "171 University of California, Berkeley Berkeley, C..."
+    },
+    {
+      "index": 5,
+      "size": 874,
+      "first_words": "Edit this Page Page History Table of Contents Befo..."
+    }
+  ]
+}

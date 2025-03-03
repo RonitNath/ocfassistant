@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.shell-25c06b\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 820,
+      "first_words": "Remote shell and file transfer (SSH/SFTP) \u2013 Open..."
+    },
+    {
+      "index": 2,
+      "size": 325,
+      "first_words": "We support the following commonly used shell accou..."
+    },
+    {
+      "index": 3,
+      "size": 910,
+      "first_words": "Our SSH fingerprint can be used to verify that you..."
+    },
+    {
+      "index": 4,
+      "size": 827,
+      "first_words": "From your browser If you just need to access SSH q..."
+    },
+    {
+      "index": 5,
+      "size": 835,
+      "first_words": "Protocol: SFTP (or SSH) Host Name: ssh.ocf.berkele..."
+    },
+    {
+      "index": 6,
+      "size": 987,
+      "first_words": "If you\u2019re trying to run a webapp or other kind of..."
+    },
+    {
+      "index": 7,
+      "size": 806,
+      "first_words": "Ruby on Rails Web hosting Backups/Archiving Django..."
+    }
+  ]
+}

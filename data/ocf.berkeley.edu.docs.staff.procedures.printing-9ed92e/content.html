@@ -1,0 +1,827 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-procedures-printing">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/procedures/printing/" />
+
+        <title>
+            
+                
+                    Printing maintenance &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/procedures/printing/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Printing maintenance</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_removing-printers-from-service">Removing printers from service</a></li><li><a href="#h2_restoring-printer-service">Restoring printer service</a></li><li><a href="#h2_replacing-toner">Replacing toner</a></li><li><a href="#h2_recycling-used-toner">Recycling used toner</a></li><ol><li><a href="#h3_options-to-dispose-the-toners">Options to dispose the toners</a></li></ol><li><a href="#h2_performing-maintenance-on-the-printers">Performing maintenance on the printers</a></li><li><a href="#h2_stats">Stats</a></li></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <h2 id="h2_removing-printers-from-service">Removing printers from service <a class="anchor" href="#h2_removing-printers-from-service"><span></span></a></h2>
+<p>Ideally, printers shouldn't ever be turned off. Instead, they should be removed
+from the CUPS classes:</p>
+<ol>
+<li>Go to <a href="https://printhost.ocf.berkeley.edu/">https://printhost.ocf.berkeley.edu/</a> (works only in lab)</li>
+<li>Go to Classes &gt; <code>double</code> &gt; Modify Class</li>
+<li>Remove the offending printer from the list of selected printers</li>
+<li>GOTO 2, repeat for the <code>single</code> class</li>
+</ol>
+<p>Alternatively, this can be done using the <code>utils</code> command <code>mod-printer</code> with proper authentication.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>mod-printer remove [printer]
+</pre></div>
+<p>The <code>printer</code> is the name of the physical printer (currently: <code>logjam</code>,
+<code>papercut</code>, or <code>pagefault</code>). This will prompt you to enter your password
+twice, once for <code>single</code> and again for <code>double</code>.</p>
+<p><strong>Note</strong>: this command must be used from <a href="https://www.ocf.berkeley.edu/docs/staff/backend/servers/#whiteout"><code>whiteout</code></a>.</p>
+<p>(In theory pausing printers should have the same effect, but the current CUPS
+version still queues jobs for them for some unknown reason, causing half of
+user jobs to not print.)</p>
+<h2 id="h2_restoring-printer-service">Restoring printer service <a class="anchor" href="#h2_restoring-printer-service"><span></span></a></h2>
+<p>Perform the reverse of the above (add the printers back to the classes), then
+double-check that the printers are not paused. This can also be done by
+replacing <code>remove</code> in the above <code>mod-printer</code> command with <code>add</code> (again only if called from <code>whiteout</code>).
+Even if staff don't pause them,
+CUPS will pause them automatically if they fail.</p>
+<h2 id="h2_replacing-toner">Replacing toner <a class="anchor" href="#h2_replacing-toner"><span></span></a></h2>
+<p>Toner replacement takes only a few seconds. Don't bother recording toner
+replacement, there is no point.</p>
+<p>Old toner cartridges should be saved in the server room (find a box that has a
+bunch of old toner in it). We return these to Staples for $2/cartridge in
+rewards.</p>
+<p>Our printers use <a href="https://www.staples.com/HP-64X-Black-Toner-Cartridge-CC364XD-High-Yield-Twin-Pack/product_821762">CC364X toner cartridges</a>. As part of our service
+agreement with the <a href="https://campuslifeservices.ucsf.edu/documentsmedia/services/print_management">UCSF Print Management Program</a>, we buy toner in bulk
+from them and in exchange receive complimentary service for our printers. In
+order to replenish stocks of toner, first get in touch with the UC Berkeley
+PMP Coordinator (as of 2018, this is Pam Krol) to get a quote for a bulk toner
+order, and then notify our LEAD Center advisor to get the pass-through account
+chartstring in order to let PMP debit our account directly through the ASUC.
+Once a contract is signed, PMP will ship the toner to the lab and withdraw
+funds from our account automatically. It is necessary to inform our advisors
+of this in advance so they can properly authorize and document the fund transfer
+between the ASUC and the University. The LEAD center has requested we keep our
+use of the passthrough account to a miminum, so we've agreed to buy toner in
+annual intervals.</p>
+<h2 id="h2_recycling-used-toner">Recycling used toner <a class="anchor" href="#h2_recycling-used-toner"><span></span></a></h2>
+<p>OCF goes through toners quite fast, due to the heavy volume of printing from our
+users. In the past, we've let it accumulate inside the storage room which
+resulted in accidental toner spillage. The following document contains how
+to recycle the toners in hope of encouraging rapid removal of the toners from OCF space.</p>
+<p>OCF staffers should keep an eye out for the accumulation of the toners, and proactively
+recycle the used toners as soon as possible.</p>
+<h3 id="h3_options-to-dispose-the-toners">Options to dispose the toners <a class="anchor" href="#h3_options-to-dispose-the-toners"><span></span></a></h3>
+<ul>
+<li><p>We can dispose the toners by returning them to
+<a href="https://www.staples.com/sbd/cre/marketing/sustainability-center/recycling-
+services/">Staples</a> down at the Shattuck Ave. They give us $2 Staples rewards per toner, and
+there is maximum limit of 10 toners per month. With the rewards, we can purchase
+snacks and etc from Staples.
+The rewards account information can be found in the passwd file.</p>
+</li>
+<li><p>Copy Center at 3rd floor of Moffitt Library - to the right of FSM cafe when you enter the
+building - would accept our toners that are individually sealed in a garbage bag.</p>
+</li>
+<li><p>Xerox Recycles HP toners. One can <a href="https://www.xerox.com/perl-bin/product.p
+l?mode=recycling&amp;XOGlang=en_US&amp;referer=xrx">order</a> toner return box kit with a free return
+label. Once the kit arrives, put the used toners in the box and schedule a UPS pick up.</p>
+</li>
+</ul>
+<h2 id="h2_performing-maintenance-on-the-printers">Performing maintenance on the printers <a class="anchor" href="#h2_performing-maintenance-on-the-printers"><span></span></a></h2>
+<p>Our contract with PMP entitles us to free service for our printers, with a
+short turn-around time. As a result, we should not longer attempt maintenance
+ourselves, and should let the professionals take care of it. Should maintenance
+be necessary, email <code>copycenter@library.berkeley.edu</code> (with <code>sm+printers@</code> cc'd)
+to contact a PMP technician, inform them of the problem, and let them handle
+everything else. Make sure to include the relevant printer IDs in the email. If
+there are any questions about the terms of our service agreement, direct them to
+the UC Berkeley PMP Coordinator.</p>
+<p>The following is a list of our printers and their IDs, from left to right:</p>
+<table>
+<thead><tr>
+<th>Printer name</th>
+<th>ID #</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>papercut</td>
+<td>1782</td>
+</tr>
+<tr>
+<td>logjam</td>
+<td>1786</td>
+</tr>
+<tr>
+<td>pagefault</td>
+<td>1781</td>
+</tr>
+</tbody>
+</table>
+<h2 id="h2_stats">Stats <a class="anchor" href="#h2_stats"><span></span></a></h2>
+<ul>
+<li><a href="https://ocf.io/printers">Printer status Grafana dashboard (ocf.io/printers)</a></li>
+<li>Toner and Maintenance Kit <a href="https://www.ocf.berkeley.edu/stats/">status</a></li>
+<li><a href="https://www.ocf.berkeley.edu/stats/printing/pages-printed">How many pages has each printer printed</a>? (expressed as total
+pages printed over time)</li>
+</ul>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/procedures/printing.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/procedures/printing.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_removing-printers-from-service">Removing printers from service</a></li><li><a href="#h2_restoring-printer-service">Restoring printer service</a></li><li><a href="#h2_replacing-toner">Replacing toner</a></li><li><a href="#h2_recycling-used-toner">Recycling used toner</a></li><ol><li><a href="#h3_options-to-dispose-the-toners">Options to dispose the toners</a></li></ol><li><a href="#h2_performing-maintenance-on-the-printers">Performing maintenance on the printers</a></li><li><a href="#h2_stats">Stats</a></li></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/">Procedures</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/">Accounts</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/alumni-reset/">Alumni account reset</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/association/">LDAP association</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/renaming/">Rename an account</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/hpc/">Adding users to the HPC cluster</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/backporting-packages/">Backporting Debian packages</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/vhost/">Configuring virtual hosting</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/new-host/">Creating new hosts (servers, desktops)</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/dmca/">DMCA</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/editing-docs/">Editing docs</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/granting-privileges/">Granting staff privileges</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/installing-updates/">Installing updates with apt-dater</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/live-resize/">Live disk resizing</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/gapps/">Making OCF Google Apps accounts</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/xmpp/">Manually creating XMPP accounts</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Printing maintenance</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/process-accounting/">Process accounting</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/restarting-services/">Restarting services</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/ssh-supernova/">SSHing into Supernova</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/ssl/">SSL certificates</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/setting-up-lacp/">Setting up bridging and link aggregation</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/setting-up-mdraid/">Setting up mdraid on servers</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/user-quotas/">User disk quotas</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

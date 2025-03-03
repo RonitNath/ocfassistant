@@ -1,0 +1,5 @@
+ZNC also integrates with NickServ, automatically authenticating for you with a nickserv module if you save a password with ZNC. Creating a ZNC account Ask a root staffer (or ping #rebuild) to create a ZNC username / password. Configuring ZNC Configuration is most easily done through the ZNC web interface . It requires you to login using your staff-created ZNC account.
+
+Once you've logged in, under Your Settings you should set the following fields: Nickname : your nickname Alt.
+
+Nickname : your alternate nickname, if your primary is taken Ident : should be same as nickname, used to uniquely identify you from everyone else using IRC Networks : add a network with server irc.ocf.berkeley.edu +6697 , space included . Click save at the bottom, and your ZNC account should be setup to connect to the main IRC server.

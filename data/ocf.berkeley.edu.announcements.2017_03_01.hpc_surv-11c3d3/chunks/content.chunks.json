@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.announcements.2017_03_01.hpc_surv-11c3d3\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 833,
+      "first_words": "OCF seeking interest in high-performance computin..."
+    },
+    {
+      "index": 2,
+      "size": 873,
+      "first_words": "Our current, tentative itinerary is to make an ini..."
+    },
+    {
+      "index": 3,
+      "size": 765,
+      "first_words": "Our first server is planned to feature multiple hi..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

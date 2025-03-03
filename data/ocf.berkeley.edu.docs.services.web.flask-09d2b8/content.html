@@ -1,0 +1,509 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-services-web-flask">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/services/web/flask/" />
+
+        <title>
+            
+                
+                    Flask &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/services/web/flask/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Flask</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+
+        
+        <p><strong>Note: These instructions are primarily intended for individual user accounts.
+If you are using a group account, you may wish to consider
+<a href="/docs/services/webapps/">apphosting</a> instead.</strong></p>
+<p><a href="https://palletsprojects.com/p/flask/">Flask</a> is a popular microframework for
+Python web development. Using it on the OCF servers requires only just a little
+extra configuration.</p>
+<h2 id="h2_setting-up-a-flask-project">Setting up a Flask project <a class="anchor" href="#h2_setting-up-a-flask-project"><span></span></a></h2>
+<ol>
+<li><p>Make a new directory for your flask app in your home directory. You can name
+this whatever you want, but we'll assume you named the directory <code>app</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~$<span style="color: #bbbbbb"> </span>mkdir<span style="color: #bbbbbb"> </span>app
+user@tsunami:~$<span style="color: #bbbbbb"> </span><span style="color: #008000">cd</span><span style="color: #bbbbbb"> </span>app
+</pre></div>
+</li>
+<li><p>Make a virtualenv.  This will allow you to run <code>pip install</code> to install any
+python packages that you need that the OCF does not already have. The
+benefit of having a virtualenv is that you can decide the dependencies you
+want, without being tied to the OCF defaults:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~/app$<span style="color: #bbbbbb"> </span>virtualenv<span style="color: #bbbbbb"> </span>-p<span style="color: #bbbbbb"> </span>python3<span style="color: #bbbbbb"> </span>venv
+user@tsunami:~/app$<span style="color: #bbbbbb"> </span>venv/bin/pip<span style="color: #bbbbbb"> </span>install<span style="color: #bbbbbb"> </span>flask<span style="color: #bbbbbb"> </span>flup6
+</pre></div>
+<p>Feel free to install any other packages you need for your flask app at this
+step too (or later on, that's cool too). If you have an existing flask app
+with a <code>requirements.txt</code> file, then run <code>venv/bin/pip install -r
+requirements.txt</code> to install dependencies from that.</p>
+<p>For full details on how to use pip, see <a href="https://packaging.python.org/tutorials/installing-packages/#installing-from-pypi">the pip documentation</a>.</p>
+</li>
+<li><p>Create a new python file (or directory) for your application logic. In this
+case, we'll create a new directory named <code>myapp</code> and make a new file within
+it named <code>app.py</code>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">flask</span> <span style="color: #008000; font-weight: bold">import</span> Flask
+app <span style="color: #666666">=</span> Flask(<span style="color: #19177C">__name__</span>)
+
+<span style="color: #AA22FF">@app</span><span style="color: #666666">.</span>route(<span style="color: #BA2121">&#39;/&#39;</span>)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">hello</span>():
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #BA2121">&#39;Hello World!&#39;</span>
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666666">==</span> <span style="color: #BA2121">&#39;__main__&#39;</span>:
+    app<span style="color: #666666">.</span>run()
+</pre></div>
+</li>
+<li><p>Create a new directory in your <code>~/public_html/</code> directory for your flask
+application. You can also just put these files directly in <code>~/public_html</code>
+if you want your site available directly under
+<code>https://www.ocf.berkeley.edu/~user</code> and you don't have any other sites:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~$<span style="color: #bbbbbb"> </span>mkdir<span style="color: #bbbbbb"> </span>~/public_html/flask
+</pre></div>
+<p>For example, this path above will make your site available at
+<code>https://www.ocf.berkeley.edu/~user/flask</code>.</p>
+</li>
+<li><p>Create <code>~/public_html/flask/.htaccess</code> with these contents:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">RewriteEngine</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">On</span>
+<span style="color: #008000">RewriteBase</span><span style="color: #bbbbbb"> </span>/
+<span style="color: #008000">RewriteCond</span><span style="color: #bbbbbb"> </span>%{REQUEST_FILENAME}<span style="color: #bbbbbb"> </span>!-f
+<span style="color: #3D7B7B; font-style: italic"># Change &quot;user&quot; and &quot;flask&quot; to your username and whatever directory</span>
+<span style="color: #3D7B7B; font-style: italic"># name you made in public_html, respectively</span>
+<span style="color: #008000">RewriteRule</span><span style="color: #bbbbbb"> </span>^(.*)$<span style="color: #bbbbbb"> </span>/~user/flask/run.fcgi/$1<span style="color: #bbbbbb"> </span>[QSA,L]
+</pre></div>
+</li>
+<li><p>Create <code>~/public_html/flask/run.fcgi</code> with these contents:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">#!/home/u/us/user/app/venv/bin/python</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">os</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">sys</span>
+
+sys<span style="color: #666666">.</span>path<span style="color: #666666">.</span>insert(<span style="color: #666666">0</span>, os<span style="color: #666666">.</span>path<span style="color: #666666">.</span>expanduser(<span style="color: #BA2121">&#39;~/app&#39;</span>))
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">flup.server.fcgi</span> <span style="color: #008000; font-weight: bold">import</span> WSGIServer
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">myapp.app</span> <span style="color: #008000; font-weight: bold">import</span> app
+
+<span style="color: #008000; font-weight: bold">if</span> <span style="color: #19177C">__name__</span> <span style="color: #666666">==</span> <span style="color: #BA2121">&#39;__main__&#39;</span>:
+    WSGIServer(app)<span style="color: #666666">.</span>run()
+</pre></div>
+<p>Make sure to replace the first line of <code>run.fcgi</code> file with the actual path
+to your project's virtualenv Python. You can find it by running the command
+<code>readlink -f ~/app/venv/bin/python</code>.</p>
+<p>Make sure to also replace <code>~/app</code> (if you have a different path in your home
+directory) and <code>from myapp.app</code> with the name of your Flask application that
+you selected before (we used <code>myapp</code> and <code>app.py</code> but you can use whatever
+you want).</p>
+</li>
+<li><p>Make the <code>run.fcgi</code> file you just created executable with:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~$<span style="color: #bbbbbb"> </span>chmod<span style="color: #bbbbbb"> </span>+x<span style="color: #bbbbbb"> </span>~/public_html/flask/run.fcgi
+</pre></div>
+</li>
+<li><p>Once your app has started running, changes you make to the Python code or
+templates won't take effect for a few hours. To apply changes immediately,
+the webserver needs to see that the <code>run.fcgi</code> file has changed. You can can
+change the modification time of the <code>run.fcgi</code> file to trigger a restart
+with the command:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>user@tsunami:~$<span style="color: #bbbbbb"> </span>touch<span style="color: #bbbbbb"> </span>~/public_html/flask/run.fcgi
+</pre></div>
+</li>
+</ol>
+<h3 id="h3_debugging">Debugging <a class="anchor" href="#h3_debugging"><span></span></a></h3>
+<p>If you see an error page when trying to load your app, you may find the
+webserver's logs useful. You can access them in the following locations:</p>
+<ul>
+<li>error log: <code>/opt/httpd/error.log</code> (most useful)</li>
+<li>suexec log: <code>/opt/httpd/suexec.log</code> (only useful in rare cases)</li>
+</ul>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/services/web/flask.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/services/web/flask.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/services/web/">Web hosting</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/backups/">Backups/Archiving</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/django/">Django</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Flask</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/jekyll/">Jekyll</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/php/">PHP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/rails/">Ruby on Rails</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/services/web/wordpress/">WordPress</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

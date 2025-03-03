@@ -1,0 +1,7 @@
+Our computer lab, located in 171 MLK Student Union , features high-res scanners, free printing, and high-end desktops with mechanical keyboards and GTX graphics cards, all running Debian GNU/Linux.
+
+Our lab and servers run free and open-source software, such as: Joining the OCF is an awesome way to learn! We love talking tech and learning new things.
+
+We use our weekly board meetings and staff hours not just to make decisions, but also to learn more about *nix and free software. We're totally open and super-inclusive! Our members have a wide range of majors and technical backgrounds. There are tons of ways to learn and have fun! We've got a perfect sandbox to poke around.
+
+In addition to our powerful servers and desktops, staff get access to their own private server to hoze. We meet every Wednesday at 7:10pm in the lab . We hope to see you there!

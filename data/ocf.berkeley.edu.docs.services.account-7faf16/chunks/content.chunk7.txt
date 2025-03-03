@@ -1,0 +1,5 @@
+Offsite backups are made weekly and consist of the entire state of the onsite backups at the time the backup is made.
+
+Offsite backups are encrypted locally before being uploaded to servers owned by Box.com, under the terms of the University's collaboration agreement with the company.
+
+Offsite backups are retained for a period of 6 months before being deleted for user data privacy reasons. Encrypted backups are only accessible by a small number of OCF staff.

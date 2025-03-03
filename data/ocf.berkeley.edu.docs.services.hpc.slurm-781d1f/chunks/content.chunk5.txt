@@ -1,0 +1,7 @@
+Acceptable time formats include "minutes", "minutes:seconds", "hours:minutes:seconds", "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds". You cannot set the time limit greater than the default, which is 2 days.
+
+Using srun On hpcctl.ocf.berkeley.edu : srun [ command-line flags ] [ command to run ] For example, to run a job that uses 4 CPUs, 8 GB of RAM, and 1 GPU: bzh@hpcctl:~$ srun --ntasks =1 --cpus-per-task =4 --mem = 8G --gres = gpu:1 echo "Hello world!" Hello world!
+
+Running an interactive terminal To start up an interactive terminal on a compute node, use the --pty [your terminal of choice] flag.
+
+For most everyone, you'll be using bash , so to start an interactive terminal on a node, run: srun [ other command-line flags ] --pty bash Using sbatch A Slurm batch script is functionally the same as a regular bash script: The bash shebang at the start, and script after.

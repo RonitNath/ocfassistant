@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.about.officers-fbe0b4\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 987,
+      "first_words": "Officers \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 821,
+      "first_words": "Site Managers Oliver Ni <oliverni> Laksith Venkate..."
+    },
+    {
+      "index": 3,
+      "size": 13452,
+      "first_words": "Term Officers Fall 2024 General Managers Jaysa Gar..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

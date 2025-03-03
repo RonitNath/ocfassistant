@@ -1,0 +1,1040 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-procedures-live-resize">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/procedures/live-resize/" />
+
+        <title>
+            
+                
+                    Live disk resizing &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/procedures/live-resize/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Live disk resizing</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_assumptions">Assumptions</a></li><li><a href="#h2_prerequisites">Prerequisites</a></li><ol><li><a href="#h3_on-the-kvm-hypervisor">On the KVM hypervisor</a></li><li><a href="#h3_on-the-vm-kvm-guest">On the VM (KVM guest)</a></li></ol><li><a href="#h2_method-1-fdisk-most-common">Method 1: fdisk (most common)</a></li><li><a href="#h2_method-2-parted-less-common">Method 2: parted (less common)</a></li><li><a href="#h2_conclusion-for-either-method-used-above">Conclusion (for either method used above):</a></li><ol><li><a href="#h3_let-the-kernel-know-that-the-partitions-have-changed">Let the kernel know that the partitions have changed</a></li><li><a href="#h3_resize-the-filesystem">Resize the filesystem</a></li><li><a href="#h3_re-create-and-re-enable-swap">Re-create and re-enable swap</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <h2 id="h2_assumptions">Assumptions <a class="anchor" href="#h2_assumptions"><span></span></a></h2>
+<ol>
+<li>You are resizing the disk to be a <strong>larger</strong> size than it currently is. If
+you would like to resize a disk to be smaller, that is much more complicated
+and will almost certainly require some downtime of the VM being resized.</li>
+<li>This is being run on a KVM-based hypervisor with a locally-stored VM disk in
+LVM that's under <code>/dev/vg/&lt;vm&gt;</code>. If this is not the case, these commands may
+not work (mostly the ones under prerequisites, the later commands will
+likely still be fine)</li>
+<li>The primary disk is the one being resized and it is located at <code>/dev/vda</code>.
+If a non-boot disk is being resized, it's likely going to be even easier
+than this guide says (probably no need to move swap), but otherwise a lot of
+the same steps will apply.</li>
+</ol>
+<h2 id="h2_prerequisites">Prerequisites <a class="anchor" href="#h2_prerequisites"><span></span></a></h2>
+<h3 id="h3_on-the-kvm-hypervisor">On the KVM hypervisor <a class="anchor" href="#h3_on-the-kvm-hypervisor"><span></span></a></h3>
+<p>Resize the logical volume containing the VM's disk to increase by some number
+of GiB. This assumes the path for the LVM-backed disk is in <code>/dev/vg/&lt;vm&gt;</code> but
+it may be in a different directory within <code>/dev</code> depending on the volume group
+name:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ export VM=&lt;vm name here&gt;
+$ sudo lvresize -L +&lt;size in GiB&gt;G /dev/vg/$VM
+</pre></div>
+<p>Get the new size in bytes for the disk (25 GiB here for instance):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo fdisk -l /dev/vg/$VM | head -n 1
+Disk /dev/vm/&lt;vm&gt;: 25 GiB, 26843545600 bytes, 52428800 sectors
+</pre></div>
+<p>Resize the block device in <code>virsh</code> using the previous size in bytes:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo virsh blockresize $VM /dev/vg/$VM &lt;size in bytes&gt;B
+</pre></div>
+<h3 id="h3_on-the-vm-kvm-guest">On the VM (KVM guest) <a class="anchor" href="#h3_on-the-vm-kvm-guest"><span></span></a></h3>
+<p>The new disk size should have been detected by the kernel toward the bottom of
+<code>dmesg</code> output:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo dmesg | less
+[...]
+virtio_blk virtio1: [vda] new size: 52428800 512-byte logical blocks (26.9 GB/25.0 GiB)
+vda: detected capacity change from 21474836480 to 26843545600
+</pre></div>
+<p>Get some information about the disk (current partition sizes, types, current
+disk size) before proceeding further. This can be useful to have in scrollback:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo fdisk -l /dev/vda
+</pre></div>
+<p>If the disk is large enough (with partitions greater than 2 terabytes), then
+<code>fdisk</code> might not work and it'll have to use GPT instead and be resized using
+<code>parted</code>, but it's a similar process either way and both are detailed below.
+Alternatively you can use <code>gdisk</code>, but that is not documented here yet or
+installed on most hosts.</p>
+<p>Turn swap off before proceeding further too since it will likely be moving.
+The swap partition only needs to be moved if it's in the way of the expanding
+partition, so if it's positioned before it (earlier on in the <code>fdisk</code> output
+given above) then it won't need to be disabled, removed, and recreated and you
+can skip turning it off here.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo swapoff -a
+</pre></div>
+<h2 id="h2_method-1-fdisk-most-common">Method 1: <code>fdisk</code> (most common) <a class="anchor" href="#h2_method-1-fdisk-most-common"><span></span></a></h2>
+<p>This is the path that uses <code>fdisk</code> to move partitions around. It's more common
+to use, but if you need GPT support then you'll have to use <code>parted</code> below in
+method 2. Note that <code>fdisk</code> will not write out any changes unless you give it
+the <code>w</code> command to write them, so anything done up until that point should be
+safe and you can exit without changes if it's not looking like you want it to.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo fdisk /dev/vda
+</pre></div>
+<p>First, print out some information so you know what you are looking at. For
+instance, this output shows a 25 GiB disk with a 18 GiB partition followed by a
+~ 2 GiB extended partition containing some swap space. Note that the disk size
+should be larger than all its contained partitions since you have just
+increased its size previously:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): p
+Disk /dev/vda: 25 GiB, 26843545600 bytes, 52428800 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x29f3dc9e
+
+Device     Boot    Start      End  Sectors Size Id Type
+/dev/vda1  *        2048 37750783 37748736  18G 83 Linux
+/dev/vda2       37752830 41940991  4188162   2G  5 Extended
+/dev/vda5       37752832 41940991  4188160   2G 82 Linux swap / Solaris
+</pre></div>
+<p>Delete all current partitions (5 here is swap, 2 is extended partition, 1 is
+root partition) since you'll be resizing the first one and moving the others
+after it:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): d
+Partition number (1,2,5, default 5): 5
+Partition 5 has been deleted.
+
+Command (m for help): d
+Partition number (1,2, default 2): 2
+Partition 2 has been deleted.
+
+Command (m for help): d
+Selected partition 1
+Partition 1 has been deleted.
+</pre></div>
+<p>Print out information (all partitions are deleted, at least in memory, but
+nothing has been written yet):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): p
+Disk /dev/vda: 25 GiB, 26843545600 bytes, 52428800 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x29f3dc9e
+</pre></div>
+<p>Create a new root partition at partition 1. If you are asked about removing
+signatures during this I usually just keep them around as none of the data or
+flags should need changing and you are just growing the end of the partition:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p):
+Partition number (1-4, default 1):
+First sector (2048-52428799, default 2048):
+Last sector, +sectors or +size{K,M,G,T,P} (2048-52428799, default 52428799): +24G
+
+Created a new partition 1 of type &#39;Linux&#39; and of size 24 GiB.
+Partition #1 contains a ext4 signature.
+
+Do you want to remove the signature? [Y]es/[N]o: N
+</pre></div>
+<p>Create new swap partition with the remaining size (I didn't create an extended
+partition, but feel free to if you'd like. It isn't really useful for most of
+our VMs, it's only to get around a 4 partition limit on traditional partition
+tables):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p):
+Partition number (2-4, default 2):
+First sector (50333696-52428799, default 50333696):
+Last sector, +sectors or +size{K,M,G,T,P} (50333696-52428799, default 52428799):
+
+Created a new partition 2 of type &#39;Linux&#39; and of size 1023 MiB.
+</pre></div>
+<p>Change the type of the new partition to be the correct type for swap (code 82):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): t
+Partition number (1,2, default 2): 2
+Hex code (type L to list all codes): 82
+
+Changed type of partition &#39;Linux&#39; to &#39;Linux swap / Solaris&#39;.
+</pre></div>
+<p>You can set the bootable flag on the first partition if you'd like to match the
+existing configuration, but it shouldn't matter on Linux as it's a setting that
+only exists in the MBR for certain legacy clients:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): a
+Partition number (1,2, default 2): 1
+
+The bootable flag on partition 1 is enabled now.
+</pre></div>
+<p>Print out data one last time before actually committing it:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): p
+Disk /dev/vda: 25 GiB, 26843545600 bytes, 52428800 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x29f3dc9e
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/vda1           2048 50333695 50331648   24G 83 Linux
+/dev/vda2       50333696 52428799  2095104 1023M 82 Linux swap / Solaris
+</pre></div>
+<p><strong>!! DANGER: Write the changes to the partition table !!</strong>:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Command (m for help): w
+The partition table has been altered.
+</pre></div>
+<p>If you see this error upon doing so, it can be safely ignored as you're going
+to address this in the conclusion section:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Calling ioctl() to re-read partition table.
+Re-reading the partition table failed.: Device or resource busy
+The kernel still uses the old table. The new table will be used at the next
+reboot or after you run partprobe(8) or kpartx(8).
+</pre></div>
+<p>Exit <code>fdisk</code> and continue to the conclusion section below.</p>
+<h2 id="h2_method-2-parted-less-common">Method 2: <code>parted</code> (less common) <a class="anchor" href="#h2_method-2-parted-less-common"><span></span></a></h2>
+<p>This is primarily useful for working with disks that have partitions over 2 TiB
+in size and are using GPT (mirrors for instance when it was a VM), but it can
+be used with smaller disks/partitions or non-GPT too. There's also a graphical
+version at <code>gparted</code> if you have that option, but this does not assume you have
+a graphical interface to work with.</p>
+<p><strong>MAJOR WARNING</strong>: When using <code>parted</code>, any changes you make are written out
+immediately after making them, so you will not have the same opportunity to
+review changes at the end as with <code>fdisk</code>!</p>
+<p>Start off by entering <code>parted</code> and setting your units to use sectors (generally
+more useful than bytes since you usually want to align partitions to sector
+boundaries):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo parted /dev/vda
+GNU Parted 3.2
+Using /dev/vda
+Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands.
+(parted) unit s
+</pre></div>
+<p>Then, print out the current settings. These are important to keep noted
+somewhere as after you start removing partitions you cannot easily get this
+information back:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>(parted) p
+Model: Virtio Block Device (virtblk)
+Disk /dev/vda: 54525952s
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start      End        Size       Type      File system     Flags
+ 1      2048s      50333695s  50331648s  primary   ext4            boot
+ 2      50333696s  52428799s  2095104s   extended
+ 5      50335744s  52428799s  2093056s   logical   linux-swap(v1)
+</pre></div>
+<p>If working with a GPT, you may get this prompt when printing the existing
+partition information and need to fix the GPT to use all the space:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Warning: Not all of the space available to /dev/vda appears to be used, you
+can fix the GPT to use all of the space (an extra 2147483648 blocks) or
+continue with the current setting?
+
+Fix/Ignore? Fix
+</pre></div>
+<p>Remove the old partitions, and go past a couple scary warnings for the root
+partition that is in use. These can be ignored as we are going to fix this
+later with <code>partprobe</code> and because no data is actually moving around:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>(parted) rm 5
+(parted) rm 2
+(parted) rm 1
+Warning: Partition /dev/vda1 is being used. Are you sure you want to continue?
+Yes/No? Yes
+
+Error: Partition(s) 1 on /dev/vda have been written, but we have been unable to
+inform the kernel of the change, probably because it/they are in use. As a result,
+the old partition(s) will remain in use.  You should reboot now before making
+further changes.
+Ignore/Cancel? Ignore
+</pre></div>
+<p>Create the partition again with the same starting value as before (2048s in
+this case) and a larger ending value. The starting value here is crucial to get
+the same as the previous one so that no data is shifted but the ending value
+can be anything as long as it's greater than or equal to what it was before.
+The units also do not have to match:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>(parted) mkpart primary 2048s 25GiB
+</pre></div>
+<p>Make a partition for swap (if you removed it before). You don't have to make an
+extended partition, that's only there to make it so you can have more than 4
+partitions total. <code>-1s</code> is used here to specify the last sector to use the
+whole disk:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>(parted) mkpart primary linux-swap(v1) 25GiB -1s
+</pre></div>
+<p>Print the values again to make sure all looks good. Feel free to change units
+to make sure things look good in GiB too. You're mostly looking to make sure
+that the start of the main partition is the same as before, that it's larger
+than before, and that no data except a swap partition had its start moved:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>(parted) p
+Model: Virtio Block Device (virtblk)
+Disk /dev/vda: 54525952s
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start      End        Size       Type     File system     Flags
+ 1      2048s      52428799s  52426752s  primary                  lba
+ 2      52428800s  54525951s  2097152s   primary  linux-swap(v1)  lba
+
+(parted) unit GiB
+(parted) p
+Model: Virtio Block Device (virtblk)
+Disk /dev/vda: 26.0GiB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start    End      Size     Type     File system     Flags
+ 1      0.00GiB  25.0GiB  25.0GiB  primary                  lba
+ 2      25.0GiB  26.0GiB  1.00GiB  primary  linux-swap(v1)  lba
+</pre></div>
+<p>If you're using GPT, the first primary partition should have the <code>bios_grub</code>
+flag set. The file systems shown shouldn't really matter here.</p>
+<p>Quit <code>parted</code>. The values are already changed, so no saving is needed:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>(parted) quit
+</pre></div>
+<p>This will be shown, but we'll address this in the next steps below for the swap
+partition if you had to move that:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Information: You may need to update /etc/fstab.
+</pre></div>
+<h2 id="h2_conclusion-for-either-method-used-above">Conclusion (for either method used above): <a class="anchor" href="#h2_conclusion-for-either-method-used-above"><span></span></a></h2>
+<h3 id="h3_let-the-kernel-know-that-the-partitions-have-changed">Let the kernel know that the partitions have changed <a class="anchor" href="#h3_let-the-kernel-know-that-the-partitions-have-changed"><span></span></a></h3>
+<p>Run <code>partprobe</code> to start using the new partition table in the kernel without a
+reboot:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo partprobe
+</pre></div>
+<p>Magic!</p>
+<h3 id="h3_resize-the-filesystem">Resize the filesystem <a class="anchor" href="#h3_resize-the-filesystem"><span></span></a></h3>
+<p><code>fdisk -l</code> should now show all the new information and partition sizes:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo fdisk -l
+</pre></div>
+<p>Resize the filesystem to take up all of the partition's space:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo resize2fs /dev/vda1
+resize2fs 1.44.5 (15-Dec-2018)
+Filesystem at /dev/vda1 is mounted on /; on-line resizing required
+old_desc_blocks = 2, new_desc_blocks = 2
+The filesystem on /dev/vda1 is now 6553344 (4k) blocks long.
+</pre></div>
+<p><code>df -h</code> should show the correct new size now:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ df -h | grep /dev/vda1
+/dev/vda1        25G   15G  9.3G  61% /
+</pre></div>
+<h3 id="h3_re-create-and-re-enable-swap">Re-create and re-enable swap <a class="anchor" href="#h3_re-create-and-re-enable-swap"><span></span></a></h3>
+<p>If you had swap on initially, re-create the swap area in the disk swap
+partition (likely <code>/dev/vda5</code> if you have the extended partition and
+<code>/dev/vda2</code> if you do not):</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo mkswap /dev/vda2
+Setting up swapspace version 1, size = 1022 MiB (1071640576 bytes)
+no label, UUID=4eb9847b-3028-4b0a-8a34-f38373c9edd8
+</pre></div>
+<p>Update the swap device UUID (the one with <code>swap</code> and <code>sw</code> in its line) in
+<code>/etc/fstab</code> with the new one printed out by <code>mkswap</code> in the previous step:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo vim /etc/fstab
+</pre></div>
+<p>Finally, turn swap back on:</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>$ sudo swapon -a
+</pre></div>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/procedures/live-resize.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/procedures/live-resize.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_assumptions">Assumptions</a></li><li><a href="#h2_prerequisites">Prerequisites</a></li><ol><li><a href="#h3_on-the-kvm-hypervisor">On the KVM hypervisor</a></li><li><a href="#h3_on-the-vm-kvm-guest">On the VM (KVM guest)</a></li></ol><li><a href="#h2_method-1-fdisk-most-common">Method 1: fdisk (most common)</a></li><li><a href="#h2_method-2-parted-less-common">Method 2: parted (less common)</a></li><li><a href="#h2_conclusion-for-either-method-used-above">Conclusion (for either method used above):</a></li><ol><li><a href="#h3_let-the-kernel-know-that-the-partitions-have-changed">Let the kernel know that the partitions have changed</a></li><li><a href="#h3_resize-the-filesystem">Resize the filesystem</a></li><li><a href="#h3_re-create-and-re-enable-swap">Re-create and re-enable swap</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/">Procedures</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/">Accounts</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/alumni-reset/">Alumni account reset</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/association/">LDAP association</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/accounts/renaming/">Rename an account</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/hpc/">Adding users to the HPC cluster</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/backporting-packages/">Backporting Debian packages</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/vhost/">Configuring virtual hosting</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/new-host/">Creating new hosts (servers, desktops)</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/dmca/">DMCA</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/editing-docs/">Editing docs</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/granting-privileges/">Granting staff privileges</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/installing-updates/">Installing updates with apt-dater</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Live disk resizing</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/gapps/">Making OCF Google Apps accounts</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/xmpp/">Manually creating XMPP accounts</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/printing/">Printing maintenance</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/process-accounting/">Process accounting</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/restarting-services/">Restarting services</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/ssh-supernova/">SSHing into Supernova</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/ssl/">SSL certificates</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/setting-up-lacp/">Setting up bridging and link aggregation</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/setting-up-mdraid/">Setting up mdraid on servers</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/procedures/user-quotas/">User disk quotas</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.hpc.slurm-781d1f\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 797,
+      "first_words": "Slurm \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 853,
+      "first_words": "Slurm also intelligently queues jobs from differen..."
+    },
+    {
+      "index": 3,
+      "size": 662,
+      "first_words": "When to use srun versus sbatch If your job require..."
+    },
+    {
+      "index": 4,
+      "size": 940,
+      "first_words": "In order to allocate more resources and time to yo..."
+    },
+    {
+      "index": 5,
+      "size": 901,
+      "first_words": "Acceptable time formats include \"minutes\", \"minute..."
+    },
+    {
+      "index": 6,
+      "size": 919,
+      "first_words": "However, to pass options into SLURM, you'll need t..."
+    },
+    {
+      "index": 7,
+      "size": 748,
+      "first_words": "Your job's ID is output when a batch script is sub..."
+    },
+    {
+      "index": 8,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

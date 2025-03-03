@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs-232a20\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 651,
+      "first_words": "Documentation \u2013 Open Computing Facility Toggle na..."
+    },
+    {
+      "index": 2,
+      "size": 851,
+      "first_words": "About us Officers Where alumni have gone Communica..."
+    },
+    {
+      "index": 3,
+      "size": 665,
+      "first_words": "Ruby on Rails Web hosting Backups/Archiving Django..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

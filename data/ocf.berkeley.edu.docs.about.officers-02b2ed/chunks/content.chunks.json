@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.about.officers-02b2ed\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 986,
+      "first_words": "Officers \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 821,
+      "first_words": "Site Managers Oliver Ni <oliverni> Laksith Venkate..."
+    },
+    {
+      "index": 3,
+      "size": 9739,
+      "first_words": "Term Officers Fall 2024 General Managers Jaysa Gar..."
+    },
+    {
+      "index": 4,
+      "size": 1369,
+      "first_words": "Callahan <calman> Site Managers Stephen McCamant <..."
+    },
+    {
+      "index": 5,
+      "size": 1081,
+      "first_words": "Percival <percival> Site Managers Kenneth Nishimot..."
+    },
+    {
+      "index": 6,
+      "size": 773,
+      "first_words": "Mark Ping <emarkp> (09/10/92\u201310/29/92) David Pasch..."
+    },
+    {
+      "index": 7,
+      "size": 490,
+      "first_words": "Banerjee <psb> Site Managers Adam Glass <glass> Sp..."
+    },
+    {
+      "index": 8,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

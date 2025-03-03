@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.about.formerstaff-555414\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 720,
+      "first_words": "Where alumni have gone \u2013 Open Computing Facility..."
+    },
+    {
+      "index": 2,
+      "size": 318,
+      "first_words": "While we obviously can't claim credit for everyone..."
+    },
+    {
+      "index": 3,
+      "size": 1026,
+      "first_words": "Some of the places OCF staffers have gone on to wo..."
+    },
+    {
+      "index": 4,
+      "size": 865,
+      "first_words": "Eventbrite Facebook Forte Software (now part of Su..."
+    },
+    {
+      "index": 5,
+      "size": 805,
+      "first_words": "Yelp Yggdrasil Computing, Inc. Z-Code Software (ac..."
+    },
+    {
+      "index": 6,
+      "size": 851,
+      "first_words": "On the Berkeley Campus Elsewhere Other groups On t..."
+    }
+  ]
+}

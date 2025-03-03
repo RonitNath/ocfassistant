@@ -1,0 +1,7 @@
+However, to pass options into SLURM, you'll need to add some special comment lines, which are in the format #SBATCH [command-line flag]=[value] . They must be after the shebang but before any non-comments .
+
+For example, a batch script which uses 4 CPUs, 8 GB of RAM, and 1 GPU has its contents as: #!/bin/bash #SBATCH --ntasks=1 #SBATCH --cpus-per-task=4 #SBATCH --mem=8G #SBATCH --gres=gpu:1 echo "Hello world!"
+
+You submit batch scripts to Slurm with: sbatch [ path to batch script ] Output from sbatch By default, output from your job ( stdout and stderr ) is placed into a file in the directory you ran sbatch from. it will be named slurm-[your job's numeric ID].out . To specify a different output file, use the -o / --output flag.
+
+For example, to redirect output to a file named job.log in your home directory, use --output=~/job.log . Cancelling a job To cancel your job before it's run, run scancel [job ID] .

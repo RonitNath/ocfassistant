@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.privacy-6ad3fb\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 769,
+      "first_words": "Privacy Policy \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 938,
+      "first_words": "Types of personal information we collect Informati..."
+    },
+    {
+      "index": 3,
+      "size": 897,
+      "first_words": "Note: our web hosting service ( https://ocf.io/web..."
+    },
+    {
+      "index": 4,
+      "size": 976,
+      "first_words": "How we secure your information Your data is secure..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

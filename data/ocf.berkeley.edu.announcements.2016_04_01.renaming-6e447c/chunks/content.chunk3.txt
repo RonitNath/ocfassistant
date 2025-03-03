@@ -1,0 +1,3 @@
+We're also working with facilities to get some stickers printed to cover up the signs in the hallways of MLK. The Open Facility for Computing is an all-volunteer, student-run organization. It was founded in 1989 to serve the interests of the UC Berkeley campus community. Questions about this change? Please reach out to devnull@ofc.berkeley.edu .
+
+About our organization Founded back in 1989 by an agile team of Node.js developers disillusioned by a lack of free campus printing, the OFC (formerly OCF) has established itself as an important stop along the day of any busy undergrad.

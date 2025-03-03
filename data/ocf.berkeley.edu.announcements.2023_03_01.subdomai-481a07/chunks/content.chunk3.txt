@@ -1,0 +1,7 @@
+Furthermore, the responsibility of migrating the websites of hundreds of student groups has now been thrust onto the all-volunteer staff of the OCF - seemingly without clear guidance or instruction from those making this decision.
+
+We appreciate the vast amounts of support from the ASUC and many other student organizations during this process and are grateful to have formed new partnerships with our users through this experience. Thank you.
+
+Read the university's announcement here: https://brand.berkeley.edu/news/top-level-sub-domain-name-changes-student-organizations General Overview Since 1998, the Open Computing Facility has hosted websites for UC Berkeley students, faculty, and staff. Currently we host websites for 633 student organizations.
+
+As an integral part of the UC Berkeley community, student groups until recently were allowed to register a subdomain of berkeley.edu for these websites (i.e. group.berkeley.edu).

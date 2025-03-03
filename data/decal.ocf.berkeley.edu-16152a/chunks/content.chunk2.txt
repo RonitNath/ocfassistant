@@ -1,0 +1,7 @@
+Slides link are released, but are not official/finalized until after lecture is given on Tuesday 7pm. Lab 4 has been released and can be accessed below. Please use the corresponding Ed thread for Lab 4 related questions. Any questions? Post on Ed or reach us at decal@ocf.berkeley.edu !
+
+Weekly Schedule 6:30 PM 7:00 PM 7:30 PM 8:00 PM 8:30 PM 9:00 PM Monday Tuesday Lecture 7:00 PMâ8:00 PM OCF Lab Lab 8:00 PMâ9:00 PM OCF Lab Wednesday Thursday Friday Calendar Week 0: 1/28/2025 Infosession Tues 1/28 & Thurs 1/30, 7-8pm @ OCF Lab Lab Lab 0 due Sat.
+
+2/1 Week 1: 2/04/2025 Lecture History of UNIX, Intro to Linux, FOSS : Slides , Recording Lab Lab 1 due Sat.
+
+2/8 Week 2: 2/11/2025 Lecture Core Shell & Shell Scripting : Slides , Recording Lab Lab 2 due Sat. 2/15 Week 3: 2/18/2025 Lecture Packages : Slides , Recording Lab Lab 3 due Sat. 2/22 Week 4: 2/25/2025 Lecture Services : Slides , Recording Lab Lab 4 due Sat.

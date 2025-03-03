@@ -1,0 +1,804 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-staff-backend-kubernetes">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/staff/backend/kubernetes/" />
+
+        <title>
+            
+                
+                    Kubernetes &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/staff/backend/kubernetes/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Kubernetes</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><li><a href="#h2_kubernetes">Kubernetes</a></li><li><a href="#h2_kubernetes-cluster">Kubernetes Cluster</a></li><ol><li><a href="#h3_masters">Masters</a></li><ol><li><a href="#h4_why-the-odd-number-of-masters">Why the odd number of masters?</a></li></ol><li><a href="#h3_workers">Workers</a></li><li><a href="#h3_pods">Pods</a></li></ol><li><a href="#h2_ocf-kubernetes-cluster-bootstrapping">OCF Kubernetes Cluster Bootstrapping</a></li><ol><li><a href="#h3_kubernetes-pki">Kubernetes PKI</a></li><li><a href="#h3_ocf-kubernetes-configuration">OCF Kubernetes Configuration</a></li></ol><li><a href="#h2_getting-traffic-into-the-cluster">Getting traffic into the cluster</a></li><ol><li><a href="#h3_why-didnt-we-use-metallb">Why didn't we use MetalLB?</a></li><li><a href="#h3_why-dont-we-copy-marathon-and-specify-one-port-per-service">Why don't we copy Marathon and specify one port per service?</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p>At the OCF we have fully migrated all services from Mesos/Marathon to
+<a href="https://kubernetes.io/">Kubernetes</a>. In this document we will explain the design of our
+Kubernetes cluster while also touching briefly on relevant core concepts. This
+page is <em>not</em> a <code>HOWTO</code> for deploying services or troubleshooting a bad
+cluster. Rather, it is meant to explain architectural considerations such that
+current work can be built upon.  Although, reading this document will help you
+both deploy services in the OCF Kubernetes cluster and debug issues when they
+arise.</p>
+<h2 id="h2_kubernetes">Kubernetes <a class="anchor" href="#h2_kubernetes"><span></span></a></h2>
+<p>Kubernetes is a container orchestration system open sourced by Google. Its main
+purpose is to schedule services to run on a cluster of computers while
+abstracting away the existence of the cluster from the services. The design of
+Kubernetes is loosely based on Google's internal orchestration system Borg.
+Kubernetes is now maintained by the <a href="https://cncf.io">Cloud Native Computing Foundation</a>,
+which is a part of the Linux Foundation. Kubernetes can flexibly handle
+replication, impose resource limits, and recover quickly from failures.</p>
+<h2 id="h2_kubernetes-cluster">Kubernetes Cluster <a class="anchor" href="#h2_kubernetes-cluster"><span></span></a></h2>
+<p>A Kubernetes cluster consists of "master" nodes and "worker" nodes. In short,
+master nodes share state to manage the cluster and schedule jobs to run on
+workers. <a href="/docs/staff/backend/kubernetes/#h3_why-the-odd-number-of-masters">It is considered best practice to run an odd number of masters</a>, and currently our
+cluster has three masters.</p>
+<h3 id="h3_masters">Masters <a class="anchor" href="#h3_masters"><span></span></a></h3>
+<p>Kubernetes masters share state via <a href="https://github.com/etcd-io/etcd">etcd</a>, a distributed key-value
+store (KVS) implementing the <a href="https://raft.github.io/raft.pdf">Raft</a> protocol. The three main goals of
+Raft are:</p>
+<ol>
+<li>Leader elections in case of failure.</li>
+<li>Log replication across all masters.</li>
+<li>Ensuring log integrity across all masters.</li>
+</ol>
+<p>One master is elected as a leader of the cluster. The leader has the ability to
+commit writes to the KVS. <code>etcd</code> then reliably replicates this state across
+every master, so that if the leader fails, another master can be elected and no
+state will be lost in the process. Do note that the state stored in <code>etcd</code> is
+scheduling state, service locations, and other cluster metadata; it does <em>not</em>
+keep state for the services running on the cluster.</p>
+<h4 id="h4_why-the-odd-number-of-masters">Why the odd number of masters? <a class="anchor" href="#h4_why-the-odd-number-of-masters"><span></span></a></h4>
+<p>Consider a cluster of <em>N</em> members. When masters form quorum to agree on cluster
+state, quorum must have <em>at least</em> ⌊<em>N</em>/2⌋+1 members. Every new odd number in a
+cluster with <em>M</em> &gt; 1 masters adds one more node of fault tolerance.  Therefore,
+adding an extra node to an odd numbered cluster gives us nothing. If interested
+read more <a href="https://coreos.com/etcd/docs/latest/faq.html#what-is-failure-tolerance">here</a>.</p>
+<h3 id="h3_workers">Workers <a class="anchor" href="#h3_workers"><span></span></a></h3>
+<p>Workers are the brawn in the Kubernetes cluster. While master nodes are
+constantly sharing data, managing the control plane (routing inside the
+Kubernetes cluster), and scheduling services, workers primarily run
+<a href="https://kubernetes.io/docs/concepts/workloads/pods/pod/">pods</a>.  <code>kubelet</code> is the service that executes pods as dictated by the
+control plane, performs health checks, and recovers from pod failures should
+they occur.  Workers also run an instance of <code>kube-proxy</code>, which forwards
+control plane traffic to the correct <code>kubelet</code>.</p>
+<h3 id="h3_pods">Pods <a class="anchor" href="#h3_pods"><span></span></a></h3>
+<p>In the Kubernetes world, pods are the smallest computing unit. A pod is made up
+of one or more containers. The difference between a pod and a standalone
+container is best illustrated by an example. Consider <a href="https://github.com/ocf/ocfweb/tree/master/services">ocfweb</a>; it is
+composed of several containers—the web container, static container, and worker
+container.  In Kubernetes, together these three containers form one pod, and it
+is pods that can be scaled up or down. A failure in any of these containers
+indicates a failure in the entire pod. An astute reader might wonder: <em>if pods
+can be broken down into containers, how can pods possibly be the smallest
+unit?</em> Do note that if one wished to deploy a singleton container, it would
+still need to be wrapped in the pod abstraction for Kubernetes to do anything
+with it.</p>
+<p>While pods are essential for understanding Kubernetes, when writing services we
+don't actually deal in pods but one further abstraction,
+<a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">deployments</a>, which create pods for us.</p>
+<h2 id="h2_ocf-kubernetes-cluster-bootstrapping">OCF Kubernetes Cluster Bootstrapping <a class="anchor" href="#h2_ocf-kubernetes-cluster-bootstrapping"><span></span></a></h2>
+<p>Since almost all OCF architecture is bootstapped using Puppet, it was necessary
+for us to do the same with Kubernetes. We rely on the
+<a href="https://github.com/puppetlabs/puppetlabs-kubernetes">puppetlabs-kubernetes</a> module to handle initial
+bootstrapping and bolt OCF specific configurations on top of it.
+<code>puppetlabs-kubernetes</code> performs two crucial tasks:</p>
+<ol>
+<li>Installs <code>etcd</code>, <code>kubelet</code>, <code>kube-proxy</code>, and <code>kube-dns</code>, initializes the
+cluster, and applies a networking backend.</li>
+<li>Generates the required <a href="https://kubernetes.io/docs/setup/certificates">PKI for Kubernetes and etcd</a>.</li>
+</ol>
+<p>Do note that <code>puppetlabs-kubernetes</code> is still very much a work in progress. If
+you notice an issue in the module you are encouraged to write a patch and send
+it upstream.</p>
+<h3 id="h3_kubernetes-pki">Kubernetes PKI <a class="anchor" href="#h3_kubernetes-pki"><span></span></a></h3>
+<p>All the private keys and certs for the PKI are in the puppet private share, in
+<code>/opt/puppet/shares/private/kubernetes</code>. We won't go into detail of everything
+contained there, but Kubernetes and <code>etcd</code> communication is authenticated using
+client certificates. All the necessary items for workers are included in
+<code>os/Debian.yaml</code>, although adding a new master to the cluster requires a manual
+re-run of <a href="https://github.com/puppetlabs/puppetlabs-kubernetes#Setup">kubetool</a> to generate new <code>etcd server</code> and
+<code>etcd peer</code> certs.</p>
+<h3 id="h3_ocf-kubernetes-configuration">OCF Kubernetes Configuration <a class="anchor" href="#h3_ocf-kubernetes-configuration"><span></span></a></h3>
+<p>Currently, the OCF has three Kubernetes masters: (1) <code>deadlock</code>, (2) <code>coup</code>,
+and (3) <code>autocrat</code>. A Container Networking Interface (<code>cni</code>) is the last piece
+required for a working cluster. The <code>cni</code>'s purpose is to faciltate intra-pod
+communication. <code>puppetlabs-kubernetes</code> supports two choices: <code>weave</code> and
+<code>flannel</code>. Both solutions work out-the-box, and we've had success with
+<code>flannel</code> thus far so we've stuck with it.</p>
+<h2 id="h2_getting-traffic-into-the-cluster">Getting traffic into the cluster <a class="anchor" href="#h2_getting-traffic-into-the-cluster"><span></span></a></h2>
+<p>One of the challenges with running Kubernetes on bare-metal is getting traffic
+into the cluster. Kubernetes is commonly deployed on <code>AWS</code>, <code>GCP</code>, or <code>Azure</code>,
+so Kubernetes has native support for ingress on these providers. Since we are
+on bare-metal, we designed our own scheme for ingressing traffic.</p>
+<p>The figure below demonstrates a request made for <code>templates.ocf.berkeley.edu</code>.
+For the purpose of simplicity, we assume <code>deadlock</code> is the current <code>keepalived</code>
+master, and that <code>nginx</code> will send this request to <code>Worker1</code>.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>                                    ----------------------------------------------------
+                                    |                 Kubernetes Cluster               |
+                nginx               |                                                  |
+             ----------             |                    Ingress          Ocfweb Pod   |
+             |autocrat|             | Host: Templates   ---------         ---------    |
+             ----------             |      ---------&gt;   |Worker1| -       |Worker1|    |
+                                    |     /             ---------  \      ---------    |
+                                    |    /                          |                  |
+                nginx               |   /                Ingress    |   Templates Pod  |
+         -------------------  ✘ SSL /  /                ---------   |     ---------    |
+REQ --&gt;  |    deadlock:    |   ---&gt;   -                 |Worker2|   ---&gt;  |Worker2|    |
+         |keepalived master|        \                   ---------         ---------    |
+         -------------------        |                                                  |
+                                    |                                                  |
+                nginx               |                    Ingress         Grafana Pod   |
+             ----------             |                   ---------         ---------    |
+             |  coup  |             |                   |Worker3|         |Worker3|    |
+             ----------             |                   ---------         ---------    |
+                                    ----------------------------------------------------
+</pre></div>
+<p>All three Kubernetes masters are running an instance of <a href="https://nginx.org/">Nginx</a>.
+Furthermore, the masters are all running <code>keepalived</code>. The traffic for any
+Kubernetes HTTP service will go through the current <code>keepalived</code> master, which
+holds the virtual IP for all Kubernetes services. The <code>keepalived</code> master is
+randomly chosen but will move hosts in the case of failure.  <code>nginx</code> will
+terminate ssl and pass the request on to a worker running <a href="https://github.com/kubernetes/ingress-nginx">Ingress
+Nginx</a>.  Right now ingress is running as a <a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport">NodePort</a>
+service on all workers (Note: we can easily change this to be a subset of
+workers if our cluster scales such that this is no longer feasible).  The
+ingress worker will inspect the <code>Host</code> header and forward the request on to the
+appropriate pod where the request is finally processed. <em>Do note that the
+target pod is not necessarily on the same worker that routed the traffic</em>.</p>
+<h3 id="h3_why-didnt-we-use-metallb">Why didn't we use MetalLB? <a class="anchor" href="#h3_why-didnt-we-use-metallb"><span></span></a></h3>
+<p><code>MetalLB</code> was created so a bare-metal Kubernetes cluster could use <code>Type:
+LoadBalancer</code> in Service definitions. The problem is, in <code>L2</code> mode, it takes a
+pool of IPs and puts your service on a random IP in that pool. How one makes
+DNS work in this configuration is completely unspecified. We would need to
+dynamically update our DNS, which sounds like a myriad of outages waiting to
+happen. <code>L3</code> mode would require the OCF dedicating a router to Kubernetes.</p>
+<h3 id="h3_why-dont-we-copy-marathon-and-specify-one-port-per-service">Why don't we copy Marathon and specify one port per service? <a class="anchor" href="#h3_why-dont-we-copy-marathon-and-specify-one-port-per-service"><span></span></a></h3>
+<p>In our previous Marathon configuration, we gave each service a port on the load
+balancer and traffic coming into that port is routed accordingly. First, in
+Kubernetes we would emulate this behavior using <code>NodePort</code> services, and all
+Kubernetes documentation discourages this. Second, it's ugly. Every time we add
+a new service we need to modify the load balancer configuration in Puppet. With
+our Kubernetes configuration we can add unlimited HTTP services without
+touching Puppet.</p>
+<p>But wait! The Kubernetes documentation says not to use <code>NodePort</code> services in
+production, and you just said that above too! True, but we only run <em>one</em>
+<code>NodePort</code> service, <code>ingress-nginx</code>, to keep us from needing other <code>NodePort</code>
+services.  SoundCloud, a music streaming company that runs massive bare-metal
+Kubernetes clusters, also has an interesting blog post about <a href="https://developers.soundcloud.com/blog/how-soundcloud-uses-haproxy-with-kubernetes-for-user-facing-traffic">running NodePort
+in production</a>.</p>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/staff/backend/kubernetes.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/staff/backend/kubernetes.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><li><a href="#h2_kubernetes">Kubernetes</a></li><li><a href="#h2_kubernetes-cluster">Kubernetes Cluster</a></li><ol><li><a href="#h3_masters">Masters</a></li><ol><li><a href="#h4_why-the-odd-number-of-masters">Why the odd number of masters?</a></li></ol><li><a href="#h3_workers">Workers</a></li><li><a href="#h3_pods">Pods</a></li></ol><li><a href="#h2_ocf-kubernetes-cluster-bootstrapping">OCF Kubernetes Cluster Bootstrapping</a></li><ol><li><a href="#h3_kubernetes-pki">Kubernetes PKI</a></li><li><a href="#h3_ocf-kubernetes-configuration">OCF Kubernetes Configuration</a></li></ol><li><a href="#h2_getting-traffic-into-the-cluster">Getting traffic into the cluster</a></li><ol><li><a href="#h3_why-didnt-we-use-metallb">Why didn't we use MetalLB?</a></li><li><a href="#h3_why-dont-we-copy-marathon-and-specify-one-port-per-service">Why don't we copy Marathon and specify one port per service?</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/">Infrastructure</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/backups/">Backups</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/buster/">Debian Buster upgrade</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/firewall/">External firewall</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/git/">Git</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/internal-firewalls/">Internal firewalls</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/jenkins/">Jenkins</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/libvirt/">KVM/Libvirt</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/kerberos/">Kerberos</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <strong>Kubernetes</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/ldap/">LDAP</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/">Mail</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/mail/vhost/">Virtual hosted mail</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/switch/">Managed switches</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/munin/">Munin</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/printhost/">Printhost</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/prometheus/">Prometheus</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/puppet/">Puppet</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/rt/">Request Tracker</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/staff/backend/servers/">Servers</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

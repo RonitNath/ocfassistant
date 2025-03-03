@@ -1,0 +1,3 @@
+Then save your changes using the button at the bottom of the page and ZNC should automatically authenticate with NickServ if you get disconnected from ZNC.
+
+Edit this Page Page History Table of Contents Option 1: Use our web client Option 2: Using your own client Option 3: Over SSH Option 4: Over XMPP Authenticating with NickServ Registering with NickServ ZNC Creating a ZNC account Configuring ZNC Connecting to ZNC Setting up NickServ to work with ZNC More in this category Contact us Internet Relay Chat (IRC) Slack OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

@@ -1,0 +1,7 @@
+You have a couple of options for chatting: Option 1: Use our web client We have a web client set up at irc.ocf.berkeley.edu using the popular open-source web client The Lounge .
+
+It's already set up with our IRC network settings, so all you need to do is enter a nickname that you want to use and click the connect button at the bottom. You can enter your real name if you want, but it's not required.
+
+Once connected, you can type messages in the bottom bar and press enter and the OCF staff connected will respond to you as soon as we see your messages. Option 2: Using your own client You can connect using any IRC client.
+
+If you do not already have an IRC client, we recommend using Hexchat because it is free, open source, and generally easy to use.

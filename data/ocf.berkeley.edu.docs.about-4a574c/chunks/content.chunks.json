@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.about-4a574c\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 946,
+      "first_words": "About us \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 880,
+      "first_words": "The Open Computing Facility provides free computin..."
+    },
+    {
+      "index": 3,
+      "size": 856,
+      "first_words": "To help people explore the field of computing and..."
+    },
+    {
+      "index": 4,
+      "size": 925,
+      "first_words": "Policies for this cluster and decisions for the OC..."
+    },
+    {
+      "index": 5,
+      "size": 801,
+      "first_words": "Edit this Page Page History More in this category..."
+    }
+  ]
+}

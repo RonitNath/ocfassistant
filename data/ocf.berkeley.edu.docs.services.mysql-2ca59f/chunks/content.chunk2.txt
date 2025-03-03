@@ -1,0 +1,11 @@
+In practice, you shouldn't notice any important differences between the two, though MariaDB does contain some improvements . Policies We limit users to 1 database, and this database has the same name as your username.
+
+As a user of shared database server we ask you to respect the community and refrain from any activities that will hurt the quality of service for other users.
+
+We understand this policy is vague, so our suggested maximum size for databases is 1GB, and for individual tables 256 MB.
+
+Storing large amounts of data is not a problem unless the server has to perform complex queries on this data.
+
+Web-based interface for editing If you are looking for a familiar phpMyAdmin interface, visit https://pma.ocf.berkeley.edu .
+
+Creating a MySQL database We have two options to create a database using the terminal or our web management tool. Web-based tool Click here and type in your username and password.

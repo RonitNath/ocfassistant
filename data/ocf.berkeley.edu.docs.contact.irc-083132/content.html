@@ -1,0 +1,437 @@
+
+
+
+<!doctype html>
+<!--
+      Think this site is hideous? We could use your help!
+      More info at http://www.ocf.berkeley.edu/about/staff :-)
+
+      This is ocfweb version 2396812250bda83100753749b8a6a3fa0a0f64d9
+      https://github.com/ocf/ocfweb/
+-->
+<html class="page-doc page-doc-contact-irc">
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        
+        
+            <meta property="og:image" content="https://static.ocf.berkeley.edu/img/penguin-opengraph.png"/>
+        
+
+        <link rel="canonical" href="https://www.ocf.berkeley.edu/docs/contact/irc/" />
+
+        <title>
+            
+                
+                    Internet Relay Chat (IRC) &ndash;
+                
+                Open Computing Facility
+            
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,500,500italic" rel="stylesheet">
+        <link href="https://static.ocf.berkeley.edu/scss/site.scss.css" rel="stylesheet" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-16.png" sizes="16x16" />
+        <link rel="icon" href="https://static.ocf.berkeley.edu/img/favicon/favicon-32.png" sizes="32x32" />
+    </head>
+
+
+    <body>
+        <div class="navbar ocf-navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Open Computing Facility</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-sm"><a href="/account/register/">Join</a></li>
+                        <li class="dropdown">
+                            <a href="/docs/about/" class="dropdown-toggle" data-toggle="dropdown">
+                                About <span class="hidden-sm">Us</span> <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/about/">Our Organization</a></li>
+                                <li><a href="/about/staff">Joining the Staff Team</a></li>
+                                <li><a href="/stats/">Lab Statistics</a></li>
+                                <li><a href="/docs/staff/backend/">Backend Infrastructure</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="/docs/services/" class="dropdown-toggle" data-toggle="dropdown">
+                                Services <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/docs/services/lab/">Computer Lab</a></li>
+                                <li><a href="/docs/services/lab/printing/">Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/SFTP (Shell)</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/mysql/">MySQL Database</a></li>
+                                <li><a href="/docs/services/mirrors/">Software Mirrors</a></li>
+                                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/staff-hours">Staff Hours</a></li>
+                        <li><a href="/docs/">Help</a></li>
+                        <li><a href="/docs/contact/">
+                                Contact <span class="hidden-sm">Us</span>
+                        </a></li>
+
+                        
+                            <li>
+                                <a href="/login/login/?next=/docs/contact/irc/" class="ocf-account-dropdown">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    Log In
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ocf-status-bar">
+            <div class="container">
+                <p>
+                    
+                        
+                            <strong>Lab Currently Closed</strong>
+                        
+                        <span class="nowrap">
+                            
+                                Hours:
+                            
+                            9am–8pm
+                            on Monday 
+                            <a class="subtle" href="/docs/services/lab/">more &raquo;</a>
+                        </span>
+                    
+                </p>
+            </div>
+        </div> -->
+
+        
+            
+                <div class="ocf-hero ocf-page-title">
+                    <div class="container">
+                        <h1>Internet Relay Chat (IRC)</div>
+                    </div>
+                </div>
+            
+        
+
+        
+        <div class="ocf-content container">
+            
+                
+            
+            
+<div class="row">
+    <div class="col-sm-8 ocf-content-block">
+        
+          
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <a data-toggle="collapse" data-target="#toc" class="doc-collapse-toggle collapsed">
+          <span class="glyphicon" aria-hidden="true"></span>
+          Table of Contents
+        </a>
+        <div id="toc" class="collapse">
+          <ol><ol><li><a href="#h3_option-1-use-our-web-client">Option 1: Use our web client</a></li><li><a href="#h3_option-2-using-your-own-client">Option 2: Using your own client</a></li><li><a href="#h3_option-3-over-ssh">Option 3: Over SSH</a></li><li><a href="#h3_option-4-over-xmpp">Option 4: Over XMPP</a></li></ol><li><a href="#h2_authenticating-with-nickserv">Authenticating with NickServ</a></li><ol><li><a href="#h3_registering-with-nickserv">Registering with NickServ</a></li></ol><li><a href="#h2_znc">ZNC</a></li><ol><li><a href="#h3_creating-a-znc-account">Creating a ZNC account</a></li><li><a href="#h3_configuring-znc">Configuring ZNC</a></li><li><a href="#h3_connecting-to-znc">Connecting to ZNC</a></li><li><a href="#h3_setting-up-nickserv-to-work-with-znc">Setting up NickServ to work with ZNC</a></li></ol></ol>
+        </div>
+    
+  </div>
+</div>
+
+
+        
+        <p>OCF staff often use IRC to communicate. If you have questions, feel free to
+drop by &mdash; it's often faster than emailing us, especially for
+discussion-type questions.</p>
+<p>We normally chat in the <code>#rebuild</code> channel. For historical reasons, <code>#ocf</code> is
+mostly for non-OCF-related discussion.</p>
+<p>You have a couple of options for chatting:</p>
+<h3 id="h3_option-1-use-our-web-client">Option 1: Use our web client <a class="anchor" href="#h3_option-1-use-our-web-client"><span></span></a></h3>
+<p>We have a web client set up at <a href="https://irc.ocf.berkeley.edu">irc.ocf.berkeley.edu</a> using the popular
+open-source web client <a href="https://thelounge.github.io">The Lounge</a>. It's already set up with our
+IRC network settings, so all you need to do is enter a nickname that you want
+to use and click the connect button at the bottom. You can enter your real name
+if you want, but it's not required. Once connected, you can type messages in
+the bottom bar and press enter and the OCF staff connected will respond to you
+as soon as we see your messages.</p>
+<h3 id="h3_option-2-using-your-own-client">Option 2: Using your own client <a class="anchor" href="#h3_option-2-using-your-own-client"><span></span></a></h3>
+<p>You can connect using any IRC client. If you do not already have an IRC client,
+we recommend using <a href="https://hexchat.github.io">Hexchat</a> because it is free, open source, and
+generally easy to use. Our server settings are listed below:</p>
+<ul>
+<li><strong>Server:</strong> <code>irc.ocf.berkeley.edu</code></li>
+<li><strong>Port:</strong> <code>6697</code> (requires SSL/TLS)</li>
+<li><strong>Channels:</strong> <code>#rebuild</code> (best to reach staff), <code>#ocf</code> (best for off-topic)</li>
+</ul>
+<h3 id="h3_option-3-over-ssh">Option 3: Over SSH <a class="anchor" href="#h3_option-3-over-ssh"><span></span></a></h3>
+<p>If you're logged in to the OCF login server via <a href="/docs/services/shell/">SSH</a>, you
+can use the pyrc script to easily connect to IRC. It will automatically launch
+a tmux session to contain your IRC session, so that you aren't disconnected
+when you close the terminal.</p>
+<p>To do so, just type <code>pyrc</code> and hit enter. irssi will launch; press alt +
+left/right to switch which channel you're viewing.</p>
+<h3 id="h3_option-4-over-xmpp">Option 4: Over XMPP <a class="anchor" href="#h3_option-4-over-xmpp"><span></span></a></h3>
+<p>If you have an XMPP account, you can join IRC channels with room name
+<code>#channelname</code> and server name <code>irc.ocf.berkeley.edu</code> (alternatively,
+<code>#channelname@irc.ocf.berkeley.edu</code> depending on your client).</p>
+<p>An <a href="/docs/services/xmpp/">`ocf.berkeley.edu` XMPP account</a> can be used, but an
+account on any federated server will work.</p>
+<h2 id="h2_authenticating-with-nickserv">Authenticating with NickServ <a class="anchor" href="#h2_authenticating-with-nickserv"><span></span></a></h2>
+<p>To make sure that you can keep the same username, even after being disconnected
+and reconnecting again, you can register with NickServ.</p>
+<h3 id="h3_registering-with-nickserv">Registering with NickServ <a class="anchor" href="#h3_registering-with-nickserv"><span></span></a></h3>
+<p>To register with NickServ, choose a password and enter the command <code>/msg
+NickServ register [password] [email]</code> into your IRC client. NickServ should
+reply after you run the registration command that you have been registered with
+your email. To see if you are registered properly, try running <code>/msg NickServ
+info</code>. You should see your email address, and where you are logged in from,
+among other results.</p>
+<h2 id="h2_znc">ZNC <a class="anchor" href="#h2_znc"><span></span></a></h2>
+<p><a href="https://wiki.znc.in/ZNC">ZNC</a> is an IRC network bouncer. It permanently connects to the IRC
+server, so users connecting through it can preserve their chat session. Most
+users don't need this, but IRC regulars may appreciate the extended chat
+history and the absence of join/leave messages.</p>
+<p>ZNC also integrates with NickServ, automatically authenticating for you with
+a nickserv module if you save a password with ZNC.</p>
+<h3 id="h3_creating-a-znc-account">Creating a ZNC account <a class="anchor" href="#h3_creating-a-znc-account"><span></span></a></h3>
+<p>Ask a root staffer (or ping #rebuild) to create a ZNC username / password.</p>
+<h3 id="h3_configuring-znc">Configuring ZNC <a class="anchor" href="#h3_configuring-znc"><span></span></a></h3>
+<p>Configuration is most easily done through the <a href="https://irc.ocf.berkeley.edu:4095">ZNC web interface</a>. It
+requires you to login using your staff-created ZNC account.</p>
+<p>Once you've logged in, under <code>Your Settings</code> you should set the following
+fields:</p>
+<ul>
+<li><strong>Nickname</strong>: your nickname</li>
+<li><strong>Alt. Nickname</strong>: your alternate nickname, if your primary is taken</li>
+<li><strong>Ident</strong>: should be same as nickname, used to uniquely identify you from
+everyone else using IRC</li>
+<li><strong>Networks</strong>: add a network with server <code>irc.ocf.berkeley.edu +6697</code>,
+<strong>space included</strong>.</li>
+</ul>
+<p>Click save at the bottom, and your ZNC account should be setup to connect to
+the main IRC server.</p>
+<h3 id="h3_connecting-to-znc">Connecting to ZNC <a class="anchor" href="#h3_connecting-to-znc"><span></span></a></h3>
+<p>The OCF ZNC server settings are:</p>
+<ul>
+<li><strong>Server:</strong> <code>irc.ocf.berkeley.edu</code></li>
+<li><strong>Port:</strong> <code>4095</code> (requires SSL/TLS)</li>
+</ul>
+<p>You should also set your IRC client login settings:</p>
+<ul>
+<li><strong>Use SSL [...]</strong>: True</li>
+<li><strong>Login method</strong>: <code>Server password (/PASS password)</code></li>
+<li><strong>Password</strong>: your ZNC <code>password</code>, or <code>user:password</code></li>
+</ul>
+<p>Once you have setup both ZNC and your IRC client, you should be able to
+connect to IRC normally.</p>
+<h3 id="h3_setting-up-nickserv-to-work-with-znc">Setting up NickServ to work with ZNC <a class="anchor" href="#h3_setting-up-nickserv-to-work-with-znc"><span></span></a></h3>
+<p>If you are <a href="/docs/staff/tips/staffvm/znc/">using ZNC</a>, load the <a href="https://wiki.znc.in/Nickserv">NickServ
+module</a> by running <code>/znc LoadMod nickserv</code> while connected to your
+ZNC server. Then, in your ZNC web admin interface, log in and go to <code>Your
+Settings</code> under either the global or user modules links. Under the Networks
+section, click on the <code>Edit</code> link next to the OCF network and scroll down to
+the Modules section. Enable the <code>nickserv</code> module and type the password you
+used to register with NickServ into the arguments box. Then save your changes
+using the button at the bottom of the page and ZNC should automatically
+authenticate with NickServ if you get disconnected from ZNC.</p>
+
+        
+    </div>
+
+    <div class="col-sm-4 ocf-sidebar">
+        
+            <p class="page-github-icons">
+                <a class="edit-this-page" href="https://github.com/ocf/ocfweb/edit/master/ocfweb/docs/docs/contact/irc.md">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Edit this Page
+                </a>
+                <a class="page-history" href="https://github.com/ocf/ocfweb/commits/master/ocfweb/docs/docs/contact/irc.md">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    Page History
+                </a>
+            </p>
+            
+<div class="dummy">
+  <div class="ocf-doc-toc">
+    
+        <h3>Table of Contents</h3>
+        <ol><ol><li><a href="#h3_option-1-use-our-web-client">Option 1: Use our web client</a></li><li><a href="#h3_option-2-using-your-own-client">Option 2: Using your own client</a></li><li><a href="#h3_option-3-over-ssh">Option 3: Over SSH</a></li><li><a href="#h3_option-4-over-xmpp">Option 4: Over XMPP</a></li></ol><li><a href="#h2_authenticating-with-nickserv">Authenticating with NickServ</a></li><ol><li><a href="#h3_registering-with-nickserv">Registering with NickServ</a></li></ol><li><a href="#h2_znc">ZNC</a></li><ol><li><a href="#h3_creating-a-znc-account">Creating a ZNC account</a></li><li><a href="#h3_configuring-znc">Configuring ZNC</a></li><li><a href="#h3_connecting-to-znc">Connecting to ZNC</a></li><li><a href="#h3_setting-up-nickserv-to-work-with-znc">Setting up NickServ to work with ZNC</a></li></ol></ol>
+    
+  </div>
+</div>
+
+
+
+            <h3>More in this category</h3>
+            
+
+
+    <li>
+        
+            <a href="/docs/contact/">Contact us</a>
+        
+
+
+<ul>
+    
+        
+
+
+    <li>
+        
+            <strong>Internet Relay Chat (IRC)</strong>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+        
+
+
+    <li>
+        
+            <a href="/docs/contact/slack/">Slack</a>
+        
+
+
+<ul>
+    
+</ul>
+
+
+    </li>
+
+
+    
+</ul>
+
+
+    </li>
+
+
+
+        
+    </div>
+</div>
+
+        </div>
+        
+
+        
+            <div class="footer ocf-footer">
+                
+                    <div class="ocf-footer-top">
+                        <div class="container">
+                            <p class="text-center">OCF &hearts;
+                            <a href="https://www.linuxfoundation.org/">Linux</a>,
+                            <a href="https://kubernetes.io/">Kubernetes</a>,
+                            <a href="https://www.python.org/">Python</a>,
+                            <a href="https://nixos.org/">Nix</a>,
+                            and Free/Open-Source Software. <span class="nowrap">Sound like you?
+                            <a href="/about/staff">Join the staff team!</a></span></p>
+                        </div>
+                    </div>
+                
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5>About the OCF</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/about/">Overview</a></li>
+                                <li><a href="/docs/about/officers/">Officers</a></li>
+                                <li><a href="/docs/docs/">Official Documents</a></li>
+                                <li><a href="https://www.ocf.berkeley.edu/~staff/bod/">Board Meeting Minutes</a></li>
+                                <li><a href="/docs/privacy/">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Account Tools</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/account/register/">Join the OCF</a></li>
+                                <li><a href="/account/password/">Reset Password</a></li>
+                                <li><a href="/account/commands/">Manage My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/docs/services/lab/">Computer Lab &amp; Printing</a></li>
+                                <li><a href="/docs/services/web/">Web Hosting</a></li>
+                <li><a href="/docs/services/webapps/">Application Hosting</a></li>
+                                <li><a href="/docs/services/mail/">Email Hosting</a></li>
+                                <li><a href="/docs/services/shell/">SSH/Remote Shell</a></li>
+                <li><a href="/docs/services/hpc/">High Performance Computing</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <h5>Help and Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://status.ocf.berkeley.edu/">Status Blog</a></li>
+                                <li><a href="https://ocf.io/donate">Donate to the OCF</a></li>
+                                <li><a href="/docs/faq/">Frequently Asked Questions</a></li>
+                                <li><a href="/docs/">User Documentation</a></li>
+                                <li><a href="/docs/staff/">Staff Documentation</a></li>
+                                <li><a href="/docs/contact/">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ocf-copyright">
+                        <p>The Open Computing Facility is run entirely by student volunteers.</p>
+                        <p>Copyright &copy; 1989&ndash;2025 Board of Directors of the Open Computing Facility.</p>
+                        <p>The Open Computing Facility is a Chartered Program of the ASUC.</p>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!-- Block intended to be overidden later for stuff like modals that should be under <body> -->
+        
+
+        <!-- Hack to make browsers load glyphicons immediately.
+
+             Without this, there is awkward flashing on some pages (e.g. docs)
+             when hovering over something and a glyphicon appears.
+        -->
+        <span style="font-family: 'Glyphicons Halflings';"></span>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://static.ocf.berkeley.edu/js/site.js"></script>
+
+        
+    </body>
+</html>

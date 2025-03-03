@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\decal.ocf.berkeley.edu-16152a\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 731,
+      "first_words": "Home | Sysadmin DeCal Link Search Menu Expand Doc..."
+    },
+    {
+      "index": 2,
+      "size": 923,
+      "first_words": "Slides link are released, but are not official/fin..."
+    },
+    {
+      "index": 3,
+      "size": 650,
+      "first_words": "3/1 Week 5: 3/04/2025 Lecture Networking 101 Lab L..."
+    }
+  ]
+}

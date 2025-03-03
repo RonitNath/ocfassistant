@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.contact.irc-083132\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 949,
+      "first_words": "Internet Relay Chat (IRC) \u2013 Open Computing Facili..."
+    },
+    {
+      "index": 2,
+      "size": 755,
+      "first_words": "You have a couple of options for chatting: Option..."
+    },
+    {
+      "index": 3,
+      "size": 864,
+      "first_words": "Our server settings are listed below: Server: irc...."
+    },
+    {
+      "index": 4,
+      "size": 863,
+      "first_words": "Authenticating with NickServ To make sure that you..."
+    },
+    {
+      "index": 5,
+      "size": 819,
+      "first_words": "ZNC also integrates with NickServ, automatically a..."
+    },
+    {
+      "index": 6,
+      "size": 873,
+      "first_words": "Connecting to ZNC The OCF ZNC server settings are:..."
+    },
+    {
+      "index": 7,
+      "size": 630,
+      "first_words": "Then save your changes using the button at the bot..."
+    },
+    {
+      "index": 8,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

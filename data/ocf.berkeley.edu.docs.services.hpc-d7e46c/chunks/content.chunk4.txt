@@ -1,0 +1,9 @@
+Slurm is a free and open source job scheduler that evenly distributes jobs across an HPC cluster, where each computer in the cluster is referred to as a node. The only way to access our HPC nodes is through Slurm. Detailed documentation for how to access Slurm is here .
+
+Dependencies For managing application dependencies, you currently have two options: Virtual Environments First you can use a virtual environment if you are using Python packages.
+
+To create a virtual environment navigate to your home directory and run the following commands: virtualenv -p python3 venv .
+
+venv/bin/activate This will allow you to pip install any Python packages that the OCF does not already have for your program.
+
+Singularity For those who need access to non-Python dependencies or have already integrated their program into Docker, the second option is to use Singularity containers.

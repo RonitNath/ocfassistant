@@ -1,0 +1,3 @@
+ Slack – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Slack Table of Contents Join the OCF Slack Workspace Other important info Everything is public I can't log in!
+
+List of Major OCF Channels List of Minor OCF channels Optional: Using wee-slack We also offer IRC as a chat service. If that is what you were looking for, head over to our page on IRC .

@@ -1,0 +1,9 @@
+Slurm also intelligently queues jobs from different users to most efficiently use our nodes' resources. Running a job through Slurm Slurm is only accessible while SSHed into hpcctl.ocf.berkeley.edu . Submitting a job to Slurm can be done in one of two ways: through srun , and through sbatch .
+
+When using srun , options are supplied using command-line flags, and the job is attached to the terminal you run srun from.
+
+If there is a queue to run jobs, the terminal will wait until your job starts running, and if the terminal closes, the job will be cancelled.
+
+By contrast, to submit a job using sbatch , you must first create a batch file that includes options for your job, and the commands that your job will run.
+
+The batch file is then submitted, and after the job runs, log files with the job's output to stdout are put into your home directory.

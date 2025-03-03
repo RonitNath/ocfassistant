@@ -1,0 +1,3 @@
+Join the OCF Slack Workspace Create an OCF account if you don't yet have one. Go to the OCF Slack workspace and click the "If you have an @ocf.berkeley.edu email address , you can create an account." button. Enter your OCF username in the box, this should send an email to your Berkeley email. If you don't recieve an email, please contact a staff member for assistance. Click the link in your Berkeley email and follow the instructions to complete setup. We strongly recommend setting your display name to your OCF username for consistency. Join some channels!
+
+Other important info Everything is public When using Slack, please keep in mind that the channels are connected to our IRC server , which is open to the whole world.

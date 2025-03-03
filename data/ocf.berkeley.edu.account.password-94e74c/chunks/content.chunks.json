@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.account.password-94e74c\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 777,
+      "first_words": "CAS - Central Authentication Service UC Berkeley..."
+    },
+    {
+      "index": 2,
+      "size": 834,
+      "first_words": "Help For assistance, see: Help desk information Ma..."
+    }
+  ]
+}

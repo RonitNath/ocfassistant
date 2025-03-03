@@ -1,7 +1,11 @@
 
 from qdrant_client import QdrantClient
 
-client = QdrantClient(url="http://localhost:6333")
+import os
+
+qdrant_url = os.getenv("QDRANT_URL")
+
+client = QdrantClient(url=qdrant_url)
 
 
 def create_collection():

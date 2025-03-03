@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff-a416bd\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 526,
+      "first_words": "Staff documentation \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 1957,
+      "first_words": "Documentation Additional documentation Getting Inv..."
+    },
+    {
+      "index": 3,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

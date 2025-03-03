@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2024.08.planned_outage_all-741c7c\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 508,
+      "first_words": "Open Computing Facility Status: Planned Outage: A..."
+    },
+    {
+      "index": 2,
+      "size": 2525,
+      "first_words": "Posted by Jonathan at 10:42 PM Older Post Home Sub..."
+    }
+  ]
+}

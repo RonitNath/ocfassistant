@@ -10,6 +10,9 @@ from urllib.parse import urljoin, urlparse
 import time
 from fnmatch import fnmatch
 from tqdm import tqdm
+import datetime
+import time
+import logging
 
 # Get the config
 with open('config.yml', 'r') as f:
@@ -21,7 +24,7 @@ data_folder = config['data_folder']
 scrape_safe_patterns = config['scrape_safe_patterns']
 scrape_root = config['scrape_root']
 
-def scraper(depth=1):
+def scraper(depth=1, extend_depth=False):
     """
     Use scrape_root to get the intiial document
     Get all the links from the initial document, and filter them using scrape_safe_patterns
@@ -33,8 +36,18 @@ def scraper(depth=1):
     Create a graph of the links between the data in json format, with the following schema:
     {
         "url": "<sanitized-url-hash>",
-        "links": ["<sanitized-url-hash>", "<sanitized-url-hash>", ...]
+        "links": ["<sanitized-url-hash>", "<sanitized-url-hash>", ...],
+        "depth": depth_at_which_url_was_found,
+        "leaf": true_if_no_outgoing_links
     }
+
+    Links are always extracted and stored for all pages, even if beyond the current depth.
+    This allows for re-running with increased depth without needing to re-fetch already visited pages.
+    Only links within the current depth limit are followed during crawling.
+
+    Args:
+        depth (int): Maximum crawl depth
+        extend_depth (bool): If True, extends an existing crawl to a deeper depth
 
     Then go through each file in the data_folder, and for each folder which does not have a .txt file,
     read the html file and get the text from the file.
@@ -52,22 +65,61 @@ def scraper(depth=1):
     
     # Dictionary to store the URL graph
     url_graph = {}
+    
+    # If we're extending an existing graph, load it
+    graph_path = os.path.join(data_folder, "url_graph.json")
+    previous_depth = 0
+    if extend_depth and os.path.exists(graph_path):
+        print("Loading existing URL graph to extend depth...")
+        with open(graph_path, 'r', encoding='utf-8') as f:
+            url_graph = json.load(f)
+        
+        # Find the maximum depth in the current graph
+        if url_graph:
+            depths = [info.get('depth', 0) for info in url_graph.values()]
+            previous_depth = max(depths) if depths else 0
+            print(f"Found existing graph with maximum depth {previous_depth}")
+            
+            if depth <= previous_depth:
+                print(f"Warning: New depth {depth} is not greater than previous depth {previous_depth}")
+                print("To re-crawl at the same depth, don't use extend_depth=True")
+    
     visited_urls = set()
-    urls_to_visit = [(url, 0) for url in scrape_root]  # (url, depth)
-
+    
+    # If extending depth, get URLs from the frontier of the previous crawl
+    if extend_depth and previous_depth > 0:
+        urls_to_visit = get_urls_for_depth_extension(previous_depth, depth)
+        # If we found URLs to extend, we should mark all previously visited URLs
+        for content_hash, info in url_graph.items():
+            visited_urls.add(info.get('url', ''))
+    else:
+        # Start fresh from root URLs
+        urls_to_visit = [(url, 0) for url in scrape_root]  # (url, depth)
     
     # Dictionary to map URLs to their folder names
     url_to_folder = {}
     
     # For the progress bar, we'll use an estimated number of URLs to visit
-    # This will adjust as we discover more URLs
     estimated_urls = len(urls_to_visit) * (depth + 1)  # Simple estimation
     
-    # Stage 1: URL crawling with progress bar
-    print(f"Stage 1: Crawling URLs (initial horribly inaccurate estimate: {estimated_urls} URLs)...")
+
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+    
+    # Clear the log file
+    with open("logs/scraping_profiling.txt", "w") as f:
+        f.truncate(0)
+
+    # Set up logging for profiling
+    logging.basicConfig(filename='logs/scraping_profiling.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+    # Stage 1: URL crawling with progress bar and profiling
+    print(f"Stage 1: Crawling URLs")
     pbar = tqdm(total=estimated_urls, desc="Crawling", unit="URL")
     
     processed_count = 0
+    start_time = time.time()  # Start time for the entire crawling process
     while urls_to_visit:
         current_url, current_depth = urls_to_visit.pop(0)
         
@@ -92,55 +144,73 @@ def scraper(depth=1):
         # Get content and process the page
         try:
             content = fetch_url(current_url)
+            logging.info(f"Fetching finished for {current_url} in {time.time() - start_time} seconds")
             if not content:
                 continue
                 
-            url_hash = hash_url(current_url)
+            url_hash = hash_content(content)
+            logging.info(f"Hashing finished for {current_url} in {time.time() - start_time} seconds")
+
             sanitized_url = sanitize_url(current_url)
-            folder_name = f"{sanitized_url}-{url_hash}"
+            folder_name, is_duplicate, duplicate_of = save_html_content(url_hash, current_url, content)
             
             # Store mapping of URL to folder name
             url_to_folder[current_url] = folder_name
             
-            save_html_content(url_hash, current_url, content)
+            # Always extract links regardless of depth
+            links = extract_links(current_url, content)
+            logging.info(f"Extracting links finished for {current_url} in {time.time() - start_time} seconds")
+            link_folders = []
             
-            # Extract and process links if not at max depth
-            if current_depth < depth:
-                links = extract_links(current_url, content)
-                link_folders = []
-                
-                # If we found new links, update our estimated total
-                new_links = [link for link in links if link not in visited_urls and is_url_safe(link)]
-                if new_links:
-                    pbar.total += len(new_links)
-                    pbar.refresh()
-                
-                for link in links:
-                    if link not in visited_urls and is_url_safe(link):
-                        link_hash = hash_url(link)
-                        link_sanitized = sanitize_url(link)
-                        link_folder = f"{link_sanitized}-{link_hash}"
-                        link_folders.append(link_folder)
-                        # Add to queue for next depth level
+            # If we found new links, update our estimated total
+            new_links = [link for link in links if link not in visited_urls and is_url_safe(link)]
+            if new_links and current_depth < depth:
+                pbar.total += len(new_links)
+                pbar.refresh()
+            
+            for link in links:
+                if is_url_safe(link):  # Always store safe links in the graph
+                    link_sanitized = sanitize_url(link)
+                    link_folder = f"{link_sanitized}"
+                    link_folders.append(link_folder)
+                    
+                    # Only add to queue if we're within the depth limit
+                    if link not in visited_urls and current_depth < depth:
                         urls_to_visit.append((link, current_depth + 1))
-                
-                # Add to graph
-                url_graph[folder_name] = {
-                    "url": current_url,
-                    "links": link_folders
-                }
-            else:
-                # No outgoing links at max depth
-                url_graph[folder_name] = {
-                    "url": current_url,
-                    "links": []
-                }
-                
-            # Sleep to be nice to the server
-            # time.sleep(0.5) haha jk
+            
+            logging.info(f"Adding to queue finished for {current_url} in {time.time() - start_time} seconds")
+
+            # Add to graph with depth and leaf info
+            content_hash = folder_name.split('-')[-1]  # Extract the hash part from the folder name
+            url_graph[content_hash] = {
+                "url": current_url,
+                "links": link_folders,
+                "depth": current_depth,
+                "leaf": len(link_folders) == 0  # True if no outgoing links
+            }
+            
+            # Log the time taken for this iteration
+            iteration_end_time = time.time()
+            logging.info(f"Processed {current_url} in {iteration_end_time - start_time} seconds")
             
         except Exception as e:
             pbar.write(f"Error processing {current_url}: {e}")
+            # Log the error
+            logging.error(f"Error processing {current_url}: {e}")
+            # Check if URL is already in failed_urls.txt before adding
+            failed_urls_path = "logs/failed_urls.txt"
+            
+            # First check if the URL is already in the file
+            if os.path.exists(failed_urls_path):
+                with open(failed_urls_path, "r") as f:
+                    existing_urls = f.read()
+            else:
+                existing_urls = ""
+                
+            # Then append if not already in the file
+            if current_url not in existing_urls:
+                with open(failed_urls_path, "a") as f:
+                    f.write(current_url + "\n")
     
     pbar.close()
     print(f"Completed crawling {processed_count} URLs.")
@@ -159,21 +229,34 @@ def is_url_safe(url):
     """Check if a URL matches any of the safe patterns."""
     return any(fnmatch(url, pattern) for pattern in scrape_safe_patterns)
 
-def hash_url(url):
-    """Create a 6-character hash of a URL."""
-    return hashlib.sha256(url.encode()).hexdigest()[:6]
+def hash_content(content):
+    """Create a 6-character hash of HTML content."""
+    return hashlib.sha256(content.encode()).hexdigest()[:6]
 
 def fetch_url(url):
     """Fetch the content of a URL."""
     try:
-        response = requests.get(url, timeout=10)
+        timeout = config['scrape_fetch_timeout']
+        response = requests.get(url, timeout=timeout)
         response.raise_for_status()
         return response.text
     except Exception as e:
         print(f" Failed to fetch {url}: {e}")
-        # add failed url to failed_urls.txt, don't duplicate    
-        with open("failed_urls.txt", "a") as f:
-            if url not in f.read():
+        # Check if failed url is already in failed_urls.txt before adding
+        failed_urls_path = "logs/failed_urls.txt"
+        # Create logs directory if it doesn't exist
+        os.makedirs(os.path.dirname(failed_urls_path), exist_ok=True)
+        
+        # First check if the URL is already in the file
+        if os.path.exists(failed_urls_path):
+            with open(failed_urls_path, "r") as f:
+                existing_urls = f.read()
+        else:
+            existing_urls = ""
+            
+        # Then append if not already in the file
+        if url not in existing_urls:
+            with open(failed_urls_path, "a") as f:
                 f.write(url + "\n")
         return None
 
@@ -195,28 +278,59 @@ def extract_links(base_url, html_content):
     
     return links
 
-def save_html_content(url_hash, original_url, content):
-    """Save HTML content to a file."""
+def save_html_content(content_hash, original_url, content):
+    """
+    Save HTML content to a file, handling duplicate content.
+    
+    Returns:
+        tuple: (folder_name, is_duplicate, duplicate_of)
+    """
+    # Track if this is a duplicate and what it's a duplicate of
+    is_duplicate = False
+    duplicate_of = None
+    
     # Create a sanitized version of the URL for the folder name
     sanitized_url = sanitize_url(original_url)
-    folder_name = f"{sanitized_url}-{url_hash}"
+    folder_name = f"{sanitized_url}-{content_hash}"
+    
+    # Check if this content hash already exists in a different folder
+    for existing_dir in os.listdir(data_folder):
+        if os.path.isdir(os.path.join(data_folder, existing_dir)) and existing_dir.endswith(f"-{content_hash}"):
+            # Found a duplicate!
+            if existing_dir != folder_name:  # Not the same URL
+                is_duplicate = True
+                duplicate_of = existing_dir
+                break
     
     # Create directory for the folder if it doesn't exist
     hash_dir = os.path.join(data_folder, folder_name)
     if not os.path.exists(hash_dir):
         os.makedirs(hash_dir)
     
-    # Save the HTML content
-    html_path = os.path.join(hash_dir, "content.html")
-    if not os.path.exists(html_path):
-        with open(html_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-        
-        # Save original URL for reference
-        with open(os.path.join(hash_dir, "url.txt"), 'w', encoding='utf-8') as f:
-            f.write(original_url)
-    else:
-        pass  # Skip silently as we're using progress bar now
+    # Create metadata.json with URL information
+    metadata = {
+        "url": original_url,
+        "hash": content_hash,
+        "timestamp": datetime.datetime.now().isoformat(),
+    }
+    
+    # If this is a duplicate, add that information to metadata
+    if is_duplicate:
+        metadata["is_duplicate"] = True
+        metadata["duplicate_of"] = duplicate_of
+    
+    # Save metadata
+    with open(os.path.join(hash_dir, "metadata.json"), 'w', encoding='utf-8') as f:
+        json.dump(metadata, f, indent=2)
+    
+    # Save the HTML content (only if not a duplicate)
+    if not is_duplicate:
+        html_path = os.path.join(hash_dir, "content.html")
+        if not os.path.exists(html_path):
+            with open(html_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+    
+    return folder_name, is_duplicate, duplicate_of
 
 def sanitize_url(url):
     """
@@ -248,7 +362,21 @@ def sanitize_url(url):
     return url
 
 def save_url_graph(url_graph):
-    """Save the URL graph to a JSON file."""
+    """
+    Save the URL graph to a JSON file.
+    
+    The URL graph now uses content hashes as keys for easy lookup of content.
+    The structure is:
+    {
+        "content_hash": {
+            "url": "original_url",
+            "links": ["link_folder_name1", "link_folder_name2", ...],
+            "depth": depth_at_which_url_was_found,
+            "leaf": true_if_no_outgoing_links
+        },
+        ...
+    }
+    """
     graph_path = os.path.join(data_folder, "url_graph.json")
     with open(graph_path, 'w', encoding='utf-8') as f:
         json.dump(url_graph, f, indent=2)
@@ -258,7 +386,7 @@ def process_html_to_text():
     """Process HTML files to extract their text content."""
     # Get list of folders to process
     folders = [f for f in os.listdir(data_folder) 
-               if os.path.isdir(os.path.join(data_folder, f)) and f != "url_graph.json"]
+               if os.path.isdir(os.path.join(data_folder, f))]
     
     # Check how many need text extraction
     to_process = []
@@ -266,7 +394,18 @@ def process_html_to_text():
         folder_path = os.path.join(data_folder, folder_name)
         html_path = os.path.join(folder_path, "content.html")
         text_path = os.path.join(folder_path, "content.txt")
+        metadata_path = os.path.join(folder_path, "metadata.json")
         
+        # Skip if it's a duplicate (no content.html)
+        if not os.path.exists(html_path) and os.path.exists(metadata_path):
+            # Check if it's a duplicate
+            with open(metadata_path, 'r', encoding='utf-8') as f:
+                metadata = json.load(f)
+                if metadata.get("is_duplicate", False):
+                    print(f"Skipping duplicate: {folder_name} (duplicate of {metadata.get('duplicate_of', 'unknown')})")
+                    continue
+        
+        # Process only if we have HTML content but no text yet
         if os.path.exists(html_path) and not os.path.exists(text_path):
             to_process.append((folder_name, folder_path, html_path, text_path))
     
@@ -305,3 +444,36 @@ def process_html_to_text():
 
 def save_data():
     pass
+
+def get_urls_for_depth_extension(current_depth, new_depth):
+    """
+    Get a list of URLs that should be visited if depth is increased.
+    
+    Args:
+        current_depth (int): The previous max depth
+        new_depth (int): The new max depth
+        
+    Returns:
+        list: List of (url, depth) tuples to visit
+    """
+    # Check if the URL graph exists
+    graph_path = os.path.join(data_folder, "url_graph.json")
+    if not os.path.exists(graph_path):
+        return []
+        
+    # Load the URL graph
+    with open(graph_path, 'r', encoding='utf-8') as f:
+        url_graph = json.load(f)
+    
+    urls_to_visit = []
+    
+    # Find URLs that were at the frontier of the previous crawl
+    for content_hash, info in url_graph.items():
+        if info.get('depth') == current_depth and not info.get('leaf', False):
+            # This URL was at the maximum depth and has outgoing links
+            url = info.get('url')
+            if url:
+                urls_to_visit.append((url, current_depth))
+    
+    print(f"Found {len(urls_to_visit)} URLs at depth {current_depth} with outgoing links to explore at depth {new_depth}")
+    return urls_to_visit

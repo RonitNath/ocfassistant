@@ -1,0 +1,5 @@
+ Upcoming Student Technology Fund Renewal Vote – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Upcoming Student Technology Fund Renewal Vote The Student Technology Fund The Student Technology Fund (STF) equitably and transparently stewards use of student fees in support of technology initiatives that advance undergraduate, graduate, and professional school students’ academic and co-curricular experiences at UC Berkeley.
+
+STF provides funding for: Free software for all students on campus, including Zoom Pro, Adobe CC, Microsoft Office etc.
+
+Projects like the Student Technology Equity Program (STEP), the Student Tech Services Helpdesk, the Open Computing Facility (OCF) , and much more.

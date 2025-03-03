@@ -9,10 +9,16 @@ from scrape import scraper
 import embeddings
 from chunking import process_all_text_files
 
-def scrape_data(depth=1):
-    """Test the web scraping functionality with the given depth."""
-    print(f"Starting web scraping with depth={depth}...")
-    url_graph = scraper(depth=depth)
+def scrape_data(depth=1, extend_depth=False):
+    """
+    Test the web scraping functionality with the given depth.
+    
+    Args:
+        depth (int): Maximum crawl depth
+        extend_depth (bool): If True, extends an existing crawl to a deeper depth
+    """
+    print(f"Starting web scraping with depth={depth}{' (extending previous crawl)' if extend_depth else ''}...")
+    url_graph = scraper(depth=depth, extend_depth=extend_depth)
     
     # Output some statistics
     print("\nScraping completed. Results:")
@@ -58,7 +64,13 @@ def chat_with_model():
     # Ensure the model is available
     validate_ollama_setup(model_name)
     
-    chat(model_name, 'Explain a solution to the halting problem')
+    import asyncio
+    from chat import run_chat
+
+    try:
+        asyncio.run(run_chat())
+    except KeyboardInterrupt:
+        print('\nGoodbye!')
 
 def chunk_text():
     """Test the semantic chunking functionality."""
@@ -96,14 +108,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OCF Assistant tools")
     parser.add_argument("--scrape", action="store_true", help="Run the web scraper")
     parser.add_argument("--depth", type=int, default=1, help="Web scraping depth (default: 1)")
+    parser.add_argument("--extend-depth", action="store_true", help="Extend existing web scrape to a greater depth")
     parser.add_argument("--chat", action="store_true", help="Chat with the LLM model")
     parser.add_argument("--chunk", action="store_true", help="Run semantic chunking on scraped data")
     parser.add_argument("--model", type=str, default="llama3.2:3b", help="Model to use for chat and chunking (default: llama3.2:3b)")
 
     args = parser.parse_args()
+
+    from utils import setup_env
+    _ = setup_env() # For ollama and qdrant urls
     
     if args.scrape:
-        scrape_data(depth=args.depth)
+        scrape_data(depth=args.depth, extend_depth=args.extend_depth)
     elif args.chat:
         chat_with_model()
     elif args.chunk:
