@@ -220,54 +220,58 @@ def generate_embeddings_for_chunks(chunk_paths, force=False):
         print("No new embeddings to generate")
         return {}
     
-    results = {}
+    print(f"Generating embeddings for {len(paths_to_process)} chunks...")
+    chunk_contents = {}
     
-    # Read all chunk texts
-    chunk_texts = []
-    for path in tqdm(paths_to_process, desc="Reading chunks", unit="chunk"):
+    # First read all chunks
+    for chunk_path in tqdm(paths_to_process, desc="Reading chunks", unit="chunk"):
         try:
-            with open(path, 'r', encoding='utf-8') as f:
-                chunk_texts.append(f.read())
+            with open(chunk_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                chunk_contents[chunk_path] = content
         except Exception as e:
-            logging.error(f"Error reading chunk {path}: {e}")
-            continue
+            logging.error(f"Error reading chunk {chunk_path}: {e}")
+            print(f"Error reading chunk {chunk_path}: {e}")
     
-    # Generate embeddings in batch
-    print(f"Generating embeddings for {len(chunk_texts)} chunks...")
-    start_time = time.time()
+    results = {}
+    failures = 0
     
-    try:
-        embeddings = get_embeddings(chunk_texts, batch=True)
-        
-        # Save each embedding with its metadata
-        for i, (path, embedding) in enumerate(zip(paths_to_process, embeddings)):
-            try:
-                # Get the folder name (sanitized URL with hash)
-                folder_name = os.path.basename(os.path.dirname(path))
-                
-                # Get the chunk index from the filename
-                chunk_filename = os.path.basename(path)
-                chunk_idx = int(chunk_filename.split('_')[1].split('.')[0]) if '_' in chunk_filename else 0
-                
-                # Create metadata
-                metadata = {
-                    'folder_name': folder_name,
-                    'chunk_index': chunk_idx,
-                    'chunk_file': chunk_filename
-                }
-                
-                # Save the embedding
-                embedding_path = save_embedding(path, embedding, metadata)
-                results[path] = embedding_path
-            except Exception as e:
-                logging.error(f"Error saving embedding for {path}: {e}")
-                continue
-    except Exception as e:
-        logging.error(f"Error generating embeddings: {e}")
-        raise
+    # Generate embeddings one at a time
+    for chunk_path, content in tqdm(chunk_contents.items(), desc="Processing embeddings", unit="chunk"):
+        try:
+            # Generate embedding
+            embedding = get_embeddings(content)
+            
+            # Create metadata
+            metadata = {
+                "source": chunk_path,
+                "timestamp": time.time(),
+                "length": len(content),
+                "model": model
+            }
+            
+            # Save embedding
+            save_embedding(chunk_path, embedding, metadata)
+            results[chunk_path] = get_chunk_embedding_path(chunk_path)
+            
+        except Exception as e:
+            failures += 1
+            logging.error(f"Error generating embedding for {chunk_path}: {e}")
+            # Don't print every failure to avoid flooding the console
+            if failures <= 5 or failures % 50 == 0:
+                print(f"Error with chunk {failures}: {str(e)[:100]}...")
     
-    end_time = time.time()
-    print(f"Embeddings generated in {end_time - start_time:.2f} seconds")
+    # Report statistics
+    success_count = len(results)
+    failure_count = failures
+    total_processed = success_count + failure_count
+    
+    if total_processed > 0:
+        success_rate = (success_count / total_processed) * 100
+        print(f"\nEmbedding generation completed:")
+        print(f"- Successfully processed: {success_count}/{total_processed} chunks ({success_rate:.1f}%)")
+        if failure_count > 0:
+            print(f"- Failed to process: {failure_count} chunks")
     
     return results
 

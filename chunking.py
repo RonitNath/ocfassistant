@@ -435,11 +435,15 @@ def process_all_text_files(generate_embeddings=False):
     
     data_folder = config.get('data_folder', 'data')
     
-    # Find all text files that need chunking
-    text_files_to_process = []
-    all_folders = []
+    if not os.path.exists(data_folder):
+        print(f"Data folder '{data_folder}' not found.")
+        return
     
     print(f"Scanning data folder: {data_folder}...")
+    
+    # Find all text files that need chunking
+    all_text_files = []
+    all_folders = []
     
     for folder_name in os.listdir(data_folder):
         folder_path = os.path.join(data_folder, folder_name)
@@ -453,66 +457,72 @@ def process_all_text_files(generate_embeddings=False):
         if os.path.exists(text_path):
             chunks_dir = os.path.join(folder_path, "chunks")
             
-            # Check if chunking is needed
+            # Check if chunking is needed (no chunks dir or empty chunks dir)
             if not os.path.exists(chunks_dir) or len(os.listdir(chunks_dir)) == 0:
-                text_files_to_process.append(text_path)
+                all_text_files.append(text_path)
     
-    # Process only files that need chunking
-    if not text_files_to_process:
-        print("No text files need chunking. All chunks are already created.")
+    if not all_text_files:
+        print("No text files need chunking.")
     else:
-        print(f"Found {len(text_files_to_process)} text files that need chunking.")
+        print(f"Found {len(all_text_files)} text files that need chunking.")
         
         # Process each text file and create chunks
-        for file_path in tqdm(text_files_to_process, desc="Chunking files"):
+        processed_count = 0
+        total_chunks = 0
+        
+        for text_path in tqdm(all_text_files, desc="Chunking files", unit="file"):
             try:
-                chunk_text_file(file_path)
+                folder_path = os.path.dirname(text_path)
+                chunk_count = chunk_text_file(text_path, method="hybrid")
+                processed_count += 1
+                total_chunks += chunk_count
             except Exception as e:
-                logging.error(f"Error chunking {file_path}: {e}")
-                print(f"Error chunking {file_path}: {e}")
+                print(f"Error chunking {text_path}: {e}")
+                logging.error(f"Error chunking {text_path}: {e}")
     
-    # If embedding generation is requested
+    # If embeddings generation was requested
     if generate_embeddings:
         print("Scanning for chunks that need embeddings...")
         
-        # Collect all chunk paths
-        chunk_paths = []
+        # Find all chunk files for embedding generation
+        all_chunk_files = []
+        
         for folder_path in all_folders:
             chunks_dir = os.path.join(folder_path, "chunks")
             if os.path.exists(chunks_dir):
-                for file in os.listdir(chunks_dir):
-                    if file.endswith('.txt'):
-                        chunk_path = os.path.join(chunks_dir, file)
-                        chunk_paths.append(chunk_path)
+                for chunk_file in os.listdir(chunks_dir):
+                    if chunk_file.endswith('.txt'):
+                        chunk_path = os.path.join(chunks_dir, chunk_file)
+                        all_chunk_files.append(chunk_path)
         
-        if not chunk_paths:
-            print("No chunks found. Make sure your files have been chunked first.")
-            return
+        if all_chunk_files:
+            print(f"Found {len(all_chunk_files)} chunks total")
             
-        print(f"Found {len(chunk_paths)} chunks total")
-        
-        try:
-            # Generate embeddings
-            import embeddings
-            # Check if Ollama is available, otherwise skip embeddings
-            if not embeddings.test_ollama_connection():
-                print("Warning: Ollama API is not available. Skipping embedding generation.")
-                return
+            try:
+                # Import embeddings module
+                import embeddings
                 
-            # Filter chunks that don't have embeddings yet
-            chunks_needing_embeddings = [path for path in chunk_paths 
-                                     if not embeddings.embedding_exists(path)]
-            
-            if chunks_needing_embeddings:
-                print(f"Generating embeddings for {len(chunks_needing_embeddings)} chunks without embeddings")
-                embeddings.generate_embeddings_for_chunks(chunks_needing_embeddings)
-            else:
-                print("All chunks already have embeddings")
+                # Check if Ollama is available
+                if not embeddings.test_ollama_connection():
+                    print("Warning: Ollama API is not available. Skipping embedding generation.")
+                    return
                 
-        except Exception as e:
-            logging.error(f"Error generating embeddings: {e}")
-            print(f"Error generating embeddings: {e}")
-
+                # Filter chunks that don't have embeddings yet
+                chunks_needing_embeddings = [path for path in all_chunk_files 
+                                           if not embeddings.embedding_exists(path)]
+                
+                if chunks_needing_embeddings:
+                    print(f"Generating embeddings for {len(chunks_needing_embeddings)} chunks without embeddings")
+                    embeddings.generate_embeddings_for_chunks(chunks_needing_embeddings)
+                else:
+                    print("All chunks already have embeddings")
+                    
+            except Exception as e:
+                logging.error(f"Error generating embeddings: {e}")
+                print(f"Error generating embeddings: {e}")
+        else:
+            print("No chunks found for embedding generation")
+    
     # Print summary of all chunks
     total_chunks = 0
     for folder_path in all_folders:

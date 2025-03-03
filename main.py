@@ -212,36 +212,43 @@ def chat_with_model():
             logging.error(f"Model response error: {e}")
 
 def chunk_text():
-    """Test the semantic chunking functionality."""
+    """
+    Run semantic chunking of text data without generating embeddings.
+    """
     print("Starting semantic chunking of text data...")
-    process_all_text_files()
-    
-    # Count the number of chunks created
-    data_folder = "data"
-    if os.path.exists(data_folder):
-        total_chunks = 0
-        processed_files = 0
+    try:
+        from chunking import process_all_text_files
+        # Process all text files but don't generate embeddings
+        process_all_text_files(generate_embeddings=False)
+        print("Chunking completed successfully.")
         
-        for folder_name in os.listdir(data_folder):
-            folder_path = os.path.join(data_folder, folder_name)
+        # Count the number of chunks created
+        data_folder = "data"
+        if os.path.exists(data_folder):
+            total_chunks = 0
+            processed_files = 0
             
-            # Skip if not a directory
-            if not os.path.isdir(folder_path) or folder_name == "url_graph.json":
-                continue
+            for folder_name in os.listdir(data_folder):
+                folder_path = os.path.join(data_folder, folder_name)
                 
-            chunks_dir = os.path.join(folder_path, "chunks")
-            if os.path.exists(chunks_dir):
-                processed_files += 1
-                # Count chunk files
-                chunk_files = [f for f in os.listdir(chunks_dir) if f.endswith('.txt')]
-                total_chunks += len(chunk_files)
-        
-        print(f"\nChunking completed. Results:")
-        print(f"- Files processed: {processed_files}")
-        print(f"- Total chunks created: {total_chunks}")
-        print(f"- Average chunks per file: {total_chunks/max(1, processed_files):.2f}")
-    else:
-        print("No data folder found. Chunking may have failed.")
+                # Skip if not a directory
+                if not os.path.isdir(folder_path) or folder_name == "url_graph.json":
+                    continue
+                    
+                chunks_dir = os.path.join(folder_path, "chunks")
+                if os.path.exists(chunks_dir):
+                    processed_files += 1
+                    # Count chunk files
+                    chunk_files = [f for f in os.listdir(chunks_dir) if f.endswith('.txt')]
+                    total_chunks += len(chunk_files)
+                    
+            print(f"- Total files processed: {processed_files}")
+            print(f"- Total chunks created: {total_chunks}")
+            if processed_files > 0:
+                print(f"- Average chunks per file: {total_chunks/processed_files:.2f}")
+    except Exception as e:
+        print(f"Error during chunking: {e}")
+        logging.error(f"Error during chunking: {e}")
 
 def simulate_scrape(target_depth, debug=False, estimate_unreachable=False):
     """
@@ -473,13 +480,14 @@ def upload_to_qdrant():
 
 def generate_embeddings():
     """
-    Generate embeddings for all chunks.
+    Generate embeddings for all chunks that don't already have them.
     """
     print("Generating embeddings for chunks...")
     try:
         from chunking import process_all_text_files
+        # Process text files with embedding generation enabled
         process_all_text_files(generate_embeddings=True)
-        print("Successfully generated embeddings for chunks.")
+        print("Successfully completed embedding generation process.")
     except Exception as e:
         print(f"Error generating embeddings: {e}")
         logging.error(f"Error generating embeddings: {e}")
