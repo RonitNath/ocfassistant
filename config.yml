@@ -1,10 +1,8 @@
 data_folder: data
 
-models:
-  embeddings:
-    name: ollama/snowflake-arctic-embed2:latest
-  chat:
-    name: ollama/llama3.2:3b
+# Model configuration
+embeddings_model: snowflake-arctic-embed2:latest
+chat_model: llama3.2:3b
 
 # URLs to keep when graph searching scrape
 scrape_safe_patterns:
@@ -19,6 +17,10 @@ scrape_root:
 # Set low so we can scrape faster. Keep an eye on this if you are running into issues.
 scrape_fetch_timeout: 1
 
+# Vector database configuration
+qdrant_collection: ocf_collection
+embedding_dimension: 1024
+
 # Chunking parameters
 chunking:
   # Maximum characters per chunk
@@ -29,9 +31,6 @@ chunking:
   overlap_size: 50
   # Threshold for semantic similarity
   similarity_threshold: 0.75
-
-
-
 
 # Default prompt for the chat
 default_prompt: |

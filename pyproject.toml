@@ -16,6 +16,7 @@ pyyaml = "^6.0.2"
 nltk = "^3.9.1"
 dotenv = "^0.9.9"
 asyncio = "^3.4.3"
+numpy = "^2.2.3"
 
 
 [build-system]

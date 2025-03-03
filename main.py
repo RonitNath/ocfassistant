@@ -5,10 +5,14 @@ from embeddings import validate_ollama_setup
 import os
 import argparse
 import json
+import time
+import logging
 from scrape import scraper, is_url_safe
 # Import our custom embeddings module
 import embeddings
+import qdrant
 from chunking import process_all_text_files
+import yaml
 
 def scrape_data(depth=1, extend_depth=False):
     """
@@ -57,21 +61,155 @@ def scrape_data(depth=1, extend_depth=False):
         print("No data folder found. Scraping may have failed.")
 
 def chat_with_model():
-    """Chat with the LLM model."""
-    model_name = 'llama3.2:3b'
-    print("Currently, write your own prompt in config.yml's example_question")
-    print("Using model:", model_name)
+    """
+    Chat with the LLM model, using RAG to enhance responses.
+    """
+    # Setup logging for profiling
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
     
-    # Ensure the model is available
-    validate_ollama_setup(model_name)
+    logging.basicConfig(
+        filename='logs/chat_profiling.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
     
-    import asyncio
-    from chat import run_chat
-
+    # Ensure Qdrant collection exists
+    qdrant.ensure_collection_exists()
+    
+    # Get available models
     try:
-        asyncio.run(run_chat())
-    except KeyboardInterrupt:
-        print('\nGoodbye!')
+        models = list()
+        print("Available models:")
+        for model in models['models']:
+            print(f"- {model['name']}")
+    except Exception as e:
+        print(f"Error listing models: {e}")
+    
+    # Get model to use from config
+    with open('config.yml', 'r') as f:
+        config = yaml.safe_load(f)
+    
+    model_name = config.get('chat_model', 'llama3.2:8b')
+    print(f"Using model: {model_name}")
+    
+    # Validate Ollama setup
+    if not validate_ollama_setup():
+        print("Ollama setup failed. Please check if Ollama is running.")
+        return
+    
+    print(f"Starting chat with {model_name}. Type 'exit' to quit.")
+    
+    # Get collection stats
+    try:
+        stats = qdrant.get_collection_stats()
+        print(f"Vector DB contains {stats.get('vectors_count', 0)} documents")
+    except Exception as e:
+        print(f"Error getting collection stats: {e}")
+    
+    messages = []
+    
+    while True:
+        user_input = input("\nYou: ")
+        
+        if user_input.lower() in ['exit', 'quit', 'q']:
+            print("Exiting chat.")
+            break
+        
+        # Profile each step of the process
+        profile = {}
+        
+        # Step 1: RAG - Find relevant documents
+        start_time = time.time()
+        
+        # Generate embedding for the query
+        try:
+            relevant_chunks = qdrant.search_similar_chunks(user_input, limit=10)
+            profile['retrieval_time'] = time.time() - start_time
+            logging.info(f"Retrieved {len(relevant_chunks)} chunks in {profile['retrieval_time']:.2f} seconds")
+            
+            # Log the retrieval scores
+            if relevant_chunks:
+                scores = [chunk['score'] for chunk in relevant_chunks]
+                avg_score = sum(scores) / len(scores)
+                logging.info(f"Retrieval scores - min: {min(scores):.4f}, max: {max(scores):.4f}, avg: {avg_score:.4f}")
+        except Exception as e:
+            print(f"Error during retrieval: {e}")
+            logging.error(f"Retrieval error: {e}")
+            relevant_chunks = []
+            profile['retrieval_time'] = time.time() - start_time
+        
+        # Step 2: Build the prompt with context
+        start_time = time.time()
+        
+        # Format the context from relevant chunks
+        context = ""
+        if relevant_chunks:
+            context = "Context information from the OCF website:\n\n"
+            for i, chunk in enumerate(relevant_chunks, 1):
+                # Format metadata for citation
+                metadata = chunk.get('metadata', {})
+                folder_name = metadata.get('folder_name', 'unknown')
+                # Get only the text
+                text = chunk.get('original_text', '')
+                # Add the chunk to the context with a citation
+                context += f"[{i}] From {folder_name}:\n{text}\n\n"
+        
+        profile['context_preparation_time'] = time.time() - start_time
+        logging.info(f"Context preparation took {profile['context_preparation_time']:.2f} seconds")
+        
+        # Step 3: Send the query to the model with context
+        start_time = time.time()
+        
+        # Add the user message
+        messages.append({"role": "user", "content": user_input})
+        
+        # If we have context, add system message
+        if context:
+            # Add a system message with the context
+            system_message = {
+                "role": "system",
+                "content": f"You are an assistant for the Open Computing Facility at UC Berkeley. "
+                           f"Use the following information to answer the user's question. "
+                           f"If the information provided doesn't answer the question, say so and provide "
+                           f"general information about OCF if available.\n\n{context}"
+            }
+            
+            # Insert the context at the beginning of the conversation
+            if len(messages) == 1:  # Only the current user message
+                messages = [system_message] + messages
+            else:
+                # Replace the existing system message if any
+                system_msg_index = next((i for i, msg in enumerate(messages) if msg["role"] == "system"), None)
+                if system_msg_index is not None:
+                    messages[system_msg_index] = system_message
+                else:
+                    messages = [system_message] + messages
+        
+        try:
+            # Call the model
+            response = chat(model=model_name, messages=messages)
+            profile['model_response_time'] = time.time() - start_time
+            logging.info(f"Model response took {profile['model_response_time']:.2f} seconds")
+            
+            # Add the assistant's response to the conversation history
+            messages.append({"role": "assistant", "content": response["message"]["content"]})
+            
+            # Calculate total processing time
+            total_time = profile.get('retrieval_time', 0) + profile.get('context_preparation_time', 0) + profile.get('model_response_time', 0)
+            
+            print(f"\nAssistant: {response['message']['content']}")
+            print(f"\n[Processing took {total_time:.2f}s: Retrieval {profile.get('retrieval_time', 0):.2f}s, "
+                  f"Context {profile.get('context_preparation_time', 0):.2f}s, "
+                  f"Model {profile.get('model_response_time', 0):.2f}s]")
+            
+            # Log overall performance
+            logging.info(f"Total processing time: {total_time:.2f} seconds")
+            logging.info(f"Profile: {profile}")
+        
+        except Exception as e:
+            print(f"Error: {e}")
+            logging.error(f"Model response error: {e}")
 
 def chunk_text():
     """Test the semantic chunking functionality."""
@@ -312,16 +450,52 @@ def simulate_scrape(target_depth, debug=False, estimate_unreachable=False):
         "urls_by_depth": urls_per_depth
     }
 
+def upload_to_qdrant():
+    """
+    Upload all embeddings to the Qdrant vector database.
+    """
+    print("Starting upload of embeddings to Qdrant...")
+    
+    # Ensure Qdrant collection exists
+    if not qdrant.ensure_collection_exists():
+        print("Failed to ensure Qdrant collection exists.")
+        return
+    
+    # Process all embeddings
+    success_count, total_count = qdrant.process_all_embeddings()
+    
+    print(f"\nQdrant upload completed:")
+    print(f"- Successfully uploaded: {success_count}/{total_count} embeddings")
+    
+    # Get collection stats
+    stats = qdrant.get_collection_stats()
+    print(f"- Collection now contains {stats.get('vectors_count', 0)} vectors")
+
+def generate_embeddings():
+    """
+    Generate embeddings for all chunks.
+    """
+    print("Generating embeddings for chunks...")
+    try:
+        from chunking import process_all_text_files
+        process_all_text_files(generate_embeddings=True)
+        print("Successfully generated embeddings for chunks.")
+    except Exception as e:
+        print(f"Error generating embeddings: {e}")
+        logging.error(f"Error generating embeddings: {e}")
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="OCF Assistant Tool")
+    parser = argparse.ArgumentParser(description="OCF Assistant CLI")
     parser.add_argument("--scrape", action="store_true", help="Run web scraping")
-    parser.add_argument("--depth", type=int, default=1, help="Maximum depth for web scraping")
+    parser.add_argument("--depth", type=int, default=1, help="Depth of scraping (default: 1)")
     parser.add_argument("--extend-depth", action="store_true", help="Extend previous crawl to deeper depth")
     parser.add_argument("--chunk", action="store_true", help="Run chunking on scraped text")
     parser.add_argument("--chat", action="store_true", help="Chat with the model")
     parser.add_argument("--simulate", type=int, help="Simulate scraping to specified depth without fetching URLs")
     parser.add_argument("--debug", action="store_true", help="Show detailed debug information")
     parser.add_argument("--estimate-unreachable", action="store_true", help="Include unreachable URLs in simulation estimates")
+    parser.add_argument("--qdrant", action="store_true", help="Upload embeddings to Qdrant vector database")
+    parser.add_argument("--embeddings", action="store_true", help="Generate embeddings for chunks")
     
     args = parser.parse_args()
     
@@ -336,5 +510,9 @@ if __name__ == "__main__":
         chunk_text()
     elif args.simulate is not None:
         simulate_scrape(args.simulate, debug=args.debug, estimate_unreachable=args.estimate_unreachable)
+    elif args.qdrant:
+        upload_to_qdrant()
+    elif args.embeddings:
+        generate_embeddings()
     else:
         parser.print_help()

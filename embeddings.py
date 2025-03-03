@@ -9,13 +9,15 @@ import os
 import numpy as np
 import logging
 from tqdm import tqdm
+import ollama
+import time
 
 # Load config
 with open('config.yml', 'r') as f:
     config = yaml.safe_load(f)
 
-EMBEDDINGS_MODEL = config['models']['embeddings']['name']
-API_URL = "http://localhost:11434/api"
+# API endpoint from environment variable
+API_URL = os.getenv("OLLAMA_URL", "http://localhost:11434") + "/api"
 
 # Set up logging
 if not os.path.exists("logs"):
@@ -28,131 +30,246 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def validate_ollama_setup(model, debug=False):
+# Get embeddings model from config
+model = config['embeddings_model']
+data_folder = config.get('data_folder', 'data')
+
+def validate_ollama_setup(model):
     """
-    Validate that Ollama is running and the requested model is available.
-    Download the model if it's not already available.
-    
-    Args:
-        model (str): The model name to validate
-        
-    Returns:
-        bool: True if validation passed
-        
-    Raises:
-        Exception: If Ollama is not running or model couldn't be loaded
+    Validates that Ollama is running and the specified model is available.
+    Returns True if setup is valid, False otherwise.
     """
-    # First check if Ollama is running
-    if not test_ollama_connection():
-        raise Exception("Ollama is not running. Please start the Ollama service.")
-    
-    # Then check if the model is available
     try:
-        response = requests.get(f"{API_URL}/tags", timeout=10)
-        response.raise_for_status()
-        available_models = [model['name'] for model in response.json().get('models', [])]
+        # Check if Ollama is running by making a simple request
+        response = requests.get(f"{API_URL}/version", timeout=5)
+        if response.status_code != 200:
+            logging.error(f"Ollama API returned status code {response.status_code}")
+            print(f"Error: Ollama API returned status code {response.status_code}. Is Ollama running?")
+            return False
+
+        # Check if the model exists
+        response = requests.get(f"{API_URL}/tags", timeout=5)
+        if response.status_code != 200:
+            logging.error(f"Failed to get model list: {response.status_code}")
+            return False
+            
+        available_models = [model_info['name'] for model_info in response.json().get('models', [])]
         
-        if model in available_models:
-            if debug:
-                logging.info(f"Model {model} is available.")
-            return True
-        else:
-            logging.info(f"Model {model} not found. Pulling model...")
-            print(f"Model {model} not found. Pulling model...")
+        if model not in available_models:
+            print(f"Model '{model}' not found in Ollama. Available models: {', '.join(available_models)}")
+            print("\nTo install the model, run: ollama pull " + model)
+            return False
             
-            # Pull the model
-            pull_response = requests.post(
-                f"{API_URL}/pull",
-                json={"name": model},
-                timeout=600  # Longer timeout for model download
-            )
-            pull_response.raise_for_status()
-            logging.info(f"Successfully pulled model {model}")
-            return True
-            
+        return True
+    except requests.exceptions.ConnectionError:
+        print("Error: Could not connect to Ollama API. Is Ollama running on http://localhost:11434?")
+        logging.error("Connection to Ollama API failed.")
+        return False
     except Exception as e:
-        logging.error(f"Error validating Ollama setup: {e}")
-        raise Exception(f"Error validating Ollama setup: {e}")
+        print(f"Error validating Ollama setup: {str(e)}")
+        logging.error(f"Error validating Ollama setup: {str(e)}")
+        return False
 
 def get_embeddings(text, model=None):
     """
-    Generate embeddings for a given text using Ollama.
+    Get embeddings for the provided text.
     
     Args:
-        text (str): The text to generate embeddings for
-        model (str, optional): The model to use. Defaults to the one in config.
+        text (str): Text to generate embeddings for
+        model (str): Embedding model to use, defaults to config
         
     Returns:
-        list: The embedding vector or None if there was an error
+        np.ndarray: The embeddings for the text
     """
     if model is None:
-        model = EMBEDDINGS_MODEL
+        model = config['embeddings_model']
+    
+    # Validate Ollama setup
+    if not validate_ollama_setup(model):
+        raise RuntimeError("Ollama setup validation failed")
         
-    # Remove the ollama/ prefix if present (API doesn't need it)
-    if model.startswith("ollama/"):
-        model = model.replace("ollama/", "", 1)
+    # Call Ollama to generate embeddings
+    url = f"{API_URL}/embeddings"
+    data = {
+        "model": model,
+        "prompt": text
+    }
     
     try:
-        validate_ollama_setup(model)
-        
-        response = requests.post(
-            f"{API_URL}/embeddings",
-            json={
-                "model": model,
-                "prompt": text,
-            },
-            timeout=30
-        )
+        response = requests.post(url, json=data)
         response.raise_for_status()
-        
-        result = response.json()
-        return result.get("embedding")
-    except Exception as e:
-        logging.error(f"Error generating embeddings: {e}")
-        return None
+        embeddings = response.json().get("embedding", [])
+        return np.array(embeddings, dtype=np.float32)
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error getting embeddings: {str(e)}")
+        raise RuntimeError(f"Failed to get embeddings: {str(e)}")
 
-def get_embeddings_batch(texts, model=None, batch_size=10):
+def get_chunk_embedding_path(chunk_path):
     """
-    Generate embeddings for a batch of texts.
+    Get the path where the embedding for a chunk should be stored.
     
     Args:
-        texts (list): List of texts to generate embeddings for
-        model (str, optional): The model to use
-        batch_size (int): Number of texts to process in each batch
+        chunk_path (str): Path to the chunk file
         
     Returns:
-        list: List of embedding vectors
+        str: Path to the embedding file
     """
-    all_embeddings = []
-    total_batches = (len(texts) + batch_size - 1) // batch_size
+    # Replace .txt with .json for the embedding file
+    embedding_path = chunk_path.replace('.txt', '.embedding.json')
+    return embedding_path
+
+def embedding_exists(chunk_path):
+    """
+    Check if an embedding exists for a chunk.
     
-    logging.info(f"Starting batch embedding generation for {len(texts)} texts")
-    
-    # Use tqdm for the batches with minimal output
-    batch_pbar = tqdm(
-        total=total_batches, 
-        desc="Processing batches", 
-        unit="batch", 
-        ncols=100,
-        bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}'
-    )
-    
-    for i in range(0, len(texts), batch_size):
-        batch = texts[i:i+batch_size]
-        batch_num = i//batch_size + 1
-        logging.info(f"Processing batch {batch_num}/{total_batches}")
+    Args:
+        chunk_path (str): Path to the chunk file
         
-        # Use a nested tqdm for items within the batch
-        for text in batch:
-            embedding = get_embeddings(text, model)
-            all_embeddings.append(embedding)
+    Returns:
+        bool: True if embedding exists, False otherwise
+    """
+    embedding_path = get_chunk_embedding_path(chunk_path)
+    return os.path.exists(embedding_path)
+
+def save_embedding(chunk_path, embedding, metadata=None):
+    """
+    Save an embedding for a chunk.
+    
+    Args:
+        chunk_path (str): Path to the chunk file
+        embedding (numpy.ndarray): Embedding vector
+        metadata (dict): Additional metadata to store with the embedding
         
-        batch_pbar.update(1)
+    Returns:
+        str: Path to the saved embedding file
+    """
+    embedding_path = get_chunk_embedding_path(chunk_path)
     
-    batch_pbar.close()
-    logging.info(f"Completed batch embedding generation for {len(texts)} texts")
+    # Create metadata if not provided
+    if metadata is None:
+        metadata = {}
     
-    return all_embeddings
+    # Extract the folder path (which contains the content hash)
+    folder_path = os.path.dirname(chunk_path)
+    content_hash = os.path.basename(folder_path)
+    
+    # Add additional metadata
+    metadata.update({
+        'chunk_path': chunk_path,
+        'content_hash': content_hash,
+        'embedding_model': model,
+        'timestamp': time.time(),
+    })
+    
+    # Convert embedding to list for JSON serialization
+    embedding_data = {
+        'embedding': embedding.tolist(),
+        'metadata': metadata
+    }
+    
+    # Create the directory if it doesn't exist
+    os.makedirs(os.path.dirname(embedding_path), exist_ok=True)
+    
+    # Save the embedding
+    with open(embedding_path, 'w') as f:
+        json.dump(embedding_data, f)
+        
+    return embedding_path
+
+def load_embedding(chunk_path):
+    """
+    Load an embedding for a chunk.
+    
+    Args:
+        chunk_path (str): Path to the chunk file
+        
+    Returns:
+        tuple: (numpy.ndarray, dict) - The embedding vector and metadata
+    """
+    embedding_path = get_chunk_embedding_path(chunk_path)
+    
+    if not os.path.exists(embedding_path):
+        raise FileNotFoundError(f"No embedding found for {chunk_path}")
+        
+    with open(embedding_path, 'r') as f:
+        data = json.load(f)
+        
+    embedding = np.array(data['embedding'])
+    metadata = data.get('metadata', {})
+    
+    return embedding, metadata
+
+def generate_embeddings_for_chunks(chunk_paths, force=False):
+    """
+    Generate embeddings for multiple chunks.
+    
+    Args:
+        chunk_paths (list): List of paths to chunk files
+        force (bool): Whether to regenerate embeddings even if they already exist
+        
+    Returns:
+        dict: Mapping of chunk paths to embedding paths
+    """
+    # Filter out chunks that already have embeddings (unless force=True)
+    if not force:
+        paths_to_process = [path for path in chunk_paths if not embedding_exists(path)]
+    else:
+        paths_to_process = chunk_paths
+    
+    if not paths_to_process:
+        print("No new embeddings to generate")
+        return {}
+    
+    results = {}
+    
+    # Read all chunk texts
+    chunk_texts = []
+    for path in tqdm(paths_to_process, desc="Reading chunks", unit="chunk"):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                chunk_texts.append(f.read())
+        except Exception as e:
+            logging.error(f"Error reading chunk {path}: {e}")
+            continue
+    
+    # Generate embeddings in batch
+    print(f"Generating embeddings for {len(chunk_texts)} chunks...")
+    start_time = time.time()
+    
+    try:
+        embeddings = get_embeddings(chunk_texts, batch=True)
+        
+        # Save each embedding with its metadata
+        for i, (path, embedding) in enumerate(zip(paths_to_process, embeddings)):
+            try:
+                # Get the folder name (sanitized URL with hash)
+                folder_name = os.path.basename(os.path.dirname(path))
+                
+                # Get the chunk index from the filename
+                chunk_filename = os.path.basename(path)
+                chunk_idx = int(chunk_filename.split('_')[1].split('.')[0]) if '_' in chunk_filename else 0
+                
+                # Create metadata
+                metadata = {
+                    'folder_name': folder_name,
+                    'chunk_index': chunk_idx,
+                    'chunk_file': chunk_filename
+                }
+                
+                # Save the embedding
+                embedding_path = save_embedding(path, embedding, metadata)
+                results[path] = embedding_path
+            except Exception as e:
+                logging.error(f"Error saving embedding for {path}: {e}")
+                continue
+    except Exception as e:
+        logging.error(f"Error generating embeddings: {e}")
+        raise
+    
+    end_time = time.time()
+    print(f"Embeddings generated in {end_time - start_time:.2f} seconds")
+    
+    return results
 
 def cosine_similarity(vec1, vec2):
     """
@@ -179,29 +296,38 @@ def cosine_similarity(vec1, vec2):
 
 def test_ollama_connection():
     """
-    Test if Ollama server is running and available.
+    Test if Ollama API is available and running.
     
     Returns:
-        bool: True if connection successful, False otherwise
+        bool: True if connection is successful, False otherwise
     """
     try:
-        response = requests.get(f"{API_URL}/tags", timeout=5)
-        response.raise_for_status()
-        logging.info("Successfully connected to Ollama API")
-        return True
+        # Try to connect to Ollama API
+        ollama_url = os.getenv("OLLAMA_URL", "http://localhost:11434")
+        response = requests.get(f"{ollama_url}/api/version", timeout=3)
+        
+        if response.status_code == 200:
+            print(f"Successfully connected to Ollama API at {ollama_url}")
+            return True
+        else:
+            print(f"Ollama API returned status code {response.status_code}")
+            return False
+    except requests.exceptions.RequestException as e:
+        print(f"Ollama connection error: {str(e)}")
+        return False
     except Exception as e:
-        logging.error(f"Could not connect to Ollama: {e}")
+        print(f"Unexpected error testing Ollama connection: {str(e)}")
         return False
 
 if __name__ == "__main__":
     # Test the embedding functionality
     if test_ollama_connection():
-        print(f"Connected to Ollama API. Using model: {EMBEDDINGS_MODEL}")
+        print(f"Connected to Ollama API. Using model: {model}")
         
         test_text = "This is a test sentence to check if embeddings are working correctly."
         embeddings = get_embeddings(test_text)
         
-        if embeddings:
+        if embeddings is not None:
             print(f"Successfully generated embeddings. Vector dimension: {len(embeddings)}")
             logging.info(f"Test embeddings generated. Vector dimension: {len(embeddings)}")
         else:

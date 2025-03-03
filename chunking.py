@@ -18,6 +18,9 @@ import embeddings
 import nltk
 from tqdm import tqdm
 import yaml
+import datetime
+import hashlib
+import time
 
 # Load config
 with open('config.yml', 'r') as f:
@@ -418,57 +421,107 @@ def split_by_structure(text):
     
     return chunks
 
-def process_all_text_files():
+def process_all_text_files(generate_embeddings=False):
     """
-    Process all text files in the data folder to create semantic chunks.
+    Process all text files in the data folder.
+    Chunks text and optionally generates embeddings for each chunk.
+    
+    Args:
+        generate_embeddings (bool): Whether to generate embeddings for chunks
     """
-    logging.info(f"Scanning data folder: {data_folder}")
+    # Load config
+    with open('config.yml', 'r') as f:
+        config = yaml.safe_load(f)
+    
+    data_folder = config.get('data_folder', 'data')
+    
+    # Find all text files that need chunking
+    text_files_to_process = []
+    all_folders = []
+    
     print(f"Scanning data folder: {data_folder}...")
     
-    # Get list of folders to process
-    folders = [f for f in os.listdir(data_folder) 
-               if os.path.isdir(os.path.join(data_folder, f)) and f != "url_graph.json"]
-    
-    # Find files that need chunking
-    to_process = []
-    for folder_name in folders:
+    for folder_name in os.listdir(data_folder):
         folder_path = os.path.join(data_folder, folder_name)
-        text_path = os.path.join(folder_path, "content.txt")
-        chunks_dir = os.path.join(folder_path, "chunks")
         
-        # Skip if text file doesn't exist or chunks already exist
-        if os.path.exists(text_path) and not os.path.exists(chunks_dir):
-            to_process.append((folder_name, text_path, chunks_dir))
+        if not os.path.isdir(folder_path):
+            continue
+            
+        all_folders.append(folder_path)
+        
+        text_path = os.path.join(folder_path, "content.txt")
+        if os.path.exists(text_path):
+            chunks_dir = os.path.join(folder_path, "chunks")
+            
+            # Check if chunking is needed
+            if not os.path.exists(chunks_dir) or len(os.listdir(chunks_dir)) == 0:
+                text_files_to_process.append(text_path)
     
-    if not to_process:
-        logging.info("No text files need chunking")
-        print("No text files need chunking.")
-        return
+    # Process only files that need chunking
+    if not text_files_to_process:
+        print("No text files need chunking. All chunks are already created.")
+    else:
+        print(f"Found {len(text_files_to_process)} text files that need chunking.")
+        
+        # Process each text file and create chunks
+        for file_path in tqdm(text_files_to_process, desc="Chunking files"):
+            try:
+                chunk_text_file(file_path)
+            except Exception as e:
+                logging.error(f"Error chunking {file_path}: {e}")
+                print(f"Error chunking {file_path}: {e}")
     
-    logging.info(f"Will process {len(to_process)} files for chunking")
-    print(f"Processing {len(to_process)} files for chunking...")
-    
-    total_chunks = 0
-    
-    # Process with progress bar - use a more minimal format
-    for folder_name, text_path, chunks_dir in tqdm(
-        to_process, 
-        desc="Chunking files", 
-        unit="file",
-        ncols=100,
-        bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}'
-    ):
+    # If embedding generation is requested
+    if generate_embeddings:
+        print("Scanning for chunks that need embeddings...")
+        
+        # Collect all chunk paths
+        chunk_paths = []
+        for folder_path in all_folders:
+            chunks_dir = os.path.join(folder_path, "chunks")
+            if os.path.exists(chunks_dir):
+                for file in os.listdir(chunks_dir):
+                    if file.endswith('.txt'):
+                        chunk_path = os.path.join(chunks_dir, file)
+                        chunk_paths.append(chunk_path)
+        
+        if not chunk_paths:
+            print("No chunks found. Make sure your files have been chunked first.")
+            return
+            
+        print(f"Found {len(chunk_paths)} chunks total")
+        
         try:
-            print(f"Processing: {folder_name}")
-            logging.info(f"Processing file: {folder_name}")
-            chunks = chunk_text_file(text_path, chunks_dir)
-            total_chunks += len(chunks)
-            print(f"Created {len(chunks)} chunks for {folder_name}")
+            # Generate embeddings
+            import embeddings
+            # Check if Ollama is available, otherwise skip embeddings
+            if not embeddings.test_ollama_connection():
+                print("Warning: Ollama API is not available. Skipping embedding generation.")
+                return
+                
+            # Filter chunks that don't have embeddings yet
+            chunks_needing_embeddings = [path for path in chunk_paths 
+                                     if not embeddings.embedding_exists(path)]
+            
+            if chunks_needing_embeddings:
+                print(f"Generating embeddings for {len(chunks_needing_embeddings)} chunks without embeddings")
+                embeddings.generate_embeddings_for_chunks(chunks_needing_embeddings)
+            else:
+                print("All chunks already have embeddings")
+                
         except Exception as e:
-            print(f"Failed to chunk text from {folder_name}: {e}")
+            logging.error(f"Error generating embeddings: {e}")
+            print(f"Error generating embeddings: {e}")
+
+    # Print summary of all chunks
+    total_chunks = 0
+    for folder_path in all_folders:
+        chunks_dir = os.path.join(folder_path, "chunks")
+        if os.path.exists(chunks_dir):
+            chunk_files = [f for f in os.listdir(chunks_dir) if f.endswith('.txt')]
+            total_chunks += len(chunk_files)
     
-    print(f"Created {total_chunks} chunks in total.")
-    print("Chunking process completed.")
+    print(f"\nTotal chunks across all folders: {total_chunks}")
 
 if __name__ == "__main__":
     # Test the chunking with a sample text
