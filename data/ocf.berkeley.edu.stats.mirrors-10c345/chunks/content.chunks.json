@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.stats.mirrors-10c345\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 591,
+      "first_words": "Mirrors Statistics \u2013 Open Computing Facility Togg..."
+    },
+    {
+      "index": 2,
+      "size": 3489,
+      "first_words": "Bandwidth Usage Since Jan. 1, 2025 - 420.81 TB tot..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

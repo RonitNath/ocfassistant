@@ -1,0 +1,82 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.startertasks-1c1d00\\content.txt",
+  "chunk_count": 15,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 981,
+      "first_words": "Starter Tasks \u2013 Open Computing Facility Toggle na..."
+    },
+    {
+      "index": 2,
+      "size": 994,
+      "first_words": "If you want to work on these but haven't officiall..."
+    },
+    {
+      "index": 3,
+      "size": 721,
+      "first_words": "Get familiar with the command line All of our serv..."
+    },
+    {
+      "index": 4,
+      "size": 893,
+      "first_words": "Before testing the IRC bot right away, make sure y..."
+    },
+    {
+      "index": 5,
+      "size": 711,
+      "first_words": "For example, before creating an account for a stud..."
+    },
+    {
+      "index": 6,
+      "size": 913,
+      "first_words": "Play with your webspace Every OCF account has web..."
+    },
+    {
+      "index": 7,
+      "size": 929,
+      "first_words": "For instance, you should be able to run staffhours..."
+    },
+    {
+      "index": 8,
+      "size": 721,
+      "first_words": "If your OCF email ( <OCF username>@ocf.berkeley.ed..."
+    },
+    {
+      "index": 9,
+      "size": 649,
+      "first_words": "Make your change First, you want to create a new b..."
+    },
+    {
+      "index": 10,
+      "size": 898,
+      "first_words": "If you are using a desktop in the OCF lab, you can..."
+    },
+    {
+      "index": 11,
+      "size": 781,
+      "first_words": "Once the pull request has been submitted, other OC..."
+    },
+    {
+      "index": 12,
+      "size": 883,
+      "first_words": "The brackets and parentheses indicate that this is..."
+    },
+    {
+      "index": 13,
+      "size": 718,
+      "first_words": "You can run git log to check: you should only see..."
+    },
+    {
+      "index": 14,
+      "size": 2037,
+      "first_words": "* Set up Make your change Update your PR (optional..."
+    },
+    {
+      "index": 15,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

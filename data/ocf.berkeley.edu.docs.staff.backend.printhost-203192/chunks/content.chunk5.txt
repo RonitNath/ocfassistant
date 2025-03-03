@@ -1,0 +1,9 @@
+For example, a PDF file might go through pdftops to convert it to PostScript, then pstops to insert print job options such as duplexing, then, finally, a device-specific filter such as hpcups .
+
+Each filter is associated with an internal "cost", and CUPS picks the path with the least total cost to print the document.
+
+At the OCF, print jobs are all processed by a single filter, ocfps , which converts raw PDFs to rasterized, printable PostScript.
+
+It calls on a command-line converter to render the PDF as pixels (rasterization), then passes the result and the rest of the arguments to standard CUPS filters. So far, this has given us the fewest headaches in terms of malformatted output and printer errors.
+
+Drivers In order to know what job options are available for a particular printer and how to convert documents to a printable format, CUPS requires large config files called PostScript Printer Drivers (PPDs). The OCF uses a modified HP PPD for the M806 .

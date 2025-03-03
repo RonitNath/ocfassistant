@@ -1,0 +1,7 @@
+Posted by Jonathan at 7:38 PM Sunday, November 14, 2021 Mirrors scrub in progress Mirrors FS scrub in progress, performance may be impacted. ETA 48 hours.
+
+Posted by Jonathan at 5:47 AM Monday, November 01, 2021 [RESOLVED] Scheduled downtime on 11/13 We are planning on having some scheduled downtime on Saturday 11/13 starting around 12:00pm PST. We expect to be done before 4pm. We will be rebooting our main hypervisor as well as some other machines.
+
+Our website, student group websites, and other OCF services will be unavailable for the duration of this downtime. If you have any questions about the downtime please contact us .
+
+Update 3:57PM 2021-11-13: We have experienced some issues updating our main production server, so we expect to take at least another hour. We apologize for the inconvenience.

@@ -1,0 +1,3 @@
+The _config.yml file in your site directory contains global site settings, where you can change the title of the site among other settings. Advanced Guide For more advanced setup, please see the Jekyll Docs .
+
+Here are some docs that might be of interest: Using a different theme (Note that different themes might not be compatible with each other; the YAML header format might be different, for instance) Using variables Edit this Page Page History Table of Contents Set up your site Deploy your new site Quick Start Guide Advanced Guide More in this category Web hosting Backups/Archiving Django Flask Jekyll PHP Ruby on Rails WordPress OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

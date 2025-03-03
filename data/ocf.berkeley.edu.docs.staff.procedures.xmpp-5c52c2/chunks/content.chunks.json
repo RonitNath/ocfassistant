@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.xmpp-5c52c2\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 553,
+      "first_words": "Manually creating XMPP accounts \u2013 Open Computing..."
+    },
+    {
+      "index": 2,
+      "size": 894,
+      "first_words": "Ensure their email address matches the OCF usernam..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

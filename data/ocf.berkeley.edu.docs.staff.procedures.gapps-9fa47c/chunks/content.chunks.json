@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.gapps-9fa47c\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 945,
+      "first_words": "Making OCF Google Apps accounts \u2013 Open Computing..."
+    },
+    {
+      "index": 2,
+      "size": 764,
+      "first_words": "Making an account Google Apps accounts are availab..."
+    },
+    {
+      "index": 3,
+      "size": 709,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

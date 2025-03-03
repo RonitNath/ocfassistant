@@ -1,0 +1,5 @@
+If the bond interface is going to be the primary interface on the host, you may want to change manual to static and add addressing information by adding address , gateway , and netmask fields to the stanza. If the bond interface is going to be part of a bridge, leave it as manual . Bridging Write the following stanzas to the config file.
+
+If using a bridge it's likely you want the bridge to expose the addressing information for the host.
+
+auto br0 iface br0 inet static bridge_ports bond0 bridge_stp off bridge_maxwait 0 address 169.229.226.x netmask 255.255.255.0 gateway 169.229.226.1 iface br0 inet6 static address 2607:f140:8801::1:x netmask 64 gateway 2607:f140:8801::1 Configuring interfaces by hand Much configuration can be done by hand by using the ip command. This is useful for debugging and initial configuration but does not survive reboots.

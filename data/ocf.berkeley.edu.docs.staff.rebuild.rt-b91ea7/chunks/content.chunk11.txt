@@ -1,0 +1,3 @@
+Nginx: Comment out the following lines in /etc/nginx/sites-available/rt : # auth_pam "RT"; # auth_pam_service_name "common-password"; and restart Nginx ( service nginx restart ). Visit RT again and log in as RT root. Go to Tools > Configuration > Users > Select, and type in your username in "Go to user". Enable Let this user be granted rights (Privileged) . Go to Tools > Configuration > Global > User Rights. On the left side, in Add User, type your name.
+
+Then, on the right side, click the tab Rights for Administrators , and enable Do anything and everything . Save changes.

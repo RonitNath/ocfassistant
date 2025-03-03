@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.sorry-1755d0\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 762,
+      "first_words": "sorry: disable an OCF account \u2013 Open Computing Fa..."
+    },
+    {
+      "index": 2,
+      "size": 837,
+      "first_words": "Usage/Example Usage: sorry [user to be sorried] [s..."
+    },
+    {
+      "index": 3,
+      "size": 516,
+      "first_words": "After sorrying a user, make sure to run the note c..."
+    },
+    {
+      "index": 4,
+      "size": 804,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

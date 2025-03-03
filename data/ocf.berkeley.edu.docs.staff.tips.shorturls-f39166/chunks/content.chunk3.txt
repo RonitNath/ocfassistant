@@ -1,0 +1,5 @@
+When doing so, make sure that: The shorturl isn't already someone's username, so you don't accidentally break the ocf.io/username functionality for them. You add your shorturl to the list of reserved usernames .
+
+This way, no one will subsequently register an account with the same name as your shorturl and find that ocf.io/username doesn't work for them.
+
+Edit this Page Page History More in this category Tips and tricks .desktoprc Email Templates On your staff VM Installing and running ZNC Running ocfweb ShortURL guide ShortURL table Test accounts Using Twitch and OBS OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

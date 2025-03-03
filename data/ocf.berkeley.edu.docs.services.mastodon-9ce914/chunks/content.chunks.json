@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.mastodon-9ce914\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 843,
+      "first_words": "Mastodon \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 913,
+      "first_words": "Alternate usernames If you would like to use a use..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

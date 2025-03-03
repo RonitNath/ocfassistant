@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.firewall-2503c5\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 847,
+      "first_words": "External firewall \u2013 Open Computing Facility Toggl..."
+    },
+    {
+      "index": 2,
+      "size": 892,
+      "first_words": "Administering the firewall Accessing the interface..."
+    },
+    {
+      "index": 3,
+      "size": 895,
+      "first_words": "Policies All our current policies are located in t..."
+    },
+    {
+      "index": 4,
+      "size": 900,
+      "first_words": "Any changes made to the firewall policies need to..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

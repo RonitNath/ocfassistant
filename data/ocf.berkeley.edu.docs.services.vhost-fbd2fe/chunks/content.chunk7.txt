@@ -1,0 +1,9 @@
+Domains under berkeley.edu may not redirect to a non-berkeley.edu domain (see no off-site hosting ).
+
+University policies As with any OCF account, virtually hosted websites must comply with the relevant UC Berkeley computer use policy and DNS policy .
+
+The LEAD Center's Student Org Domain Name Guidelines presents the most relevant information to student groups.
+
+In particular, No off-site (third-party) hosting : Circumventions around off-site hosting, including (but not limited to) proxies, redirects, and substantial inline frames (iframes) of non-berkeley.edu domains are not allowed.
+
+The OCF does not process nor advise off-site hosting requests, which can be submitted directly to the university (however, feel free to keep us informed if you have an existing OCF account). In other words, to comply with university policy, the OCF may only provide virtual hosting for websites that are hosted on OCF servers.

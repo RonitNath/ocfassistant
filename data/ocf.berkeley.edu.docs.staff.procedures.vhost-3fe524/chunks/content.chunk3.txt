@@ -1,0 +1,5 @@
+Keep in mind that vhosts are not available without HTTPS, so there may be a short period of time where the new vhost is unavailable or giving a certificate error.
+
+Next, request the following DNS record from the University hostmaster : hostname.studentorg.berkeley.edu. IN CNAME hosting.ocf.berkeley.edu. Use the domain requested by the group in place of hostname . We have a reusable email template for making new DNS requests. This email should be sent to hostmaster@nic.berkeley.edu and sm+vhost@ocf.berkeley.edu. Make sure to include the name and CalLink OID of the requesting RSO.
+
+Answers to the following questions (provided by the requestor of the subdomain) should be sent to the University hostmaster along with the DNS request itself.

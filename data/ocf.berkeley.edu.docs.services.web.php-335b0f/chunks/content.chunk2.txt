@@ -1,0 +1,7 @@
+Custom PHP settings If the default PHP settings are problematic for your site (for example, if you require larger than normal file uploads), you can customize the PHP settings used by creating a .user.ini file inside your web root.
+
+In order to maintain compatibility with the OCF's PHP settings, we highly recommend not copying an entire php.ini * or .user.ini file from the web or from another server. Instead, we advise you to create an empty .user.ini and add only the settings you wish to change.
+
+Note that .user.ini filename should be used, as our webserver will not look for (per-user) php.ini files.
+
+Example .user.ini file The following file, located at ~/public_html/.user.ini , is an example of a good .user.ini file.

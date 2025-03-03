@@ -1,0 +1,12 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.staff.bod.template-949d4c\\content.txt",
+  "chunk_count": 1,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 123,
+      "first_words": "Board of Directors Meeting Attendance: ${username}..."
+    }
+  ]
+}

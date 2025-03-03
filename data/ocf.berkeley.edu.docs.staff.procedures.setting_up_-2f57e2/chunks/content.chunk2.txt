@@ -1,0 +1,5 @@
+LACP, or interface bonding , is a protocol that allows the bandwidth of multiple interfaces to be aggregated together and treated as a single interface.
+
+The type of bonding we use, 802.3ad, specifies that the bandwidth of the bonded interface will be the sum of the bandwidth of each child interface, while providing fault-tolerance in case a particular sub interface goes down.
+
+/etc/network/interfaces On Debian we can configure the network interfaces to come up at boot by adding stanzas to /etc/network/interfaces or /etc/network/interfaces.d/<iface> . Bonding We use bond-mode 4, or 802.3ad. Other types are available, like active-fallback or load balancing, but we use 802.3ad. Link aggregation needs to be configured on the switch as well to work. Instructions for doing so can be found in the documentation for the switch . Configuring the bonding interface is relatively simple.

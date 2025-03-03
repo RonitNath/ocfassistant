@@ -1,0 +1,7 @@
+However, if you are adding someone to root staff, in addition to modifying LDAP, you will also have to create their /root and /admin principals (if those don't already exist).
+
+For example, to create the /admin principal, you would do: $ kadmin kadmin> add otherstaffer/admin you/admin@OCF.BERKELEY.EDU's Password: Max ticket life [1 day]: Max renewable life [1 week]: Principal expiration time [never]: Password expiration time [never]: Attributes []: Policy [default]: otherstaffer/admin@OCF.BERKELEY.EDU's Password: Verify password - otherstaffer/admin@OCF.BERKELEY.EDU's Password: At the very first prompt, you are prompted for your password. It's safe to accept the defaults for the next few prompts.
+
+The last two prompts should be filled in by the new root staffer; it will become the password for their /root or /admin principal.
+
+After you've created these principals, you'll need to grant them powers in the Kerberos ACL file in Puppet .

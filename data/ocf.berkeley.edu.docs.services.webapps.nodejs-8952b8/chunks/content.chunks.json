@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.webapps.nodejs-8952b8\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 818,
+      "first_words": "Node.js \u2013 Open Computing Facility Toggle navigati..."
+    },
+    {
+      "index": 2,
+      "size": 915,
+      "first_words": "Setting up nvm Create a directory for your app to..."
+    },
+    {
+      "index": 3,
+      "size": 643,
+      "first_words": "~/.nvm/nvm.sh NODE_ENV=production PORT=\"/srv/apps/..."
+    },
+    {
+      "index": 4,
+      "size": 961,
+      "first_words": "Edit this Page Page History Table of Contents Sett..."
+    }
+  ]
+}

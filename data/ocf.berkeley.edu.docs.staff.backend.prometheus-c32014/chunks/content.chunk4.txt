@@ -1,0 +1,7 @@
+For example, if you would like to view the total RAM installed on each of the servers you can query node_memory_Active_bytes{host_type="server"} .
+
+To view the per-second rate of a metric, use rate(metric{label="value",...}) For example, the data sent in bytes/second over the past 5 minutes by fallingrocks can be retrieved using rate(node_network_transmit_bytes_total{instance="fallingrocks"} . For more info about querying, see the official documentation .
+
+Queries are best used in conjunction with Grafana, as to produce more readable results and save them for future reference. The next section will give more details on how to do this.
+
+Grafana The frontend for Prometheus is Grafana , which displays statistics collected by Prometheus in a user-friendly manner.

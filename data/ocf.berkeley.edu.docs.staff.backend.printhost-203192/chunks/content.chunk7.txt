@@ -1,0 +1,9 @@
+When enforcer receives a job that would put the user over daily or semesterly quota, it emails the user and returns an error code that cancels the job. Otherwise, it logs successful print jobs in the database and emails users in the case a job fails.
+
+Desktop notifications After printing a document from a desktop, lab visitors are notified when pages are subtracted from their quota by a little popup notification.
+
+This is done by a short daemon script, notify script , which starts upon login and runs the paper command every minute to see if the quota has changed.
+
+In the future, it would be nice to have a more robust notification system where enforcer pushes notifications to desktops while a job is printing.
+
+This would allow for richer notifications to be displayed; namely, alerts to show when a job has started or finished printing, whether the job printed successfully, and whether it went over quota.

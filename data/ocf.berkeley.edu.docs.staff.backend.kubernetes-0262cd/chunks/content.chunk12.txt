@@ -1,0 +1,9 @@
+The Kubernetes documentation says not to use NodePort services in production, and you just said that above too!
+
+True, but we only run one NodePort service, ingress-nginx , to keep us from needing other NodePort services.
+
+SoundCloud, a music streaming company that runs massive bare-metal Kubernetes clusters, also has an interesting blog post about running NodePort in production .
+
+Edit this Page Page History Table of Contents Kubernetes Kubernetes Cluster Masters Why the odd number of masters?
+
+Workers Pods OCF Kubernetes Cluster Bootstrapping Kubernetes PKI OCF Kubernetes Configuration Getting traffic into the cluster Why didn't we use MetalLB? Why don't we copy Marathon and specify one port per service?

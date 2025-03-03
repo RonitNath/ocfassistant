@@ -1,0 +1,5 @@
+Avoid running an interactive shell as another user (or else you may cause undesirable side effects like polluting their bash_history or updating their last login time). Avoid using a root shell (i.e. sudo -i ). Abuse of root privileges The worst thing an OCF staffer could do is abuse root privileges.
+
+Abuse of root privileges constitutes anything done using root privileges which is in violation of OCF policies, University policies, or applicable laws.
+
+Examples of this are violating members’ privacy (including reading or modifying their files without reasonable cause), harassing members, maliciously logging people out, deliberately compromising OCF security, etc.

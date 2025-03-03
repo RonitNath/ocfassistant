@@ -1,0 +1,5 @@
+OCF staff will review your request and contact the university hostmaster on your behalf if necessary.
+
+Including the OCF banner Place any of the Hosted by OCF banners on your site by copying the code onto your page. The banner need only be placed on the home page of your site. You can also create your own OCF banner with approval from the OCF (see instructions above).
+
+Including the University Student Group Disclaimer The university requires that all student group websites on a subdomain of berkeley.edu (other than those of university-sponsored student groups) contain the following text on each page: We are a student group acting independently of the University of California. We take full responsibility for our organization and this web site. Email Forwarding Want to send and receive email from @mygroup.studentorg.berkeley.edu addresses? You can do that! We call this mail virtual hosting . To learn more, check out our page about that .

@@ -1,0 +1,1 @@
+Install RT::Extension::CommandByMail and RT::Extension::MergeUsers: sudo cpan cpan> install RT::Extension::CommandByMail cpan> notest install RT::Extension::MergeUsers When prompted, the RT lib folder is located at /usr/share/request-tracker4/lib .

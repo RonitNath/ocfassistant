@@ -1,0 +1,7 @@
+Port: 587 (the default) Secured connection: Using TLS (the default) It should look roughly like this: Click "Add Account" when done. Verify the address. You'll now be sent an email with a link to click to verify the address. This should have arrived at the same Gmail account. Click the link in that email and you're good to go!
+
+From now on, when sending email via Gmail, you'll have a drop-down menu which lets you select the "From" address, like this: If you use the Gmail app on your iPhone or Android device, you'll be able to select the From address there as well. Having trouble with the above steps?
+
+If you're stuck and can't figure out what's wrong, feel free to drop by our staff hours for in-person help! As a last resort, you can also email us for assistance.
+
+If you do this, please provide as much detail as possible, including screenshots, the email you're trying to use, and the steps you took. (But please do not send us your password!)

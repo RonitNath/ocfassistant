@@ -1,0 +1,3 @@
+At the OCF, you can host it using our regular web hosting, though for groups with virtual hosting, we strongly recommend instead using our application hosting service instead, as it provides a first-class solution for webapps. Running a Django app The steps below assume you have already created a Django application. If you haven't, take a look at the Django documentation for help with that. Copy your Django application to your OCF account.
+
+For example, you can use scp to upload it, or if you're using source control, clone it using git (or another tool) into your home directory. In the steps below, we'll assume you put it at ~/app in your home directory. Inside your project directory, create a virtualenv and install your dependencies.

@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.mail.vhost-093d1e\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 974,
+      "first_words": "Virtual hosted mail \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 882,
+      "first_words": "It might also be cool if you could change your own..."
+    },
+    {
+      "index": 3,
+      "size": 404,
+      "first_words": "For sending, we use pam-mysql to authenticate SMTP..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

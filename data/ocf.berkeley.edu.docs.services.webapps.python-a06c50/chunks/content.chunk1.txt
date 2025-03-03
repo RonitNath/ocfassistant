@@ -1,0 +1,11 @@
+ Python (Django, Flask, etc.)
+
+– Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Python (Django, Flask, etc.)
+
+Table of Contents Setting up a virtualenv Installing gunicorn Preparing your app to be supervised Supervise your app with systemd Bonus Gunicorn tip: reloading your app Suggestions/improvements?
+
+Note: This document only applies to student groups with virtual hosts who have applied for apphosting.
+
+For normal user accounts or for groups without apphosting, you'll want to host with FastCGI instead. See our instructions for Django or Flask .
+
+You will want to deploy your application using a virtualenv so that you can easily install and manage dependencies and versions.

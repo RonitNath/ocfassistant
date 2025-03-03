@@ -1,0 +1,5 @@
+In this case, we'll create a new directory named myapp and make a new file within it named app.py : from flask import Flask app = Flask( __name__ ) @app . route( '/' ) def hello (): return 'Hello World!' if __name__ == '__main__' : app . run() Create a new directory in your ~/public_html/ directory for your flask application.
+
+You can also just put these files directly in ~/public_html if you want your site available directly under https://www.ocf.berkeley.edu/~user and you don't have any other sites: user@tsunami:~$ mkdir ~/public_html/flask For example, this path above will make your site available at https://www.ocf.berkeley.edu/~user/flask .
+
+Create ~/public_html/flask/.htaccess with these contents: RewriteEngine On RewriteBase / RewriteCond %{REQUEST_FILENAME} !-f # Change "user" and "flask" to your username and whatever directory # name you made in public_html, respectively RewriteRule ^(.

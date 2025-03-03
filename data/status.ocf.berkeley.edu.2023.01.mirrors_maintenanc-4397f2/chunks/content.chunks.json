@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2023.01.mirrors_maintenanc-4397f2\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 347,
+      "first_words": "Open Computing Facility Status: Mirrors maintenan..."
+    },
+    {
+      "index": 2,
+      "size": 2563,
+      "first_words": "18.The projected maintenance window is 20 minutes...."
+    },
+    {
+      "index": 3,
+      "size": 70,
+      "first_words": "October 2006 (20) September 2006 (4) Simple theme...."
+    }
+  ]
+}

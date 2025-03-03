@@ -1,0 +1,7 @@
+First, check if any DNS records already exist with dig hostname.berkeley.edu A AAAA MX for IPv4/IPv6/mail records, respectively. If they have all the records from the previous section, you don't have to do anything else. If not, make the same request to the University hostmaster as in the previous section. If you see this record: hostname.Berkeley.EDU. IN CNAME death.OCF.Berkeley.EDU. then include in your request to the hostmaster that it be dropped.
+
+We have a reusable email template for making DNS mail requests for groups that have old CNAME records.
+
+Mail virtual hosting may be requested separately from website virtual hosting and without a completely developed website.
+
+Application hosting The group website should be reasonably developed (can be offsite during review only for this request) before approving it. You will need a /admin principal to modify apphosting entries.

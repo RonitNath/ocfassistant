@@ -1,0 +1,5 @@
+Poor insight into drive health (can't just use smartctl/smartd), we had to write our own tools for it. No TRIM (needed for fast writes on our SSDs). Plus, it's proprietary, which makes getting it installed automatically difficult.
+
+We are sacrificing a bit of measurable performance (mostly because we can't use the battery-backed write cache), but we find it to be a small amount (and worth the operational benefits of never having to touch MegaCLI again). Instructions These assume you're willing to destroy all the data on the server and rebuild it. They also assume you're currently using MegaRAID.
+
+If you're not using MegaRAID or MegaRAID was already set up and you are booting off the first drive ( /dev/sda ), then you probably don't have to change anything and can skip the MegaRAID setup steps.

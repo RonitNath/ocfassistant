@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.accounts-4ab0c3\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 432,
+      "first_words": "Accounts \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 722,
+      "first_words": "Accounts map Edit this Page Page History More in t..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

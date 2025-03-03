@@ -1,0 +1,9 @@
+Relevant domain name : Registered Student Organizations may only use domains or request subdomains that are the officially recognized name of the group or a recognizable shortened version of the official name.
+
+Exceptions to this rule must be approved by the LEAD Center prior to requesting the domain from the OCF.
+
+In general, the subdomain must reasonably and uniquely identify the student group that is requesting it, and not be easily confused with another group or University department or resource.
+
+Hosting badge All virtual hosts on the OCF must include an OCF banner on the front page that links to the OCF home page . The banner must be noticeable without undue effort.
+
+The hosting badge not only attributes the OCF but also distinguishes it from sites hosted by University departments.

@@ -1,0 +1,5 @@
+Making changes to Jenkins Anyone in group ocfroot can log in to Jenkins (using their OCF username and password) and will have full access to Jenkins. Sadly, while the installation of Jenkins is controlled via Puppet, its configuration is not.
+
+Configuring by Puppet would be nice, but it would mean changes would need to be made inside Puppet instead of the web UI. In practice it seems most people in industry are still using the web UI for configuration anyway.
+
+Jenkins security model There are three users configured on the Jenkins server ( reaper ): jenkins , the user created by the Debian package. It is used for running the Jenkins master but not for performing any work. jenkins-slave , a user we create. It is used for running build jobs with potentially untrusted code. However, it's not secure enough to run totally untrusted code, since all jobs run under this user. jenkins-deploy , a user we create.

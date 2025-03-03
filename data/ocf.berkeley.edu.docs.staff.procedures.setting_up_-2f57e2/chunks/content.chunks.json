@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.setting_up_-2f57e2\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 870,
+      "first_words": "Setting up bridging and link aggregation \u2013 Open C..."
+    },
+    {
+      "index": 2,
+      "size": 888,
+      "first_words": "LACP, or interface bonding , is a protocol that al..."
+    },
+    {
+      "index": 3,
+      "size": 840,
+      "first_words": "One must first install ifenslave , and identify th..."
+    },
+    {
+      "index": 4,
+      "size": 858,
+      "first_words": "If the bond interface is going to be the primary i..."
+    },
+    {
+      "index": 5,
+      "size": 1105,
+      "first_words": "Create a bonding interface $ ip link add bond0 typ..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

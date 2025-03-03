@@ -1,0 +1,11 @@
+If it is a directory specified in rsnapshot, then likely all that needs to be done is to take that directory from the backup and put it onto the server to restore onto.
+
+Some backups, such as mysql, ldap, and kerberos are more complicated, and need to be restored using mysqlimport or ldapadd for instance.
+
+Onsite Onsite backups are pretty simple, all that needs to be done is to go to hal and find the backup to restore from in /opt/backups/live .
+
+All backups of recent data are found in either rsnapshot (for daily backups) or misc (for any incidents or one-off backups).
+
+Within rsnapshot , the backups are organized into directories dependings on how long ago the backup was made.
+
+To see when each backup was created just use ls -l to show the last modified time of each directory.

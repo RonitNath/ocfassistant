@@ -1,0 +1,5 @@
+Before testing the IRC bot right away, make sure you know how to use it: Using your IRC client (or Slack), join the #test channel. Trigger some bot commands. See https://ircbot.ocf.berkeley.edu/ for a list of commands. For example, saying create: thanks will trigger a response! Find the source code for a particular command to learn how it works. Once you’ve learned about create , you can start making changes to it! Follow the steps in the GitHub README to run the bot in development mode.
+
+Make sure you can talk to the bot in development mode-- it will be named create-yourusername instead of simply create . Make a simple change and test that it works. Bonus: figure out how to get your development bot to join a public channel like #test. (there are multiple ways to do this!)
+
+Play with staff utilities* OCF staff use a collection of scripts when interacting with the campus community.

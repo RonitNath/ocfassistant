@@ -1,0 +1,5 @@
+ETA 60 mins.</p><p><br /></p><p><b>Update: 1530 PST&nbsp;</b>This incident has been resolved.</p> Jonathan http://www.blogger.com/profile/10004598210761796546 noreply@blogger.com tag:blogger.com,1999:blog-34923766.post-7636315612178187033 2021-10-08T00:47:00.004-07:00 2021-10-09T14:51:27.968-07:00 Tanglu, Hyperbola decommissioning <p><b>Update: Maintenance was completed during Friday's downtime. No service interruptions expected today.
+
+</b>Tanglu and Hyperbola mirrors have been decommissioned.</p><p><br /></p><p>We are planning to take the mirrors server down for disk array migration from 10am-6pm this Saturday. HTTP, HTTPS, FTP, and Rsync will be unavailable during the maintenance window.
+
+The server may come up before 6pm, but please expect degraded performance and/or service interruption throughout the maintenance window.</p><p><b>We are planning to decommission tanglu and tanglu-releases as the project has been defunct for over 2 years.

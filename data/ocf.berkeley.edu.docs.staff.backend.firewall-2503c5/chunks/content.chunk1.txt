@@ -1,0 +1,5 @@
+ External firewall – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In External firewall Table of Contents Administering the firewall Accessing the interface Policies Syslog We use a Palo Alto Networks (PAN) firewall provided by IST.
+
+We have one network port in the server room which is activated and behind the firewall; we have another network port activated in the lab behind the television which is also behind the firewall.
+
+All the ports the desktops use are also behind the firewall since they are routed through the switch in the server room.

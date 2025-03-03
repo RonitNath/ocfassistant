@@ -1,0 +1,7 @@
+While your data is protected from hardware failure by the OCF's backup infrastructure, you will find you need a backup history of your own when you need to: Migrate to an upgraded website Archive an old website with historical data Regress to a previous state due to a bug Recover from a security breach You can make easy-to-restore backups over SSH by following the examples on this page. You could alternatively use SFTP, but this wouldn't allow you to back up a database.
+
+Backing up a web directory Making a backup of your website document tree (where all the .html , .php , etc. files are) is as simple as making a copy of your files into your home folder.
+
+If you maintain multiple websites, you can make individual backups of each; otherwise, you can just back up public_html .
+
+To save on storage space, you should archive and compress these backups as either .zip or .tar.gz files.

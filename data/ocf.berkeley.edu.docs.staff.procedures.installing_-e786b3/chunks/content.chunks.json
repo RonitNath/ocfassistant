@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.installing_-e786b3\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 868,
+      "first_words": "Installing updates with apt-dater \u2013 Open Computin..."
+    },
+    {
+      "index": 2,
+      "size": 769,
+      "first_words": "To install updates: Make sure the desktops are not..."
+    },
+    {
+      "index": 3,
+      "size": 444,
+      "first_words": "Expand it (select then hit enter), then attach to..."
+    },
+    {
+      "index": 4,
+      "size": 709,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

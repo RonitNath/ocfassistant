@@ -1,0 +1,3 @@
+Instead, we provide: Mail forwarding: forward emails sent to xxxx@yourgroup.studentorg.berkeley.edu to an email address you already own. Mail sending: send an email as xxxx@yourgroup.studentorg.berkeley.edu . Lightweight user management: create different email addresses and configure who to forward them to.
+
+Our admin panel looks like this: We provide instructions for setting this up with Gmail below, but other email providers and clients offer similar options. How can I use Gmail to send and receive email? We have an entire page about that — click here! How can I use an email client besides Gmail to send and receive email?

@@ -1,0 +1,5 @@
+ Starter Tasks – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Starter Tasks Table of Contents Connect to the OCF IRC network Get familiar with the command line Run the IRC bot in development mode* (requires being on IRC) Play with staff utilities* Play with your webspace Play with ocflib* Make a pull request!
+
+* Set up Make your change Update your PR (optional) Want to dive into learning about technical infrastructure at the OCF, but not sure where to start? Here are some self-paced tasks you can do on your own.
+
+Feel free to ask for help in our Slack , Discord , Matrix , Slack , or in person during staff hours ! Tasks marked with an asterisk (*) require staff privileges.

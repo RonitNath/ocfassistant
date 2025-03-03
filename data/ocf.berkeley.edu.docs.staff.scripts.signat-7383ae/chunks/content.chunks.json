@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.signat-7383ae\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 826,
+      "first_words": "signat: check signatory status \u2013 Open Computing F..."
+    },
+    {
+      "index": 2,
+      "size": 903,
+      "first_words": "ocflib is also used to look up UIDs and OIDs in OC..."
+    },
+    {
+      "index": 3,
+      "size": 892,
+      "first_words": "Searching for signatories... NICHOLAS DANIEL IMPIC..."
+    },
+    {
+      "index": 4,
+      "size": 576,
+      "first_words": "$ signat user nickimp NICHOLAS DANIEL IMPICCICHE (..."
+    },
+    {
+      "index": 5,
+      "size": 1268,
+      "first_words": "$ signat uid 1032668 NICHOLAS DANIEL IMPICCICHE (1..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Security advantages One major security advantage of using Kerberos is that if a ticket is stolen from a host, it will expire, so damage is minimized compared to being able to steal a password or long-lived ticket.
+
+Kerberos also assumes that the network that is being used for communication could be compromised and has malicious users who could be listening to network traffic and stealing any data sent from machine to machine. To combat this, Kerberos does not send any data like plaintext passwords or keys by themselves across the network that could be used for attacks.
+
+Instead, it uses tickets, and encrypts data sent to clients and servers with a key that only that machine can read.
+
+Usability advantages Kerberos makes passwordless login easy, since after the first password is input, a ticket can be used for future logins instead of having to type the same password again and go through the whole authentication process a second time.

@@ -1,0 +1,77 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.kerberos-a7b3dc\\content.txt",
+  "chunk_count": 14,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 844,
+      "first_words": "Kerberos \u2013 Open Computing Facility Toggle navigat..."
+    },
+    {
+      "index": 2,
+      "size": 947,
+      "first_words": "Security advantages One major security advantage o..."
+    },
+    {
+      "index": 3,
+      "size": 843,
+      "first_words": "Keep in mind that all of the authentication will h..."
+    },
+    {
+      "index": 4,
+      "size": 939,
+      "first_words": "Here's a bunch of different terms that you might r..."
+    },
+    {
+      "index": 5,
+      "size": 865,
+      "first_words": "Principal : A Kerberos principal is essentially a..."
+    },
+    {
+      "index": 6,
+      "size": 709,
+      "first_words": "Used to enable Kerberos authentication with a serv..."
+    },
+    {
+      "index": 7,
+      "size": 949,
+      "first_words": "TGS ( T icket G ranting S ervice): Usually the sam..."
+    },
+    {
+      "index": 8,
+      "size": 896,
+      "first_words": "kadmin : Administration utility for Kerberos to ma..."
+    },
+    {
+      "index": 9,
+      "size": 863,
+      "first_words": "Adding privileges for users To add privileges for..."
+    },
+    {
+      "index": 10,
+      "size": 740,
+      "first_words": "The get-keys privilege is used to fetch principals..."
+    },
+    {
+      "index": 11,
+      "size": 970,
+      "first_words": "If one is found, it returns a TGT, which is encryp..."
+    },
+    {
+      "index": 12,
+      "size": 894,
+      "first_words": "If an attacker intercepts this communication, they..."
+    },
+    {
+      "index": 13,
+      "size": 667,
+      "first_words": "The service will verify the ticket with the KDC wh..."
+    },
+    {
+      "index": 14,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

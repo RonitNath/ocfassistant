@@ -1,0 +1,5 @@
+the public SSH login, apphosting, and web servers, and desktops) Staff VMs External machines plugged into the OCF network (e.g.
+
+staffers' laptops) Each server filters input traffic as follows: All servers allow traffic from internal servers, which are considered trusted. For instance, all servers will accept traffic from supernova. All servers disallow traffic from the DMZ by default, as those hosts are considered untrusted. For instance, hal will not accept traffic from tsunami without a special exception.
+
+(DMZ servers can't even talk to other DMZ servers by default.) Some servers allow certain traffic from DMZ servers. The precise rules can be found in the puppet code. Generally: DMZ servers can talk to needed production services on the appropriate ports. Staff VMs allow all incoming traffic. Staff VMs and desktops are allowed to directly SSH into internal servers. There are other miscellaneous rules allowing other traffic.

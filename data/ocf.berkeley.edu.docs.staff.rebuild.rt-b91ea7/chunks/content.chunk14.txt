@@ -1,0 +1,5 @@
+(Tools > Configuration > Users > Select, click root, change email to staff@ocf.berkeley.edu and Real Name to OCF Staff).
+
+Make the General queue sound better: Tools > Configuration > Queues > Select, click General, change Description to "OCF Staff". (I think changing the Queue Name would be nice too.
+
+If you do that, remember to change the parameters to rt-mailgate in /var/mail/aliases/aliases and re-run newaliases on sandstorm.) Add root as a watcher for General so staff@ gets automatically Cc'ed to new tickets. Click Watchers in the upper right corner and add root. Send more mail. By default RT only sends an autoreply to the requestor on ticket creation. Create a new scrip (RT callback) so that Cc (staff@) gets notified on ticket creation as well. Create that which is to be mailed: go to Tools > Configuration > Global > Templates > Create.

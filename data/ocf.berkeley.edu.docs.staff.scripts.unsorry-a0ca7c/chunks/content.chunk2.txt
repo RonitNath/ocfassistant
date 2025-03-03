@@ -1,0 +1,1 @@
+unsorry will remove the user from the sorry group, re-enable a login shell, and generally allow them to use their account again. Occasionally more than simply unsorry may be necessary depending on changes in the infrastructure. unsorry should be run on supernova. Usage/Example $ sudo unsorry username It may also be necessary to run nscd -i passwd on tsunami .

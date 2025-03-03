@@ -1,0 +1,11 @@
+In the individual ticket page, one can change a ticket's priority value ([-10, 100] recommended) by clicking on The Basics . Ownership is modified through Reminders and mailing list settings can be modified through People . Tickets may reference each other or there may be redundant tickets.
+
+If so, ticket relationships and merging can be done under Links for the ticket you want to keep/set relations for.
+
+Statuses new : New tickets without staff responses open : Responded tickets stalled : Held back due to other things. Turns to open on thread update.
+
+resolved : Manual resolution rejected : Rejection usually without comments deleted : Use sparingly, and generally used on obvious spam. Searching By default, the queues only show open or new tickets.
+
+To see other tickets, either search the ticket number in the top right or use New Search to do more advanced searching.
+
+If using the latter, don't forget to press either Add these terms and Search or Update formate and Search .

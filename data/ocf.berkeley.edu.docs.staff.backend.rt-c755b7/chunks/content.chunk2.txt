@@ -1,0 +1,7 @@
+Manually-created tickets are found under: bod for meeting topics bureaucracy for officer-related issues operations for Operations Strategist work (opstaff) projects for long-term activities techtalks for Tech Talk ideas and organization todo for shorter-term items Tickets Comment vs Reply Much like the issues between Reply and Reply-All, the difference between Comment and Reply has led to some mishaps.
+
+In the RT interface, Reply directly communicates with the poster, so look for the last communication with the ticket opener. Comment doesn't directly communicate and is generally for internal discussion.
+
+This can also be done through email, as RT defaults the reply-to field with the queue mailing lists. Be careful here though: to comment through email, send the email to {queue}-comment (i.e. help@ vs help-comment@).
+
+Also make sure that your reply does not include any of the comments, as in make sure the trimmed comment is all the information you want released.

@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.jenkins-59241d\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 999,
+      "first_words": "Jenkins \u2013 Open Computing Facility Toggle navigati..."
+    },
+    {
+      "index": 2,
+      "size": 914,
+      "first_words": "Making changes to Jenkins Anyone in group ocfroot..."
+    },
+    {
+      "index": 3,
+      "size": 955,
+      "first_words": "It is used for running build jobs tagged deploy ,..."
+    },
+    {
+      "index": 4,
+      "size": 972,
+      "first_words": "Of course, in many cases once code builds successf..."
+    },
+    {
+      "index": 5,
+      "size": 901,
+      "first_words": "From the project page, choose the \"Embeddable Buil..."
+    },
+    {
+      "index": 6,
+      "size": 798,
+      "first_words": "Under \"Build Triggers\", check \"GitHub Pull Request..."
+    },
+    {
+      "index": 7,
+      "size": 585,
+      "first_words": "Edit this Page Page History Table of Contents Maki..."
+    },
+    {
+      "index": 8,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+ Restarting services – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Restarting services Taking production services offline As established by the SMs on August 30, 2017.
+
+Staffers who wish to take any production service offline for longer than the length of a reboot, or who wish to reboot a hypervisor hosting production services must gain permission from the Site Managers or Deputy Site Managers whenever possible.

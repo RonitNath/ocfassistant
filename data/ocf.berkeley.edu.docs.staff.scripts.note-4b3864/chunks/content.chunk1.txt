@@ -1,0 +1,5 @@
+ note: add notes to a user account – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In note: add notes to a user account Introduction note adds notes to the user's entry in ~staff/User_Info .
+
+It is used to log important information about a user, for example, if they've been sorried (and why), if their password was reset, if some admistrative action has been performed on their account, e.g.
+
+renaming the account, or for myriad other reasons where some documentation should be made about an OCF account. note should be run on supernova.

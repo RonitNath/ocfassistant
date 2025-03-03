@@ -1,0 +1,11 @@
+Adding privileges for users To add privileges for users, first create a new principal for them to use. As part of this process, the user will have to give each principal a password.
+
+The password can be the same or different from their main user principal, but they will have to enter it every time they want to edit LDAP or run commands with sudo .
+
+To create a new principal, run kadmin add [user]/[instance] , where [instance] is either root or admin .
+
+The [user]/root principal is used when running sudo commands and for changing user passwords, whereas the [user]/admin principal is used mainly for modifying LDAP.
+
+Next, to give the principal actual privileges, add the principals and privileges assigned to the kadmind.acl file used by Puppet.
+
+Notice that the all privilege does not actually give all privileges, since the get-keys privilege is separate.

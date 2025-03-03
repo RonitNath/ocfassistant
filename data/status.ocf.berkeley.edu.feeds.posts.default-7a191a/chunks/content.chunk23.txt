@@ -1,0 +1,5 @@
+If you notice any issues using our mirrors please reach out to us at help@ocf.berkeley.edu.</p><p><br /></p><p>We are currently (9/22) running emergency maintenance on mirrors.ocf.berkeley.edu. Due to an earlier drive failure we've had to replace the drives.
+
+We expect the mirrors server to be down until Monday, but we will keep this blog post updated.<br /></p> ethanhs http://www.blogger.com/profile/00268153614295180221 noreply@blogger.com tag:blogger.com,1999:blog-34923766.post-7845568682475150600 2021-07-05T15:42:00.005-07:00 2021-09-16T17:11:02.976-07:00 Intermittent service outages during summer break <p>The OCF is currently aware of intermittent service outages during the summer break to our OCF website, web hosting services, mailing services, mirrors, and internal infrastructure.
+
+Volunteer staffers have begun an investigation of the issue and are planning to resolve it in the coming weeks.

@@ -1,0 +1,7 @@
+For instance, you should be able to run staffhours[0] to see the info corresponding to the first staff hour entry on the page. Your turn!
+
+Use ocflib functions to get the following information in your interactive Python shell: Get the list of signatories for the OCF, and your favorite student org. (hint: look at the signat source code from before!) Find the toner levels of each printer. Find the hours the OCF was open on your most recent birthday.
+
+If you get stuck, don't forget that you can search the GitHub repo or Sourcegraph to find more info. Make a pull request! * Whenever a technical change to the OCF is made, we use a pull request on GitHub.
+
+Pull requests allow staffers to propose changes in discrete chunks and get feedback before the code goes live. You're going to make a pull request to ocfweb . Specifically, you'll add your name to the list of everyone who's completed this task . Set up Log into GitHub .

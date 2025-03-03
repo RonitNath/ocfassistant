@@ -1,0 +1,5 @@
+Note that VODs do not last forever (14 days for regular Twitch users); see the recommendations section below on how to save your stream. When streaming, keep the Stream Manager open (ideally on another screen) to see chat. You can get to this from https://dashboard.twitch.tv/stream-manager . Setting up OBS to stream to Twitch OBS is pretty straightforward to configure.
+
+You can install OBS by following the official instructions here , and you can find additional guidance from the OBS official wiki here . When you first open OBS, you'll encounter a first-time setup screen. Be sure to run through the options and make sure to optimize for streaming over recording.
+
+OBS operates by providing sources (input from your computer and connected devices) that you can assemble into custom arrangements called a scene .

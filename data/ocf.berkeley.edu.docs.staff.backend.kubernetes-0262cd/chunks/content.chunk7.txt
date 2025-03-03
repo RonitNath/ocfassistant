@@ -1,0 +1,9 @@
+We won't go into detail of everything contained there, but Kubernetes and etcd communication is authenticated using client certificates.
+
+All the necessary items for workers are included in os/Debian.yaml , although adding a new master to the cluster requires a manual re-run of kubetool to generate new etcd server and etcd peer certs.
+
+OCF Kubernetes Configuration Currently, the OCF has three Kubernetes masters: (1) deadlock , (2) coup , and (3) autocrat . A Container Networking Interface ( cni ) is the last piece required for a working cluster. The cni 's purpose is to faciltate intra-pod communication. puppetlabs-kubernetes supports two choices: weave and flannel .
+
+Both solutions work out-the-box, and we've had success with flannel thus far so we've stuck with it.
+
+Getting traffic into the cluster One of the challenges with running Kubernetes on bare-metal is getting traffic into the cluster.

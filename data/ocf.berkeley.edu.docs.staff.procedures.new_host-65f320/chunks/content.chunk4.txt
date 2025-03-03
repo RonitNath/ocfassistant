@@ -1,0 +1,5 @@
+Make a commit to the Puppet repo which adds a file hieradata/nodes/<hostname>.yaml for the new host. Follow the example of a similar node's host.yaml file. Step 1.4. Create the Kerberos keytab On the puppetmaster, run sudo gen-keytab . Step 2.
+
+Create the host, run Debian installer Virtual hosts We have a handy script, makevm , that: Creates a logical volume (disk) for the new VM Adds a new VM using virt-install and PXE boots it Waits for the Debian installer to finish SSHs to the new server and sets its IP To use it, log on to the target physical server ( riptide , hal , pandemic , or jaws ), and run makevm --help .
+
+A typical invocation looks something like: makevm -m 4096 -c 2 -s 15 arsenic 169.229.226.47 Physical hosts All you need to do to run the Debian installer is PXE boot.

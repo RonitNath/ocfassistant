@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.restarting_-bf6859\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 717,
+      "first_words": "Restarting services \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 981,
+      "first_words": "Whenever a staffer restarts a production service,..."
+    },
+    {
+      "index": 3,
+      "size": 970,
+      "first_words": "So you've gotten the necessary permission and made..."
+    },
+    {
+      "index": 4,
+      "size": 709,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

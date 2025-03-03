@@ -1,0 +1,7 @@
+run wrappedApp Be sure to adjust the path to your application near the top of the file (the APP_PATH variable) Once you've added the dispatch.fcgi file, mark it as executable: user@tsunami:~/public_html$ chmod +x dispatch.fcgi Rewrite requests to the FastCGI wrapper Create a file called .htaccess in your web root (or a subdirectory) containing the following lines: RewriteEngine On RewriteBase / RewriteCond %{REQUEST_FILENAME} !-f RewriteRule ^(.
+
+*)$ /~user/rails/dispatch.fcgi [QSA,L] Be sure to change user and rails to your username and whatever directory name you made in public_html , respectively.
+
+(or remove rails if not inside a separate directory) Rewriting asset and route paths One issue you may run into is an error like No route matches [GET] "/~user" .
+
+To fix an issue like this, the best method is to edit config/routes.rb in your application and add a scope block around all your routes matching the path you are using.

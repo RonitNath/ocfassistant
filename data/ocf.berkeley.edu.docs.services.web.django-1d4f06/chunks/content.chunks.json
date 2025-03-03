@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web.django-1d4f06\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 578,
+      "first_words": "Django \u2013 Open Computing Facility Toggle navigatio..."
+    },
+    {
+      "index": 2,
+      "size": 744,
+      "first_words": "At the OCF, you can host it using our regular web..."
+    },
+    {
+      "index": 3,
+      "size": 823,
+      "first_words": "For example, to create a Python 3 virtualenv, try:..."
+    },
+    {
+      "index": 4,
+      "size": 777,
+      "first_words": "In the directory you just created, make a file cal..."
+    },
+    {
+      "index": 5,
+      "size": 920,
+      "first_words": "In the same directory, create another file called..."
+    },
+    {
+      "index": 6,
+      "size": 739,
+      "first_words": "Then, to generate assets in STATIC_ROOT , run venv..."
+    },
+    {
+      "index": 7,
+      "size": 990,
+      "first_words": "You can can change the modification time of the ru..."
+    }
+  ]
+}

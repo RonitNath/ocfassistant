@@ -1,0 +1,52 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.backups-79f939\\content.txt",
+  "chunk_count": 9,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 1019,
+      "first_words": "Backups \u2013 Open Computing Facility Toggle navigati..."
+    },
+    {
+      "index": 2,
+      "size": 880,
+      "first_words": "Students automatically get an \"unlimited\" plan, so..."
+    },
+    {
+      "index": 3,
+      "size": 788,
+      "first_words": "If it is a directory specified in rsnapshot, then..."
+    },
+    {
+      "index": 4,
+      "size": 894,
+      "first_words": "Offsite Offsite backups are more complicated becau..."
+    },
+    {
+      "index": 5,
+      "size": 982,
+      "first_words": "Decrypt the backup using gpg . This requires your..."
+    },
+    {
+      "index": 6,
+      "size": 849,
+      "first_words": "Backup Contents Backups currently include: Everyth..."
+    },
+    {
+      "index": 7,
+      "size": 455,
+      "first_words": "(The incremental file backups are only about ~300..."
+    },
+    {
+      "index": 8,
+      "size": 547,
+      "first_words": "Edit this Page Page History Table of Contents Back..."
+    },
+    {
+      "index": 9,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

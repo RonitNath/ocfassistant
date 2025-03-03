@@ -1,0 +1,5 @@
+This will allow you to run pip install to install any python packages that you need that the OCF does not already have.
+
+The benefit of having a virtualenv is that you can decide the dependencies you want, without being tied to the OCF defaults: user@tsunami:~/app$ virtualenv -p python3 venv user@tsunami:~/app$ venv/bin/pip install flask flup6 Feel free to install any other packages you need for your flask app at this step too (or later on, that's cool too).
+
+If you have an existing flask app with a requirements.txt file, then run venv/bin/pip install -r requirements.txt to install dependencies from that. For full details on how to use pip, see the pip documentation . Create a new python file (or directory) for your application logic.

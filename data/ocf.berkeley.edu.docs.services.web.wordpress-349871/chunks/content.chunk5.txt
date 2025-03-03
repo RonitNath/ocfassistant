@@ -1,0 +1,7 @@
+Unzip this file and change the file extension of all .xml files to .wxr Log into the dashboard at your OCF WordPress installation and go to Tools > Import > WordPress , then upload the .wxr file with all your content. You will have to re-upload most of your media files to your OCF WordPress installation.
+
+Additionally, you should try and go through most of your posts and pages with images, as you may need to relink things again. Further details can be found at the support page by WordPress.com .
+
+Frequently Asked Questions I forgot my admin password and can't log in First, try using the "Forgot Password" feature on your site. You can find a link from the login page.
+
+If you're not able to recover your password via email, you can use wp-cli instead, using the instructions below. (If you're not comfortable following these instructions, consider coming in to staff hours instead. Go to our web-based SSH client and sign in with your username and password.

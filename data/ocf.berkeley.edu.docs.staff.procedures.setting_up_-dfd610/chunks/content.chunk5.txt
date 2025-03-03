@@ -1,0 +1,3 @@
+The reason is so that you can replace the drive when it fails with another drive which isn't quite the same size (it might be a few bytes smaller).
+
+for device in /dev/sda /dev/sdb /dev/sdc /dev/sdd; do parted " $device " mklabel gpt parted " $device " mkpart primary 10MB 510GB done Pick one disk to hold GRUB (I usually do /dev/sda ) and do: parted /dev/sda mkpart primary ext4 1 5 parted /dev/sda Figure out the new partition number (typically 2 since it was the second partition created), then run: parted /dev/sda set 2 bios_grub on Set up RAID 10, and make sure to use the data partitions (like /dev/sda1 and not the entire drive).

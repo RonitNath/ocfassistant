@@ -1,0 +1,3 @@
+We expect the downtime to last for about 4 hours.</p><p>We apologize for the inconvenience.</p> Jonathan http://www.blogger.com/profile/10004598210761796546 noreply@blogger.com tag:blogger.com,1999:blog-34923766.post-6373505088930264681 2022-02-04T19:47:00.007-08:00 2022-02-06T22:28:00.497-08:00 Mirrors upgrade underway, service interruptions expected <p>We are currently performing upgrades on the OCF mirrors server to accommodate more projects and improve the throughput. During this time, you might experience sporadic downtime and reduced performance.
+
+Please retry your downloads in a few seconds if you experience failures when downloading from the OCF mirrors.</p><p>We apologize for any inconvenience.

@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.tips.templates-591010\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 841,
+      "first_words": "Email Templates \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 773,
+      "first_words": "The template variables will be automatically fille..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

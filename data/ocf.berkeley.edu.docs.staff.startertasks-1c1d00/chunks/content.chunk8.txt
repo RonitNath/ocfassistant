@@ -1,0 +1,3 @@
+If your OCF email ( <OCF username>@ocf.berkeley.edu ) is not connected to your account, add it to your account emails . Create your personal fork of ocfweb . Log into supernova .
+
+Optional: For easier authentication to GitHub, generate an SSH key and add it to your GitHub account . Note: the xclip commands will probably not work. Instead, just run cat ~/.ssh/id_rsa.pub and manually copy it to your clipboard. Return to your new fork of ocfweb and clone the repository . Enter your clone with cd ocfweb . Take a look at the README. It will tell you to run a few commands to finish setting up. You only have to do this part once. Now that your fork is set up, all future pull requests to ocfweb will use this same clone.

@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.editing_doc-e21485\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 805,
+      "first_words": "Editing docs \u2013 Open Computing Facility Toggle nav..."
+    },
+    {
+      "index": 2,
+      "size": 775,
+      "first_words": "from Virtual Hosting : All virtual hosts on the OC..."
+    },
+    {
+      "index": 3,
+      "size": 945,
+      "first_words": "For more complicated ones, the repository's readme..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.switch-b6b5bb\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 948,
+      "first_words": "Managed switches \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 925,
+      "first_words": "We do not currently use many of the managed featur..."
+    },
+    {
+      "index": 3,
+      "size": 734,
+      "first_words": "In the future, we'd like to make use of some of th..."
+    },
+    {
+      "index": 4,
+      "size": 765,
+      "first_words": "blackhole.ocf.berkeley.edu> enable blackhole.ocf.b..."
+    },
+    {
+      "index": 5,
+      "size": 865,
+      "first_words": "blackhole.ocf.berkeley.edu(config-if-Po7)#show por..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

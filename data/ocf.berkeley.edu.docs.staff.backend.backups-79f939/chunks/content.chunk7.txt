@@ -1,0 +1,3 @@
+(The incremental file backups are only about ~300 MiB, but since mysqldump files can't be incrementally backed up, those take a whole ~2 GiB each time, so the total backup grows by ~3GiB each time. However, an old backup is discarded each time too, so it approximately breaks even.)
+
+Ideas for backup improvements Automate backup testing, so have some system for periodically checking that backups can be restored from, whether they are offsite or onsite.

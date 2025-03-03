@@ -1,0 +1,7 @@
+openssl s_client -CApath /etc/ssl/certs -connect rt.ocf.berkeley.edu:443 The last line of the SSL session information should have a zero return code.
+
+This only verifies the certificate, not that the hostname you entered matches the Common Name or Subject Alternatives Names on the certificate.
+
+Good: Verify return code: 0 (ok) Bad example 1: Verify return code: 18 (self signed certificate) The default self-signed certificate, not the one obtained through Let's Encrypt, is probably still being used.
+
+Bad example 2: Verify return code: 21 (unable to verify the first certificate) The intermediate CA chain is probably missing (or in the wrong order), so there is no trust path to a root CA.

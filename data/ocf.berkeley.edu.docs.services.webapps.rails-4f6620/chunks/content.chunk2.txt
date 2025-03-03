@@ -1,0 +1,7 @@
+Setting up RVM Create a directory for your app to live in: mkdir -p ~/myapp cd ~/myapp Install RVM in your home directory.
+
+Note that rvm is terrible and will modify your shell config files without asking, but that's probably what you want, since it will make using and managing Ruby/Rails easier.
+
+Go find the RVM commands appropriate for your app, and copy the lines straight into your shell to install it. In general this is a bad way to install things, but it only has to be done once.
+
+At the time of writing, it looks like this: gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 curl -sSL https://get.rvm.io | bash -s stable Go ahead and run it, and source rvm : . ~/.rvm/scripts/rvm Install whatever version of Ruby you want. (Newer is better).

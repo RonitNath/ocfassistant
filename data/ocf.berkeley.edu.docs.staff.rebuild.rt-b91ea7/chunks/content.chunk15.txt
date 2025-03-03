@@ -1,0 +1,7 @@
+Create a template with the name "Correspondence Creation" and description "For mailing staff on ticket creation, but without all that boilerplate". Keep type as "Perl".
+
+Paste this in as the content: RT-Attach-Message: yes Subject: {$Ticket->Subject} {$Transaction->Content()} Save changes.
+
+Modify the scrip "On Create Notify AdminCcs" to use the template "Global Template: Correspondence Creation". Send spoofed mail. Mail in the past has come from actual people, not endless drones of "via RT". Let's fake that for people who are uncomfortable with change.
+
+At the top of Correspondence, Admin Correspondence, Admin Comment, and Correspondence Creation templates, append the following below the last mail header that appears, if any exist: From: { my $u = $Transaction->CreatorObj; my $a = $u->EmailAddress; my $res = $u->RealName || $u->Name; $res .= " <".$a . ">" ; $res; } Automatically close tickets.

@@ -1,0 +1,7 @@
+Making an account Google Apps accounts are available upon request for OCF staff members, and are granted at SM discretion.
+
+Upon getting one, staffers should be aware that OCF emails will be sent to the new account instead of the Calnet account that they're used to.
+
+Making a new account requires Google Admin privileges: Go to admin.google.com, click on the "Users" section of the Admin panel, and press the '+' button.
+
+Fill in the first and last name of the user, and make sure their email address matches their OCF username. Update the user's mail attribute in LDAP to use Google Apps: kinit you/admin uid=usernamehere . Change it to usernamehere@g.ocf.berkeley.edu . The g. in the domain is critical; omitting it can cause email delivery loops in our system!

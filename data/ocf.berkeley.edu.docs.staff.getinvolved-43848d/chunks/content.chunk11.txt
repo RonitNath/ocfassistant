@@ -1,0 +1,7 @@
+You can use our chat channels or talk to a veteran staffer in person to get a starting point and roadmap.
+
+Staff Hours During the week, veteran staffers host “staff hours” ( ocf.io/staffhours ), where we provide support to users of our services. Newbies are encouraged to attend staff hours too.
+
+For a newbie, attending staff hours can serve multiple purposes: Learn by shadowing veteran staffers as they help people out Talk about your interests so we can help you find stuff to work on Get one-on-one mentoring so you can learn about the vast complex world of OCF infrastructure Get context and more information on a particular area you’re interested in contributing in Slack, Discord, Matrix, or IRC OCF staff often communicate on Slack , Discord , Matrix , or IRC .
+
+These chat services are bridged together, so joining any of them lets you participate in the same discussions.

@@ -1,0 +1,11 @@
+Students automatically get an "unlimited" plan, so it provides a nice and free location to store encrypted backups.
+
+We currently have a weekly cronjob that makes an encrypted backup using GPG keys and then uploads it to Box.com .
+
+This takes about 20 hours combined to make and upload, and will probably take even longer in the future as backups grow.
+
+An email is sent out once the backup files are uploaded, and the link provided is shared with only OCF officers to make sure the backups are kept as secure as possible, since they contain all of the OCF's important data. The backups are already encrypted, but it doesn't hurt to add a little extra security to that.
+
+Retention Off-site backups older than six months (180 days) are permanently deleted by a daily cronjob .
+
+Restoring Backups The easiest way to restore from a backup is to look at how it is made and reverse it.

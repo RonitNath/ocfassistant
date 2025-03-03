@@ -1,0 +1,7 @@
+In the directory you just created, make a file called run.fcgi with the file contents: #!/home/u/us/user/app/venv/bin/python import os import sys sys . path . insert( 0 , os . path .
+
+expanduser( '~/app' )) from flup.server.fcgi import WSGIServer # Replace "djangoapp" below with your application name from djangoapp import wsgi if __name__ == '__main__' : WSGIServer(wsgi . application) .
+
+run() Make sure to replace the first line of run.fcgi file with the actual path to your project's virtualenv Python. You can find it by running the command readlink -f ~/app/venv/bin/python .
+
+Make sure also to replace from djangoapp with the name of your Django application (that's the name of the directory containing your wsgi.py file). In the same directory, run chmod +x run.fcgi .

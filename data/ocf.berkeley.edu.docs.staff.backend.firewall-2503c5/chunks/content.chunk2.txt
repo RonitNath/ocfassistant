@@ -1,0 +1,9 @@
+Administering the firewall Accessing the interface Administration of the firewall is done through the web interface , and must be done from an on-campus IP address (for instance through the library VPN or SOCKS proxying through an OCF host).
+
+Remember to specify https when loading the firewall admin page , as it does not have a redirect from http to https.
+
+If you are having connection issues with the firewall admin page loading indefinitely, it is likely because you are trying to use http or trying to access it from an off-campus IP.
+
+To quickly set up a SOCKS proxy, run ssh -D 8000 -N supernova from any off-campus host and then set up the SOCKS proxy (through your OS or through your browser's settings) to use the proxy on localhost and port 8000 .
+
+To sign in to administer the firewall, make sure to use the single sign-on (SSO) option, and it will ask for CalNet authentication.

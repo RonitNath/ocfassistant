@@ -1,0 +1,5 @@
+The service will verify the ticket with the KDC when used, to make sure it is valid for the user issuing the request.
+
+Edit this Page Page History Table of Contents Introduction Security advantages Usability advantages Versions Terminology Commands Adding privileges for users How does it actually work?
+
+More in this category Infrastructure Backups Debian Buster upgrade External firewall Git Internal firewalls Jenkins KVM/Libvirt Kerberos Kubernetes LDAP Mail Virtual hosted mail Managed switches Munin Printhost Prometheus Puppet Request Tracker Servers OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

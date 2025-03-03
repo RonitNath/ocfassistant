@@ -1,0 +1,9 @@
+Keep in mind that all of the authentication will have to be done every 10 hours, as tickets do expire, but passwords have to be typed far less with Kerberos in place.
+
+Tickets are invalidated on logout, so that makes sure that someone can't steal a ticket and use it after you have left, as a little added security. Versions There are two major free versions of Kerberos: MIT and Heimdal Kerberos.
+
+At the OCF, we use Heimdal Kerberos; if you look up documentation, it might instead be for the MIT version, so be careful to make sure the commands work. Kerberos also has 2 main versions that are still used: version 4 and version 5.
+
+Version 5 fixes a lot of the security and design flaws of version 4, so we use version 5 of the protocol.
+
+Terminology Unfortunately, Kerberos is a complicated protocol that involves a lot of technical jargon.

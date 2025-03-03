@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.tips.twitch-815f54\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 755,
+      "first_words": "Using Twitch and OBS \u2013 Open Computing Facility To..."
+    },
+    {
+      "index": 2,
+      "size": 817,
+      "first_words": "Note that VODs do not last forever (14 days for re..."
+    },
+    {
+      "index": 3,
+      "size": 982,
+      "first_words": "We recommend setting up at least two scenes in OBS..."
+    },
+    {
+      "index": 4,
+      "size": 989,
+      "first_words": "We advise streamers to be very careful about what..."
+    },
+    {
+      "index": 5,
+      "size": 734,
+      "first_words": "Screencasting in Arch on Wayland GNOME (Note: this..."
+    },
+    {
+      "index": 6,
+      "size": 552,
+      "first_words": "If so, move this file to overwrite your old \"/etc/..."
+    },
+    {
+      "index": 7,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

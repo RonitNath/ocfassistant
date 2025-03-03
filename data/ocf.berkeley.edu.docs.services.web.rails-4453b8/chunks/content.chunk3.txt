@@ -1,0 +1,5 @@
+Create FastCGI wrapper script To host your application, create a file called dispatch.fcgi in your web root ( ~/public_html/ ) based on the following template: #!/usr/bin/ruby require 'etc' APP_PATH = Etc . getpwuid .
+
+dir + '/foo' ENV [ 'GEM_HOME' ] = APP_PATH + '/bundle/ruby/2.3.0/gems' ENV [ 'GEM_PATH' ] = APP_PATH + '/bundle/ruby/2.3.0' require_relative APP_PATH + '/config/environment' class Rack :: PathInfoRewriter def initialize (app) @app = app end def call (env) env . delete( 'SCRIPT_NAME' ) parts = env [ 'REQUEST_URI' ]. split( '?' ) env [ 'PATH_INFO' ] = parts [0] env [ 'QUERY_STRING' ] = parts [1]. to_s @app . call(env) end end app, options = Rack :: Builder . parse_file( APP_PATH + '/config.ru' ) wrappedApp = Rack :: Builder .
+
+new do use Rack :: ShowExceptions use Rack :: PathInfoRewriter run app end Rack :: Handler :: FastCGI .

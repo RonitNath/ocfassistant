@@ -1,0 +1,7 @@
+their department Account does not already have a virtual host, or has an exception from a Site Manager For RSOs, domain name complies with LEAD Center guidelines .
+
+In particular, requested domain name is sufficiently similar to their official name and wouldn't potentially be confused with a university department. For non-berkeley.edu domains, domain name has been approved by a (D)GM or (D)SM.
+
+(We wish to keep the number of these domains under check to limit the number of non-berkeley.edu domain owners we have to contact when our web server or mail server DNS changes.)
+
+Enabling virtual hosting Web Edit the file configs/vhost.conf in the ocf/etc repo , adding new entries at the top. The format is documented at the top of that file. This takes effect at the top of every hour when a cronjob runs. HTTPS should available shortly afterwards (within 5-10 minutes).

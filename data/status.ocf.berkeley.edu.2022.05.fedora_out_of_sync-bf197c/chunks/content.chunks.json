@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2022.05.fedora_out_of_sync-bf197c\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 304,
+      "first_words": "Open Computing Facility Status: Fedora out of syn..."
+    },
+    {
+      "index": 2,
+      "size": 2534,
+      "first_words": "Posted by Jonathan at 2:58 AM Newer Post Older Pos..."
+    }
+  ]
+}

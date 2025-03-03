@@ -1,0 +1,9 @@
+Taking down a site If you have an old website you want to archive and remove from public view, you can make a backup of it using the above instructions and then delete your webiste files and database.
+
+When deleting files, be sure to delete the contents inside of public_html and not just public_html itself, which is a mere link.
+
+The easiest way to remove the contents of your database is to log into phpMyAdmin at https://pma.ocf.berkeley.edu with your OCF username and MySQL password. There, you can select all tables using the check boxes and select Drop to delete them all.
+
+If you instead wanted to delete the whole database, you could use the command mysqladmin -uusername -p drop username However, you would need to run makemysql to create a new database, which would permanently change your password.
+
+Example backup Suppose your OCF account name is johndoe and you have WordPress installed directly in ~/public_html .

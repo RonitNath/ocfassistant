@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.vhost.mail-fdb35f\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 785,
+      "first_words": "Mail virtual hosting for student groups \u2013 Open Co..."
+    },
+    {
+      "index": 2,
+      "size": 884,
+      "first_words": "By contrast, mail virtual hosting lets you create..."
+    },
+    {
+      "index": 3,
+      "size": 631,
+      "first_words": "Instead, we provide: Mail forwarding: forward emai..."
+    },
+    {
+      "index": 4,
+      "size": 867,
+      "first_words": "There are too many email clients for us to provide..."
+    },
+    {
+      "index": 5,
+      "size": 896,
+      "first_words": "More in this category Virtual hosting (group.stude..."
+    }
+  ]
+}

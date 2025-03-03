@@ -1,0 +1,9 @@
+Automated alerts Munin sends mail to root whenever certain stats run out of bounds for a machine, e.g. if disk usage goes above 92%.
+
+Some plugins have configurable warning and critical levels for each field, which are usually set in the node config like so: [pluginname] env.fieldname_warning min:max env.fieldname_critical min:max The warning bounds for each node are generated from a Puppet template in the ocf module using machine specs from facter.
+
+While config files use underscores, the display name for a variable's warning levels takes the form fieldname.warning or fieldname.critical .
+
+When munin-limits finds a variable in warning or critical range, it pipes the alert text to another script which filters out uninteresting or noisy messages and emails the rest to root.
+
+Munin itself isn't very flexible about disabling alerts from plugins, so, if there is a noisy variable you want to ignore alerts for, you can add it to the list of IGNORED_WARNINGS .

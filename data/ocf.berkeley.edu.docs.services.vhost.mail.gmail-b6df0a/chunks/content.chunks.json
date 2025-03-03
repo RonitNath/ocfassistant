@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.vhost.mail.gmail-b6df0a\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 929,
+      "first_words": "Using Gmail with mail virtual hosting \u2013 Open Comp..."
+    },
+    {
+      "index": 2,
+      "size": 959,
+      "first_words": "Set a password for the email. From the same page a..."
+    },
+    {
+      "index": 3,
+      "size": 954,
+      "first_words": "Port: 587 (the default) Secured connection: Using..."
+    },
+    {
+      "index": 4,
+      "size": 837,
+      "first_words": "Edit this Page Page History More in this category..."
+    }
+  ]
+}

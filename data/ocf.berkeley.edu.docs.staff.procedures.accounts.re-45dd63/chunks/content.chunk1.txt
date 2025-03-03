@@ -1,0 +1,3 @@
+ Rename an account – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Rename an account We should sparingly rename a user account, and only do so when it is necessary (e.g. typo in the username or update of their lived name).
+
+To rename an individual account, sorry the account with the old name and make a note of why you are changing the username. To run sorry you need to be a root user. Follow the prompts of the script.

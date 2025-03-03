@@ -1,0 +1,3 @@
+All SMART attributes are currently normal, so we currently do not expect any immediate service interruption as we investigate the issue.&nbsp;</p><p>10/12: Scheduled maintenance at 1930 PST.
+
+ETA 15 mins.</p><p><b>We will update this post once we have more information on the situation.</b></p> Jonathan http://www.blogger.com/profile/10004598210761796546 noreply@blogger.com tag:blogger.com,1999:blog-34923766.post-4955908348571058816 2021-10-08T14:10:00.004-07:00 2021-10-08T15:31:49.661-07:00 Emergency Mirrors Outage 10/8 <p>Our mirror server is currently down for maintenance.

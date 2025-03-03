@@ -1,0 +1,5 @@
+To raise disk quotas, you can use a command like: soft_limit = "5242880" # 5 GiB in KiB hard_limit = "5767168" # 5.5 GiB in KiB for i in $( seq 1000 99999 ) ; do quotatool -b -Rr -q " $soft_limit " -l " $hard_limit " -u ": $i " /dev/mapper/vg-homes done The flags assure that we set a block limit (rather than an inode limit) and that we only raise quotas (so that we don't accidentally lower the quota of a special snowflake).
+
+The "soft limit" is like a warning limit; it can be configured to be enforced after a grace period, but we don't do this.
+
+In practice, we announce the limit to the public as "X GB", with a soft limit of "X GB" and a hard limit of "X+0.5 GB". Since the soft limit is never enforced, the real limit is the hard limit.

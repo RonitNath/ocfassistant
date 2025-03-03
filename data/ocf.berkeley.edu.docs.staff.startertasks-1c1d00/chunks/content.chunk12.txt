@@ -1,0 +1,5 @@
+The brackets and parentheses indicate that this is a link in Markdown , which is the markup language we use for the docs. As before, stage your changes and commit them. Optional: Squash your changes. A pull request often will accumulate lots of little commits that are not very important. You can "squash" all these commits together to make things cleaner.
+
+Run git rebase -i HEAD~2 ( ~2 is the number of commits to rebase) to do an "interactive rebase " of the last two commits. A text editor will open with a line for each commit.
+
+Leave the first commit marked as "pick", but for the second commit, replace "pick" with "squash" to squash it into the first one. Save and exit. You will get a chance to edit the commit message for the squashed commit. By default, it just puts the two commit messages together. You might want to delete the second message. Save and exit. You did it!

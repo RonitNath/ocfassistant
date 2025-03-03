@@ -1,0 +1,7 @@
+Missing CalNet UID If an alumni cannot use the online password reset function to reset the password on their account, but they do have a CalNet login, you can manually add the Calnet UID to their account in LDAP to let them perform a password reset. They may also need to have a Kerberos principal added for them.
+
+Please make sure to confirm the user's CalNet ID using the Berkeley Directory, or by searching the Cal Alumni Network. Alumni profile URLs are in the form https://cal.berkeley.edu/profile.php?u=<calnet_uid> .
+
+You may need an actual alumnus to perform the search for you, if you are so inclined but unable to access the page on account of your youth.
+
+To perform the association, simply follow the steps outlined in the LDAP Association documentation with regards to adding the calnetUid record. However, don't delete it after you're done. Missing Kerberos principal In 2011, we transitioned our password database to Kerberos.

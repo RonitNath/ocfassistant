@@ -1,0 +1,5 @@
+The values are already changed, so no saving is needed: (parted) quit This will be shown, but we'll address this in the next steps below for the swap partition if you had to move that: Information: You may need to update /etc/fstab.
+
+Conclusion (for either method used above): Let the kernel know that the partitions have changed Run partprobe to start using the new partition table in the kernel without a reboot: $ sudo partprobe Magic!
+
+Resize the filesystem fdisk -l should now show all the new information and partition sizes: $ sudo fdisk -l Resize the filesystem to take up all of the partition's space: $ sudo resize2fs /dev/vda1 resize2fs 1.44.5 (15-Dec-2018) Filesystem at /dev/vda1 is mounted on /; on-line resizing required old_desc_blocks = 2, new_desc_blocks = 2 The filesystem on /dev/vda1 is now 6553344 (4k) blocks long.

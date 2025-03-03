@@ -1,0 +1,1 @@
+ Open Computing Facility Status: Emergency mirrors server maintenance today Updates for Open Computing Facility services Tuesday, March 15, 2022 Emergency mirrors server maintenance today The OCF mirrors server will be down for about an hour staring 1300 PDT today due to a required move within the rack and IPv6 provisioning.We apologize for the inconvenience.

@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu-b394ec\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 775,
+      "first_words": "Open Computing Facility Status Updates for Open C..."
+    },
+    {
+      "index": 2,
+      "size": 963,
+      "first_words": "Posted by Jonathan at 10:38 PM Thursday, February..."
+    },
+    {
+      "index": 3,
+      "size": 903,
+      "first_words": "Affected archives include (this is not an exhausti..."
+    },
+    {
+      "index": 4,
+      "size": 272,
+      "first_words": "Posted by Jonathan at 10:09 PM Tuesday, March 15,..."
+    },
+    {
+      "index": 5,
+      "size": 2560,
+      "first_words": "Posted by Jonathan at 12:01 PM Older Posts Home Su..."
+    }
+  ]
+}

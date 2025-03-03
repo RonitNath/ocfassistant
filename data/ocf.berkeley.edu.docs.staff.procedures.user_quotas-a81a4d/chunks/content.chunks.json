@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.user_quotas-a81a4d\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 766,
+      "first_words": "User disk quotas \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 601,
+      "first_words": "View your own quota quota View another user's quot..."
+    },
+    {
+      "index": 3,
+      "size": 833,
+      "first_words": "You can disable the quota entirely by setting 0 fo..."
+    },
+    {
+      "index": 4,
+      "size": 745,
+      "first_words": "To raise disk quotas, you can use a command like:..."
+    },
+    {
+      "index": 5,
+      "size": 905,
+      "first_words": "Edit this Page Page History Table of Contents Summ..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+( docs ) JSON APIs for lab hours ( api/hours.py ) Account creation , password resets , others Lab usage statistics ( stats/ ) Form for requesting a virtual host ( account/vhost.py ) ocflib ( issues ) - a Python library installed on all servers. Has Python functions for various parts of the lab infrastructure.
+
+Account management, searching ( account/ ) Accessing the database ( infra/mysql.py ) Send automated emails ( misc/mail.py ) Printer querying and statistics ( printing/ ) utils ( issues ) - similar to ocflib, this contains Python scripts that are run by humans.

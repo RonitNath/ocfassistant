@@ -1,0 +1,9 @@
+Offsite Offsite backups are more complicated because the backup files first need to be downloaded, stuck together into a single file, decrypted, extracted, and then put into LVM to get back the whole backup archive that would normally be found onsite.
+
+This essentially just means that the create-encrypted-backup script needs to be reversed to restore once the backup files are downloaded.
+
+Here are the general steps to take to restore from an offsite backup: Download all the backup pieces from Box.com.
+
+This is generally easiest with a command line tool like cadaver , which can just use a mget * to download all the files (albeit sequentially).
+
+If more speed is needed, open multiple cadaver connections and download multiple groups of files at once. Put together all the backup pieces into a single file. This can be done by running cat <backup>.img.gz.gpg.part* > <backup>.img.gz.gpg .

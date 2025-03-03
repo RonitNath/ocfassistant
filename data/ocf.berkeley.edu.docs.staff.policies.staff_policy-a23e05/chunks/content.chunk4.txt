@@ -1,0 +1,5 @@
+In particular: Don’t read or modify a member’s files or directories unless one of the following is true: The file or directory’s permissions ordinarily grant you access. The member has requested it (explicitly or implicitly). You have probable cause to suspect that the member may be involved in some policy violation (e.g. a security breach). The above restrictions also apply to surveilling members’ private activity on the OCF (e.g. by strace ’ing their processes, recording network packet captures, etc.).
+
+If you do have to access a member’s files or other private data, limit your accesses to the minimum required to perform your duties. Let other members know when possible if modifying their files.
+
+Here are some additional guidelines to follow: If you don’t have to use root for something, don’t use it.

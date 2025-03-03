@@ -1,0 +1,7 @@
+However, if you're looking to create your website from scratch, in most cases it will be much easier to just install WordPress on your OCF account and start editing it here, rather than creating it locally or on another provider like WordPress.com and transferring things over.
+
+If you have an old WordPress installation lying around -- if you are replacing an old student group website, for example -- you should archive it before proceeding. See the example on our backup page to easily make a backup over SSH.
+
+The basic steps to migration are as follows: Follow the steps above to install WordPress on your OCF account.
+
+Use the web admin dashboard to install all the themes and plugins you were using at WordPress.com Log into your WordPress.com dashboard and go to Settings > Export to download a zipped XML file with all your site's posts and content. Note that this export usually will not include all of your media content.

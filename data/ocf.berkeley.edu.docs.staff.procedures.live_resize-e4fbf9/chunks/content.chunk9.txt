@@ -1,0 +1,3 @@
+It isn't really useful for most of our VMs, it's only to get around a 4 partition limit on traditional partition tables): Command (m for help): n Partition type p primary (1 primary, 0 extended, 3 free) e extended (container for logical partitions) Select (default p): Partition number (2-4, default 2): First sector (50333696-52428799, default 50333696): Last sector, +sectors or +size{K,M,G,T,P} (50333696-52428799, default 52428799): Created a new partition 2 of type 'Linux' and of size 1023 MiB.
+
+Change the type of the new partition to be the correct type for swap (code 82): Command (m for help): t Partition number (1,2, default 2): 2 Hex code (type L to list all codes): 82 Changed type of partition 'Linux' to 'Linux swap / Solaris'.

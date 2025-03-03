@@ -1,0 +1,1 @@
+There are also some special purpose mailing lists: ocf@lists.berkeley.edu ( ocf.io/announce ): we add emails from Calapalooza tabling to this mailing list, and send out announcements about staff meetings here. We use a Berkeley mailing list here to let non-OCF members sign up for it. This mailing list should be cleared every fall.

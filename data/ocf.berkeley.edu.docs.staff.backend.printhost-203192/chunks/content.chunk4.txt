@@ -1,0 +1,7 @@
+This part of the process is largely controlled by the printer's onboard configuration, which can be modified by visiting the printer's IP over the web (e.g. https://papercut/ ).
+
+In the OCF's case, security is provided by an access control list (ACL) which accepts print jobs from the printhost and rejects jobs from other hosts. Filters CUPS handles documents of many different formats.
+
+Some typical MIME types include application/pdf for raw PDF and application/vnd.cups-postscript for printable PostScript. To convert between formats, CUPS runs the data through programs called filters .
+
+A filter is, basically, a program that takes a special call format, plus CUPS-specific environment variables, and converts files from one format to another while adding special formatting options like duplex mode. CUPS uses not just one, but potentially several filters to get the document into its final format.

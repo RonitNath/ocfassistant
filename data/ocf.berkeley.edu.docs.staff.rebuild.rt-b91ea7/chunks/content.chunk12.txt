@@ -1,0 +1,3 @@
+You will want to remove your superuser powers later because superusers may be artificially limited in rights elsewhere on RT for your own protection: "Starting from version 3.2 (or 3.4?) RT doesn't show users with the SuperUser right in a ticket owner select-box." Re-enable Kerberos password authentication in Apache configuration and force-reload Apache. Create groups. I've created root and staff groups; this configuration may change as our use of RT is refined. Go to Tools > Configuration > Groups > Create and create "Root" and "Staff" groups.
+
+Add users to these groups by the Members subsection in the upper right corner of the group modification page. (You can also alter a user's group memberships from the user's modification page.)

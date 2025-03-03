@@ -1,0 +1,82 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.getinvolved-43848d\\content.txt",
+  "chunk_count": 15,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 955,
+      "first_words": "Getting Involved \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 863,
+      "first_words": "We don't impose a specific time commitment; some v..."
+    },
+    {
+      "index": 3,
+      "size": 984,
+      "first_words": "If you are interested in gaining insight into the..."
+    },
+    {
+      "index": 4,
+      "size": 970,
+      "first_words": "We can help you figure out your interests at the O..."
+    },
+    {
+      "index": 5,
+      "size": 985,
+      "first_words": "Don\u2019t worry about finding the best way to contribu..."
+    },
+    {
+      "index": 6,
+      "size": 193,
+      "first_words": "Here\u2019s a list of our most active repos, with some..."
+    },
+    {
+      "index": 7,
+      "size": 899,
+      "first_words": "Install a standard set of software packages on eac..."
+    },
+    {
+      "index": 8,
+      "size": 572,
+      "first_words": "( docs ) JSON APIs for lab hours ( api/hours.py )..."
+    },
+    {
+      "index": 9,
+      "size": 745,
+      "first_words": "Paper quota refund ( printing/paper ) Query/search..."
+    },
+    {
+      "index": 10,
+      "size": 910,
+      "first_words": "Help requests During the semester, our help@ocf.be..."
+    },
+    {
+      "index": 11,
+      "size": 882,
+      "first_words": "You can use our chat channels or talk to a veteran..."
+    },
+    {
+      "index": 12,
+      "size": 814,
+      "first_words": "Some important channels: #rebuild - technical disc..."
+    },
+    {
+      "index": 13,
+      "size": 663,
+      "first_words": "If you\u2019re worried about what you\u2019ve missed, we rec..."
+    },
+    {
+      "index": 14,
+      "size": 2264,
+      "first_words": "Stay up-to-date In-person meetings Board of Direct..."
+    },
+    {
+      "index": 15,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

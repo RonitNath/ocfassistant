@@ -1,0 +1,11 @@
+So you've gotten the necessary permission and made a post on the status blog /updated the MOTD (if it's a scheduled restart). What now? If you are planning to shut down login servers (i.e.
+
+tsunami, vampires and corruption), run the shutdown command on these machines as soon as possible in order to schedule the shutdown and warn users in advance.
+
+You can do this with a command like sudo shutdown -h 22:00 "Rebooting for kernel upgrades" for a shutdown scheduled for 10:00pm. For other VMs, you can shut them each down via sudo virsh shutdown . Be careful to always shut down firestorm last .
+
+This is because once firestorm is shut down, LDAP/Kerberos logins go offline, and the hypervisors can thereafter only be logged into via the root account.
+
+Since you'll not be able to run new commands using sudo, you should always sudo -i before shutting down firestorm.
+
+Once all of the VMs have been shut down, you can then power off the hypervisors via shutdown -h now .

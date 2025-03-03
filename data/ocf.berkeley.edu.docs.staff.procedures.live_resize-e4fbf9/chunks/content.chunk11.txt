@@ -1,0 +1,7 @@
+If you see this error upon doing so, it can be safely ignored as you're going to address this in the conclusion section: Calling ioctl() to re-read partition table. Re-reading the partition table failed. : Device or resource busy The kernel still uses the old table. The new table will be used at the next reboot or after you run partprobe(8) or kpartx(8). Exit fdisk and continue to the conclusion section below.
+
+Method 2: parted (less common) This is primarily useful for working with disks that have partitions over 2 TiB in size and are using GPT (mirrors for instance when it was a VM), but it can be used with smaller disks/partitions or non-GPT too.
+
+There's also a graphical version at gparted if you have that option, but this does not assume you have a graphical interface to work with.
+
+MAJOR WARNING : When using parted , any changes you make are written out immediately after making them, so you will not have the same opportunity to review changes at the end as with fdisk !

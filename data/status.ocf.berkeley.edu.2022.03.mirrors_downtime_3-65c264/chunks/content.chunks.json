@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2022.03.mirrors_downtime_3-65c264\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 688,
+      "first_words": "Open Computing Facility Status: [Complete, see no..."
+    },
+    {
+      "index": 2,
+      "size": 2535,
+      "first_words": "Posted by Jonathan at 10:28 AM Newer Post Older Po..."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+ paper: view and modify print quotas – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In paper: view and modify print quotas Table of Contents Introduction Usage Scenarios View help (shows possible commands and arguments) View balances Issue refunds (change user balances) Introduction The paper script is used to list and modify user print quotas.
+
+When users print documents, their print quota is updated in a central database on mysql that is also checked to make sure users have enough print quota before sending their document(s) to the printer.
+
+This database can be queried and modified by the paper script, which internally uses ocflib to access the database.

@@ -1,0 +1,3 @@
+mdadm --create -v /dev/md0 --level = raid10 --raid-devices =4 \ /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1 Set up a GPT partition table on the new RAID volume. Don't forget this or you'll be sorry when you have to abandon the Debian install. parted /dev/md0 mklabel gpt Back in Finnix, run sync to write any changes in memory to disk. Reboot and launch the Debian installer. Make sure not to do the "OCF Automated Install" at PXE, do an "expert install" instead. sorry. When you get to partitioning, use common sense.
+
+I recommend switching to another TTY ( Ctrl+Alt+F2 ) and using fdisk to create ~40GB root, ~8GB swap, and the rest as one partition (for LVM). These should be created on the RAID device (typically /dev/md0 if you only have one RAID array).

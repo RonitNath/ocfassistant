@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.policies-0a8ada\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 637,
+      "first_words": "Staff policies \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 2214,
+      "first_words": "The following policies are primarily applicable to..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

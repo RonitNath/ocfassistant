@@ -1,0 +1,5 @@
+prefix = "/~user/asset" Make sure to replace user in this example (and in your config/routes.rb ) with your username, and add the path you are using for your application if applicable between ~user and ~asset .
+
+Debugging If you see an error page when trying to load your app, you may find the webserver's logs useful.
+
+You can access them in the following locations: error log: /opt/httpd/error.log (most useful) suexec log: /opt/httpd/suexec.log (only useful in rare cases) Once your app has started running, changes you make to the Ruby code or templates won't take effect for a few hours.

@@ -1,0 +1,5 @@
+The template variables will be automatically filled out by entering text into the input boxes above the main text box. Variables can be located in the template by looking for {<variable name>} before filling it out.
+
+Adding templates New templates can be added to the website by submitting a pull request to the ocf/templates repo. Template files are found in templates/www/templates . Variables can be added in a template as {<variable name>} .
+
+Edit this Page Page History More in this category Tips and tricks .desktoprc Email Templates On your staff VM Installing and running ZNC Running ocfweb ShortURL guide ShortURL table Test accounts Using Twitch and OBS OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

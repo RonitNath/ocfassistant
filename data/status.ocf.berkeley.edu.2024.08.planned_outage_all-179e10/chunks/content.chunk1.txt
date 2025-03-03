@@ -1,0 +1,3 @@
+ Open Computing Facility Status: Planned Outage: All OCF Services, August 14 Updates for Open Computing Facility services Saturday, August 10, 2024 Planned Outage: All OCF Services, August 14 All OCF services will be unavailable on Wednesday, August 14, due to a planned electrical shutdown in the MLK Student Union building.
+
+While the electrical shutdown does not affect the campus data center, the availability of the OCF Software Mirror service. The OCF HPC service will be unavailable during the outage.

@@ -1,0 +1,7 @@
+For instance, if your site is at https://www.ocf.berkeley.edu/~user then convert your routes from something like this: MyApp :: Application . routes . draw do resources :users [...] end to something like this: MyApp :: Application . routes .
+
+draw do scope "~user" do resources :users [...] end end This will make your application able to route all your existing routes correctly.
+
+If your site is at something like https://www.ocf.berkeley.edu/~user/rails then use ~user/rails in the scope block instead. However, assets (images, stylesheets, javascript) may still be broken.
+
+To fix these, add a line like this into your config/application.rb (or under the correct environment in config/environments/(development,production).rb if you want to be more specific). Note that this has to be inside the class Application block: Rails . application . config . assets .

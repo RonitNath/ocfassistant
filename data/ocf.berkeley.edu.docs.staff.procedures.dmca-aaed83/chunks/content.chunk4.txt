@@ -1,0 +1,7 @@
+Regardless of action, be sure to always provide adequate notice to our users and offer to assist them (of course, we cannot provide legal advice, but the University or ASUC may be able to).
+
+Lumen Database submission We like to forward any takedown or cease and desist notices to the Lumen database . Please ask for a copy of the original notice from the University if one is not provided.
+
+To submit a notice to the database, first sign in with the OCF account using credentials from the passwords file. Then fill out the create new notice form .
+
+The "recipient" field should be the University, the "sender" field should be the entity that sent the request, the "principal" field is the copyright holder, and the the "submitter" is the OCF.

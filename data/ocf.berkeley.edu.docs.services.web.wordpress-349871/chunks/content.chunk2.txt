@@ -1,0 +1,7 @@
+Instructions for using WordPress are provided below; you can also drop by during staff hours for in-person assistance. Installing WordPress The easiest way to set up WordPress is via SSH .
+
+Some simple instructions: Go to our web-based SSH client and sign in with your username and password. Create your web root by entering makehttp and hitting enter. Create your MySQL database by entering makemysql . Copy the password it gives you -- you'll need it later.
+
+Go to your web directory and download WordPress by entering these lines individually: cd ~/public_html wp core download This will download the latest version of WordPress into your web directory using wp-cli . Visit your web admin dashboard and complete the installation process.
+
+Your website will be https://www.ocf.berkeley.edu/~username and the dashboard https://www.ocf.berkeley.edu/~username/wp-admin .

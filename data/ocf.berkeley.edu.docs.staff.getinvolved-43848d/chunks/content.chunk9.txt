@@ -1,0 +1,3 @@
+Paper quota refund ( printing/paper ) Query/search OCF accounts ( acct/ ) For users: create MySQL database and HTTP webdir ( makeservices/makemysql-real , makeservices/makehttp ) Create new virtual machines ( staff/sys/makevm ) Wake up desktops from sleep ( staff/lab/lab-wakeup ) slackbridge ( issues ) - bridges our IRC network with our Slack organization, so staff members can exercise choice in what chat program they’d like to use. Written in Python. ircbot ( issues ) - a fun chatbot, also used to approve new account requests. Written in Python.
+
+See https://ircbot.ocf.berkeley.edu/ for a listing of IRC bot functionality TODOs If you’re feeling particularly adventurous, you can search for the string “TODO” across our entire codebase .

@@ -1,0 +1,5 @@
+This can also be done by replacing remove in the above mod-printer command with add (again only if called from whiteout ). Even if staff don't pause them, CUPS will pause them automatically if they fail. Replacing toner Toner replacement takes only a few seconds. Don't bother recording toner replacement, there is no point.
+
+Old toner cartridges should be saved in the server room (find a box that has a bunch of old toner in it). We return these to Staples for $2/cartridge in rewards. Our printers use CC364X toner cartridges .
+
+As part of our service agreement with the UCSF Print Management Program , we buy toner in bulk from them and in exchange receive complimentary service for our printers.

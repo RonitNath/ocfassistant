@@ -1,0 +1,5 @@
+Setting up a virtualenv Create a directory for your app to live in: mkdir -p ~/myapp cd ~/myapp Set up a virtualenv: virtualenv venv Activate the virtualenv: .
+
+venv/bin/activate You should do this step every time before running your app or managing installed packages. Copy your code to ~/myapp/src or similar, and install any dependencies using pip . Installing gunicorn We recommend using gunicorn to serve your application. After activating your virtualenv, install it with pip install gunicorn . Note that you may see a warning about a syntax error. As long as the output ends in "Successfully installed gunicorn", it's safe to ignore this .
+
+Preparing your app to be supervised Create a file at ~/myapp/run with content like: #!/bin/bash -e .

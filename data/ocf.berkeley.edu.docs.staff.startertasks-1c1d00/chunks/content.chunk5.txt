@@ -1,0 +1,5 @@
+For example, before creating an account for a student organization, we make sure the person requesting the account is listed as a signatory for that group. Staff members use the signat command to perform this check. Log into supernova .
+
+Use the signat command to list the signatories for the Open Computing Facility or another student organization of your choice. Hint: if you are not sure how to use the signat command, try running signat --help . This trick works with most commands. OCF scripts also have documentation on this website . Find the source code for this script on GitHub.
+
+Hint: if you’re not sure which repository something is in, you can use OCF Sourcegraph to search across all repositories!

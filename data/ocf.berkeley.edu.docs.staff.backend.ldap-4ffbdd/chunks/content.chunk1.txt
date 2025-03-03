@@ -1,0 +1,5 @@
+ LDAP – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In LDAP Table of Contents Introduction Definition of an OCF account Definition of a POSIX group Utilities ldapsearch ldapvi ldapadd Introduction The Lightweight Directory Access Protocol accesses a directory service over a network.
+
+We currently use OpenLDAP to store information about accounts (except password hashes which are in Kerberos ). Definition of an OCF account Attributes that define an OCF account (group or individual).
+
+Some of these attributes cannot be seen without the proper permissions, such as mail : dn : distinguished name; primary key for the entry.

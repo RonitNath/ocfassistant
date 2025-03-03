@@ -1,0 +1,5 @@
+Add relevant entries to LDAP/DNS The SSL support within Puppet relies on the dnsA and dnsCname entries for a host within LDAP.
+
+These are also converted in the ocf/dns repo into BIND-parsable files, so if you update LDAP and then update the ocf/dns repo, you should be ready to go! Setting up SSL with Puppet Add the ocf::ssl::default module to the server (e.g. by adding it to the server's per-host hiera config). This will run dehydrated to update DNS dynamically (a dns-01 challenge) and spit out a valid cert. This will automatically retrieve a cert for a host that matches as much as it can in terms of SANs.
+
+For instance, if requesting for a host with a hostname of foo with an alias of bar , it will request foo.ocf.berkeley.edu , bar.ocf.berkeley.edu , foo.ocf.io , and bar.ocf.io . If you need to customize this list, use the ocf::ssl::bundle class and pass in a list of domains.

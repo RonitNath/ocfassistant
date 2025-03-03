@@ -1,0 +1,3 @@
+from Virtual Hosting : All virtual hosts on the OCF must include an [[OCF banner|doc services/vhost/badges]] on the front page that links to the [[OCF home page|home]]. Editing docs Edits to the documentation are made via the OCF website's Git repository on GitHub. The editing process is like our other Git workflows: Fork the repository on GitHub . Make changes on a new branch. Push your changes. Make a pull request. Once you make a pull request, it will automatically be tested by Jenkins , the build server. Jenkins will also deploy your changes once they have been merged. For simple changes, you can just click "Edit this Page" in the sidebar.
+
+This will open the file in GitHub, and walk you through the steps for either commiting on master or making a pull request.

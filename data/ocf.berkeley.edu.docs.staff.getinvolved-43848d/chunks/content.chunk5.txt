@@ -1,0 +1,9 @@
+Don’t worry about finding the best way to contribute, as long as you find something that you want to work on. Here are some ways to get started: Projects We have a curated list of projects at ocf.io/projects .
+
+Projects labeled “newbie” are ones we think are best fit for new staffers, but we are happy to provide context and mentorship on any project. In general, don’t worry about fully understanding the project description.
+
+If you find a something that interests you, respond to the thread or reach out to a veteran staffer to get more information. GitHub Issues All of our code is on GitHub ( github.com/ocf ).
+
+You can find good ways to contribute by browsing open issues, but they can sometimes be hard to understand if they’re short on context.
+
+The following links can be helpful: (note that you must be logged in to GitHub to see these links) All OCF GitHub issues OCF GitHub issues marked "good first issue" If you'd like, you can also look at issues within specific repos.

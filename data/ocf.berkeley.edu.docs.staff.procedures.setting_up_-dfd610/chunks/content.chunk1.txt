@@ -1,0 +1,5 @@
+ Setting up mdraid on servers – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Setting up mdraid on servers Table of Contents Aside: why software RAID instead of MegaRAID?
+
+Instructions MegaRAID setup Software RAID setup WebCLI setup Cleanup Setting up a new server involves putting in all its new drives, turning off MegaRAID, setting up mdraid (Linux software RAID) on them, and then installing the operating system. It requires quite a few tricky steps.
+
+The below steps were written for jaws / pandemic / hal which have LSI RAID cards that need to be put into JBOD mode. The intructions will vary without LSI hardware RAID (which we don't use).

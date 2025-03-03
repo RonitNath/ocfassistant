@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.ssh_list-9930f9\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 894,
+      "first_words": "ssh-list: run command via SSH on many hosts simul..."
+    },
+    {
+      "index": 2,
+      "size": 771,
+      "first_words": "For example: ssh-list all -i whoami In most cases,..."
+    },
+    {
+      "index": 3,
+      "size": 946,
+      "first_words": "From supernova: sudo kinit -k -t /root/apt-dater.k..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

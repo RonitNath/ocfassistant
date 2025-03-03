@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.unsorry-a0ca7c\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 755,
+      "first_words": "unsorry: re-enable a sorried account \u2013 Open Compu..."
+    },
+    {
+      "index": 2,
+      "size": 361,
+      "first_words": "unsorry will remove the user from the sorry group,..."
+    },
+    {
+      "index": 3,
+      "size": 867,
+      "first_words": "Make sure to document all sorry ing and unsorry in..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

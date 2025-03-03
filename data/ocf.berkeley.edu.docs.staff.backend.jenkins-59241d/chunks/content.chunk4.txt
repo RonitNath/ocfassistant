@@ -1,0 +1,11 @@
+Of course, in many cases once code builds successfully, we ship it off somewhere where it gets effectively run as root anyway. But this feels a little safer.
+
+Jenkins for GitHub projects On the master branch To test GitHub projects when you push to master: Configure the "GitHub Project" URL to point to the main page of the project (for example, https://github.com/ocf/puppet/ ).
+
+Under "Source Code Management", select "Git" and add the repository URL (for example, https://github.com/ocf/puppet/ ). Under "Build Triggers", check "Build when a change is pushed to GitHub". On GitHub, go to "Settings" then "Webhooks & services".
+
+Add a new "Jenkins (GitHub Plugin)" service with URL https://jenkins.ocf.berkeley.edu/github-webhook/ .
+
+You can create additional steps or organize pipelines if desired (for example, if you'd like to first test and then deploy).
+
+Adding a "Build Status" badge to the README You might like to add a fancy "Build Status" badge to the README.

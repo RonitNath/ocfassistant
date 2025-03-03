@@ -1,0 +1,5 @@
+ OCF Login – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In OCF Login Sorry! Before you can proceed, we need to know who you are.
+
+Please enter your OCF username and password below to continue. OCF username Password Forgot your password or username?
+
+OCF Accounts Your OCF account is specific to the Open Computing Facility; it's not the same as your university CalNet account or your email account. If you've never used OCF services before, it's possible you might not have an account at all. If that's the case, how about joining ? OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

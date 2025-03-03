@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web.php-335b0f\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 966,
+      "first_words": "PHP \u2013 Open Computing Facility Toggle navigation O..."
+    },
+    {
+      "index": 2,
+      "size": 729,
+      "first_words": "Custom PHP settings If the default PHP settings ar..."
+    },
+    {
+      "index": 3,
+      "size": 603,
+      "first_words": "; raise max upload and POST sizes upload_max_files..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

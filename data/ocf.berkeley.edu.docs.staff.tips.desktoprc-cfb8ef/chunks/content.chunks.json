@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.tips.desktoprc-cfb8ef\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 856,
+      "first_words": ".desktoprc \u2013 Open Computing Facility Toggle navig..."
+    },
+    {
+      "index": 2,
+      "size": 656,
+      "first_words": "Sync your dotfiles If you want your application se..."
+    },
+    {
+      "index": 3,
+      "size": 384,
+      "first_words": "For example, to automatically connect to the OCF's..."
+    },
+    {
+      "index": 4,
+      "size": 725,
+      "first_words": "Disable terminal shortcuts The XFCE4 terminal emul..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+ Open Computing Facility Status: [RESOLVED] Raspbian out of sync Updates for Open Computing Facility services Saturday, April 02, 2022 [RESOLVED] Raspbian out of sync We noticed that our Raspbian mirror is out of sync, likely due to the IP address change.
+
+10:16 PM - We have temporarily switched our upstream for the Raspbian mirror, and it's currently syncing. Emailed Raspbian. - rjz 5/13 - Resolved.

@@ -1,0 +1,3 @@
+If you have a better way to host Python-based apps on the app server (or a suggestion for how we could improve this documentation), send us an email !
+
+Edit this Page Page History Table of Contents Setting up a virtualenv Installing gunicorn Preparing your app to be supervised Supervise your app with systemd Bonus Gunicorn tip: reloading your app Suggestions/improvements? More in this category Web application hosting Node.js Python (Django, Flask, etc.) Ruby on Rails OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

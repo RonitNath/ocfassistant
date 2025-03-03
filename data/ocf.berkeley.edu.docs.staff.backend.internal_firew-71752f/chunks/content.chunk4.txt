@@ -1,0 +1,9 @@
+It's important to note that internal firewalls are set up to only filter traffic from other OCF machines. Traffic from outside the OCF network is the sole responsibility of the external firewall.
+
+Implementation Internal firewalls are implemented using iptables rules set by Puppet with the puppetlabs-firewall module .
+
+We place all of our input rules in the PUPPET-INPUT chain and all of our output rules in the PUPPET-OUTPUT chain.
+
+Firewall rules are added by using firewall_multi and ocf::firewall::firewall46 declarations: ocf::firewall::firewall46 should generally be used in most cases.
+
+It inserts IPv4 and IPv6 iptables rules, but only adds the IPv6 iptables rule if the host has a public IPv6 address. This prevents Puppet errors otherwise occurring due to IPv6 addresses not being resolved. firewall_multi should be used if IP addresses need to be manually specified in the firewall rule. ocf::firewall::firewall46 and firewall_multi both internally use the firewall resource.

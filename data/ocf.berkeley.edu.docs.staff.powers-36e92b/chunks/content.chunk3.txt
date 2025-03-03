@@ -1,0 +1,11 @@
+Before RSOs became able to reset their passwords online in 2015, this principal was widely given out. Since then, it has become much less necessary to have for staff hours. It is now given out as needed.
+
+Technical Managers group ocfroot The most technical and "on-call" staff members are given sudo access (root privileges) on all servers and the ability to modify LDAP/Kerberos directly.
+
+The Site Manager(s) and Deputy Site Manager(s) are always Technical Managers. Other Deputy Managers and the General Manager(s) often happen to be Technical Managers as well.
+
+ocfroot group You must be in the ocfroot LDAP group in order to use sudo on most servers, other than desktops and your own staff VM.
+
+The ability to become root via sudo on machines other than your staff VM requires the existence of a /root principal (see above).
+
+/admin principal In order to modify LDAP or Kerberos, staff must possess a /admin principal and it must be granted Kerberos-editing rights in Puppet .

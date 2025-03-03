@@ -1,0 +1,5 @@
+If, in two weeks, we receive no response or OCF staff have determined that there has not been sufficient progress towards resolving the issue, the virtual host will be disabled if it is not already. After a virtual host has been disabled for 3 months, it may be reclaimed at the discretion of the OCF staff. Renaming virtual hosts If you wish to rename your virtual host (e.g.
+
+switch from something.berkeley.edu to somethingelse.berkeley.edu), you must provide a compelling reason for doing so, such as a change in the name of your group. In this case, you may contact us to request a virtual host at your new URL. If the request is approved, you will be granted the new virtual host.
+
+If both virtual hosts are direct subdomains of berkeley.edu, then you will be allowed to keep your existing virtual host at its current URL until the end of the semester following the rename, after which it will be reclaimed and eligible for reassignment to another group or individual (e.g.

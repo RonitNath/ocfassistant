@@ -1,0 +1,1 @@
+We expect the upgrades to be completed by mid-February.</p><p>Later this semester, we will migrate the mirrors server to the campus datacenter to ease up the network load at the OCF lab*. The project is currently in the planning stages, so no definite dates are available. However, we will make a separate post on the status blog before we proceed with the migration.

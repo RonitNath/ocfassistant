@@ -1,0 +1,5 @@
+If an account is associated in an RT ticket, leave the ticket open until the password has been reset and the account disassociated.
+
+Edit this Page Page History More in this category Accounts Alumni account reset LDAP association Rename an account OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!
+
+About the OCF Overview Officers Official Documents Board Meeting Minutes Privacy Policy Account Tools Join the OCF Reset Password Manage My Account Services Computer Lab & Printing Web Hosting Application Hosting Email Hosting SSH/Remote Shell High Performance Computing Help and Support Status Blog Donate to the OCF Frequently Asked Questions User Documentation Staff Documentation Contact Us The Open Computing Facility is run entirely by student volunteers. Copyright © 1989–2025 Board of Directors of the Open Computing Facility. The Open Computing Facility is a Chartered Program of the ASUC.

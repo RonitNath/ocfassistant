@@ -1,0 +1,9 @@
+Workers also run an instance of kube-proxy , which forwards control plane traffic to the correct kubelet . Pods In the Kubernetes world, pods are the smallest computing unit. A pod is made up of one or more containers. The difference between a pod and a standalone container is best illustrated by an example.
+
+Consider ocfweb ; it is composed of several containers—the web container, static container, and worker container.
+
+In Kubernetes, together these three containers form one pod, and it is pods that can be scaled up or down. A failure in any of these containers indicates a failure in the entire pod.
+
+An astute reader might wonder: if pods can be broken down into containers, how can pods possibly be the smallest unit?
+
+Do note that if one wished to deploy a singleton container, it would still need to be wrapped in the pod abstraction for Kubernetes to do anything with it.

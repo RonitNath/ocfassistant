@@ -1,0 +1,5 @@
+Once the pull request has been submitted, other OCF staff will have a change to review your changes and make sure they look good. Once one or two people approve, the pull request can be merged and your change will go live.
+
+Update your PR (optional) Sometimes you will want to update a pull request after it has been created, because you thought of something new or because another staffer suggested a change.
+
+In this case, you'll update your pull request so that your username on the list links to the pull request you made. If you have disconnected, log back into supernova and navigate to your ocfweb folder. Copy the URL to the GitHub pull request you opened in the last part. Edit the list file again, and replace your username with [username](https://link.to/pull/request) .

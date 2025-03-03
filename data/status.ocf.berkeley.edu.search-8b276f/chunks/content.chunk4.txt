@@ -1,0 +1,5 @@
+Posted by Jonathan at 10:09 PM Tuesday, March 15, 2022 Emergency mirrors server maintenance today The OCF mirrors server will be down for about an hour staring 1300 PDT today due to a required move within the rack and IPv6 provisioning. We apologize for the inconvenience.
+
+Posted by Jonathan at 12:01 PM Sunday, March 13, 2022 Emergency maintenance: hypervisors reboot today We will be rebooting the hypervisors this afternoon at about 2 pm to apply the updated kernel that fixes several high-severity vulnerabilities.
+
+The downtime will be around 15-30 minutes, and all websites hosted by the OCF as well as the login servers, Matrix server, Slack bridge, mail server, and the IRC server will be unavailable during the reboot.

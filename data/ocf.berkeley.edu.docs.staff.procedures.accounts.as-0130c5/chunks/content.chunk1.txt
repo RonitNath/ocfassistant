@@ -1,0 +1,5 @@
+ LDAP association – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In LDAP association New individual accounts have a calnetUid attribute in LDAP which is used for changing passwords online , querying CalNet when running `check` , and producing aggregate counts of the number of members by university affiliation. Similarly, group accounts have a callinkOid attribute.
+
+Old accounts, especially if previously disabled, may be missing the calnetUID or callinkOid attribute. Please add it when enabling accounts. If unknown or a group other than a registered student organization, set it to 0 .
+
+The 0 is still useful for distinguishing between individuals and groups based on the attribute name.

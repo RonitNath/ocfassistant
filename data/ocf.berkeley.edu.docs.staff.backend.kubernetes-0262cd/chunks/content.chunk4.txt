@@ -1,0 +1,5 @@
+Do note that the state stored in etcd is scheduling state, service locations, and other cluster metadata; it does not keep state for the services running on the cluster. Why the odd number of masters? Consider a cluster of N members. When masters form quorum to agree on cluster state, quorum must have at least ⌊ N /2⌋+1 members. Every new odd number in a cluster with M > 1 masters adds one more node of fault tolerance. Therefore, adding an extra node to an odd numbered cluster gives us nothing. If interested read more here . Workers Workers are the brawn in the Kubernetes cluster.
+
+While master nodes are constantly sharing data, managing the control plane (routing inside the Kubernetes cluster), and scheduling services, workers primarily run pods .
+
+kubelet is the service that executes pods as dictated by the control plane, performs health checks, and recovers from pod failures should they occur.

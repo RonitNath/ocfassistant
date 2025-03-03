@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web.flask-09d2b8\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 900,
+      "first_words": "Flask \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 744,
+      "first_words": "This will allow you to run pip install to install..."
+    },
+    {
+      "index": 3,
+      "size": 908,
+      "first_words": "In this case, we'll create a new directory named m..."
+    },
+    {
+      "index": 4,
+      "size": 751,
+      "first_words": "*)$ /~user/flask/run.fcgi/$1 [QSA,L] Create ~/publ..."
+    },
+    {
+      "index": 5,
+      "size": 977,
+      "first_words": "Make the run.fcgi file you just created executable..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

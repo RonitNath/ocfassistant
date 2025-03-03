@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.tips.staffvm.znc-36e1db\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 966,
+      "first_words": "Installing and running ZNC \u2013 Open Computing Facil..."
+    },
+    {
+      "index": 2,
+      "size": 2264,
+      "first_words": "It's pretty safe to accept the defaults (just hit..."
+    },
+    {
+      "index": 3,
+      "size": 850,
+      "first_words": "Create a file /etc/systemd/system/znc.service with..."
+    },
+    {
+      "index": 4,
+      "size": 818,
+      "first_words": "Edit this Page Page History More in this category..."
+    }
+  ]
+}

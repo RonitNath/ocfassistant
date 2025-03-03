@@ -1,0 +1,7 @@
+Update 7:14PM 2021-11-13: We have been told to leave the build which hosts our servers by the Student Union staff, therefore we likely will not be able to bring things back up until Monday. Update 4:49AM 2021-11-14: Most services are now up. We are working on bringing scurvy (staff VM, Berkeleytime etc.) up.
+
+Update 5:28AM 2021-11-14: Scurvy is up, berkeleytime is up, hellfire is up, marking this as RESOLVED?
+
+Update 5:40AM 2021-11-14: Marking this as RESOLVED Posted by Jonathan at 9:29 PM Saturday, October 23, 2021 HTTP/2 is now enabled for web hosting HTTP/2 is enabled for https connections on the web hosting server (death) as of 1730 PDT, Oct. 23.
+
+Please email us at help [at] ocf.berkeley.edu (or send a message in #rebuild) if you experience any issues.

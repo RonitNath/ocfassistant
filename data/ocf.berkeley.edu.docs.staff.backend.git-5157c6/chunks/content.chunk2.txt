@@ -1,0 +1,9 @@
+You may commit another staff member's work if you have permission and change the author appropriately (e.g., --author="Guest User <guser@ocf.berkeley.edu>" ).
+
+When committing, git config user.name should be your name and git config user.email should be your OCF email address -- this should be taken care of by LDAP and /etc/mailname on OCF machines. To "update" Get the latest commits from the central repository and update your working tree.
+
+git pull --rebase This will git fetch (update your local copy of the remote repository) and git rebase (rewrite current branch in terms of tracked branch).
+
+The rebase prevents unnecessary merge commits by moving your local commits on top of the latest remote commit ( FETCH_HEAD ).
+
+This is a good thing if you have any local commits which have not yet been pushed to the remote repository.

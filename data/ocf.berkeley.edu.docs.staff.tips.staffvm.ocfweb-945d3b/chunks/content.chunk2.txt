@@ -1,0 +1,5 @@
+If you are in ocfroot you can push this directly to puppet and trigger a puppet run on your staffvm ( sudo puppet-trigger -fe <user> ) otherwise, push to your fork and submit a pull request and someone will merge it for you, after which you can trigger the puppet run on your VM.
+
+Furthermore, you will need to install the libcrack2-dev package so that the crypto libraries ocfweb depends on will successfully compile.
+
+Edit this Page Page History More in this category On your staff VM Installing and running ZNC Running ocfweb OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

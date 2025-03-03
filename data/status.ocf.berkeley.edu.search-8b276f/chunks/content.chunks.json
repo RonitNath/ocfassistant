@@ -1,0 +1,72 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.search-8b276f\\content.txt",
+  "chunk_count": 13,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 775,
+      "first_words": "Open Computing Facility Status Updates for Open C..."
+    },
+    {
+      "index": 2,
+      "size": 963,
+      "first_words": "Posted by Jonathan at 10:38 PM Thursday, February..."
+    },
+    {
+      "index": 3,
+      "size": 903,
+      "first_words": "Affected archives include (this is not an exhausti..."
+    },
+    {
+      "index": 4,
+      "size": 728,
+      "first_words": "Posted by Jonathan at 10:09 PM Tuesday, March 15,..."
+    },
+    {
+      "index": 5,
+      "size": 893,
+      "first_words": "Posted by Jonathan at 1:43 PM Friday, March 11, 20..."
+    },
+    {
+      "index": 6,
+      "size": 957,
+      "first_words": "Posted by Jonathan at 12:04 PM Tuesday, February 0..."
+    },
+    {
+      "index": 7,
+      "size": 416,
+      "first_words": "Later this semester, we will migrate the mirrors s..."
+    },
+    {
+      "index": 8,
+      "size": 892,
+      "first_words": "Planned additions as of 2/6 2230PST (please note,..."
+    },
+    {
+      "index": 9,
+      "size": 810,
+      "first_words": "Posted by Jonathan at 7:38 PM Sunday, November 14,..."
+    },
+    {
+      "index": 10,
+      "size": 767,
+      "first_words": "Update 7:14PM 2021-11-13: We have been told to lea..."
+    },
+    {
+      "index": 11,
+      "size": 925,
+      "first_words": "Posted by Jonathan at 5:31 PM centos-debuginfo mir..."
+    },
+    {
+      "index": 12,
+      "size": 751,
+      "first_words": "We expect to have 3 TiB of usable disk space on th..."
+    },
+    {
+      "index": 13,
+      "size": 2612,
+      "first_words": "Posted by Jonathan at 12:32 AM Labels: disk-array..."
+    }
+  ]
+}

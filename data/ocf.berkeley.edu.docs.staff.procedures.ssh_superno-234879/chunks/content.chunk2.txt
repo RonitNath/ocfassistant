@@ -1,0 +1,5 @@
+For most projects we recommend doing all development from supernova , a server available to all staff. Our Kubernetes server is also accessible from supernova . Before you begin You need to be on staff to log into the server. If you're not sure whether or not you're on staff, try logging in. If this doesn't work, talk to a staff member and we can add you! All are welcome and encouraged to join.
+
+Logging in To log in, open a terminal window and type in: ssh username@supernova.ocf.berkeley.edu For more instructions, see the SSH docs . You should replace ssh.ocf.berkeley.edu with supernova.ocf.berkeley.edu .
+
+Things you can do on supernova Administration scripts Some scripts, such as ones used to create group accounts and refund printing quotas, are available on supernova . Learn more about these in the scripts section of staff documentation . Development and Testing You can git clone OCF repositories and run them on supernova .

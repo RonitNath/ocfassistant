@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2024.02.ocf_mirrors_down_f-d451d0\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 579,
+      "first_words": "Open Computing Facility Status: OCF Mirrors Down,..."
+    },
+    {
+      "index": 2,
+      "size": 2540,
+      "first_words": "~rjz Posted by Jonathan at 11:28 PM Newer Post Old..."
+    }
+  ]
+}

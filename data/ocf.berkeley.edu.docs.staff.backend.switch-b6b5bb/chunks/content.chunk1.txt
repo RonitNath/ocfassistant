@@ -1,0 +1,5 @@
+ Managed switches – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Managed switches We use an Arista 7050SX-64 10GbE switch as a primary switch for our servers, and two Arista 7048T-A 1GbE switches for desktops and management respectively. These devices were donated to us by Arista Networks in Fall 2018.
+
+Each device in the lab connects first to the back of a patch panel, and then from a port on the patch panel to a port on one of the 7048T-As via Cat6.
+
+The servers connect directly to the 7050SX via SFP+ DACs, as does our uplink to IST, through a Cat6 to 1GbE SFP+ converter. The 7048T's connect to the 7050SX through their SFP+ uplink ports.

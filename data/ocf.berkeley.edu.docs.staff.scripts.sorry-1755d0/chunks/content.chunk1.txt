@@ -1,0 +1,5 @@
+ sorry: disable an OCF account – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In sorry: disable an OCF account Introduction sorry is the command used to disable OCF accounts.
+
+Accounts are disabled for various reasons, including but not limited to violating OCF/university policies, security issues, lack of contact information, etc.
+
+Alumni also sometimes request to have their accounts disabled to stop vhosts, take down information, or for myriad other reasons.

@@ -1,0 +1,5 @@
+Custom plugins We provide a Puppet class, ocf::munin::plugin , which installs a custom Munin plugin to a machine, for example, to monitor the number of players on our CS:GO server. Writing a plugin is very easy, should you need to do so.
+
+When called without arguments, it should print to standard output a list of variable names and values: field1.value <value> field2.value <value> ...
+
+When given the lone argument config , it should print display information for Munin graphs and variable warning levels: graph_title Title graph_vlabel yaxis graph_scale no field1.label label field1.warning min:max ... Edit this Page Page History More in this category Infrastructure Backups Debian Buster upgrade External firewall Git Internal firewalls Jenkins KVM/Libvirt Kerberos Kubernetes LDAP Mail Virtual hosted mail Managed switches Munin Printhost Prometheus Puppet Request Tracker Servers OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

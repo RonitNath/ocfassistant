@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.tips.staffvm.ocfweb-945d3b\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 926,
+      "first_words": "Running ocfweb \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 638,
+      "first_words": "If you are in ocfroot you can push this directly t..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

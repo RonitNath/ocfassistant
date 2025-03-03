@@ -1,0 +1,7 @@
+This is being run on a KVM-based hypervisor with a locally-stored VM disk in LVM that's under /dev/vg/<vm> .
+
+If this is not the case, these commands may not work (mostly the ones under prerequisites, the later commands will likely still be fine) The primary disk is the one being resized and it is located at /dev/vda .
+
+If a non-boot disk is being resized, it's likely going to be even easier than this guide says (probably no need to move swap), but otherwise a lot of the same steps will apply.
+
+Prerequisites On the KVM hypervisor Resize the logical volume containing the VM's disk to increase by some number of GiB.

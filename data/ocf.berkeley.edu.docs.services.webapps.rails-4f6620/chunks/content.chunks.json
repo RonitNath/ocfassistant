@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.webapps.rails-4f6620\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 886,
+      "first_words": "Ruby on Rails \u2013 Open Computing Facility Toggle na..."
+    },
+    {
+      "index": 2,
+      "size": 760,
+      "first_words": "Setting up RVM Create a directory for your app to..."
+    },
+    {
+      "index": 3,
+      "size": 831,
+      "first_words": "rvm install ruby-2.4.0 rvm use ruby-2.4.0 Copy you..."
+    },
+    {
+      "index": 4,
+      "size": 889,
+      "first_words": "~/.rvm/scripts/rvm cd ~/myapp/src RAILS_ENV=produc..."
+    },
+    {
+      "index": 5,
+      "size": 697,
+      "first_words": "Supervise your app with systemd Cool, your app wor..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

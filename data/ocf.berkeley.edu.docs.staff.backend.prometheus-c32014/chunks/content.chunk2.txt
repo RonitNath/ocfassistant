@@ -1,0 +1,5 @@
+Another important exporter we use is the SNMP Exporter which monitors information from printers, and possibly in the future, network switches.
+
+A full list of exporters is available in the Prometheus documentation . In order to take advantage of these exporters, we define them in the Puppet config for the Prometheus server .
+
+Custom Metrics There are three main ways to generate custom metrics: If metrics can be generated from a VM, run a script on a cronjob that writes to /srv/prometheus . These automatically get bundled into Node Exporter. We do this for CUPS monitoring - here is an example of this in practice . Run a metrics server over HTTP and add them manually to the Puppet config.

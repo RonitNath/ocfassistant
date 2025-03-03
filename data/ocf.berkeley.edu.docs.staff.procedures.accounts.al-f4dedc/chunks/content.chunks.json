@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.accounts.al-f4dedc\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 763,
+      "first_words": "Alumni account reset \u2013 Open Computing Facility To..."
+    },
+    {
+      "index": 2,
+      "size": 941,
+      "first_words": "Missing CalNet UID If an alumni cannot use the onl..."
+    },
+    {
+      "index": 3,
+      "size": 992,
+      "first_words": "Anyone who logged into their OCF account during th..."
+    },
+    {
+      "index": 4,
+      "size": 605,
+      "first_words": "Pursuant to the instructions for alumni , if you r..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

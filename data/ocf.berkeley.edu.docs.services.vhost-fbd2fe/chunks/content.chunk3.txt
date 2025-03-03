@@ -1,0 +1,9 @@
+Student and department groups need a group account; faculty and staff may use their personal account. Set up real site. Set up your webspace and upload your website (if you haven't already done so). The website should be developed already, not a placeholder.
+
+Include OCF hosting banner. Place a Hosted by OCF banner on your home page that links to the OCF front page.
+
+If none of these images are appropriate for your site, you may design one of your own and submit it for approval. Include university's disclaimer (if applicable).
+
+If you are a student group, place the university-mandated student group disclaimer on each page of your website (see the section below). Obtain a domain (faculty and staff only).
+
+The OCF will not request personal domains for individuals, so faculty and staff must obtain their own. Your department may be able to assist you with this step. Complete request form. Complete the virtual hosting request form online.

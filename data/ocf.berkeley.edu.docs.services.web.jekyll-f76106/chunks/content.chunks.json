@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web.jekyll-f76106\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 798,
+      "first_words": "Jekyll \u2013 Open Computing Facility Toggle navigatio..."
+    },
+    {
+      "index": 2,
+      "size": 846,
+      "first_words": "Create a new directory for your Jekyll project and..."
+    },
+    {
+      "index": 3,
+      "size": 906,
+      "first_words": "user@tsunami:~/jekyll$ bundle config set --local p..."
+    },
+    {
+      "index": 4,
+      "size": 882,
+      "first_words": "Let's see how to customize it a bit to make it you..."
+    },
+    {
+      "index": 5,
+      "size": 748,
+      "first_words": "The _config.yml file in your site directory contai..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

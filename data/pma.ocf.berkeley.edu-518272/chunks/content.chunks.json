@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\pma.ocf.berkeley.edu-518272\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 274,
+      "first_words": "phpMyAdmin Welcome to phpMyAdmin Javascript must..."
+    },
+    {
+      "index": 2,
+      "size": 860,
+      "first_words": "Language Shqip - Albanian \u0627\u0644\u0639\u0631\u0628\u064a\u0629 - Arabic \u0540\u0561\u0575\u0565\u0580\u0567\u0576..."
+    }
+  ]
+}

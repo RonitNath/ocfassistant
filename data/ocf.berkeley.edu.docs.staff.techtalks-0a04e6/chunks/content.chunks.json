@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.techtalks-0a04e6\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 617,
+      "first_words": "Tech talks \u2013 Open Computing Facility Toggle navig..."
+    },
+    {
+      "index": 2,
+      "size": 2303,
+      "first_words": "Date Title Staff Member Video Slides February 13th..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

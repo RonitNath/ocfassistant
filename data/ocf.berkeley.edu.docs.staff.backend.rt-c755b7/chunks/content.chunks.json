@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.rt-c755b7\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 831,
+      "first_words": "Request Tracker \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 975,
+      "first_words": "Manually-created tickets are found under: bod for..."
+    },
+    {
+      "index": 3,
+      "size": 730,
+      "first_words": "Creation They can be manually created through the..."
+    },
+    {
+      "index": 4,
+      "size": 988,
+      "first_words": "In the individual ticket page, one can change a ti..."
+    },
+    {
+      "index": 5,
+      "size": 620,
+      "first_words": "Search arguments can also be saved for later use,..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

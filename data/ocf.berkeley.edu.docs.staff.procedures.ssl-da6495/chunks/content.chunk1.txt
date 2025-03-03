@@ -1,0 +1,7 @@
+ SSL certificates – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In SSL certificates We are able to obtain signed certificates at no charge through Let's Encrypt .
+
+The primary Common Name for a certificate should always be the server hostname , with service CNAMEs specified as Subject Alternative Names.
+
+For instance, a certificate for our apt repository/mirrors should have the primary CN fallingrocks.ocf.berkeley.edu , with apt.ocf.berkeley.edu and mirrors.ocf.berkeley.edu as SANs.
+
+This allows us to easily distinguish between certificates in cases where a service may be hosted by multiple hostnames, or where the hostname changes, without sharing private keys.

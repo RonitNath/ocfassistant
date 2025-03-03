@@ -1,0 +1,5 @@
+Authorization Staff are authorized to act independently of the SMs unless otherwise specified here or elsewhere. This is so staff are not obstructed by having to ask the SMs for approval for all decisions.
+
+Root privileges The Site Managers have the sole power to add staff to the ocfroot group, otherwise grant root privileges on a machine which runs a production service or which mounts NFS, create and grant privileges to /admin principals, and grant other powers which can be used to gain the aforementioned privileges or access other OCF members’ data. Staffers in the ocfroot group are known as Technical Managers.
+
+To be eligible for Technical Manager status, you must fulfill the following criteria: A Site Manager must be able to recognize you in person.

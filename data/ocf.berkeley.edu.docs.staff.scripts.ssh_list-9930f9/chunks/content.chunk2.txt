@@ -1,0 +1,7 @@
+For example: ssh-list all -i whoami In most cases, it's most useful to use a type like desktop rather than all .
+
+If you get a ton of authentication errors, don't provide your password, just do kinit $USER first (your Kerberos ticket probably expired, or you probably logged in with an SSH key). Some useful commands are below (please add more! ): Run puppet once Anyone in ocfroot can call sudo puppet-trigger without providing a password.
+
+ssh-list desktop -i 'sudo puppet-trigger' Restart unused desktops Anyone in ocfroot can call sudo shutdown without providing a password.
+
+ssh-list desktop -i '[ $(who | wc -l) -eq 0 ] && sudo shutdown -r now' Run apt-get update to clear apt caches ocfroot can't run passwordless apt-get , so you need to use the apt-dater keytab.

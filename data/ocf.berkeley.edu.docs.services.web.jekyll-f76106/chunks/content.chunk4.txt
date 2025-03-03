@@ -1,0 +1,7 @@
+Let's see how to customize it a bit to make it yours: On your site, there should be a new welcome post (at some path like https://www.ocf.berkeley.edu/~username/jekyll/current-date/welcome-to-jekyll.html ).
+
+This contains instructions on how to add a new post, but we've summarized the instructions below: In your site directory ( jekyll for instance), there should be a subdirectory named _posts . Blog posts go there by default as Markdown files.
+
+Please follow the sample post file there to make your own (note the YAML header at the top in between --- markers and the file name format with the date and a title). Other than blog posts, you can also make other pages (about, contact, etc.) that are linked at the top right of the site.
+
+An example is the about.md file already placed in your site directory (note the YAML header with layout: page to specify which layout to use).

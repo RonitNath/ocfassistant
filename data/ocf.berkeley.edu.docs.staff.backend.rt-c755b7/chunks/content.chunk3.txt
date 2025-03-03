@@ -1,0 +1,5 @@
+Creation They can be manually created through the New Ticket in button on the top right of the page.
+
+If doing so to communicate to people outside of the OCF, add their email to the requestors field of the ticket and leave the body blank.
+
+Afterwards, reply to the ticket to actually communicate with the person as the ticket creation doesn't send emails to the requestor but does to staff. Staff mailing lists are attached to the queue, so they usually don't have to be CC'd (i.e. help to help@). You can set people to be owner, allowing people to keep track of assignments better. Modification With any created ticket, it can be modified further. For queues like bod , some tickets should be discussed more urgently than others.

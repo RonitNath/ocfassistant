@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.private-546fb5\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 766,
+      "first_words": "Additional documentation \u2013 Open Computing Facilit..."
+    },
+    {
+      "index": 2,
+      "size": 2013,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

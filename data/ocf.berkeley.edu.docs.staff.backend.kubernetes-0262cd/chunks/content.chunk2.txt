@@ -1,0 +1,9 @@
+Rather, it is meant to explain architectural considerations such that current work can be built upon.
+
+Although, reading this document will help you both deploy services in the OCF Kubernetes cluster and debug issues when they arise. Kubernetes Kubernetes is a container orchestration system open sourced by Google.
+
+Its main purpose is to schedule services to run on a cluster of computers while abstracting away the existence of the cluster from the services. The design of Kubernetes is loosely based on Google's internal orchestration system Borg.
+
+Kubernetes is now maintained by the Cloud Native Computing Foundation , which is a part of the Linux Foundation.
+
+Kubernetes can flexibly handle replication, impose resource limits, and recover quickly from failures. Kubernetes Cluster A Kubernetes cluster consists of "master" nodes and "worker" nodes. In short, master nodes share state to manage the cluster and schedule jobs to run on workers.

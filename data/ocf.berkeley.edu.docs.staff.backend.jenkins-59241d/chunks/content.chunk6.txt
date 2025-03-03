@@ -1,0 +1,5 @@
+Under "Build Triggers", check "GitHub Pull Request Builder", and then check "Use github hooks for build triggering". Under "GitHub Pull Request Builder", delete all lines under "Admin List" (if there are any). Add "ocf" as the only line to the "List of organizations" box.
+
+On GitHub, under "Settings" and "Webhooks & services", add a new webhook with payload URL https://jenkins.ocf.berkeley.edu/ghprbhook/ , content type application/json , and the secret (it's in supernova:/opt/passwords ).
+
+Choose to trigger only on certain events: Commit comment Issue comment Issues Pull Request Pull Request view comment (These might not all be necessary, but I don't know the exact list.) On GitHub, add the "Bots" group admin access to the repository. This is necessary so that it can set commit statuses.

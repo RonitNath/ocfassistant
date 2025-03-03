@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.tips.shorturls-f39166\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 735,
+      "first_words": "ShortURL guide \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 875,
+      "first_words": "There are also abbreviations for the most commonly..."
+    },
+    {
+      "index": 3,
+      "size": 684,
+      "first_words": "When doing so, make sure that: The shorturl isn't..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

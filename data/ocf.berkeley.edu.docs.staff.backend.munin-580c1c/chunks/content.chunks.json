@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.munin-580c1c\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 928,
+      "first_words": "Munin \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 967,
+      "first_words": "Automated alerts Munin sends mail to root whenever..."
+    },
+    {
+      "index": 3,
+      "size": 997,
+      "first_words": "Custom plugins We provide a Puppet class, ocf::mun..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

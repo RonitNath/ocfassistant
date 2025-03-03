@@ -1,0 +1,132 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.feeds.posts.default-7a191a\\content.txt",
+  "chunk_count": 25,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 676,
+      "first_words": "tag:blogger.com,1999:blog-34923766 2024-10-09T15:5..."
+    },
+    {
+      "index": 2,
+      "size": 926,
+      "first_words": "The OCF HPC service will be unavailable during the..."
+    },
+    {
+      "index": 3,
+      "size": 154,
+      "first_words": "</b>OCF Internal APT repos remain unavailable at t..."
+    },
+    {
+      "index": 4,
+      "size": 1303,
+      "first_words": "When power was resumed, the server encountered a d..."
+    },
+    {
+      "index": 5,
+      "size": 508,
+      "first_words": "We will take steps to ensure that system monitorin..."
+    },
+    {
+      "index": 6,
+      "size": 924,
+      "first_words": "Sync speeds are higher now.</p> Jonathan http://ww..."
+    },
+    {
+      "index": 7,
+      "size": 447,
+      "first_words": "We apologize for the inconvenience.</p><p><br /></..."
+    },
+    {
+      "index": 8,
+      "size": 867,
+      "first_words": "The downtime will be around 15-30 minutes, and all..."
+    },
+    {
+      "index": 9,
+      "size": 480,
+      "first_words": "We are in contact with the university to get the i..."
+    },
+    {
+      "index": 10,
+      "size": 621,
+      "first_words": "Apologies, but the process turned out to be more i..."
+    },
+    {
+      "index": 11,
+      "size": 712,
+      "first_words": "We expect the downtime to last for about 4 hours.<..."
+    },
+    {
+      "index": 12,
+      "size": 367,
+      "first_words": "We expect the upgrades to be completed by mid-Febr..."
+    },
+    {
+      "index": 13,
+      "size": 1146,
+      "first_words": "It is likely that the server's IP addresses will f..."
+    },
+    {
+      "index": 14,
+      "size": 1105,
+      "first_words": "We expect the downtime to be around 30 minutes.</p..."
+    },
+    {
+      "index": 15,
+      "size": 806,
+      "first_words": "Updates will be posted on this page.</p> Jonathan..."
+    },
+    {
+      "index": 16,
+      "size": 760,
+      "first_words": "Our website, student group websites, and other OCF..."
+    },
+    {
+      "index": 17,
+      "size": 1007,
+      "first_words": "up.</p><p>Update 5:28AM 2021-11-14: Scurvy is up,..."
+    },
+    {
+      "index": 18,
+      "size": 547,
+      "first_words": "However, our centos-debuginfo mirror is an unoffic..."
+    },
+    {
+      "index": 19,
+      "size": 890,
+      "first_words": "The project will continue to be synced in the mean..."
+    },
+    {
+      "index": 20,
+      "size": 581,
+      "first_words": "All SMART attributes are currently normal, so we c..."
+    },
+    {
+      "index": 21,
+      "size": 955,
+      "first_words": "ETA 60 mins.</p><p><br /></p><p><b>Update: 1530 PS..."
+    },
+    {
+      "index": 22,
+      "size": 893,
+      "first_words": "We strongly recommend against the continued use of..."
+    },
+    {
+      "index": 23,
+      "size": 910,
+      "first_words": "If you notice any issues using our mirrors please..."
+    },
+    {
+      "index": 24,
+      "size": 839,
+      "first_words": "Please expect delays in this process due to the li..."
+    },
+    {
+      "index": 25,
+      "size": 376,
+      "first_words": "All other services, such as our login servers (tsu..."
+    }
+  ]
+}

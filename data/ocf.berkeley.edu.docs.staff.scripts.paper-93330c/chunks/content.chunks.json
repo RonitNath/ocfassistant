@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.paper-93330c\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 963,
+      "first_words": "paper: view and modify print quotas \u2013 Open Comput..."
+    },
+    {
+      "index": 2,
+      "size": 678,
+      "first_words": "The paper script can be used from anywhere to list..."
+    },
+    {
+      "index": 3,
+      "size": 1014,
+      "first_words": "$ paper refund --pages <num_pages> --reason \"<reas..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

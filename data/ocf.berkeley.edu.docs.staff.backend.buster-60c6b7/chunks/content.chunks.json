@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.buster-60c6b7\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 720,
+      "first_words": "Debian Buster upgrade \u2013 Open Computing Facility T..."
+    },
+    {
+      "index": 2,
+      "size": 842,
+      "first_words": "death dev-death Comments: same time as all login s..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

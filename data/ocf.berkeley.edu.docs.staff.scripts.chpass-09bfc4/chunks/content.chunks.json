@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.chpass-09bfc4\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 929,
+      "first_words": "chpass: reset a user's password \u2013 Open Computing..."
+    },
+    {
+      "index": 2,
+      "size": 747,
+      "first_words": "raphtown@pileup:~$ chpass andromeda OCF Change Pas..."
+    },
+    {
+      "index": 3,
+      "size": 1040,
+      "first_words": "Please enter the password for principal raphtown/r..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

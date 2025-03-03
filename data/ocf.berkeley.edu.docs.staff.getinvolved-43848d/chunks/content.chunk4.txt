@@ -1,0 +1,11 @@
+We can help you figure out your interests at the OCF and provide more direction towards contributing.
+
+Staff Training The staff training resources contain a number of weekly collaborative exercises, working up from the basics to eventually making a substantial contribution of your own.
+
+Linux SysAdmin DeCal If you'd like to learn about many of the tools we use around the OCF in a more traditional course setting, we regularly offer the Linux SysAdmin DeCal .
+
+All lectures and lab assignments are open source and available for free on the website, and you are more than welcome to use them even if you aren't officially enrolled in the course.
+
+Starter Tasks Page The Starter Tasks page in our documentation contains a variety of intermediate-difficulty exercises that are another great way to get some practice working with OCF infrastructure.
+
+Contribute We know that finding ways to contribute to the OCF can feel daunting, but we don’t want you to be discouraged.

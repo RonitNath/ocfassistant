@@ -1,0 +1,7 @@
+ Ruby on Rails – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Ruby on Rails Table of Contents Setting up RVM Installing unicorn Preparing your app to be supervised Supervise your app with systemd Suggestions/improvements?
+
+Note: This document only applies to student groups with virtual hosts who have applied for apphosting.
+
+For normal user accounts or for groups without apphosting, you'll want to host with FastCGI instead. See our instructions for that here .
+
+You will want to deploy your application using RVM so that you can easily install and manage dependencies and versions.

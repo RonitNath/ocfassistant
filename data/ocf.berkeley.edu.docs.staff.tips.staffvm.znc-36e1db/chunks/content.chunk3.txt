@@ -1,0 +1,5 @@
+Create a file /etc/systemd/system/znc.service with the contents: [Unit] Description=ZNC - IRC Bouncer Requires=nss-user-lookup.target After=network-online.target nss-user-lookup.target [Service] User=<YOUR_USER> ExecStart=/usr/bin/znc --foreground ExecReload=/bin/kill -HUP $MAINPID Restart=on-failure KillSignal=SIGINT SuccessExitStatus=2 [Install] WantedBy=multi-user.target Make sure to change <YOUR_USER> to your username!
+
+Reload systemd and start znc: sudo systemctl daemon-reload sudo systemctl enable znc sudo systemctl start znc ZNC should now be running (and will start/restart automatically). You can see detailed information with sudo systemctl status znc .
+
+If you enabled webadmin, you can access your server at https://<your_staff_VM>.ocf.berkeley.edu:PORT/ . Make sure you use https or you'll get a cryptic "connection reset" message.

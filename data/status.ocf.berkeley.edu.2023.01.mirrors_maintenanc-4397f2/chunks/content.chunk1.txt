@@ -1,0 +1,1 @@
+ Open Computing Facility Status: Mirrors maintenance, 1/18 23:00 PST Updates for Open Computing Facility services Wednesday, January 18, 2023 Mirrors maintenance, 1/18 23:00 PST We'll be running some maintenance tasks on the mirrors server (https://mirrors.ocf.berkeley.edu) at 23:00 PST today, 1/18.The projected maintenance window is 20 minutes.

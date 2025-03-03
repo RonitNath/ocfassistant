@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.printing-9ed92e\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 656,
+      "first_words": "Printing maintenance \u2013 Open Computing Facility To..."
+    },
+    {
+      "index": 2,
+      "size": 947,
+      "first_words": "Instead, they should be removed from the CUPS clas..."
+    },
+    {
+      "index": 3,
+      "size": 700,
+      "first_words": "This can also be done by replacing remove in the a..."
+    },
+    {
+      "index": 4,
+      "size": 940,
+      "first_words": "In order to replenish stocks of toner, first get i..."
+    },
+    {
+      "index": 5,
+      "size": 932,
+      "first_words": "The following document contains how to recycle the..."
+    },
+    {
+      "index": 6,
+      "size": 889,
+      "first_words": "Performing maintenance on the printers Our contrac..."
+    },
+    {
+      "index": 7,
+      "size": 941,
+      "first_words": "(expressed as total pages printed over time) Edit..."
+    },
+    {
+      "index": 8,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

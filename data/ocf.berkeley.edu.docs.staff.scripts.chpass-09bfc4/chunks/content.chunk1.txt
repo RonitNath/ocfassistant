@@ -1,0 +1,5 @@
+ chpass: reset a user's password – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In chpass: reset a user's password The preferred way of changing passwords is to do it online . This does not require a staffer to be present to change the user's password. Only use the command line chpass if this is not suitable. An example is, for group accounts or users that send notarized letters to the OCF.
+
+Technical Description Python script that changes a user's kerberos principal password using a specified staff/root principal.
+
+Usage ~$ chpass andromeda Changes user andromeda's password Sample Use Case You can run chpass on any server.

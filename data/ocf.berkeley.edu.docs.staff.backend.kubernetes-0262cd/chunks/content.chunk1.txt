@@ -1,0 +1,5 @@
+ Kubernetes – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Kubernetes Table of Contents Kubernetes Kubernetes Cluster Masters Why the odd number of masters?
+
+Workers Pods OCF Kubernetes Cluster Bootstrapping Kubernetes PKI OCF Kubernetes Configuration Getting traffic into the cluster Why didn't we use MetalLB? Why don't we copy Marathon and specify one port per service? At the OCF we have fully migrated all services from Mesos/Marathon to Kubernetes .
+
+In this document we will explain the design of our Kubernetes cluster while also touching briefly on relevant core concepts. This page is not a HOWTO for deploying services or troubleshooting a bad cluster.

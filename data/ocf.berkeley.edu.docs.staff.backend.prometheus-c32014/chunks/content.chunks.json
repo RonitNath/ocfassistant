@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.prometheus-c32014\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 1399,
+      "first_words": "Prometheus \u2013 Open Computing Facility Toggle navig..."
+    },
+    {
+      "index": 2,
+      "size": 695,
+      "first_words": "Another important exporter we use is the SNMP Expo..."
+    },
+    {
+      "index": 3,
+      "size": 942,
+      "first_words": "This is the most ideal method of using a prewritte..."
+    },
+    {
+      "index": 4,
+      "size": 769,
+      "first_words": "For example, if you would like to view the total R..."
+    },
+    {
+      "index": 5,
+      "size": 813,
+      "first_words": "Some of the more useful dashboards available are:..."
+    },
+    {
+      "index": 6,
+      "size": 461,
+      "first_words": "Edit this Page Page History Table of Contents Aler..."
+    },
+    {
+      "index": 7,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

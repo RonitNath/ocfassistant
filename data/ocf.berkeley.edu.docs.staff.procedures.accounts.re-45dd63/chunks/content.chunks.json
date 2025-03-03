@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.accounts.re-45dd63\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 721,
+      "first_words": "Rename an account \u2013 Open Computing Facility Toggl..."
+    },
+    {
+      "index": 2,
+      "size": 847,
+      "first_words": "sudo sorry username_to_rename note -u username_to_..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

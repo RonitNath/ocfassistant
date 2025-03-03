@@ -1,0 +1,7 @@
+ checkacct: find accounts by full name – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In checkacct: find accounts by full name Introduction If a member does not know their account name, you can use this script to look it up.
+
+Before recording an account request for a group with approve , check to see if the group already has an account.
+
+Be sure to use different forms and abbreviations of the group's name to maximize the chance that a group will be found.
+
+This script will search LDAP for case-insensitive matches in any part of the full name or account name, including part of a word.

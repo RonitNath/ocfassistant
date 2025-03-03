@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.approve-c05f38\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 812,
+      "first_words": "approve: record an OCF group account request \u2013 Op..."
+    },
+    {
+      "index": 2,
+      "size": 724,
+      "first_words": "If a member requesting an individual account canno..."
+    },
+    {
+      "index": 3,
+      "size": 983,
+      "first_words": "Searching for signatories... MATTHEW JAMES Mcallis..."
+    },
+    {
+      "index": 4,
+      "size": 610,
+      "first_words": "'Open Computing Facility', and email should ideall..."
+    },
+    {
+      "index": 5,
+      "size": 907,
+      "first_words": "Edit this Page Page History Table of Contents When..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

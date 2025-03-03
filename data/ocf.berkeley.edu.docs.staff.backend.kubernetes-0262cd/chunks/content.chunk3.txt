@@ -1,0 +1,5 @@
+It is considered best practice to run an odd number of masters , and currently our cluster has three masters.
+
+Masters Kubernetes masters share state via etcd , a distributed key-value store (KVS) implementing the Raft protocol. The three main goals of Raft are: Leader elections in case of failure. Log replication across all masters. Ensuring log integrity across all masters. One master is elected as a leader of the cluster. The leader has the ability to commit writes to the KVS.
+
+etcd then reliably replicates this state across every master, so that if the leader fails, another master can be elected and no state will be lost in the process.

@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.hpc-f683aa\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 967,
+      "first_words": "Adding users to the HPC cluster \u2013 Open Computing..."
+    },
+    {
+      "index": 2,
+      "size": 709,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

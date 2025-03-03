@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.mailing_lists-b038ba\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 786,
+      "first_words": "Staff mailing lists \u2013 Open Computing Facility Tog..."
+    },
+    {
+      "index": 2,
+      "size": 822,
+      "first_words": "Technical Managers are required to join them: rt :..."
+    },
+    {
+      "index": 3,
+      "size": 677,
+      "first_words": "mon : Monitoring alerts are sent here: Rackspace C..."
+    },
+    {
+      "index": 4,
+      "size": 332,
+      "first_words": "There are also some special purpose mailing lists:..."
+    },
+    {
+      "index": 5,
+      "size": 2013,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

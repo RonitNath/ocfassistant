@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.accounts.as-0130c5\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 990,
+      "first_words": "LDAP association \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 931,
+      "first_words": "Occasionally, it is useful to allow someone to res..."
+    },
+    {
+      "index": 3,
+      "size": 957,
+      "first_words": "If an account is associated in an RT ticket, leave..."
+    }
+  ]
+}

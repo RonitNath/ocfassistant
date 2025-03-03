@@ -1,0 +1,3 @@
+Make your change First, you want to create a new branch to separate this change from other changes that you or other people are making. To do this, choose a very short name for your branch and run git checkout -b <branch-name> . You have now created and switched to your new branch. Now, you can edit the file and add your username. Figure out which file corresponds to the completion list and add your username to that file. (Just add the name for now, don't worry about adding the URL or brackets.)
+
+There are a few options for editing the file: If you are familiar with a console text editor like vim or emacs , you can use that to edit the file.

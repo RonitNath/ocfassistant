@@ -1,0 +1,3 @@
+; raise max upload and POST sizes upload_max_filesize = 32M post_max_size = 32M ; raise maximum number of input variables max_input_vars = 20000 Security To prevent websites from being compromised, outbound HTTP requests via either curl_exec() or file_get_contents() are blocked. Consider using different frameworks if your website requires outbound HTTP requests.
+
+Edit this Page Page History More in this category Web hosting Backups/Archiving Django Flask Jekyll PHP Ruby on Rails WordPress OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

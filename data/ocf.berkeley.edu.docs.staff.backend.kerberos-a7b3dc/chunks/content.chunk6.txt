@@ -1,0 +1,7 @@
+Used to enable Kerberos authentication with a service running on a particular host, such as http , which (for instance) enables logins to RT, or smtp , which allows email authentication. Ticket : Tickets are issued by the TGS (see below) to clients. Tickets have an expiration time, which is set to the default of 10 hours after being issued.
+
+Keytab : A keytab is essentially the equivalent of a password, but one that can be used easily by a script.
+
+If someone has read access to a keytab, they can retrieve all the keys in it, so be very careful what permissions are set on keytabs.
+
+TGT ( T icket G ranting T icket): A special ticket that is used for communication between the client machine and the KDC.

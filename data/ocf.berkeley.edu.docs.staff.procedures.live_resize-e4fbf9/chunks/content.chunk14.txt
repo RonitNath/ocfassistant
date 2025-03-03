@@ -1,0 +1,9 @@
+These can be ignored as we are going to fix this later with partprobe and because no data is actually moving around: (parted) rm 5 (parted) rm 2 (parted) rm 1 Warning: Partition /dev/vda1 is being used. Are you sure you want to continue? Yes/No?
+
+Yes Error: Partition(s) 1 on /dev/vda have been written, but we have been unable to inform the kernel of the change, probably because it/they are in use. As a result, the old partition(s) will remain in use. You should reboot now before making further changes. Ignore/Cancel?
+
+Ignore Create the partition again with the same starting value as before (2048s in this case) and a larger ending value.
+
+The starting value here is crucial to get the same as the previous one so that no data is shifted but the ending value can be anything as long as it's greater than or equal to what it was before.
+
+The units also do not have to match: (parted) mkpart primary 2048s 25GiB Make a partition for swap (if you removed it before).

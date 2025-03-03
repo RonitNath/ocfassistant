@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.powers-36e92b\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 831,
+      "first_words": "Staff privileges \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 889,
+      "first_words": "Staff privileges are distinct from the Board of Di..."
+    },
+    {
+      "index": 3,
+      "size": 981,
+      "first_words": "Before RSOs became able to reset their passwords o..."
+    },
+    {
+      "index": 4,
+      "size": 2692,
+      "first_words": "Other privileges Technical Managers also have the..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

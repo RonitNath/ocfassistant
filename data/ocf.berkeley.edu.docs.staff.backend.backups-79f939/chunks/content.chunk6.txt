@@ -1,0 +1,7 @@
+Backup Contents Backups currently include: Everything on NFS User home and web directories Cronjobs on supported servers (tsunami, supernova, biohazard, etc.)
+
+MySQL databases (including user databases, stats, RT, print quotas, IRC data) Everything on GitHub (probably very unnecessary) LDAP and Kerberos data A smattering of random files on random servers Backup Procedures Backups are currently made daily via a cronjob on hal which calls rsnapshot .
+
+The current settings are to retain 7 daily backups, 4 weekly backups, and 6 monthly backups, but we might adjust this as it takes more space or we get larger backup drives. We use rsnapshot to make incremental backups.
+
+Typically, each new backup takes an additional ~3GiB of space (but this will vary based on how many files actually changed). A full backup is about ~2TiB of space and growing.

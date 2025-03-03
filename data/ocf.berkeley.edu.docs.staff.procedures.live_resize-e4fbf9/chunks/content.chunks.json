@@ -1,0 +1,102 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.live_resize-e4fbf9\\content.txt",
+  "chunk_count": 19,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 916,
+      "first_words": "Live disk resizing \u2013 Open Computing Facility Togg..."
+    },
+    {
+      "index": 2,
+      "size": 621,
+      "first_words": "This is being run on a KVM-based hypervisor with a..."
+    },
+    {
+      "index": 3,
+      "size": 926,
+      "first_words": "This assumes the path for the LVM-backed disk is i..."
+    },
+    {
+      "index": 4,
+      "size": 945,
+      "first_words": "This can be useful to have in scrollback: $ sudo f..."
+    },
+    {
+      "index": 5,
+      "size": 453,
+      "first_words": "Note that fdisk will not write out any changes unl..."
+    },
+    {
+      "index": 6,
+      "size": 859,
+      "first_words": "Note that the disk size should be larger than all..."
+    },
+    {
+      "index": 7,
+      "size": 589,
+      "first_words": "Command (m for help): d Partition number (1,2, def..."
+    },
+    {
+      "index": 8,
+      "size": 771,
+      "first_words": "If you are asked about removing signatures during..."
+    },
+    {
+      "index": 9,
+      "size": 743,
+      "first_words": "It isn't really useful for most of our VMs, it's o..."
+    },
+    {
+      "index": 10,
+      "size": 930,
+      "first_words": "You can set the bootable flag on the first partiti..."
+    },
+    {
+      "index": 11,
+      "size": 989,
+      "first_words": "If you see this error upon doing so, it can be saf..."
+    },
+    {
+      "index": 12,
+      "size": 336,
+      "first_words": "Start off by entering parted and setting your unit..."
+    },
+    {
+      "index": 13,
+      "size": 906,
+      "first_words": "These are important to keep noted somewhere as aft..."
+    },
+    {
+      "index": 14,
+      "size": 969,
+      "first_words": "These can be ignored as we are going to fix this l..."
+    },
+    {
+      "index": 15,
+      "size": 357,
+      "first_words": "You don't have to make an extended partition, that..."
+    },
+    {
+      "index": 16,
+      "size": 933,
+      "first_words": "You're mostly looking to make sure that the start..."
+    },
+    {
+      "index": 17,
+      "size": 837,
+      "first_words": "The values are already changed, so no saving is ne..."
+    },
+    {
+      "index": 18,
+      "size": 1648,
+      "first_words": "df -h should show the correct new size now: $ df -..."
+    },
+    {
+      "index": 19,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

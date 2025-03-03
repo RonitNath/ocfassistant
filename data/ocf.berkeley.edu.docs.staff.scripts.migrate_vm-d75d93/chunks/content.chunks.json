@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.migrate_vm-d75d93\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 835,
+      "first_words": "migrate-vm: migrate VMs between hosts \u2013 Open Comp..."
+    },
+    {
+      "index": 2,
+      "size": 874,
+      "first_words": "For example, the following command moves supernova..."
+    },
+    {
+      "index": 3,
+      "size": 447,
+      "first_words": "The section to delete looks like this: <cpu mode=..."
+    },
+    {
+      "index": 4,
+      "size": 873,
+      "first_words": "Edit this Page Page History Table of Contents Usag..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

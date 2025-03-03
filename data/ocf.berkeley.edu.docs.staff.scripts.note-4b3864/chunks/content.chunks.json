@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.note-4b3864\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 835,
+      "first_words": "note: add notes to a user account \u2013 Open Computin..."
+    },
+    {
+      "index": 2,
+      "size": 212,
+      "first_words": "Usage/Example $ note -u username [note] note will..."
+    },
+    {
+      "index": 3,
+      "size": 804,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

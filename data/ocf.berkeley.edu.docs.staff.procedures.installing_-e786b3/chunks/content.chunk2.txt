@@ -1,0 +1,5 @@
+To install updates: Make sure the desktops are not suspended , and that you aren't trying to install updates near a 15-minute boundary when the desktops auto-suspend. See lab-wakeup to wake up the desktops prior to updating.
+
+From supernova , run: sudo apt-dater-ocf This will send an email to root with a list of packages to be updated.
+
+Glance over the list to make sure there are no obvious problems (for example, if it's trying to upgrade an entire system or install every available backport, which has actually happened before). Once apt-dater opens, proceed to the next step. Select the "Updates pending" row at the top, and hit u . You'll be asked if you wish to upgrade the entire group. Press y to confirm. All the hosts will now be in the "Sessions" category.

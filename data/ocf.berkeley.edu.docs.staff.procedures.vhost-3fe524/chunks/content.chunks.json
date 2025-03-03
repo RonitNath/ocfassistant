@@ -1,0 +1,47 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.vhost-3fe524\\content.txt",
+  "chunk_count": 8,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 1178,
+      "first_words": "Configuring virtual hosting \u2013 Open Computing Faci..."
+    },
+    {
+      "index": 2,
+      "size": 871,
+      "first_words": "their department Account does not already have a v..."
+    },
+    {
+      "index": 3,
+      "size": 745,
+      "first_words": "Keep in mind that vhosts are not available without..."
+    },
+    {
+      "index": 4,
+      "size": 744,
+      "first_words": "The purpose of the hostname and who will be using..."
+    },
+    {
+      "index": 5,
+      "size": 888,
+      "first_words": "First, check if any DNS records already exist with..."
+    },
+    {
+      "index": 6,
+      "size": 917,
+      "first_words": "Add the group account to the ocfapphost LDAP group..."
+    },
+    {
+      "index": 7,
+      "size": 971,
+      "first_words": "The nginx running on apphosting server will return..."
+    },
+    {
+      "index": 8,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

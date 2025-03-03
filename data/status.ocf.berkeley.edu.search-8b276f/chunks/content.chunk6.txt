@@ -1,0 +1,5 @@
+Posted by Jonathan at 12:04 PM Tuesday, February 08, 2022 Scheduled downtime on Saturday, 2/12 We will be upgrading the operating system on our web hosting (death), login (tsunami), and app hosting (vampires) servers this Saturday, 2/12/2022, beginning at 6:00 pm Pacific Time. All OCF-hosted websites and apps will be unavailable during the upgrade. We expect the downtime to last for about 4 hours. We apologize for the inconvenience.
+
+Posted by Jonathan at 11:39 AM Friday, February 04, 2022 Mirrors upgrade underway, service interruptions expected We are currently performing upgrades on the OCF mirrors server to accommodate more projects and improve the throughput. During this time, you might experience sporadic downtime and reduced performance.
+
+Please retry your downloads in a few seconds if you experience failures when downloading from the OCF mirrors. We apologize for any inconvenience. We expect the upgrades to be completed by mid-February.

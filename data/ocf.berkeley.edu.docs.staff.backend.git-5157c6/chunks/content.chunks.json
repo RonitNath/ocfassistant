@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.git-5157c6\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 975,
+      "first_words": "Git \u2013 Open Computing Facility Toggle navigation O..."
+    },
+    {
+      "index": 2,
+      "size": 837,
+      "first_words": "You may commit another staff member's work if you..."
+    },
+    {
+      "index": 3,
+      "size": 910,
+      "first_words": "If you have \"dirty\" uncommitted changes, you'll ne..."
+    },
+    {
+      "index": 4,
+      "size": 419,
+      "first_words": "git fetch REMOTE # update local copy of remote git..."
+    },
+    {
+      "index": 5,
+      "size": 2122,
+      "first_words": "Other useful commands Current state of working tre..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

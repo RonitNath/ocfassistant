@@ -1,0 +1,11 @@
+The application opens up a system print dialog, which gets a list of available printers and options from the local CUPS client, which in turn gets it from the printhost.
+
+The application renders the desired pages to a PostScript, PDF, or other CUPS-compatible format, then sends it to the printhost.
+
+The CUPS server on the printhost receives the job and print options and queues the job for printing.
+
+The actual document, plus metadata including user-set options, is stored in the print spool at /var/spool/cups until a printer becomes available to print it.
+
+The document is converted into a more printer-friendly format before it actually reaches the printer. Once it's ready to print, it is sent to the printer via some backend such as IPP.
+
+Finally, the printer accepts a PostScript document as raw data and prints it out (some also support raster formats).

@@ -1,0 +1,7 @@
+This is done automatically after every Puppet run which results in iptables rules being modified, but if you manually fiddle with iptables you may need to run it yourself.
+
+Disabling firewalls through hiera In an emergency, it's possible to effectively disable firewalling of input traffic on a server by setting ocf::firewall::reject_unrecognized_input to false in that server's hieradata.
+
+Turning on this option causes the rules in the PUPPET-INPUT chain which reject traffic to be deleted, effectively disabling the firewall's function of filtering input packets.
+
+An analogous kill switch does not currently exist for output-traffic firewalling, but can be easily added.

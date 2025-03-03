@@ -1,0 +1,7 @@
+The traffic for any Kubernetes HTTP service will go through the current keepalived master, which holds the virtual IP for all Kubernetes services. The keepalived master is randomly chosen but will move hosts in the case of failure. nginx will terminate ssl and pass the request on to a worker running Ingress Nginx .
+
+Right now ingress is running as a NodePort service on all workers (Note: we can easily change this to be a subset of workers if our cluster scales such that this is no longer feasible).
+
+The ingress worker will inspect the Host header and forward the request on to the appropriate pod where the request is finally processed. Do note that the target pod is not necessarily on the same worker that routed the traffic . Why didn't we use MetalLB?
+
+MetalLB was created so a bare-metal Kubernetes cluster could use Type: LoadBalancer in Service definitions.

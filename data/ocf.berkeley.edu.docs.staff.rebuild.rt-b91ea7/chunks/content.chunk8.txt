@@ -1,0 +1,5 @@
+Emulate logout behavior by changing the Logout page to send a 401 (works for Chrome), run proprietary IE code (works for IE), and make an Ajax call to a non-existing page with bad credentials (works for Firefox).
+
+The below code has been "adapted" from https://trac-hacks.org/wiki/TrueHttpLogoutPatch This should be fixed so that RT's installation files aren't being directly modified.
+
+Edit /usr/share/request-tracker4/html/NoAuth/Logout.html : Change <& /Elements/Header, Title => loc('Logout'), Refresh => RT->Config->Get('LogoutRefresh') &> to <& /Elements/Header, Title => loc('Logout') &> and paste the following below it: <script type="text/javascript"> function clearAuthenticationCache() { try { var agent = navigator.userAgent.toLowerCase(); if (agent.indexOf("msie") != -1) { // This works only on IE only.

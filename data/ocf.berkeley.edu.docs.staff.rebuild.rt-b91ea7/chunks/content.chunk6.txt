@@ -1,0 +1,1 @@
+permanent ; } server { listen 443 ; server_name rt.ocf.berkeley.edu ; rewrite ^/ $ /rt ; root /usr/share/request-tracker4 ; location /rt { # See /usr/share/doc/rt4-fcgi/examples/request-tracker4.conf expires epoch ; # Require the default authentication on typhoon (pam_krb5) auth_pam "RT" ; auth_pam_service_name "common-password" ; # Proxy over to rt4.

@@ -1,0 +1,3 @@
+ Open Computing Facility Status: Multiple mirrors out of date Updates for Open Computing Facility services Friday, August 26, 2022 Multiple mirrors out of date We noticed that multiple OCF mirror archives were out of date due to exhausted boot disk space on the mirrors server.
+
+Affected archives include (this is not an exhaustive list): Debian Debian-security Puppetlabs Ubuntu Ubuntu-ports Kali The last update of the affected archives was on Aug 13. Sync is running but might take a while. We sincerely apologize for this. We will take steps to ensure that system monitoring alerts are handled in a timely manner.

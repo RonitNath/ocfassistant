@@ -1,0 +1,5 @@
+Play with your webspace Every OCF account has web hosting enabled at https://www.ocf.berkeley.edu/~yourusername . As an example, check out ckuehl’s website . Add some files to your webspace and preview it in your web browser. (optional) Most student groups that host with the OCF use WordPress. Install WordPress in your webspace.
+
+(hint: instructions for this are on our website) Play with ocflib* ocflib is a Python library we maintain which is installed on every OCF host. For this exercise, you won’t need to make modifications to ocflib. Log into supernova and start an IPython3 shell (the ipython3 command).
+
+To make sure things are working: Run import ocflib.lab.staff_hours to import utilities relating to staff hours . Run staffhours = ocflib.lab.staff_hours.get_staff_hours() to get the list of staff hours. Take a look at the list staffhours and check that it matches the info on the staff hours page .

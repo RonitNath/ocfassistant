@@ -1,0 +1,7 @@
+Affected archives include (this is not an exhaustive list): Debian Debian-security Puppetlabs Ubuntu Ubuntu-ports Kali The last update of the affected archives was on Aug 13. Sync is running but might take a while. We sincerely apologize for this. We will take steps to ensure that system monitoring alerts are handled in a timely manner.
+
+Posted by Jonathan at 11:49 PM Friday, May 13, 2022 Fedora out of sync I noticed that our Fedora mirror was out of sync due to a slow upstream mirror. Working on it. Update: Switched to another upstream mirror. Sync speeds are higher now.
+
+Posted by Jonathan at 2:58 AM Saturday, April 02, 2022 [RESOLVED] Raspbian out of sync We noticed that our Raspbian mirror is out of sync, likely due to the IP address change.
+
+10:16 PM - We have temporarily switched our upstream for the Raspbian mirror, and it's currently syncing. Emailed Raspbian. - rjz 5/13 - Resolved.

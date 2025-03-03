@@ -1,0 +1,5 @@
+ .desktoprc – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In .desktoprc Table of Contents Example uses Sync your dotfiles Configure HexChat (IRC) Disable terminal shortcuts The file ~/remote/.desktoprc is automatically sourced when you log into any of the desktops.
+
+Since ~/remote is actually sshfs 'd to your home folder on NFS, this means you can put your common config or preferences in it and have them be shared across all desktops.
+
+Example uses If you want to get a feel for what you can do with your .desktoprc , try out some of these useful ideas.

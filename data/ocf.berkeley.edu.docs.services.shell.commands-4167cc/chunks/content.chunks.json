@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.shell.commands-4167cc\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 816,
+      "first_words": "Command reference \u2013 Open Computing Facility Toggl..."
+    },
+    {
+      "index": 2,
+      "size": 793,
+      "first_words": "OCF commands Key: ARGUMENT [optional] Command Desc..."
+    },
+    {
+      "index": 3,
+      "size": 514,
+      "first_words": "less FILE Lets you view the contents of a text fil..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

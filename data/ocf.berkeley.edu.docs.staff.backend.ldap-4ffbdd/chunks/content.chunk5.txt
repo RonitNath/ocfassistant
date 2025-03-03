@@ -1,0 +1,5 @@
+$ ldapvi uid=daradib 0 uid=daradib,ou=People,dc=OCF,dc=Berkeley,dc=EDU objectClass: ocfAccount objectClass: account objectClass: posixAccount cn: Dara Adib uid: daradib uidNumber: 19892 gidNumber: 20 homeDirectory: /home/d/da/daradib loginShell: /bin/bash calnetUid: 872544 Now if you make changes to some attributes (say, change the shell to tcsh ) and try to save the temporary file which has been opened in a text editor: 1 entry read add: 0, rename: 0, modify: 1, delete: 0 Action? [yYqQvVebB*rsf+?] You can enter v to view the LDIF change record (or ? for help).
+
+dn: uid=daradib,ou=People,dc=OCF,dc=Berkeley,dc=EDU changetype: modify replace: loginShell loginShell: /bin/tcsh You can enter y to apply changes, q to save the LDIF change record as a file in your current directory, or Q to discard.
+
+ldapadd ldapadd is a utility to add entries to the LDAP directory if you have the proper permissions .

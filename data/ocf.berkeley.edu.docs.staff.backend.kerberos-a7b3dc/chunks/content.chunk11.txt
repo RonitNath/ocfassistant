@@ -1,0 +1,7 @@
+If one is found, it returns a TGT, which is encrypted with the user's key (originally generated from the user's password and stored on the KDC). The client gets the encrypted TGT and decrypts it with the user's entered password. Note the user's password was never directly sent across the network at any stage in the process.
+
+Then the TGT is stored in the cache on the client machine until it expires, when it is requested again if needed. The user can then use this TGT to make requests for service tickets from the KDC.
+
+Kerberos makes sure that nobody can request a TGT for a user except the user themselves by using preauthentication, which essentially means that the KDC requests additional authentication than just a principal to give a TGT, since otherwise the key in the TGT could just be cracked offline by an attacker using a dictionary attack.
+
+This preauthentication typically takes the form of something like the current time encrypted with the user's key.

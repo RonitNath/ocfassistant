@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.dmca-aaed83\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 911,
+      "first_words": "DMCA \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 765,
+      "first_words": "If a DMCA takedown notice is received, refer to Gu..."
+    },
+    {
+      "index": 3,
+      "size": 831,
+      "first_words": "The service provider restores the allegedly infrin..."
+    },
+    {
+      "index": 4,
+      "size": 742,
+      "first_words": "Regardless of action, be sure to always provide ad..."
+    },
+    {
+      "index": 5,
+      "size": 709,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

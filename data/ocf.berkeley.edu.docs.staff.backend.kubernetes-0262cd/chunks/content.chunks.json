@@ -1,0 +1,72 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.kubernetes-0262cd\\content.txt",
+  "chunk_count": 13,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 964,
+      "first_words": "Kubernetes \u2013 Open Computing Facility Toggle navig..."
+    },
+    {
+      "index": 2,
+      "size": 950,
+      "first_words": "Rather, it is meant to explain architectural consi..."
+    },
+    {
+      "index": 3,
+      "size": 648,
+      "first_words": "It is considered best practice to run an odd numbe..."
+    },
+    {
+      "index": 4,
+      "size": 909,
+      "first_words": "Do note that the state stored in etcd is schedulin..."
+    },
+    {
+      "index": 5,
+      "size": 885,
+      "first_words": "Workers also run an instance of kube-proxy , which..."
+    },
+    {
+      "index": 6,
+      "size": 981,
+      "first_words": "While pods are essential for understanding Kuberne..."
+    },
+    {
+      "index": 7,
+      "size": 908,
+      "first_words": "We won't go into detail of everything contained th..."
+    },
+    {
+      "index": 8,
+      "size": 415,
+      "first_words": "Kubernetes is commonly deployed on AWS , GCP , or..."
+    },
+    {
+      "index": 9,
+      "size": 776,
+      "first_words": "--------------------------------------------------..."
+    },
+    {
+      "index": 10,
+      "size": 870,
+      "first_words": "The traffic for any Kubernetes HTTP service will g..."
+    },
+    {
+      "index": 11,
+      "size": 894,
+      "first_words": "The problem is, in L2 mode, it takes a pool of IPs..."
+    },
+    {
+      "index": 12,
+      "size": 715,
+      "first_words": "The Kubernetes documentation says not to use NodeP..."
+    },
+    {
+      "index": 13,
+      "size": 962,
+      "first_words": "More in this category Infrastructure Backups Debia..."
+    }
+  ]
+}

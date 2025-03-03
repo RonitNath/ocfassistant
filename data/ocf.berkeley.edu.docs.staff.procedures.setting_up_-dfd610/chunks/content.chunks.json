@@ -1,0 +1,52 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.setting_up_-dfd610\\content.txt",
+  "chunk_count": 9,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 947,
+      "first_words": "Setting up mdraid on servers \u2013 Open Computing Fac..."
+    },
+    {
+      "index": 2,
+      "size": 835,
+      "first_words": "Also, MegaCLI isn't very consistent between versio..."
+    },
+    {
+      "index": 3,
+      "size": 804,
+      "first_words": "Poor insight into drive health (can't just use sma..."
+    },
+    {
+      "index": 4,
+      "size": 882,
+      "first_words": "These commands work pretty reliably but you should..."
+    },
+    {
+      "index": 5,
+      "size": 637,
+      "first_words": "The reason is so that you can replace the drive wh..."
+    },
+    {
+      "index": 6,
+      "size": 755,
+      "first_words": "mdadm --create -v /dev/md0 --level = raid10 --raid..."
+    },
+    {
+      "index": 7,
+      "size": 961,
+      "first_words": "When asked, install GRUB on the same disk as in st..."
+    },
+    {
+      "index": 8,
+      "size": 750,
+      "first_words": "Instructions MegaRAID setup Software RAID setup We..."
+    },
+    {
+      "index": 9,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

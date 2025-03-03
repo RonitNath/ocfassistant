@@ -1,0 +1,52 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.internal_firew-71752f\\content.txt",
+  "chunk_count": 9,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 993,
+      "first_words": "Internal firewalls \u2013 Open Computing Facility Togg..."
+    },
+    {
+      "index": 2,
+      "size": 941,
+      "first_words": "the public SSH login, apphosting, and web servers,..."
+    },
+    {
+      "index": 3,
+      "size": 856,
+      "first_words": "In addition to input rules, it's necessary to have..."
+    },
+    {
+      "index": 4,
+      "size": 988,
+      "first_words": "It's important to note that internal firewalls are..."
+    },
+    {
+      "index": 5,
+      "size": 910,
+      "first_words": "Direct use of the firewall resource should be avoi..."
+    },
+    {
+      "index": 6,
+      "size": 969,
+      "first_words": "It seems that in some circumstances iptables may b..."
+    },
+    {
+      "index": 7,
+      "size": 675,
+      "first_words": "This is done automatically after every Puppet run..."
+    },
+    {
+      "index": 8,
+      "size": 485,
+      "first_words": "Edit this Page Page History Table of Contents Impl..."
+    },
+    {
+      "index": 9,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

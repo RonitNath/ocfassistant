@@ -1,0 +1,3 @@
+This means that the domain name will no longer be reserved for the group or individual that previously used it, and the domain may be claimed by others. If the domain is claimed by another group or individual after is has been reclaimed, the original group will not be able to reclaim it unless it becomes available again.
+
+If the virtual host has been disabled by the explicit request of the account holder, or if the account has lost eligibility for virtual hosting, then the virtual host may be reclaimed immediately. Finally, if the virtual host was disabled for violating account or vhost policy, before reclaiming the vhost, OCF staff will make an effort to contact the group which holds it.

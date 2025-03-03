@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.staff_hours-c17065\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 885,
+      "first_words": "Staff Hours \u2013 Open Computing Facility Toggle navi..."
+    },
+    {
+      "index": 2,
+      "size": 694,
+      "first_words": "Monday 11:00AM - 2:00PM Joe Wang General Manager W..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.vhost-fbd2fe\\content.txt",
+  "chunk_count": 14,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 908,
+      "first_words": "Virtual hosting (group.studentorg.berkeley.edu) \u2013..."
+    },
+    {
+      "index": 2,
+      "size": 998,
+      "first_words": "For example, a group's site can be made available..."
+    },
+    {
+      "index": 3,
+      "size": 947,
+      "first_words": "Student and department groups need a group account..."
+    },
+    {
+      "index": 4,
+      "size": 949,
+      "first_words": "OCF staff will review your request and contact the..."
+    },
+    {
+      "index": 5,
+      "size": 924,
+      "first_words": "Policies Groups, faculty, and academic staff only..."
+    },
+    {
+      "index": 6,
+      "size": 903,
+      "first_words": "Limitations on non-berkeley.edu The OCF may host n..."
+    },
+    {
+      "index": 7,
+      "size": 919,
+      "first_words": "Domains under berkeley.edu may not redirect to a n..."
+    },
+    {
+      "index": 8,
+      "size": 798,
+      "first_words": "Relevant domain name : Registered Student Organiza..."
+    },
+    {
+      "index": 9,
+      "size": 683,
+      "first_words": "Disabling of virtual hosts If your OCF account is..."
+    },
+    {
+      "index": 10,
+      "size": 697,
+      "first_words": "This means that the domain name will no longer be..."
+    },
+    {
+      "index": 11,
+      "size": 978,
+      "first_words": "If, in two weeks, we receive no response or OCF st..."
+    },
+    {
+      "index": 12,
+      "size": 560,
+      "first_words": "if requested in the fall semester, the old vhost w..."
+    },
+    {
+      "index": 13,
+      "size": 860,
+      "first_words": "Edit this Page Page History Table of Contents Web..."
+    },
+    {
+      "index": 14,
+      "size": 806,
+      "first_words": "Ruby on Rails Web hosting Backups/Archiving Django..."
+    }
+  ]
+}

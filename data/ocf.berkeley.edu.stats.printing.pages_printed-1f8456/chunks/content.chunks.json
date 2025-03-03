@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.stats.printing.pages_printed-1f8456\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 719,
+      "first_words": "Pages Printed \u2013 Open Computing Facility Toggle na..."
+    },
+    {
+      "index": 2,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

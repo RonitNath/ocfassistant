@@ -1,0 +1,5 @@
+For example, the following command moves supernova from jaws to whatever KVM host the command is run on: sudo migrate-vm jaws:supernova Steps performed To move the virtual machine, migrate-vm performs the following steps: Shuts down the virtual machine on the old host. Creates a new LVM volume on the new host with the correct size. Securely copies the virtual machine's disk from the old host to the new host. Checksums both the old and the new disks on each machine to ensure they match. Imports the KVM domain definition from the old host to the new host.
+
+Final steps After the virtual machine has been transferred between hosts, make sure the guest works on the new host.
+
+If moving from hal , you might need to delete the custom CPU definition section from the KVM XML to get the virtual machine to start. To edit the XML definition, run sudo virsh edit ${hostname} .

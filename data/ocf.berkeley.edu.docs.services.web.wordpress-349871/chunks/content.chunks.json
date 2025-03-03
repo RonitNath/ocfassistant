@@ -1,0 +1,57 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web.wordpress-349871\\content.txt",
+  "chunk_count": 10,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 817,
+      "first_words": "WordPress \u2013 Open Computing Facility Toggle naviga..."
+    },
+    {
+      "index": 2,
+      "size": 869,
+      "first_words": "Instructions for using WordPress are provided belo..."
+    },
+    {
+      "index": 3,
+      "size": 880,
+      "first_words": "You can choose whatever you want for most options,..."
+    },
+    {
+      "index": 4,
+      "size": 932,
+      "first_words": "However, if you're looking to create your website..."
+    },
+    {
+      "index": 5,
+      "size": 964,
+      "first_words": "Unzip this file and change the file extension of a..."
+    },
+    {
+      "index": 6,
+      "size": 670,
+      "first_words": "Change directory to your WordPress installation (p..."
+    },
+    {
+      "index": 7,
+      "size": 761,
+      "first_words": "I forgot my MySQL (database) password The database..."
+    },
+    {
+      "index": 8,
+      "size": 811,
+      "first_words": "Change directory to your WordPress installation (p..."
+    },
+    {
+      "index": 9,
+      "size": 459,
+      "first_words": "Edit this Page Page History Table of Contents Inst..."
+    },
+    {
+      "index": 10,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

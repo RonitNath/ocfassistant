@@ -1,0 +1,7 @@
+In the same directory, create another file called .htaccess with these contents: RewriteEngine on RewriteBase / RewriteCond %{REQUEST_FILENAME} !-f # Change "user" and "django" to your username and whatever directory # name you made in public_html, respectively. RewriteRule ^(. *)$ /~user/django/run.fcgi/$1 [QSA,L] Your app should now be accessible!
+
+Note that you will likely have to add 'www.ocf.berkeley.edu' to the list of ALLOWED_HOSTS in your application's settings.
+
+Making assets available While your application may load, things like images, stylesheets and javascript might still be failing to load.
+
+Generally, the best way to get these to load is to set the following settings in your application: STATIC_URL = '/~user/app/static/' STATIC_ROOT = '/home/u/us/user/public_html/django/static' Make sure to change user and app in STATIC_URL to the correct paths, same with u/us/user and django in STATIC_ROOT .

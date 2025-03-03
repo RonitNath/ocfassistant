@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.ldap-4ffbdd\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 924,
+      "first_words": "LDAP \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 978,
+      "first_words": "Should be in the form uid=[uid],ou=People,dc=OCF,d..."
+    },
+    {
+      "index": 3,
+      "size": 851,
+      "first_words": "creationTime : Account creation time in ISO 8601 f..."
+    },
+    {
+      "index": 4,
+      "size": 914,
+      "first_words": "Searching for an account: $ ldapsearch -x uid=sanj..."
+    },
+    {
+      "index": 5,
+      "size": 906,
+      "first_words": "$ ldapvi uid=daradib 0 uid=daradib,ou=People,dc=OC..."
+    },
+    {
+      "index": 6,
+      "size": 995,
+      "first_words": "To add an account, first create a file (we call it..."
+    },
+    {
+      "index": 7,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

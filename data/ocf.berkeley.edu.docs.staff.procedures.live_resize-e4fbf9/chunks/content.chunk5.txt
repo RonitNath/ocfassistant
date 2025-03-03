@@ -1,0 +1,3 @@
+Note that fdisk will not write out any changes unless you give it the w command to write them, so anything done up until that point should be safe and you can exit without changes if it's not looking like you want it to. $ sudo fdisk /dev/vda First, print out some information so you know what you are looking at.
+
+For instance, this output shows a 25 GiB disk with a 18 GiB partition followed by a ~ 2 GiB extended partition containing some swap space.

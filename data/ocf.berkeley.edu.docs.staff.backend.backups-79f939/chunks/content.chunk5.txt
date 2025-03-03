@@ -1,0 +1,9 @@
+Decrypt the backup using gpg . This requires your key pair to be imported into gpg first using gpg --import public_key.gpg and gpg --allow-secret-key-import --import private_key.gpg , then you can decrypt the backup with gpg --output <backup>.img.gz --decrypt <backup>.img.gz.gpg .
+
+Be careful to keep your private key secure by setting good permissions on it so that nobody else can read it, and delete it after the backup is imported.
+
+The keys can be deleted with gpg --delete-secret-keys "<Name>" and gpg --delete-key "<Name>" , where your name is whatever name it shows when you run gpg --list-keys . Extract the backup with gunzip <backup>.img.gz . Put the backup image into a LVM logical volume.
+
+First find the size that the volume should be by running ls -l <backup>.img , and copy the number of bytes that outputs.
+
+Then create the LV with sudo lvcreate -L <bytes>B -n <name> /dev/<volume group> where the volume group has enough space to store the entire backup (2+ TiB).

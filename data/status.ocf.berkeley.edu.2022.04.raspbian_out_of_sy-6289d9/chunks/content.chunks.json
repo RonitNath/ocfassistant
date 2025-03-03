@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2022.04.raspbian_out_of_sy-6289d9\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 403,
+      "first_words": "Open Computing Facility Status: [RESOLVED] Raspbi..."
+    },
+    {
+      "index": 2,
+      "size": 2535,
+      "first_words": "Posted by Jonathan at 10:09 PM Newer Post Older Po..."
+    }
+  ]
+}

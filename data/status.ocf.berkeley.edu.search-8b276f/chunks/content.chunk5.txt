@@ -1,0 +1,5 @@
+Posted by Jonathan at 1:43 PM Friday, March 11, 2022 [Complete, see notes] Mirrors downtime 3/11/2022 - migration to campus DC migration to campus DC underway, expect downtime for ~2 hours Update 3/12/2022: Migration completed by 14:00 yesterday. Currently our mirrors are IPv4 only, IPv6 ETA 2 weeks.
+
+Some Kali packages may not download correctly due to campus firewall settings, so if you experience any broken Kali downloads, please switch to the https version of our mirror. We are in contact with the university to get the issue sorted out as soon as possible.
+
+Posted by Jonathan at 10:28 AM Monday, February 14, 2022 Mirrors maintenance tonight at 8 We will be installing additional RAM on the mirrors server tonight at 8pm. Expect 15 mins of downtime. Update: ETA 2130. Apologies, but the process turned out to be more involved than expected. Update 2: The mirrors are up as of 21:30.

@@ -1,0 +1,5 @@
+ Kerberos – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Kerberos Table of Contents Introduction Security advantages Usability advantages Versions Terminology Commands Adding privileges for users How does it actually work?
+
+Introduction Kerberos is a network authentication system that is designed for client to server communication over a (potentially) insecure network, where data can be eavesdropped on, and addresses can be faked.
+
+It has several security and usability advantages over using password-based authentication over the network.

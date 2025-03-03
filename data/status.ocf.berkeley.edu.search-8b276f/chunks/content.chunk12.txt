@@ -1,0 +1,5 @@
+We expect to have 3 TiB of usable disk space on the mirrors server following the removal of centos-debuginfo, so if you have any suggestions for open source projects to mirror, please also email us at help@ocf.berkeley.edu :) We are currently discussing adding ubuntu-ports.
+
+rjz OCF Staff Posted by Jonathan at 1:02 PM Monday, October 11, 2021 [Investigating] Mirrors disk status 10/11 0000 PST: We noticed that one disk attribute was abnormal on multiple disks in the mirrors server.
+
+All SMART attributes are currently normal, so we currently do not expect any immediate service interruption as we investigate the issue. 10/12: Scheduled maintenance at 1930 PST. ETA 15 mins. We will update this post once we have more information on the situation.

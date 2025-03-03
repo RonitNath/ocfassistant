@@ -1,0 +1,7 @@
+Policies All our current policies are located in the "Pre Rules" section under "Security" in the policies tab. This option should be right at the top in the box on the left side of the page.
+
+It contains all our rules since we are only blocking traffic (either outgoing or incoming) before it goes through the firewall, so all we need are pre rules. In general the interface is pretty self-explanatory.
+
+Each rule has a custom name and a description that describes what kind of traffic it should be blocking or letting through, as well as the source and destination addresses (or groups of addresses), application (identified by the firewall), service (port), and whether it is allowed or blocked.
+
+Each rule has a dropdown next to the rule name if you hover over it that leads to the log viewer, where you can see what kind of traffic matched each rule and when the traffic was allowed/blocked.

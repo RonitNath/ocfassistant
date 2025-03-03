@@ -1,0 +1,5 @@
+We advise streamers to be very careful about what they show on screen ; Twitch allows people to clip and rewatch anything frame-by-frame. Please stream with a mic so you can explain what you're doing and talk to chat. You can see the mic level in OBS.
+
+Ideally this should be hovering around the yellow range, but it should never hit the far right of the bar. If you're maxing out, decrease the mic volume. You can apply filters to the mic by clicking the gear icon. OBS has several options that will optimize stream quality. If you have a powerful discrete GPU, enable video hardware encoding through your GPU.
+
+We recommend adding Noise Suppression (reduces noise) and Noise Gate (cuts off all sound below a certain volume level). For Noise Gate, to set the thresholds, be quiet and see where the mic level ends up. Set the close threshold there, and set the open threshold 10dB higher. If you know what a compressor is, you can add one as well. (Not recommended if you aren't familiar.)

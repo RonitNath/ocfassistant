@@ -1,0 +1,5 @@
+Add or edit the following lines into /var/mail/aliases/aliases : rt: "|/usr/bin/rt-mailgate --queue General --action correspond --url https://rt.ocf.berkeley.edu/rt" rt-comment: "|/usr/bin/rt-mailgate --queue General --action comment --url https://rt.ocf.berkeley.edu/rt" Configuration The RT root user can't log in while Kerberos password authentication is enabled because of the way mod_auth_kerb/ngx_http_auth_pam works.
+
+So, you must first log in with Kerberos credentials to create a user from Kerberos and grant superuser rights on it. Log in to RT. You will be auto-created and redirected to Self-Service.
+
+Disable Kerberos password authentication: Apache 2: Comment out the following lines in /etc/apache2/sites-available/rt : # AuthType Kerberos # Require valid-user and force-reload Apache configuration ( service apache2 force-reload ).

@@ -1,0 +1,7 @@
+In the future, we'd like to make use of some of the more advanced features available on our switches, such as Port Security, to do things like preventing desktops from spoofing servers, or using layer 3 functionality to support NAT on the desktops and other devices.
+
+Administering the switch The primary switch is named blackhole and can be accessed over SSH from inside the OCF subnet.
+
+$ ssh admin@blackhole.ocf.berkeley.edu Password: blackhole.ocf.berkeley.edu> The switches can also be administered directly by connecting to their console port with a USB serial console cable.
+
+After logging in, one can enter an advanced configuration mode by typing " enable ", and then, before configuring specific interfaces, type " config ".

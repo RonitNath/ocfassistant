@@ -1,0 +1,9 @@
+If an attacker intercepts this communication, they do not have the exact timestamp or the user's key to attempt to decrypt it.
+
+We require pre-authentication at the OCF by specifying require-preauth = true in /var/lib/heimdal-kdc/kdc.conf .
+
+Then, if the user wants to communicate with other services or hosts, like SSH or a HTTP Kerberos login, then they make more requests to the KDC: The client will request a service or host principal from the TGS (Ticket Granting Service) using the TGT received before. The TGS in our case is the same as the KDC, but for some systems they could be different hosts.
+
+The TGS sends in response a service ticket, which the client then stores for use in contacting a service and authenticating until the service ticket expires.
+
+The client can then use this service ticket to send with requests to Kerberos-enabled services, like SSH, as user authentication.

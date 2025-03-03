@@ -1,0 +1,9 @@
+When asked, install GRUB on the same disk as in step 5 (I recommend /dev/sda ) WebCLI setup This probably only has to be done if this server is booting into a different drive slot than it has used before. Try booting and see what happens, and if you can't, then try messing with this.
+
+Boot into WebCLI ( Ctrl-H on boot at the LSI screen) In WebCLI, figure out which disk you added your boot to, and set it as bootable.
+
+If you can't find the "Make Bootable" option on the physical drive page, it's probably already bootable. Maybe just restart and see if it works.
+
+I can't find a way to match drive letters inside WebCLI, so you might just need to try all of them in your new array until it works, sorry.
+
+Cleanup Undo everything from above on pestilence (enable puppet again, just run puppet again to revert any changes, and start the DHCP server again) You're done! Edit this Page Page History Table of Contents Aside: why software RAID instead of MegaRAID?

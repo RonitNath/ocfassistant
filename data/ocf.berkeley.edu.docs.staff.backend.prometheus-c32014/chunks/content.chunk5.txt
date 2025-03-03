@@ -1,0 +1,5 @@
+Some of the more useful dashboards available are: Servers : Displays usage information for the physical servers and hypervisors (fallingrocks, riptide, etc). Desktops : Displays usage information for lab computers (cyclone, acid, etc). Printers : Displays printer usage and resource information. Mirrors : Displays information about mirror staleness. HPC : Displays usage information for the HPC cluster .
+
+There are more dashboards available, which can be accessed by clicking the dropdown arrow on the top left of the Grafana page. Configuring Grafana dashboards does not require editing Puppet configs.
+
+Simply go to Grafana , login using your OCF account, and click the plus icon on the left toolbar to begin visually creating a custom dashboard. Grafana uses Prometheus queries to fetch data to be displayed.

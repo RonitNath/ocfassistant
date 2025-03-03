@@ -1,0 +1,5 @@
+For example, a group's site can be made available at yourgroup.studentorg.berkeley.edu in addition to the standard address under ocf.berkeley.edu . Faculty and staff are also eligible for virtual hosting, but must obtain their own domains (e.g. name.dept.berkeley.edu ).
+
+The OCF provides two separate (but related) virtual hosting services: Web hosting , where your group's OCF-hosted website becomes available under the new name Email forwarding , which lets you configure email forwarding for the new name Web hosting is always enabled for group accounts with virtual hosting, but email forwarding must be requested separately.
+
+Web Hosting After the virtual host is set up, the files in the public_html directory of your group account (ordinarily accessible at https://www.ocf.berkeley.edu/~accountname ) will appear at the root directory of the virtual-hosted site ( yourgroup.studentorg.berkeley.edu ). Instructions Request an account. Request an OCF account (if you haven't already done so).

@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2022.08.multiple_mirrors_o-21ccd1\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 617,
+      "first_words": "Open Computing Facility Status: Multiple mirrors..."
+    },
+    {
+      "index": 2,
+      "size": 2535,
+      "first_words": "Posted by Jonathan at 11:49 PM Newer Post Older Po..."
+    }
+  ]
+}

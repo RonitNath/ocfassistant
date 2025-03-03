@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.granting_pr-b43c35\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 947,
+      "first_words": "Granting staff privileges \u2013 Open Computing Facili..."
+    },
+    {
+      "index": 2,
+      "size": 947,
+      "first_words": "However, if you are adding someone to root staff,..."
+    },
+    {
+      "index": 3,
+      "size": 711,
+      "first_words": "Also add the new root staffer to the Admin team in..."
+    },
+    {
+      "index": 4,
+      "size": 820,
+      "first_words": "Edit this Page Page History Table of Contents Addi..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+ Git – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Git Table of Contents Workflow To "update" To "upload" To "import" Other useful commands Terminology Recommended reading Git is a distributed revision control system used by the OCF.
+
+Other version control systems include Mercurial (also distributed) and Subversion (not distributed).
+
+Workflow Although Git is a great tool for large-scale distributed development, for us a Subversion-like workflow with a "central repository" (where you clone/fetch from and push to) and linear history makes more sense. The instructions below assume that development is happening in a single branch. Only commit your own, original work .

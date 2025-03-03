@@ -1,0 +1,5 @@
+Any changes made to the firewall policies need to be committed and pushed to the firewall using the commit button and then the push button (or the commit and push button to do it in one step) located in the top right.
+
+Syslog When we switched over to the new PAN firewall, syslog was set up to send messages to syslog.ocf.berkeley.edu , however it is only configured to send logs there over TLS, so currently it is failing.
+
+Edit this Page Page History Table of Contents Administering the firewall Accessing the interface Policies Syslog More in this category Infrastructure Backups Debian Buster upgrade External firewall Git Internal firewalls Jenkins KVM/Libvirt Kerberos Kubernetes LDAP Mail Virtual hosted mail Managed switches Munin Printhost Prometheus Puppet Request Tracker Servers OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

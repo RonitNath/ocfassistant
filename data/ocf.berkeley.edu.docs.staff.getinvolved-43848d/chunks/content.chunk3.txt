@@ -1,0 +1,7 @@
+If you are interested in gaining insight into the internal operations the OCF from an administrative perspective, please come to BoD meetings! Meetings always are open to all. Staff Meeting Wednesday 8-9pm In these meetings, all OCF staff (that includes you!) get together to discuss technology, learn from each other, and work on OCF projects. These meetings will be a mix of presentations, work time, and socializing. Our goal is to build OCF staff into a strong community of capable individuals.
+
+Starter Tasks There are no prerequisites to joining staff, other than a willingness to learn and participate! If you have no prior experience with coding, Linux, working with servers, etc.
+
+and would like to learn how to contribute to the OCF technically, we have a variety of starter tasks, beginner projects, and other resources to help you get acquainted.
+
+The most effective way to get started is to come to the lab during weekly meetings and after-hours to talk to staff members!

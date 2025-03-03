@@ -1,0 +1,5 @@
+ Staff policy – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Staff policy Table of Contents Background Authorization Root privileges Abuse of root privileges Amending of certain policies Staff members shall be chosen by the OCF Decision Making Process.
+
+[per OCF Board decision on 4/13/89] [The rest of this policy is per Site Manager decision on 8/30/17] Background The OCF Decision Making Process spells out the powers of BoD, the GMs, and the SMs; however, it doesn’t explain what powers other staffers have.
+
+The main purpose of this policy is to delineate what things staff can do on their own, what things they must not do, and what things they require special permission from the SM to do.

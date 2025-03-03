@@ -1,0 +1,7 @@
+TGS ( T icket G ranting S ervice): Usually the same as the KDC, the job of the TGS is to grant tickets (see above) for different network services. GSS-API : The API used by different applications to be able to authenticate with Kerberos. SASL : An authentication layer that many different applications can use. Commands All conveniently prefixed with the letter k .
+
+kinit : Used to get a ticket, for instance to be able to edit LDAP, or run commands that need sudo (using the [user]/root principal).
+
+For instance, to edit your own LDAP entry, run kinit [user]/admin ldapvi uid=[user] to authenticate using your admin Kerberos principal and then run ldapvi . The default principal requested is your base user principal ( [user]@[realm] ). Any commands put after kinit will be ran as usual with the requested credentials.
+
+klist : Shows all current tickets held with issued and expiration datetimes and the principal that each ticket corresponds to.

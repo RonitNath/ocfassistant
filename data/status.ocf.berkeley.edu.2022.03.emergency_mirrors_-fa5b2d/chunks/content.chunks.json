@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\status.ocf.berkeley.edu.2022.03.emergency_mirrors_-fa5b2d\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 361,
+      "first_words": "Open Computing Facility Status: Emergency mirrors..."
+    },
+    {
+      "index": 2,
+      "size": 2564,
+      "first_words": "6 provisioning.We apologize for the inconvenience...."
+    },
+    {
+      "index": 3,
+      "size": 70,
+      "first_words": "October 2006 (20) September 2006 (4) Simple theme...."
+    }
+  ]
+}

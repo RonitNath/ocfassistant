@@ -1,0 +1,3 @@
+If you are asked about removing signatures during this I usually just keep them around as none of the data or flags should need changing and you are just growing the end of the partition: Command (m for help): n Partition type p primary (0 primary, 0 extended, 4 free) e extended (container for logical partitions) Select (default p): Partition number (1-4, default 1): First sector (2048-52428799, default 2048): Last sector, +sectors or +size{K,M,G,T,P} (2048-52428799, default 52428799): +24G Created a new partition 1 of type 'Linux' and of size 24 GiB. Partition #1 contains a ext4 signature. Do you want to remove the signature?
+
+[Y]es/[N]o: N Create new swap partition with the remaining size (I didn't create an extended partition, but feel free to if you'd like.

@@ -1,0 +1,3 @@
+Expand it (select then hit enter), then attach to each host one-by-one (hit a when you're over a host). You'll attach to a tmux session where the updates are being installed. In each session, wait for the updates to be installed, then press C-b q . If "errors" are found, you'll be asked to review them before proceeding.
+
+These are full tmux sessions, so you can, for example, use Ctrl-B, D to detach if your current session is taking a while.

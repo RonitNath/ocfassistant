@@ -1,0 +1,5 @@
+ Puppet – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Puppet The puppetmaster is lightning .
+
+Instructions on making, testing, and deploying changes to Puppet are located at the Git repository on GitHub.
+
+Edit this Page Page History More in this category Infrastructure Backups Debian Buster upgrade External firewall Git Internal firewalls Jenkins KVM/Libvirt Kerberos Kubernetes LDAP Mail Virtual hosted mail Managed switches Munin Printhost Prometheus Puppet Request Tracker Servers OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

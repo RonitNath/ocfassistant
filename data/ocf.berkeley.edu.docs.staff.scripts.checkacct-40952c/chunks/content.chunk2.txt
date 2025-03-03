@@ -1,0 +1,1 @@
+For example, checkacct wa fel andy will search for any account that has "wa" (as in waf), "fel" (as in Felix), and "andy" (as in Andy) in the full name (LDAP cn) or account name (LDAP uid).

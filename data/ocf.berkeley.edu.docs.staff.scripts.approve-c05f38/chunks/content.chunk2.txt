@@ -1,0 +1,7 @@
+If a member requesting an individual account cannot use the online approval system (likely because of an invalid/unacceptable CalNet UID), direct them to an OCF officer. Approving a request The approve program can only be run from supernova.
+
+Before approve SSH into supernova.ocf.berkeley.edu For registered student groups, the OCF requires that a signatory authorize the approval of the account.
+
+If the account is not a registered student group, check with the membership eligibility to see what constitutes acceptable documentation.
+
+If the group is a registered student group, you can look up the requester's signatory status by name with signat . $ signat name matthew mcallister Searching for people... Found 1 entry.

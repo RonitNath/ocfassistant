@@ -1,0 +1,3 @@
+ check: get details about an OCF user – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In check: get details about an OCF user Introduction check allows staffers to get account details about users.
+
+Some information may only be accessible to privileged users or root, or depend on the server check is being run on, so output may differ accordingly. check is best run on supernova . check currently returns: getent (i.e.

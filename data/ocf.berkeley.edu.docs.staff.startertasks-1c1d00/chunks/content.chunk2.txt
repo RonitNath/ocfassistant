@@ -1,0 +1,9 @@
+If you want to work on these but haven't officially been given staff privileges yet, let a current staffer know you’re working on starter tasks and we will add you. These tasks don’t have to be completed in order.
+
+Connect to the OCF IRC network Internet Relay Chat (IRC) is a chat protocol invented in the 80s, an early precursor to Slack. The OCF runs an IRC server (since 2002! ), which is bridged to our Slack network.
+
+Many staffers prefer IRC to Slack due to its wide breadth of customizable clients, as opposed to Slack, which requires using their application.
+
+For this task, pick an IRC client, install it on your computer, and use it to connect to the OCF IRC network (details at https://ocf.io/irc ).
+
+Some popular clients are: Irssi (Mac/Linux, console) Weechat (Max/Linux, console) Hexchat (Windows/Linux, graphical) Colloquy (Mac, graphical) See http://www.irchelp.org/clients/ for more recommendations. Once you’ve joined IRC, pick any channel (#rebuild, #henlo, etc) and say hi!

@@ -1,0 +1,5 @@
+ Command reference – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Command reference Shell interface Sorry! Your browser can't display this window. Welcome to the live command reference!
+
+Here you can securely access our login server via SSH and run commands to manage your account, edit a website, or work on our server.
+
+Below is a list of account management commands with a brief description of what they do and how to use them. Simply type in a command and hit enter to run it. To log out, run the command exit .

@@ -1,0 +1,5 @@
+ Jenkins – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Jenkins Table of Contents Making changes to Jenkins Jenkins security model Jenkins for GitHub projects On the master branch Adding a "Build Status" badge to the README Building and tagging pull requests Jenkins is the tool we use for continuous integration and continuous delivery (TM) at OCF.
+
+All that means is that when you push code, Jenkins will test that code, Jenkins will build that code (if applicable), and then Jenkins will deploy that code.
+
+Ideally all projects at OCF will go through this pipeline of being tested before deployed, though currently some don't (or some only use some portion, such as deploying without any tests).

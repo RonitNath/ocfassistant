@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.checkacct-40952c\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 888,
+      "first_words": "checkacct: find accounts by full name \u2013 Open Comp..."
+    },
+    {
+      "index": 2,
+      "size": 189,
+      "first_words": "For example, checkacct wa fel andy will search for..."
+    },
+    {
+      "index": 3,
+      "size": 1553,
+      "first_words": "Usage $ checkacct wa fel andy Login: waf Name: Fel..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

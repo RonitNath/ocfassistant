@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.web.backups-53fb8c\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 585,
+      "first_words": "Backups/Archiving \u2013 Open Computing Facility Toggl..."
+    },
+    {
+      "index": 2,
+      "size": 890,
+      "first_words": "While your data is protected from hardware failure..."
+    },
+    {
+      "index": 3,
+      "size": 797,
+      "first_words": "If you have a folder ~/backups created, you can sa..."
+    },
+    {
+      "index": 4,
+      "size": 977,
+      "first_words": "Particularly, if you are using WordPress, Joomla,..."
+    },
+    {
+      "index": 5,
+      "size": 928,
+      "first_words": "Taking down a site If you have an old website you..."
+    },
+    {
+      "index": 6,
+      "size": 769,
+      "first_words": "A typical backup might look like this: johndoe@tsu..."
+    },
+    {
+      "index": 7,
+      "size": 975,
+      "first_words": "Edit this Page Page History Table of Contents Back..."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+The purpose of the hostname and who will be using it A responsible contact for the hostname Acknowledgment that all relevant university policies will be followed, including those pertaining to campus website accessibility Mail (if requested) Edit the file configs/vhost-mail.conf in the ocf/etc repo , adding a new line for the group at the top of the file.
+
+The format is simply: groupname domainname This takes effect after around 30 minutes (once puppet has run and synced ocf/etc), allowing the group to edit their email config (and the mail server will start accepting incoming/outgoing mail), but you still need to update the DNS so that they can actually receive mail. We request the same DNS records for mail hosting as for web hosting.

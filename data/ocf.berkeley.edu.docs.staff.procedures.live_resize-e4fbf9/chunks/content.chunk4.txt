@@ -1,0 +1,7 @@
+This can be useful to have in scrollback: $ sudo fdisk -l /dev/vda If the disk is large enough (with partitions greater than 2 terabytes), then fdisk might not work and it'll have to use GPT instead and be resized using parted , but it's a similar process either way and both are detailed below. Alternatively you can use gdisk , but that is not documented here yet or installed on most hosts. Turn swap off before proceeding further too since it will likely be moving.
+
+The swap partition only needs to be moved if it's in the way of the expanding partition, so if it's positioned before it (earlier on in the fdisk output given above) then it won't need to be disabled, removed, and recreated and you can skip turning it off here.
+
+$ sudo swapoff -a Method 1: fdisk (most common) This is the path that uses fdisk to move partitions around.
+
+It's more common to use, but if you need GPT support then you'll have to use parted below in method 2.

@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.puppet-ba00b8\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 897,
+      "first_words": "Puppet \u2013 Open Computing Facility Toggle navigatio..."
+    },
+    {
+      "index": 2,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

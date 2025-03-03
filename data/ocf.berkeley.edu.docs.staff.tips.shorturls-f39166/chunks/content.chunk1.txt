@@ -1,0 +1,5 @@
+ ShortURL guide – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In ShortURL guide We use ocf.io as a URL shortener.
+
+One of its functions is to shorten member website URLs: https://ocf.io/username is a shorturl for https://www.ocf.berkeley.edu/~username . We've additionally defined other shorturls.
+
+Here are some especially useful ones for staff: ocf.io/gh/ <repo> , ocf.io/github/ <repo> : The repository <repo> on the OCF GitHub page.

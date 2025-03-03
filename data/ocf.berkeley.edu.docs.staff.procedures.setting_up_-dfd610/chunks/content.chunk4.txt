@@ -1,0 +1,5 @@
+These commands work pretty reliably but you should still think before pressing enter, because they might need some adjustment. MegaRAID setup On boot, enter the LSI pre-boot CLI (press Ctrl-Y at the right time). The syntax in the pre-boot CLI seems to be the same as MegaCLI.
+
+Remove all logical drives and put the physical drives in JBOD mode: $ -CfgLdDel -LALL -aALL $ -PDMakeGood -PhysDrv[252:0,252:1,252:2,252:3] -force -a0 $ -AdpSetProp EnableJBOD 1 -aALL $ -PDMakeJBOD -PhysDrv[252:0,252:1,252:2,252:3] -a0 note: I got an error on jaws on the PDMakeJBOD , but it worked anyway Software RAID setup Boot into finnix and figure out which drives you want in the RAID. Make new partition tables on each drive and one large partition to hold the data.
+
+You should make the data partition take almost all of the space on the drive, but not all the way to the end (leave a GB or two).

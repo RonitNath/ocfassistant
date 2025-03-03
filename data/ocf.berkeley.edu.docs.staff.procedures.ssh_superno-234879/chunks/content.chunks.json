@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.ssh_superno-234879\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 729,
+      "first_words": "SSHing into Supernova \u2013 Open Computing Facility T..."
+    },
+    {
+      "index": 2,
+      "size": 939,
+      "first_words": "For most projects we recommend doing all developme..."
+    },
+    {
+      "index": 3,
+      "size": 561,
+      "first_words": "An example for ocfweb : git clone https://github.c..."
+    },
+    {
+      "index": 4,
+      "size": 844,
+      "first_words": "Edit this Page Page History Table of Contents Befo..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

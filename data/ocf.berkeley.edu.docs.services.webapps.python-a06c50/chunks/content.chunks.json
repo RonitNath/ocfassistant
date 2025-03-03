@@ -1,0 +1,32 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.webapps.python-a06c50\\content.txt",
+  "chunk_count": 5,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 982,
+      "first_words": "Python (Django, Flask, etc.)  \u2013 Open Computing Fa..."
+    },
+    {
+      "index": 2,
+      "size": 748,
+      "first_words": "Setting up a virtualenv Create a directory for you..."
+    },
+    {
+      "index": 3,
+      "size": 931,
+      "first_words": "~/myapp/venv/bin/activate PYTHONPATH=~/myapp/src:$..."
+    },
+    {
+      "index": 4,
+      "size": 581,
+      "first_words": "If you have a better way to host Python-based apps..."
+    },
+    {
+      "index": 5,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

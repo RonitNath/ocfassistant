@@ -1,0 +1,17 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.login.login-3c2e2e\\content.txt",
+  "chunk_count": 2,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 942,
+      "first_words": "OCF Login \u2013 Open Computing Facility Toggle naviga..."
+    },
+    {
+      "index": 2,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

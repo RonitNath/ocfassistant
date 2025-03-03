@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.vhost.badges-5caddf\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 680,
+      "first_words": "Hosting badges \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 968,
+      "first_words": "Logos and HTML ocf-hosted-penguin.svg < a href = \"..."
+    },
+    {
+      "index": 3,
+      "size": 818,
+      "first_words": "The \"blue\" logo is based off the \"silver\" logo and..."
+    }
+  ]
+}

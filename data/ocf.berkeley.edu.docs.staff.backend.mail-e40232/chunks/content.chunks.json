@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.mail-e40232\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 812,
+      "first_words": "Mail \u2013 Open Computing Facility Toggle navigation..."
+    },
+    {
+      "index": 2,
+      "size": 580,
+      "first_words": "Outgoing virtual host mail is also via anthrax, wh..."
+    },
+    {
+      "index": 3,
+      "size": 810,
+      "first_words": "We have feedback loops with AOL (out-of-date) Comc..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

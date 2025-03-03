@@ -1,0 +1,5 @@
+ Getting Involved – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Getting Involved Table of Contents How can I get involved in the OCF?
+
+Stay up-to-date In-person meetings Board of Directors (BoD) Staff Meeting Starter Tasks Staff Training Linux SysAdmin DeCal Starter Tasks Page Contribute Projects GitHub Issues TODOs Help requests Your idea here Staff Hours Slack, Discord, Matrix, or IRC Hang out in the lab FAQ How can I get involved in the OCF? Glad you asked! Students from all backgrounds are welcome to join staff.
+
+We don’t interview or have a selection process for joining—you simply have to express interest and show up to our weekly meetings.

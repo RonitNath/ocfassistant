@@ -1,0 +1,3 @@
+For sending, we use pam-mysql to authenticate SMTP sessions before allowing clients to send as a vhost address. (See /etc/pam.d/smtp and /etc/pam-mysql.conf on anthrax). How do I add mail hosting to a group? See here .
+
+Edit this Page Page History More in this category Mail Virtual hosted mail OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

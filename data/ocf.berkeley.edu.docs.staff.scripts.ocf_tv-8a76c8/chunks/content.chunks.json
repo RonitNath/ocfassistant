@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.ocf_tv-8a76c8\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 896,
+      "first_words": "ocf-tv: connect to the tv or modify the volume \u2013..."
+    },
+    {
+      "index": 2,
+      "size": 539,
+      "first_words": "If you'd like to just change the volume on the hos..."
+    },
+    {
+      "index": 3,
+      "size": 804,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

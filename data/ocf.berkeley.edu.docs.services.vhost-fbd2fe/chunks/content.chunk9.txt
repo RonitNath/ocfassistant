@@ -1,0 +1,5 @@
+Disabling of virtual hosts If your OCF account is found in violation of OCF policies, including but not limited to the virtual hosting policies in this document, your account and/or vhost may be disabled, depending on the cause of the violation. If your vhost is disabled you will see this landing page in place of your vhost.
+
+If you would like to request a domain that points to a currently disabled vhost, please contact us for more information.
+
+Reclamation of virtual hosts Any virtual host which is no longer used, in violation of OCF policies, or assigned to an OCF account which has lost eligibility (for instance, an account for an inactive RSO) may be reclaimed by the OCF.

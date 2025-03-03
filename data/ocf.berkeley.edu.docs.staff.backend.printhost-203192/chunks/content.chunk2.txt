@@ -1,0 +1,5 @@
+The OCF's print accounting system, nicknamed enforcer after one of the scripts, plugs into CUPS as a hook that looks at jobs before and after going to the printer.
+
+It records jobs in a database that keeps track of how many pages each user has printed, rejecting jobs that go over quota.
+
+The high level flow of data through the print system looks like this: [Application] + | PDF or PS document v [Print spool (CUPS)] + | Raw document v [Filter(s) (ocfps)] + | Converted PS document v [Backend (Tea4CUPS)] + | Accept or reject +<------------------+[Page counter (enforcer)] | ^ v | [Printer] | Remaining quota + +-------+/ \<---------------+/ \ | Status/completion time |ocflib| |Jobs database| v +------->\ /+--------------->\ / [Backend] | Job table entry + | | + +---------------------->[Enforcer (again)] | Log success/failure v [Print spool logger] CUPS pipeline overview The first stage of printing is handled by the application that sends the print job, such as Evince.

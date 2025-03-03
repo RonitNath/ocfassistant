@@ -1,0 +1,9 @@
+From the project page, choose the "Embeddable Build Status" icon, then choose "Markdown (with view), unprotected".
+
+You can optionally change the link to point to the pipeline view rather ther than just the individual job.
+
+Building and tagging pull requests Jenkins can build and tag pull requests with their build status, similar to Travis. To configure this for a repository, create a new job specifically for testing pull requests. For example, puppet-test-pr .
+
+Configure the "GitHub Project" URL to point to the main page of the project (for example, https://github.com/ocf/puppet/ ). Under "Source Code Management", select "Git" and add the repository URL (for example, https://github.com/ocf/puppet/ ). Under "Source Code Management", change "Branch Specifier" to ${sha1} .
+
+Also under "Source Code Management", change "Refspec" (it's under Advanced) to +refs/pull/*:refs/remotes/origin/pr/* .

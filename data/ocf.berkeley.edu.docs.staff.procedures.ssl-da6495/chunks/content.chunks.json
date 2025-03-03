@@ -1,0 +1,37 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.procedures.ssl-da6495\\content.txt",
+  "chunk_count": 6,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 968,
+      "first_words": "SSL certificates \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 889,
+      "first_words": "Add relevant entries to LDAP/DNS The SSL support w..."
+    },
+    {
+      "index": 3,
+      "size": 857,
+      "first_words": "If puppet successfully runs, it should provide the..."
+    },
+    {
+      "index": 4,
+      "size": 694,
+      "first_words": "openssl s_client -CApath /etc/ssl/certs -connect r..."
+    },
+    {
+      "index": 5,
+      "size": 709,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 6,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

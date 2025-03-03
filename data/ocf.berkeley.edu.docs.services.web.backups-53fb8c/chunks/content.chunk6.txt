@@ -1,0 +1,3 @@
+A typical backup might look like this: johndoe@tsunami:~$ mysqldump johndoe | gzip -c > ~/mysql-backup-7-26-15.sql.gz Enter password: johndoe@tsunami:~$ tar czhf ~/site-backup-7-26-15.tar.gz -C ~/ public_html while a restore would look like this: johndoe@tsunami:~$ gzip -dc ~/mysql-backup-7-26-15.sql.gz | mysql -D johndoe Enter password: johndoe@tsunami:~$ tar xzhf ~/site-backup-7-26-15.tar.gz -C ~/ public_html If you were using .my.cnf , you wouldn't even have to enter your database password.
+
+Security The only real security concern is that you don't leave any backup files in your public_html directory. Doing so would allow anybody to download all your raw data and e.g. steal your website login information and find and exploit other security vulnerabilities.

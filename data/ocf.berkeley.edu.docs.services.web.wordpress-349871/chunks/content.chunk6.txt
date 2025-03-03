@@ -1,0 +1,5 @@
+Change directory to your WordPress installation (probably ~/public_html , unless you changed it): cd ~/public_html Figure out your username using the command wp user list .
+
+You should see output like the below: $ wp user list +----+------------+--------------+---------------+ | ID | user_login | display_name | roles | +----+------------+--------------+---------------+ | 1 | admin | Your Name | administrator | +----+------------+--------------+---------------+ Reset your password using the username given above.
+
+$ wp user update admin --user_pass = new_password (Replace admin in the command above with your real username, and new_password with your new password.)

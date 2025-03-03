@@ -1,0 +1,9 @@
+Searching for signatories... MATTHEW JAMES Mcallister (1031366) ================================== Group Accounts OID ----------------------- --------------------------- ----- Open Computing Facility decal, linux, ggroup, group 46187 Copy the group's OID, as you will need it when running approve.
+
+If the group is not a student group, the requester will need an official letterhead giving them authority to create the account. You will also need to check that the group doesn't already have an account using checkacct .
+
+$ checkacct privacy Login: bipla Name: Berkeley Information Privacy Law Association Finally, check that the name on the requester's Cal ID matches who they say they are.
+
+Running approve When you run approve it will open a text editor; just fill out the form, save it, and let the requester enter a password when prompted.
+
+For reference, user_name will be the username used to log in to the newly-created account, group_name is the full name of the group, e.g.

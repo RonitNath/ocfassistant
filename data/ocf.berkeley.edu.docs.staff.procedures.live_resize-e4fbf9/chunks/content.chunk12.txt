@@ -1,0 +1,1 @@
+Start off by entering parted and setting your units to use sectors (generally more useful than bytes since you usually want to align partitions to sector boundaries): $ sudo parted /dev/vda GNU Parted 3.2 Using /dev/vda Welcome to GNU Parted! Type 'help' to view a list of commands. (parted) unit s Then, print out the current settings.

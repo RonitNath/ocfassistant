@@ -1,0 +1,7 @@
+rvm install ruby-2.4.0 rvm use ruby-2.4.0 Copy your code to ~/myapp/src or similar, and install any dependencies using bundle install (or gem manually, if you aren't using bundler). This will download and build whatever gems you have in your Gemfile .
+
+We've tried to install all the headers (dev packages) needed for building common gems, but if building a gem fails due to a missing header, just send us an email so we can add it. Installing unicorn We recommend using unicorn to serve your application.
+
+After setting up RVM, add a few lines to your app's Gemfile (or add a single line if you already have a :production group): group :production do gem 'unicorn' end and run bundle install to install it, as with any new gems.
+
+Preparing your app to be supervised Create a file at ~/myapp/run with content like: #!/bin/bash -e .

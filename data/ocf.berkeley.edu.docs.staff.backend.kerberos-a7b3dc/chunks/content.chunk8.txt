@@ -1,0 +1,5 @@
+kadmin : Administration utility for Kerberos to make changes to the Kerberos database, either locally (with -l ), or remotely by connecting to the KDC.
+
+Can retrieve information about principals, modify principal attributes, change principal passwords, show privileges allowed, etc. kdestroy : Remove a principal or ticket file.
+
+This is essentially the opposite of kinit , so it invalidates tickets you have, logging you out from Kerberos. This is automatically run on logout to invalidate any lingering tickets. ktutil : Very useful command that has a variety of subcommands for managing keytabs. Can be used to list credentials available in a keytab, add keys to a keytab, remove keys, etc. kpasswd : Used to change Kerberos passwords. kimpersonate : Used for impersonating another user using their keytab. There are more commands, but they aren't used so often, and can be searched if needed.

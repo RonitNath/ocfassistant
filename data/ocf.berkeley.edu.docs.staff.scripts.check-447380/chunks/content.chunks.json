@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.check-447380\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 715,
+      "first_words": "check: get details about an OCF user \u2013 Open Compu..."
+    },
+    {
+      "index": 2,
+      "size": 2034,
+      "first_words": "LDAP) info CalNet info Remaining print quota Virtu..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Limitations on non-berkeley.edu The OCF may host non-berkeley.edu domains, however the process is more complicated in this case.
+
+At the discretion of an OCF (Deputy) Site Manager, permission may be granted to those who can demonstrate a specific need for the OCF to host a website outside of the berkeley.edu domain.
+
+For such domains, the account holder must: Obtain the written permission of a Site Manager or Deputy Site Manager to host this domain. Pay any and all fees and/or obtain permissions relating to obtaining and maintaining a domain name.
+
+Here are some cases where it would be appropriate for the OCF to host a non-berkeley.edu domain: when hosting a student group website which was previously hosted at a non-berkeley.edu address, a website for a department or University-affiliated research group that requires a particular domain, or the personal website of a faculty or staff member.

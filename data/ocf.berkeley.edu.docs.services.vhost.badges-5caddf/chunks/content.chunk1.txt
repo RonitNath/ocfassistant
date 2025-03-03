@@ -1,0 +1,3 @@
+ Hosting badges – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Hosting badges These logos are for organizations that have requested virtual hosting with the OCF, or for anyone else that wants to use them.
+
+You can either use the images hosted on our site, or you can download them and place them under your own. You're welcome to design your own too, but please contact us first.

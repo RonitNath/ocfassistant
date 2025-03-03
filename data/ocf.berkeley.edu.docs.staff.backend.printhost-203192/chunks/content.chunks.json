@@ -1,0 +1,52 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.backend.printhost-203192\\content.txt",
+  "chunk_count": 9,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 838,
+      "first_words": "Printhost \u2013 Open Computing Facility Toggle naviga..."
+    },
+    {
+      "index": 2,
+      "size": 977,
+      "first_words": "The OCF's print accounting system, nicknamed enfor..."
+    },
+    {
+      "index": 3,
+      "size": 863,
+      "first_words": "The application opens up a system print dialog, wh..."
+    },
+    {
+      "index": 4,
+      "size": 905,
+      "first_words": "This part of the process is largely controlled by..."
+    },
+    {
+      "index": 5,
+      "size": 965,
+      "first_words": "For example, a PDF file might go through pdftops t..."
+    },
+    {
+      "index": 6,
+      "size": 960,
+      "first_words": "There are two versions of it: one which only allow..."
+    },
+    {
+      "index": 7,
+      "size": 915,
+      "first_words": "When enforcer receives a job that would put the us..."
+    },
+    {
+      "index": 8,
+      "size": 875,
+      "first_words": "Current thinking is that this could be implemented..."
+    },
+    {
+      "index": 9,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

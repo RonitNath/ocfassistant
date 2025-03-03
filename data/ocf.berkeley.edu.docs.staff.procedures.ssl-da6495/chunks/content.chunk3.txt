@@ -1,0 +1,7 @@
+If puppet successfully runs, it should provide these files for whatever service you want to setup that needs SSL: /etc/ssl/private/${fqdn}.key /etc/ssl/private/${fqdn}.crt /etc/ssl/private/${fqdn}.bundle The bundle file is automatically generated from the certificate you provided, and contains the Let's Encrypt intermediate certificate.
+
+You should also make sure to notify the service automatically so that when any new certs come along they are automatically used by the service.
+
+This requires linking the ocf::ssl::default module with whatever service you're using the cert within.
+
+For instance, to restart nginx when certs are updated, add this into your puppet manifest: Class [ 'ocf::ssl::default' ] ~> Class [ 'Nginx::Service' ] Verifying certificates For the host rt.ocf.berkeley.edu on port 443 (HTTPS), try connecting using the OpenSSL client.

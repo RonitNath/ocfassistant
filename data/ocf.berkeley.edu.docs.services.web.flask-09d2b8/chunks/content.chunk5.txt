@@ -1,0 +1,5 @@
+Make the run.fcgi file you just created executable with: user@tsunami:~$ chmod +x ~/public_html/flask/run.fcgi Once your app has started running, changes you make to the Python code or templates won't take effect for a few hours. To apply changes immediately, the webserver needs to see that the run.fcgi file has changed.
+
+You can can change the modification time of the run.fcgi file to trigger a restart with the command: user@tsunami:~$ touch ~/public_html/flask/run.fcgi Debugging If you see an error page when trying to load your app, you may find the webserver's logs useful.
+
+You can access them in the following locations: error log: /opt/httpd/error.log (most useful) suexec log: /opt/httpd/suexec.log (only useful in rare cases) Edit this Page Page History More in this category Web hosting Backups/Archiving Django Flask Jekyll PHP Ruby on Rails WordPress OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

@@ -1,0 +1,7 @@
+While pods are essential for understanding Kubernetes, when writing services we don't actually deal in pods but one further abstraction, deployments , which create pods for us.
+
+OCF Kubernetes Cluster Bootstrapping Since almost all OCF architecture is bootstapped using Puppet, it was necessary for us to do the same with Kubernetes. We rely on the puppetlabs-kubernetes module to handle initial bootstrapping and bolt OCF specific configurations on top of it.
+
+puppetlabs-kubernetes performs two crucial tasks: Installs etcd , kubelet , kube-proxy , and kube-dns , initializes the cluster, and applies a networking backend. Generates the required PKI for Kubernetes and etcd . Do note that puppetlabs-kubernetes is still very much a work in progress. If you notice an issue in the module you are encouraged to write a patch and send it upstream.
+
+Kubernetes PKI All the private keys and certs for the PKI are in the puppet private share, in /opt/puppet/shares/private/kubernetes .

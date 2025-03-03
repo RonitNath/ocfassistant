@@ -1,0 +1,3 @@
+Outgoing virtual host mail is also via anthrax, which uses SMTP authentication (passwords checked against crypt(3) 'd passwords in a MySQL table). There's a whole page with more details about vhost mail. Mail originating anywhere inside the OCF relays through anthrax. External relations We maintain relations with external groups for two reasons.
+
+To monitor our mail server reputation and prevent outgoing mail from being blocked by external service providers. To monitor abuse and disable compromised accounts. When our IP addresses change, we need to update our registrations.

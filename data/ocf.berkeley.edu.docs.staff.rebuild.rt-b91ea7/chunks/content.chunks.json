@@ -1,0 +1,97 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.rebuild.rt-b91ea7\\content.txt",
+  "chunk_count": 18,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 920,
+      "first_words": "Request Tracker \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 832,
+      "first_words": "We run this on Kubernetes, but you should easily b..."
+    },
+    {
+      "index": 3,
+      "size": 248,
+      "first_words": "Install RT::Extension::CommandByMail and RT::Exten..."
+    },
+    {
+      "index": 4,
+      "size": 1882,
+      "first_words": "Copy site-specific RT configuration into /etc/requ..."
+    },
+    {
+      "index": 5,
+      "size": 1470,
+      "first_words": "*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L] </..."
+    },
+    {
+      "index": 6,
+      "size": 353,
+      "first_words": "permanent ; } server { listen 443 ; server_name rt..."
+    },
+    {
+      "index": 7,
+      "size": 1241,
+      "first_words": "fastcgi_pass unix:/var/run/rt4-fcgi.sock ; include..."
+    },
+    {
+      "index": 8,
+      "size": 817,
+      "first_words": "Emulate logout behavior by changing the Logout pag..."
+    },
+    {
+      "index": 9,
+      "size": 1029,
+      "first_words": "document.execCommand(\"ClearAuthenticationCache\");..."
+    },
+    {
+      "index": 10,
+      "size": 847,
+      "first_words": "Add or edit the following lines into /var/mail/ali..."
+    },
+    {
+      "index": 11,
+      "size": 580,
+      "first_words": "Nginx: Comment out the following lines in /etc/ngi..."
+    },
+    {
+      "index": 12,
+      "size": 744,
+      "first_words": "You will want to remove your superuser powers late..."
+    },
+    {
+      "index": 13,
+      "size": 911,
+      "first_words": "In this configuration I see the set of RT privileg..."
+    },
+    {
+      "index": 14,
+      "size": 853,
+      "first_words": "(Tools > Configuration > Users > Select, click roo..."
+    },
+    {
+      "index": 15,
+      "size": 907,
+      "first_words": "Create a template with the name \"Correspondence Cr..."
+    },
+    {
+      "index": 16,
+      "size": 806,
+      "first_words": "This needs to be chained or something to send a te..."
+    },
+    {
+      "index": 17,
+      "size": 457,
+      "first_words": "Set up ticket autoclose using https://rt-wiki.best..."
+    },
+    {
+      "index": 18,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+ Staff mailing lists – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Staff mailing lists Mailing lists There are several mailing lists used internally by staff. Append @ocf.berkeley.edu to the end of each mailing list.
+
+All staffers are automatically added to the following two mailing lists: staff : For staff announcements, such as meeting times and events.
+
+wheel : For technical discussion among all staff Staffers can also choose to be further added to the following mailing lists.

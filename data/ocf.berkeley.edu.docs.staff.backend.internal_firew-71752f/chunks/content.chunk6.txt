@@ -1,0 +1,7 @@
+It seems that in some circumstances iptables may be buggy and not remove a rule that Puppet tells it to remove. This seems to be more likely to occur when the rule is the only rule in its chain.
+
+In this case, running iptables -F on that chain and subsequently rerunning Puppet will clear the issue. iptables -D <chain> <rulenum> : Deletes the rulenum -th rule from the given chain (i.e. PUPPET-INPUT or PUPPET-OUTPUT ). iptables -A <chain> <rule-specification> : Adds the specified rule to the given chain.
+
+Note that this command is not particularly useful for the PUPPET-INPUT and PUPPET-OUTPUT chains, since any added rules will be purged by Puppet. For IPv6 firewall rules, you need to use the ip6tables command instead. The invocation is the same as for iptables .
+
+Iptables rules are not automatically persisted across reboots. In order for your changes to iptables to be preserved across reboots, you need to additionally run service netfilter-persistent save .

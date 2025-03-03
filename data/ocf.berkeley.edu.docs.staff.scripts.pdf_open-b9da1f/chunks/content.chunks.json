@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.pdf_open-b9da1f\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 899,
+      "first_words": "pdf-open: unf*&^ bad PDFs if they won't print rig..."
+    },
+    {
+      "index": 2,
+      "size": 519,
+      "first_words": "If a user comes asking why their paper isn't print..."
+    },
+    {
+      "index": 3,
+      "size": 804,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 4,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.policies.lab_reservati-c56d26\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 743,
+      "first_words": "Lab reservation policy (staff expectations) \u2013 Ope..."
+    },
+    {
+      "index": 2,
+      "size": 952,
+      "first_words": "However, should Staff also agree to respond to all..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

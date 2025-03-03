@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.staff.scripts.lab_wakeup-4e6962\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 952,
+      "first_words": "lab-wakeup: wake up suspended desktops \u2013 Open Com..."
+    },
+    {
+      "index": 2,
+      "size": 804,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 3,
+      "size": 598,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

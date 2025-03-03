@@ -1,0 +1,7 @@
+Here's a bunch of different terms that you might run into when reading about or working on Kerberos and an attempt to explain what they mean: KDC ( K ey D istribution C enter): The central server that issues tickets for Kerberos communication and stores all users' keys. If the KDC is compromised, you are going to have a very bad time and will not go to space today .
+
+Our current KDC is firestorm, but that could change in the future, as servers are moved around or rebuilt. Realm : A kerberos domain, usually identified with the domain name in all caps (e.g. OCF.BERKELEY.EDU ). Two hosts are in the same realm if they share some kind of secret (password or key).
+
+The default realm is specified in /etc/krb5.conf , alongside the location of the KDC and admin server ( kerberos.ocf.berkeley.edu in our case).
+
+Cross-realm authentication is possible, but is thankfully not something we need to do, as it significantly complicates things.
