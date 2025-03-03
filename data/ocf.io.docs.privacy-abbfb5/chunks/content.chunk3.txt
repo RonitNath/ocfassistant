@@ -1,9 +1,0 @@
-Note: our web hosting service ( https://ocf.io/web ) allows user-run websites which may collect their own data and/or be governed by a separate privacy policy.
-
-How we use your information We use information you have provided in order to maintain a robust and reliable set of services. In order to do that, we may use your information to: Respond to your inquiries or comments.
-
-Reach out to you regarding operational changes or issues that may impact your usage of our services. Troubleshoot and debug issues on our servers.
-
-Investigate and fix potential security issues or breaches, including ones the university reports to us.
-
-We do not disclose, without your consent, your personal information except when required by law. We do not distribute or sell your personal information to third party organizations. We do not use external analytics platforms such as Google Analytics on our website.

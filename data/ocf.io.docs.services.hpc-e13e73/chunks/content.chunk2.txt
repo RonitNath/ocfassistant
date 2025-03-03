@@ -1,9 +1,0 @@
-Introduction At the OCF we offer a High Performance Computing (HPC) service for individuals and groups that need to run computationally demanding software.
-
-We currently have one main HPC server; however, we have plans to expand the cluster to make use the resources at our disposal.
-
-Gaining Access In order to access the HPC cluster, please send an access request to help@ocf.berkeley.edu .
-
-Make sure to include your OCF username or group account name and a detailed technical description of the projects you plan to run on our HPC infrastructure.
-
-This would include information about the nature of the software being run, as well as the amount of computational resources that are expected to be needed.

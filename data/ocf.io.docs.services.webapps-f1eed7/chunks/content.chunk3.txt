@@ -1,7 +1,0 @@
-Once you have an account, email hostmaster@ocf.berkeley.edu with at least the following information: Group's account name Group's current website, if any (even if not hosted by OCF) Desired domain name for the app (either group.studentorg.berkeley.edu, or your own domain) The technologies/languages your site is built on Requirements for virtually-hosted apps All normal requirements for virtual hosts apply.
-
-In particular, be sure you are in compliance with the university student group disclaimer policy, and that your website features a "Hosted by OCF" banner.
-
-Technical documentation You can host basically any kind of web application that can bind to a socket.
-
-We provide suggested deployment instructions for some popular web applications below, but if you know what you're doing, you needn't follow them.

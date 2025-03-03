@@ -1,5 +1,0 @@
- Printing – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Printing The OCF offers a certain amount of printing to individual members.
-
-You don't have to request a new account each semester - the quota is refreshed at the start of each semester.
-
-Printing is currently limited to: 200 pages per semester 20 pages per day Please note: Each printed side of a sheet counts as a page. Jobs take time to process proportional to the job size. If you submit a large job, please be patient while the print server processes it.

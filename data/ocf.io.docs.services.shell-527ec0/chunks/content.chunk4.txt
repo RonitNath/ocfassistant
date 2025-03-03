@@ -1,5 +1,0 @@
-From your browser If you just need to access SSH quickly, you can use our web-based SSH interface from your web browser.
-
-Mac OS X, Linux, or Windows 10 (Version 1803 and above) On Mac OS X, Linux, or Windows 10 (Version 1803 and above), enter in the terminal: ssh username@ssh.ocf.berkeley.edu Windows On Windows, use PuTTY (download the putty.exe file): Host Name: ssh.ocf.berkeley.edu Port: 22 Mosh We also support Mosh , an SSH alternative with improved support for laggy or roaming connections: mosh username@ssh.ocf.berkeley.edu SFTP You can transfer files to your account using SFTP .
-
-To transfer files you can use the command line utility sftp , or a graphical program such as FileZilla (Linux, Mac, Windows), WinSCP (Windows), or Cyberduck (Mac, Windows). Otherwise, use the following information in your SFTP client.

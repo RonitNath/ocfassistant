@@ -1,3 +1,0 @@
-Web hosting: How do I get group.studentorg.berkeley.edu (virtual hosting)? Email hosting: How do I get @group.studentorg.berkeley.edu (virtual hosting)? My group already has a group.berkeley.edu domain. Will I have to migrate to group.studentorg.berkeley.edu? Printing: I have a printing question/problem. There is some content on your website I want removed. I need to talk to a human.
-
-More in this category Frequently asked questions OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

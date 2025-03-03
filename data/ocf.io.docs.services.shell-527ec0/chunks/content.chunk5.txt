@@ -1,7 +1,0 @@
-Protocol: SFTP (or SSH) Host Name: ssh.ocf.berkeley.edu Port: 22 Disk quotas Currently, accounts are limited to 15 GB of disk usage under the home and web directories. You can check your disk usage by running quota -v over SSH or from your browser . Unattended processes You are welcome to run unattended processes on the OCF.
-
-However, you are ultimately responsible for ensuring that your unattended processes do not unduly interfere with others’ ability to use the shared computing resources.
-
-In particular, if you are going to run a batch job which may require a lot of computing power, you are advised to run it under nice and/or ionice to lower its CPU priority and I/O priority respectively.
-
-OCF staff reserve the right to terminate or otherwise decrease the resource usage of processes which are consuming too many resources.

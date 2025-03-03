@@ -1,1 +1,0 @@
-We support the following commonly used shell account tools (to name a few): Subversion, Git, and Mercurial: version control cron and at: execute commands on a periodic or scheduled basis vim and emacs: powerful and extensible text editors Most SSH/SFTP clients will prompt you to accept an unknown key when you first connect.

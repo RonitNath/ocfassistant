@@ -1,7 +1,0 @@
-For developing and deploying your app, you should almost certainly be using your platform's version manager (rvm, virtualenv, nvm, gvm, etc.).
-
-This will allow you to run the exact versions you want, and install any necessary dependencies, all without coordinating with us (or forcing the rest of our users to switch versions). The pages above provide instructions on doing this with popular programming languages. How do I get a database for my application? A MySQL database is included with your OCF account. You should probably just use that.
-
-We're not going to set up a different database for you (you could install one in your home directory if you really want to). I'm running my app on port 3000 but I can't access it.
-
-The app server is behind a firewall; you won't be able to access most ports from outside of the OCF. You could come work from the lab , or forward the port over SSH from elsewhere.

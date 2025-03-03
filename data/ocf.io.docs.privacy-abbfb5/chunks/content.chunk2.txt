@@ -1,7 +1,0 @@
-Types of personal information we collect Information you provided during the signup process including your name, CalNet UID, and email. Messages you send on chat platforms that we manage. Communications such as email that you send to us directly.
-
-Outbound and inbound internet traffic on our servers, including source and destination IP addresses, pages accessed, username (if relevant), and access time. Logs collected during use of shell-based services such as our login servers and HPC. Data related to print jobs including the file itself.
-
-Metadata about virtually hosted mail sent through our servers including time, recipient, and sender. Cookies on our website in order to store login sessions.
-
-Some highly sensitive data that we collect such as traffic logs is motivated by past events and security issues reported to us by the university. Again, we reassure you that this data is only used as described in this privacy policy.

@@ -1,5 +1,0 @@
- Software Mirrors – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Software Mirrors The OCF provides public mirrors of free and open-source software projects for anyone to use.
-
-These mirrors are available using any of the following protocols: http: http://mirrors.ocf.berkeley.edu/ https: https://mirrors.ocf.berkeley.edu/ rsync: rsync://mirrors.ocf.berkeley.edu/ We are also available at mirrors.berkeley.edu (HTTP only), as an alias for mirrors.ocf.berkeley.edu .
-
-To request for another project to be mirrored or to report a problem with our mirroring service, please contact us .

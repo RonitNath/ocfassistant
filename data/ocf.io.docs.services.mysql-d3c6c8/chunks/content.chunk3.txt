@@ -1,5 +1,0 @@
-Select the option: makemysql — reset your MySQL database password, or create a new MySQL database and run the command. Note your password in a safe place. SSH Terminal Log into the OCF via SSH , at the terminal prompt enter the command makemysql . Hit yes to confirm the operation. Note your password in a safe place.
-
-Reset Password To reset a MySQL password simply follow the directions above for creating a MySQL database. This program WILL NOT DELETE an existing database.
-
-Accessing MySQL Assuming your database is set up, in order to access it (or allow a web application to access it), you will need 4 pieces of information: Database Host: mysql Database Name: {your OCF username} Database User: {your OCF username} Database password: {your database password} Note: Your database password is not the same as your OCF account password. It is a randomly generated password that was created when your database was created.

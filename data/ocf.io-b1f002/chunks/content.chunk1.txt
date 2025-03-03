@@ -1,5 +1,0 @@
- Open Computing Facility at UC Berkeley Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Welcome to the Open Computing Facility!
-
-The Open Computing Facility (OCF) is an all-volunteer student organization dedicated to free computing for all University of California, Berkeley students, faculty, and staff. We're passionate about open source and free software.
-
-Learn what we do Create an account Student Organizations Subdomain Migration The university is migrating berkeley.edu subdomains for student organizations to studentorg.berkeley.edu. See ocf.io/s/subdomain-migration for the actions that your group will need to take.

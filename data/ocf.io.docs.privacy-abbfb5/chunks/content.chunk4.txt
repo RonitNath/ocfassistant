@@ -1,9 +1,0 @@
-How we secure your information Your data is secured via electronic safeguards that only allow access by our volunteer staffers who keep the site running.
-
-Additionally, highly sensitive logs such as internet and mail traffic logs are only accessible to a core set of root staffers.
-
-Revisions We may make changes to this privacy policy at any time, and a notice will be posted visibly on the home page ( https://ocf.berkeley.edu ) for a period of time after. This policy was last updated on September 9th, 2020 .
-
-Contact information Email help@ocf.berkeley.edu . For sensitive/security-related matters, feel free to contact security@ocf.berkeley.edu .
-
-Edit this Page Page History Table of Contents Types of personal information we collect How we use your information How we secure your information Revisions Contact information More in this category Privacy Policy OCF ♥ Linux , Kubernetes , Python , Nix , and Free/Open-Source Software. Sound like you? Join the staff team!

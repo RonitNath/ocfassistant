@@ -1,5 +1,0 @@
-To use your OCF MySQL database with a web application, enter the above information during the application's installation process. To connect to the OCF's MySQL server using the MySQL client on an OCF machine, simply run the command: mysql This command will prompt you for your MySQL database password.
-
-Backing up a MySQL database To backup your database (which you should probably do regularly), the basic command to use is mysqldump [username] > backup where username denotes your OCF username and backup is the name of the file you want to dump the contents of your database into. This command will prompt you for your MySQL password.
-
-To see more options, try running mysqldump --help Restoring a MySQL database from backup If you need to restore your database from a backup (dump file) you made previously, you simply need to connect to the database and run the SQL commands in the dump file.

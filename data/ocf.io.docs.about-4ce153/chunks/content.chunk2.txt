@@ -1,9 +1,0 @@
-The Open Computing Facility provides free computing services to students, faculty, and staff, ranging from printing to expiration-free web hosting to Unix shell accounts to email.
-
-Furthermore, the OCF operates a highly frequented long-hours computer lab with a generally high volunteer-staff-to-user ratio for accessible in-person support, as well as online support.
-
-In addition to these user services, the group also hosts numerous student group and faculty/staff websites, and provides support to these and other organizations on campus.
-
-To be able to do this, we are always aiming to secure more resources to fully meet the needs of everyone in the campus community.
-
-Our primary resources are our GNU/Linux workstations and servers, entirely administered by student volunteers . These resources are located within our computing lab on the ground floor of MLK Student Union.

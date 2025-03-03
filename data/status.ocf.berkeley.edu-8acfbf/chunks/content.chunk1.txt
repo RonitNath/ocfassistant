@@ -1,5 +1,0 @@
- Open Computing Facility Status Updates for Open Computing Facility services Saturday, August 10, 2024 Planned Outage: All OCF Services, August 14 All OCF services will be unavailable on Wednesday, August 14, due to a planned electrical shutdown in the MLK Student Union building.
-
-While the electrical shutdown does not affect the campus data center, the availability of the OCF Software Mirror service. The OCF HPC service will be unavailable during the outage.
-
-Posted by Jonathan at 10:42 PM Planned Outage: OCF Mirrors, Aug. 11 Due to a scheduled power outage at the UC Berkeley Earl Warren Data Center, OCF Mirrors (https://mirrors.ocf.berkeley.edu) will be unavailable starting 4 AM PDT, Sunday Aug. 11. The server is expected to be online by 7 PM PDT, Sunday Aug. 11.

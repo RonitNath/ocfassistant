@@ -1,3 +1,0 @@
-By default your home directory in the container is linked to your real home directory outside of the container environment, which helps you avoid having to transfer files in and out of the container. singularity exec --nv my_container ./my_executable.sh This command will open your container and run the my_executable.sh script in the container environment. The --nv option allows the container to interface with the GPU. This command is useful when using srun so you can run your program in a single command.
-
-Working on HPC Infrastructure If you were using a sandboxed container for testing, we suggest you convert it to a Singularity image file. This is because images are more portable and easier to interact with than sandboxed containers.

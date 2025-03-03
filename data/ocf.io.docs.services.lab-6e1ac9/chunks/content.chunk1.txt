@@ -1,5 +1,0 @@
- Computer lab – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Computer lab The OCF computer lab consists of 29 workstations running Debian Linux .
-
-They are maintained by OCF volunteer staff who operate the servers, workstations, and networking gear that helps the lab run. The computer lab contains 3 scanners, 3 standing desks, and a Blu-ray/DVD/CD reader/writer.
-
-OCF computers include free and open-source software such as LibreOffice (similar to Microsoft Office), GIMP (similar to Adobe Photoshop), and more. For details about printing in the lab, see Printing . Location The OCF computer lab is located in 171 MLK Student Union.

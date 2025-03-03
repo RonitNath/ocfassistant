@@ -1,9 +1,0 @@
-Singularity is a containerization platform developed at Lawrence Berkeley National Laboratory that is designed specifically for HPC environments. To read more about the benefits of Singularity you can look here .
-
-We suggest a particular workflow, which will help simplify deploying your program on our infrastructure.
-
-Installing We recommend that you do your development on our HPC infrastructure, but you can also develop on your own machine if you would like.
-
-If you are running Linux on your system, you can install Singularity from the official apt repos: sudo apt install singularity-container If you do not have an apt based Linux distribution, installation instructions can be found here . Otherwise, if you are running Mac you can look here , or Windows here .
-
-Building Your Container singularity build --sandbox ./my_container docker://ubuntu This will create a Singularity container named my_container .
