@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ocfassistant"
+version = "0.1.0"
+description = ""
+authors = ["Ronit Nath <eronnath@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+ollama = "^0.4.7"
+tqdm = "^4.67.1"
+qdrant-client = "^1.13.2"
+bs4 = "^0.0.2"
+requests = "^2.32.3"
+pyyaml = "^6.0.2"
+nltk = "^3.9.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

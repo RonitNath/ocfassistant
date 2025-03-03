@@ -1,0 +1,5 @@
+ Servers – Open Computing Facility Toggle navigation Open Computing Facility Join About Us Our Organization Joining the Staff Team Lab Statistics Backend Infrastructure Services Computer Lab Printing Web Hosting Application Hosting SSH/SFTP (Shell) Email Hosting MySQL Database Software Mirrors High Performance Computing Staff Hours Help Contact Us Log In Servers The OCF has multiple physical machines. Some of these are hypervisors, which host virtual servers running on QEMU and KVM.
+
+We also have servers that are workers for our Kubernetes cluster, and others comprise our High Performance Computing cluster. Below is a list of some servers and other hosts at the OCF.
+
+VMs are grouped under the hypervisor hosting them. cloudsdale 169.229.226.18 2607:f140:8801::1:18 Hypervisor hal 169.229.226.12 2607:f140:8801::1:12 Hypervisor KVM hypervisor, purchased 2011.

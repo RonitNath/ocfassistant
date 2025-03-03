@@ -1,0 +1,42 @@
+{
+  "original_file": "data\\ocf.io.docs.staff.backend.servers-26720d\\content.txt",
+  "chunk_count": 7,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 867,
+      "first_words": "Servers \u2013 Open Computing Facility Toggle navigati..."
+    },
+    {
+      "index": 2,
+      "size": 2827,
+      "first_words": "Used for backups. riptide 169.229.226.16 2607:f140..."
+    },
+    {
+      "index": 3,
+      "size": 616,
+      "first_words": "Currently hosting testing and staff VMs. biohazard..."
+    },
+    {
+      "index": 4,
+      "size": 842,
+      "first_words": "Purchased 2022. cytosine 169.229.226.9 2607:f140:8..."
+    },
+    {
+      "index": 5,
+      "size": 515,
+      "first_words": "Currently a Kubernetes worker and Ceph testbed. ph..."
+    },
+    {
+      "index": 6,
+      "size": 3719,
+      "first_words": "Purchased 2019, racked 2021. blackhole 169.229.226..."
+    },
+    {
+      "index": 7,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

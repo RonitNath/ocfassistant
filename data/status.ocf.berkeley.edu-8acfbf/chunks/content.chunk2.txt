@@ -1,0 +1,5 @@
+Posted by Jonathan at 10:38 PM Thursday, February 08, 2024 OCF Mirrors Down, Feb 8 ~11AM - Feb 10 9PM Update (2/10 9PM PST) - OCF Mirrors Service is up again, and we are currently syncing from upstreams. OCF Internal APT repos remain unavailable at this moment. The OCF Mirrors Service went down due to a campus datacenter power outage. When power was resumed, the server encountered a disk error on the boot disk.
+
+ETA of recovery currently unknown as a full OS rebuild seems to be needed. ~rjz Posted by Jonathan at 11:28 PM Wednesday, January 18, 2023 Mirrors maintenance, 1/18 23:00 PST We'll be running some maintenance tasks on the mirrors server (https://mirrors.ocf.berkeley.edu) at 23:00 PST today, 1/18. The projected maintenance window is 20 minutes.
+
+Posted by Jonathan at 2:31 PM Friday, August 26, 2022 Multiple mirrors out of date We noticed that multiple OCF mirror archives were out of date due to exhausted boot disk space on the mirrors server.

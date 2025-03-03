@@ -1,0 +1,57 @@
+{
+  "original_file": "data\\ocf.io.docs.services.hpc-e13e73\\content.txt",
+  "chunk_count": 10,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 926,
+      "first_words": "High performance computing \u2013 Open Computing Facil..."
+    },
+    {
+      "index": 2,
+      "size": 707,
+      "first_words": "Introduction At the OCF we offer a High Performanc..."
+    },
+    {
+      "index": 3,
+      "size": 954,
+      "first_words": "Connecting Once you submit your proposal and are a..."
+    },
+    {
+      "index": 4,
+      "size": 874,
+      "first_words": "Slurm is a free and open source job scheduler that..."
+    },
+    {
+      "index": 5,
+      "size": 917,
+      "first_words": "Singularity is a containerization platform develop..."
+    },
+    {
+      "index": 6,
+      "size": 884,
+      "first_words": "If you are working on our infrastructure you will..."
+    },
+    {
+      "index": 7,
+      "size": 744,
+      "first_words": "By default your home directory in the container is..."
+    },
+    {
+      "index": 8,
+      "size": 822,
+      "first_words": "You can make this conversion using the following c..."
+    },
+    {
+      "index": 9,
+      "size": 933,
+      "first_words": "Edit this Page Page History Table of Contents Intr..."
+    },
+    {
+      "index": 10,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+We may restart the application server as part of regular maintenance, and you'll want your app to start again when we do. You'll also want your app to automatically restart if it crashes. We highly recommend to use systemd to supervise your app. Our recommended setup is: Create a directory for your app ~/myapp . Place a startup script at ~/myapp/run . Your script should end by exec ing the server process.
+
+If you followed one of the guides for Node.js , Rails , or Django , you've already created this file, so can move on to the next step.

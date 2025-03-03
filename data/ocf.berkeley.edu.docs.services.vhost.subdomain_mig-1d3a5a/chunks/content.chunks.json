@@ -1,0 +1,27 @@
+{
+  "original_file": "data\\ocf.berkeley.edu.docs.services.vhost.subdomain_mig-1d3a5a\\content.txt",
+  "chunk_count": 4,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 911,
+      "first_words": "Subdomain migration FAQ \u2013 Open Computing Facility..."
+    },
+    {
+      "index": 2,
+      "size": 107,
+      "first_words": "We have additional instructions at the bottom for..."
+    },
+    {
+      "index": 3,
+      "size": 4995,
+      "first_words": "WordPress sites Your club's website is now also ac..."
+    },
+    {
+      "index": 4,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

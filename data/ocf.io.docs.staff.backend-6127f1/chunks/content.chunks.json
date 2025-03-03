@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.io.docs.staff.backend-6127f1\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 481,
+      "first_words": "Infrastructure \u2013 Open Computing Facility Toggle n..."
+    },
+    {
+      "index": 2,
+      "size": 2013,
+      "first_words": "Edit this Page Page History More in this category..."
+    },
+    {
+      "index": 3,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

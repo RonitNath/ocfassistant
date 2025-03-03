@@ -1,0 +1,22 @@
+{
+  "original_file": "data\\ocf.io.docs.services.mirrors-c64916\\content.txt",
+  "chunk_count": 3,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 883,
+      "first_words": "Software Mirrors \u2013 Open Computing Facility Toggle..."
+    },
+    {
+      "index": 2,
+      "size": 1237,
+      "first_words": "Currently mirrored projects AlmaLinux Alpine Linux..."
+    },
+    {
+      "index": 3,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}

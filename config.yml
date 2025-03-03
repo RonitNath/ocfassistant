@@ -1,0 +1,42 @@
+data_folder: data
+
+models:
+  embeddings:
+    name: ollama/snowflake-arctic-embed2:latest
+  chat:
+    name: ollama/llama3.2:3b
+
+# URLs to keep when graph searching scrape
+scrape_safe_patterns:
+  - https://*ocf.berkeley.edu*
+  - https://*ocf.io*
+  - https://github.com/ocf/*
+
+# Where webscraping starts
+scrape_root:
+  - https://ocf.io
+
+# Chunking parameters
+chunking:
+  # Maximum characters per chunk
+  max_chunk_size: 1000 
+  # Minimum characters per chunk
+  min_chunk_size: 100
+  # Number of characters to overlap between chunks
+  overlap_size: 50
+  # Threshold for semantic similarity
+  similarity_threshold: 0.75
+
+
+
+
+# Default prompt for the chat
+default_prompt: |
+  You are a helpful assistant that can answer questions about the OCF.
+  You are given a question and a list of documents.
+  You need to answer the question based on the documents.
+  If you don't know the answer, say "I don't know".
+  If you know the answer, answer the question.
+
+example_question: |
+  How can I setup webhosting on the OCF?

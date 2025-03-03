@@ -1,0 +1,67 @@
+{
+  "original_file": "data\\ocf.io.docs.services.webapps-f1eed7\\content.txt",
+  "chunk_count": 12,
+  "chunk_method": "hybrid",
+  "chunks": [
+    {
+      "index": 1,
+      "size": 959,
+      "first_words": "Web application hosting \u2013 Open Computing Facility..."
+    },
+    {
+      "index": 2,
+      "size": 870,
+      "first_words": "For normal user accounts or for groups without app..."
+    },
+    {
+      "index": 3,
+      "size": 815,
+      "first_words": "Once you have an account, email hostmaster@ocf.ber..."
+    },
+    {
+      "index": 4,
+      "size": 987,
+      "first_words": "Connecting to the application server We provide a..."
+    },
+    {
+      "index": 5,
+      "size": 544,
+      "first_words": "We may restart the application server as part of r..."
+    },
+    {
+      "index": 6,
+      "size": 508,
+      "first_words": "Otherwise, an example would be: #!/bin/sh -e exec..."
+    },
+    {
+      "index": 7,
+      "size": 776,
+      "first_words": "Save the following to the file ~/.config/systemd/u..."
+    },
+    {
+      "index": 8,
+      "size": 982,
+      "first_words": "In summary, Restart an app. systemctl --user resta..."
+    },
+    {
+      "index": 9,
+      "size": 908,
+      "first_words": "For developing and deploying your app, you should..."
+    },
+    {
+      "index": 10,
+      "size": 486,
+      "first_words": "Edit this Page Page History Table of Contents Intr..."
+    },
+    {
+      "index": 11,
+      "size": 698,
+      "first_words": "More in this category Services Account Account pol..."
+    },
+    {
+      "index": 12,
+      "size": 599,
+      "first_words": "About the OCF Overview Officers Official Documents..."
+    }
+  ]
+}
