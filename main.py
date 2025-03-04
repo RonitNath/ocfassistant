@@ -492,6 +492,76 @@ def generate_embeddings():
         print(f"Error generating embeddings: {e}")
         logging.error(f"Error generating embeddings: {e}")
 
+def web_server():
+    """Start a web server to serve the OCF Assistant frontend."""
+    try:
+        import flask
+        from flask import Flask, send_from_directory, render_template
+        from flask_socketio import SocketIO, emit
+        import os
+        import time
+        import threading
+        
+        app = Flask(__name__, 
+                   static_folder="static",
+                   template_folder="templates")
+        socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=30, ping_interval=15)
+        
+        # Track connected clients
+        connected_clients = set()
+        
+        @app.route('/')
+        def index():
+            return render_template('index.html')
+            
+        @app.route('/<path:path>')
+        def serve_static(path):
+            return send_from_directory('static', path)
+        
+        @socketio.on('connect')
+        def handle_connect():
+            client_id = flask.request.sid
+            connected_clients.add(client_id)
+            print(f"Client connected: {client_id}")
+            emit('connection_response', {'status': 'connected', 'client_id': client_id})
+        
+        @socketio.on('disconnect')
+        def handle_disconnect():
+            client_id = flask.request.sid
+            if client_id in connected_clients:
+                connected_clients.remove(client_id)
+            print(f"Client disconnected: {client_id}")
+        
+        @socketio.on('ping')
+        def handle_ping(data):
+            client_id = flask.request.sid
+            print(f"Ping from client {client_id}: {data}")
+            emit('pong', {'timestamp': time.time(), 'received': data})
+        
+        def background_tasks():
+            """Background task to send status updates to all connected clients"""
+            while True:
+                socketio.sleep(5)  # Update every 5 seconds
+                if connected_clients:
+                    status_data = {
+                        'timestamp': time.time(),
+                        'connected_clients': len(connected_clients)
+                    }
+                    socketio.emit('status_update', status_data)
+                    
+        # Start background thread for periodic updates
+        socketio.start_background_task(background_tasks)
+            
+        print("Starting web server with WebSocket support on http://localhost:8080")
+        socketio.run(app, host='0.0.0.0', port=8080, debug=True, allow_unsafe_werkzeug=True)
+    except ImportError as e:
+        print(f"Missing required packages: {e}")
+        print("Flask and Flask-SocketIO are required to run the web interface.")
+        print("Install them with 'pip install flask flask-socketio'.")
+    except Exception as e:
+        print(f"Error starting web server: {e}")
+        logging.error(f"Error starting web server: {e}")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OCF Assistant CLI")
     parser.add_argument("--scrape", action="store_true", help="Run web scraping")
@@ -504,6 +574,7 @@ if __name__ == "__main__":
     parser.add_argument("--estimate-unreachable", action="store_true", help="Include unreachable URLs in simulation estimates")
     parser.add_argument("--qdrant", action="store_true", help="Upload embeddings to Qdrant vector database")
     parser.add_argument("--embeddings", action="store_true", help="Generate embeddings for chunks")
+    parser.add_argument("--web", action="store_true", help="Start web interface on port 8080")
     
     args = parser.parse_args()
     
@@ -522,5 +593,7 @@ if __name__ == "__main__":
         upload_to_qdrant()
     elif args.embeddings:
         generate_embeddings()
+    elif args.web:
+        web_server()
     else:
         parser.print_help()

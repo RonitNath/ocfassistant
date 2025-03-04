@@ -59,8 +59,7 @@ case "$1" in
     echo "Pipeline complete! You can now use --chat to interact with the assistant."
     ;;
   *)
-    # Default case - run chunking as specified
-    poetry run python main.py --scrape --depth 2 --extend-depth
-    poetry run python main.py --chunk
+    echo "Running web server..."
+    poetry run python main.py --web
     ;;
 esac

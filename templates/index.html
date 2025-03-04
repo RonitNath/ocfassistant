@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCF Assistant</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Socket.IO client library -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>OCF Assistant</h1>
+                <!-- Connection status indicator will be added here by JS -->
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><button class="nav-button active" data-tab="chat"><i class="fas fa-comment-dots"></i> Chat</button></li>
+                    <li><button class="nav-button" data-tab="data"><i class="fas fa-database"></i> Data</button></li>
+                    <li><button class="nav-button" data-tab="dashboard"><i class="fas fa-chart-line"></i> Dashboard</button></li>
+                    <li><button class="nav-button" data-tab="settings"><i class="fas fa-cog"></i> Settings</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="app-content">
+            <!-- Chat Tab -->
+            <section id="chat-tab" class="tab-content active">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message system">
+                            <div class="message-content">
+                                <p>Welcome to OCF Assistant! Ask me anything about OCF.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <textarea id="chat-input" placeholder="Ask a question about OCF..."></textarea>
+                        <button id="send-button" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Tab -->
+            <section id="data-tab" class="tab-content">
+                <div class="data-container">
+                    <div class="card">
+                        <h2><i class="fas fa-spider"></i> Web Scraping</h2>
+                        <p>Manage the web scraping process to gather information from OCF websites.</p>
+                        <div class="card-actions">
+                            <button class="action-button" id="start-scrape">Start Scraping</button>
+                            <button class="action-button" id="simulate-scrape">Simulate</button>
+                        </div>
+                        <div class="input-group">
+                            <label for="scrape-depth">Scrape Depth:</label>
+                            <input type="number" id="scrape-depth" min="1" value="1">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-puzzle-piece"></i> Chunking</h2>
+                        <p>Process scraped text into manageable chunks for embedding generation.</p>
+                        <div class="card-actions">
+                            <button class="action-button" id="start-chunking">Process Chunks</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2><i class="fas fa-brain"></i> Embeddings</h2>
+                        <p>Generate and manage vector embeddings for knowledge retrieval.</p>
+                        <div class="card-actions">
+                            <button class="action-button" id="generate-embeddings">Generate Embeddings</button>
+                            <button class="action-button" id="upload-qdrant">Upload to Qdrant</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Dashboard Tab -->
+            <section id="dashboard-tab" class="tab-content">
+                <div class="dashboard-container">
+                    <div class="card">
+                        <h2><i class="fas fa-signal"></i> System Status</h2>
+                        <div class="status-container">
+                            <div class="status-item">
+                                <span class="status-label">WebSocket:</span>
+                                <span class="status-value" id="websocket-status">Initializing...</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Last Ping:</span>
+                                <span class="status-value" id="last-ping">N/A</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Client ID:</span>
+                                <span class="status-value" id="client-id">Not connected</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2><i class="fas fa-tachometer-alt"></i> Live Metrics</h2>
+                        <div id="live-metrics" class="metrics-container">
+                            <div class="metric">
+                                <span class="metric-value">-</span>
+                                <span class="metric-label">Connected Clients</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">-</span>
+                                <span class="metric-label">Last Update</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2><i class="fas fa-heartbeat"></i> Connection Test</h2>
+                        <p>Test the WebSocket connection by sending manual pings.</p>
+                        <div class="card-actions">
+                            <button class="action-button" id="send-ping">Send Ping</button>
+                            <button class="action-button" id="reconnect">Reconnect</button>
+                        </div>
+                        <div class="ping-results" id="ping-results">
+                            <!-- Ping results will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Tab -->
+            <section id="settings-tab" class="tab-content">
+                <div class="settings-container">
+                    <div class="settings-card">
+                        <h2>Configuration</h2>
+                        <div class="settings-group">
+                            <label for="embeddings-model">Embeddings Model:</label>
+                            <input type="text" id="embeddings-model" value="snowflake-arctic-embed2:latest">
+                        </div>
+                        <div class="settings-group">
+                            <label for="chat-model">Chat Model:</label>
+                            <input type="text" id="chat-model" value="llama3.2:3b">
+                        </div>
+                        <div class="settings-group">
+                            <label for="ollama-url">Ollama URL:</label>
+                            <input type="text" id="ollama-url" value="http://localhost:11434">
+                        </div>
+                        <div class="settings-group">
+                            <label for="qdrant-url">Qdrant URL:</label>
+                            <input type="text" id="qdrant-url" value="http://localhost:6333">
+                        </div>
+                        <div class="settings-actions">
+                            <button class="primary-button" id="save-settings">Save Settings</button>
+                            <button class="secondary-button" id="reset-settings">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>OCF Assistant | <a href="https://github.com/ocf" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html> 

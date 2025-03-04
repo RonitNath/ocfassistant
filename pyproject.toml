@@ -17,6 +17,8 @@ nltk = "^3.9.1"
 dotenv = "^0.9.9"
 asyncio = "^3.4.3"
 numpy = "^2.2.3"
+flask = "^3.0.0"
+flask-socketio = "^5.3.6"
 
 
 [build-system]
